@@ -830,7 +830,7 @@ export default function GuideDetail({
             />
             <div className="relative z-10 text-white">
               <h3 className="font-bold text-xs mb-1">{t("寻找可靠的住房资源？", "신뢰할 수 있는 주거 정보를 찾으시나요?", "Looking for reliable housing resources?")}</h3>
-              <p className="text-[10px] opacity-90 mb-3">{t("我们的留学生学联合作库中配有正规持牌中文中介清单。", "우리 유학생 학생회 협력 업체 중 정식 면허를 소지한 중국어 소통 가능 중개사 명단을 제공합니다.", "Our student union has a compiled directory of licensed, Chinese-speaking real estate agents.")}</p>
+
               <button 
                 onClick={onNavigateToForum}
                 className="px-6 py-1.5 bg-[#fea619] hover:bg-amber-500 text-amber-950 rounded-full font-bold text-xs cursor-pointer inline-block"
