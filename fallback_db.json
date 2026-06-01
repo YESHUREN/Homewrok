@@ -136,79 +136,14 @@
     }
   ],
   "fallbackNotifications": [],
-  "fallbackReminders": [],
-  "fallbackWalletHistory": [
+  "fallbackReminders": [
     {
-      "id": "tx_1779526620017",
+      "id": "rem_1780314829917",
       "user_id": "stud_1779432628213",
-      "title": "微信 / 支付宝快捷充值",
-      "amount": "+¥ 10000000.00",
-      "type": "plus",
-      "created_at": "2026-05-23 17:57"
-    },
-    {
-      "id": "tx_1779526603934",
-      "user_id": "stud_1779432628213",
-      "title": "微信 / 支付宝快捷充值",
-      "amount": "+¥ 500.00",
-      "type": "plus",
-      "created_at": "2026-05-23 17:56"
-    },
-    {
-      "id": "tx_1779445164028",
-      "user_id": "stud_1779432628213",
-      "title": "微信 / 支付宝快捷充值",
-      "amount": "+¥ 100.00",
-      "type": "plus",
-      "created_at": "2026-05-22 19:19"
-    },
-    {
-      "id": "tx_1779445157429",
-      "user_id": "stud_1779432628213",
-      "title": "消费: 预订梨花安好自修室",
-      "amount": "-¥ 25.05",
-      "type": "minus",
-      "created_at": "2026-05-22 19:19"
-    },
-    {
-      "id": "tx_1779432865208",
-      "user_id": "stud_1779432628213",
-      "title": "微信 / 支付宝快捷充值",
-      "amount": "+¥ 100.00",
-      "type": "plus",
-      "created_at": "2026-05-22 15:54"
-    },
-    {
-      "id": "tx_1779432628213",
-      "user_id": "stud_1779432628213",
-      "title": "注册赠予初始钱包额度",
-      "amount": "+¥ 1,000.00",
-      "type": "plus",
-      "created_at": "2026-05-22T06:50:28.213Z"
-    },
-    {
-      "id": "tx_1",
-      "user_id": "202408151229",
-      "title": "系统初始赠予",
-      "amount": "+¥ 1,000.00",
-      "type": "plus",
-      "created_at": "2026-05-20 14:30"
-    },
-    {
-      "id": "tx_2",
-      "user_id": "202408151229",
-      "title": "韩元法币极速兑换",
-      "amount": "+¥ 300.00",
-      "type": "plus",
-      "created_at": "2026-05-21 09:15"
-    },
-    {
-      "id": "tx_3",
-      "user_id": "202408151229",
-      "title": "校巴电子乘车码扣款",
-      "amount": "-¥ 60.00",
-      "type": "minus",
-      "created_at": "2026-05-21 16:40"
+      "title": "111",
+      "date": "2026-06-03",
+      "time": "12:00",
+      "enabled": true
     }
   ]
 }

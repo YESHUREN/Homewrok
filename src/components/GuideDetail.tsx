@@ -657,12 +657,12 @@ export default function GuideDetail({
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">1</div>
                 <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("纸质单邮寄到家", "지로 고지서 우편 수령", "Paper Bill Sent to Your Home")}</h4>
-                <p className="text-[11px] text-slate-500 leading-normal">{t("账单包含详细银行账户信息，每个月10号前会邮寄给你注册在登录证上的那张登记居住地住址。请千万及时去信箱拿信。", "상세 은행 계좌 정보가 포함된 고지서가 매월 10일 전후로 외국인등록증에 등록된 체류지로 발송됩니다. 우편함을 꼭 주기적으로 확인하세요.", "Detailed bank account information will be mailed before the 10th of every month to your registered address. Please check your mailbox in time.")}</p>
+                <p className="text-[11px] text-slate-500 leading-normal">{t("账单包含详细银行账户信息，每个月会邮寄给你注册在登录证上的那张登记居住地住址。请千万及时去信箱拿信。", "상세 은행 계좌 정보가 포함된 고지서가 매월 외국인등록증에 등록된 체류지로 발송됩니다. 우편함을 꼭 주기적으로 확인하세요.", "Detailed bank account information will be mailed every month to your registered address. Please check your mailbox in time.")}</p>
               </div>
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">2</div>
                 <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("选择最省心支付（卡内自动扣除）", "편리한 자동이체 설정 (계좌/카드 자동 납부)", "Worry-Free Auto-Debit (Automatic Deduction)")}</h4>
-                <p className="text-[11px] text-slate-500 leading-normal">{t("拿着通帐存折/银行卡，直接去健康保险办公室前台，或者给1345打电话用中文客服，申请“账户每月自动转账划扣 (자동이체)”。每个月25-27号卡内有足额就会自动扣，还可以享受少量扣税优惠！", "통장 또는 카드를 지참하여 건강보험공단 지사를 방문하거나, 1345에 전화하여 외국인 상담원을 통해 계좌 자동이체를 신청하세요. 매월 25~27일에 자동 인출되며 소액 감면 혜택도 받을 수 있습니다!", "Take your bankbook/card to an NHIS branch, or call 1345 to apply for Automatic Debit. NHIS will deduct premiums between the 25th and 27th each month automatically, with a small discount!")}</p>
+                <p className="text-[11px] text-slate-500 leading-normal">{t("拿着通帐存折/银行卡，直接去健康保险办公室前台，或者给1345打电话用中文客服，申请“账户每月自动转账划扣 (자동이체)”。每个月卡内有足额就会自动扣，还可以享受少量扣税优惠！", "통장 또는 카드를 지참하여 건강보험공단 지사를 방문하거나, 1345에 전화하여 외국인 상담원을 통해 계좌 자동이체를 신청하세요. 매월 자동 인출되며 소액 감면 혜택도 받을 수 있습니다!", "Take your bankbook/card to an NHIS branch, or call 1345 to apply for Automatic Debit. NHIS will deduct premiums each month automatically, with a small discount!")}</p>
               </div>
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">3</div>
