@@ -2321,11 +2321,10 @@ export default function App() {
 
                   {/* Student ID Non-editable block */}
                   <div className="space-y-1 opacity-85">
-                    <label className="text-xs font-bold text-slate-400 pl-1">{t('student_id')}</label>
+                    <label className="text-xs font-bold text-slate-400 pl-1">UID</label>
                     <div className="w-full bg-slate-100 border border-slate-200 border-dashed rounded-xl px-3 py-2.5 text-xs text-slate-500 font-semibold cursor-not-allowed">
                       {profile.studentId}
                     </div>
-                    <p className="text-[9px] text-slate-400 pl-1 mt-0.5">{language === 'en' ? '⚠️ Student ID is bound. Contact Seoul Center offline to change.' : language === 'ko' ? '⚠️ 학번이 인증 완료된 정보입니다. 변경을 원하시면 서울센터 담당자에게 문의하세요.' : '⚠️ 留学学籍信息已绑定，若需换绑请线下联系首尔中心顾问人员。'}</p>
                   </div>
 
                   {/* Gender and Birthday Grid */}
