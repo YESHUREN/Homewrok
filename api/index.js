@@ -10,7 +10,16 @@ function getSupabase() {
     SUPABASE_URL.includes("your-supabase-project-id") ||
     SUPABASE_KEY.includes("your-key-here")
   ) return null;
-  return createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Clean up URL: remove trailing slashes and '/rest/v1' suffix
+  let cleanUrl = SUPABASE_URL.trim();
+  cleanUrl = cleanUrl.replace(/\/+$/, ""); // Remove trailing slashes
+  cleanUrl = cleanUrl.replace(/\/rest\/v1$/, ""); // Remove '/rest/v1' if present
+
+  // Clean up key: trim whitespaces
+  const cleanKey = SUPABASE_KEY.trim();
+
+  return createClient(cleanUrl, cleanKey);
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
