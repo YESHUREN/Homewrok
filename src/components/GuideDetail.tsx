@@ -995,7 +995,7 @@ export default function GuideDetail({
           <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-4">
             <h3 className="font-bold text-sm text-slate-800 mb-3 flex items-center gap-1.5">
               <Layers className="w-5 h-5 text-[#00685f]" />
-              {t("韩国几大王牌留学银行推荐", "유학생을 위한 주요 은행 추천", "Recommended Top Korean Banks for Students")}
+              {t("推荐银行", "추천 은행", "Recommended Banks")}
             </h3>
 
             <div className="space-y-2">
