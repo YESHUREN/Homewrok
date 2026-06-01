@@ -1837,47 +1837,194 @@ export default function GuideDetail({
 
             {/* Notion-style Page Canvas */}
             <section className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100/80 mb-4">
-              <div className="space-y-4">
-                {content.checklistItems.map((doc, idx) => {
-                  const { icon, label, val, isCallout, calloutType } = parseNotionBlock(doc.name);
+              <div className="space-y-3.5">
+                {(() => {
+                  // 1. Group consecutive table_row items
+                  const blocks: { type: string; key: string; items: any[] }[] = [];
+                  let currentTableRows: any[] = [];
                   
-                  if (isCallout) {
-                    const bgColor = calloutType === 'warning' ? 'bg-amber-50/40 border-amber-250/50 text-amber-950' : 'bg-teal-50/40 border-teal-200/50 text-[#00685f]';
-                    return (
-                      <div key={doc.key || idx} className={`p-3.5 rounded-xl border flex items-start gap-2.5 text-[11px] ${bgColor}`}>
-                        <span className="text-sm shrink-0 leading-none mt-0.5">{icon}</span>
-                        <div className="leading-relaxed font-medium">
-                          {label ? (
-                            <>
-                              <strong className="font-extrabold text-slate-900">{label}</strong>: {val}
-                            </>
-                          ) : (
-                            val
-                          )}
-                        </div>
-                      </div>
-                    );
+                  content.checklistItems.forEach((doc, idx) => {
+                    const blockType = doc.key.includes('_') 
+                      ? doc.key.substring(0, doc.key.lastIndexOf('_'))
+                      : 'text';
+                      
+                    if (blockType === 'table_row') {
+                      currentTableRows.push(doc);
+                    } else {
+                      if (currentTableRows.length > 0) {
+                        blocks.push({
+                          type: 'table',
+                          key: `table_${idx - currentTableRows.length}`,
+                          items: currentTableRows
+                        });
+                        currentTableRows = [];
+                      }
+                      blocks.push({
+                        type: blockType,
+                        key: doc.key,
+                        items: [doc]
+                      });
+                    }
+                  });
+                  
+                  if (currentTableRows.length > 0) {
+                    blocks.push({
+                      type: 'table',
+                      key: `table_end`,
+                      items: currentTableRows
+                    });
                   }
                   
-                  return (
-                    <div key={doc.key || idx} className="flex items-start gap-3.5 text-[11px] leading-relaxed group p-0.5">
-                      {/* Left icon bullet representing clean Notion list bullet */}
-                      <div className="w-6 h-6 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 text-slate-600 text-xs mt-0.5">
-                        {icon}
-                      </div>
+                  // 2. Render each block type with beautiful typography
+                  return blocks.map((block) => {
+                    if (block.type === 'table') {
+                      if (block.items.length === 0) return null;
                       
-                      <div className="flex-1 text-slate-700 font-medium pt-0.5">
-                        {label ? (
-                          <>
-                            <strong className="font-extrabold text-slate-950">{label}</strong>: <span className="text-slate-800 font-bold">{val}</span>
-                          </>
-                        ) : (
-                          <span className="text-slate-800 font-bold">{val}</span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                      // The first row of table items acts as headers
+                      const headerRaw = block.items[0].name;
+                      const headers = headerRaw.split(' | ').map((h: string) => h.trim());
+                      const rows = block.items.slice(1).map(item => ({
+                        key: item.key,
+                        cells: item.name.split(' | ').map((c: string) => c.trim())
+                      }));
+                      
+                      return (
+                        <div key={block.key} className="overflow-x-auto rounded-xl border border-slate-150/70 shadow-sm my-4 bg-white">
+                          <table className="w-full text-left border-collapse text-[10px]">
+                            <thead>
+                              <tr className="bg-[#00685f]/5 border-b border-slate-200 text-[#00685f]">
+                                {headers.map((h, i) => (
+                                  <th key={i} className="px-3 py-2.5 font-extrabold whitespace-nowrap">{h}</th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {rows.map((row, rIdx) => (
+                                <tr key={row.key || rIdx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/30 transition-colors">
+                                  {row.cells.map((cell, cIdx) => (
+                                    <td key={cIdx} className="px-3 py-2.5 font-semibold text-slate-700 whitespace-pre-wrap">{cell}</td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      );
+                    }
+                    
+                    const doc = block.items[0];
+                    if (!doc) return null;
+                    
+                    const blockType = block.type;
+                    const { icon, text, label, val, isCallout, calloutType } = parseNotionBlock(doc.name);
+                    
+                    // A. Callout blocks
+                    if (isCallout || blockType === 'callout') {
+                      const calloutBg = calloutType === 'warning' 
+                        ? 'bg-amber-50/40 border-amber-250/50 text-amber-950' 
+                        : 'bg-teal-50/40 border-teal-200/50 text-[#00685f]';
+                      return (
+                        <div key={block.key} className={`p-3.5 rounded-xl border flex items-start gap-2.5 text-[11px] font-semibold my-2.5 ${calloutBg}`}>
+                          <span className="text-sm shrink-0 leading-none mt-0.5">{icon || "💡"}</span>
+                          <div className="leading-relaxed">
+                            {label ? (
+                              <>
+                                <strong className="font-extrabold text-slate-900">{label}</strong>: {val}
+                              </>
+                            ) : (
+                              val
+                            )}
+                          </div>
+                        </div>
+                      );
+                    }
+                    
+                    // B. Heading 1 (header)
+                    if (blockType === 'header') {
+                      return (
+                        <h2 key={block.key} className="text-sm font-black text-slate-900 mt-5 mb-2 pb-1 border-b border-slate-100 flex items-center gap-2">
+                          <span className="text-[#00685f] text-sm shrink-0">{icon || "📌"}</span>
+                          <span className="font-extrabold">{text}</span>
+                        </h2>
+                      );
+                    }
+                    
+                    // C. Heading 2 (sub_header)
+                    if (blockType === 'sub_header') {
+                      return (
+                        <h3 key={block.key} className="text-xs font-black text-slate-800 mt-4 mb-2 flex items-center gap-1.5">
+                          <span className="text-[#fea619] shrink-0">{icon || "🔸"}</span>
+                          <span className="font-bold">{text}</span>
+                        </h3>
+                      );
+                    }
+                    
+                    // D. Heading 3 (sub_sub_header)
+                    if (blockType === 'sub_sub_header') {
+                      return (
+                        <h4 key={block.key} className="text-[11px] font-bold text-[#00685f] mt-3.5 mb-1.5 flex items-center gap-1">
+                          <span className="shrink-0">{icon || "🔹"}</span>
+                          <span className="font-bold">{text}</span>
+                        </h4>
+                      );
+                    }
+                    
+                    // E. Divider
+                    if (blockType === 'divider') {
+                      return <hr key={block.key} className="border-slate-100 my-4" />;
+                    }
+                    
+                    // F. Blockquote (quote)
+                    if (blockType === 'quote') {
+                      return (
+                        <div key={block.key} className="border-l-4 border-[#00685f]/40 bg-slate-50/40 p-3 rounded-r-xl my-3 text-[11px] text-slate-650 leading-relaxed font-semibold italic pl-4">
+                          {doc.name}
+                        </div>
+                      );
+                    }
+                    
+                    // G. Bulleted list
+                    if (blockType === 'bulleted_list') {
+                      return (
+                        <div key={block.key} className="flex items-start gap-2 pl-1.5 py-0.5 text-[11px] leading-relaxed group">
+                          <span className="text-[#00685f] font-extrabold mt-0.5 shrink-0">•</span>
+                          <span className="text-slate-700 font-semibold">{doc.name}</span>
+                        </div>
+                      );
+                    }
+                    
+                    // H. Numbered list
+                    if (blockType === 'numbered_list') {
+                      const numMatch = doc.name.match(/^(\d+)[\.\s]/);
+                      let listNum = "";
+                      let listText = doc.name;
+                      if (numMatch) {
+                        listNum = numMatch[1];
+                        listText = doc.name.substring(numMatch[0].length).trim();
+                      }
+                      
+                      return (
+                        <div key={block.key} className="flex items-start gap-2 pl-1.5 py-0.5 text-[11px] leading-relaxed group">
+                          {listNum ? (
+                            <span className="w-4 h-4 rounded-full bg-teal-50 text-[#00685f] border border-teal-200 font-extrabold text-[9px] flex items-center justify-center shrink-0 mt-0.5">
+                              {listNum}
+                            </span>
+                          ) : (
+                            <span className="text-[#00685f] font-extrabold mt-0.5 shrink-0">#</span>
+                          )}
+                          <span className="text-slate-700 font-bold pt-0.5">{listText}</span>
+                        </div>
+                      );
+                    }
+                    
+                    // I. Text blocks (fallback)
+                    return (
+                      <p key={block.key} className="text-[11px] text-slate-500 leading-relaxed pl-1 py-0.5 font-medium whitespace-pre-wrap">
+                        {doc.name}
+                      </p>
+                    );
+                  });
+                })()}
               </div>
 
               {/* Render custom steps only if they are not dummy placeholders */}

@@ -43,10 +43,6 @@ if not os.path.exists(scratch_dir):
 count = 0
 for page_id, name in items:
     out_filename = os.path.join(scratch_dir, f"notion_page_{page_id}.txt")
-    if os.path.exists(out_filename):
-        print(f"File for {name} ({page_id}) already exists. Skipping.")
-        continue
-
     print(f"Fetching {name} ({page_id})...")
     url = f"https://notion-api.splitbee.io/v1/page/{page_id}"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -82,12 +78,33 @@ for page_id, name in items:
                 properties = b.get("properties", {})
                 
                 text = ""
-                if properties:
-                    for k, v in properties.items():
-                        if isinstance(v, list) and len(v) > 0 and isinstance(v[0], list):
-                            text = "".join([item[0] for item in v if isinstance(item, list) and len(item) > 0 and isinstance(item[0], str)])
-                            break
-                            
+                if btype == "table_row":
+                    # Get parent table columns order if available
+                    parent_id = b.get("parent_id")
+                    b_parent = record_map.get(parent_id, {}).get("value", {}).get("value", {})
+                    cols = b_parent.get("format", {}).get("table_block_properties", [])
+                    col_ids = [c["property"] for c in cols]
+                    
+                    cells = []
+                    if col_ids:
+                        for col_id in col_ids:
+                            cell_val = properties.get(col_id, [])
+                            cell_text = "".join([item[0] for item in cell_val if isinstance(item, list) and len(item) > 0 and isinstance(item[0], str)])
+                            cells.append(cell_text)
+                    else:
+                        # Fallback sorted by key
+                        for k, v in sorted(properties.items()):
+                            if isinstance(v, list) and len(v) > 0 and isinstance(v[0], list):
+                                cell_text = "".join([item[0] for item in v if isinstance(item, list) and len(item) > 0 and isinstance(item[0], str)])
+                                cells.append(cell_text)
+                    text = " | ".join(cells)
+                else:
+                    if properties:
+                        for k, v in properties.items():
+                            if isinstance(v, list) and len(v) > 0 and isinstance(v[0], list):
+                                text = "".join([item[0] for item in v if isinstance(item, list) and len(item) > 0 and isinstance(item[0], str)])
+                                break
+                                
                 res_list = [(btype, text, depth)]
                 
                 children = b.get("content", [])
