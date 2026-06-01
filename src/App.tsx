@@ -16,7 +16,7 @@ import {
   Home, MessageSquare, User, Menu, Bell, Search, MapPin, ChevronDown, 
   Heart, MessageCircle, Share2, Plus, Calendar, Shield, BookOpen, 
   Trash2, CreditCard, ChevronRight, HelpCircle, Globe, LogOut, Check,
-  X, Camera, PlusCircle, ArrowLeft, Send, ArrowRight, Bookmark, RefreshCw
+  X, Camera, PlusCircle, ArrowLeft, Send, ArrowRight, Bookmark, RefreshCw, Hash, Database
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
