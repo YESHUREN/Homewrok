@@ -508,7 +508,7 @@ export default function GuideDetail({
                 <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 mb-2">
                   <Layers className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-xs text-slate-850 mb-1">{t("大宗垃圾", "대형 폐기물", "Large Waste")}</h4>
+                <h4 className="font-bold text-xs text-slate-850 mb-1">{t("大件垃圾", "대형 폐기물", "Large Waste")}</h4>
                 <p className="text-[10px] text-slate-400 leading-normal mb-3 leading-relaxed">{t("废弃大件床垫、桌椅、旧电视电器等大件高层居民垃圾等。", "가구류(매트리스, 책상, 의자 등) 및 폐가전제품.", "Large items such as mattresses, tables, chairs, and old home appliances.")}</p>
                 <div className="bg-slate-100 border border-slate-200 p-1.5 rounded text-[10px] opacity-95 text-slate-700">
                   <strong>{t("流程：", "절차: ", "Process: ")}</strong>{t("向管理员申报，购买专用贴纸贴上。", "경비실/관리사무소 신고 후 전용 스티커 부착.", "Report to office/security, buy and paste dedicated sticker.")}
@@ -529,31 +529,7 @@ export default function GuideDetail({
             </div>
           </section>
 
-          {/* Discharges times */}
-          <section className="bg-white rounded-xl border border-slate-100 p-4 shadow-sm mb-4">
-            <h3 className="font-bold text-sm text-slate-800 mb-3 flex items-center gap-1.5">
-              <AlertTriangle className="w-5 h-5 text-amber-500" />
-              {t("严把排放时间和规定", "배출 시간 및 규정 엄수", "Strictly Follow Disposal Time & Rules")}
-            </h3>
-            <div className="bg-red-50 text-red-700 p-2.5 rounded-lg text-xs font-semibold mb-3">
-              {t("⚠️ 韩国垃圾稽查极其严格，乱扔一般垃圾/食物垃圾，无袋排放将直接面临最高 100万 韩币（约￥5500元）的重罚。", "⚠️ 한국은 쓰레기 단속이 매우 엄격하여 일반/음식물 쓰레기 무단 투기 및 비규격 봉투 사용 시 최대 100만 원의 과태료가 부과될 수 있습니다.", "⚠️ Waste disposal inspection is extremely strict in Korea. Unauthorized dumping or using non-standard bags is subject to a fine of up to 1,000,000 KRW.")}
-            </div>
-            
-            <ul className="space-y-2 text-xs text-slate-600">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>{t("投放时间：", "배출 시간: ", "Disposal Hours: ")}</strong>{t("一般为 18:00 - 24:00 (根据各区公告，切勿在白天排放)。", "대체로 18:00 ~ 24:00 (구청 공지에 따름, 낮 시간 배출 금지).", "Usually 18:00 - 24:00 (Check district rules; do not put trash out in daytime).")}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>{t("周六停运：", "토요일 배출 중단: ", "No Saturday Pickups: ")}</strong>{t("每周六通常禁止在外面排放任何垃圾，留存等周日晚间开始投放。", "매주 토요일은 대개 배출 금지이며, 일요일 저녁부터 다시 배출 가능합니다.", "Waste collection usually pauses on Saturdays; keep trash indoors until Sunday evening.")}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>{t("口诀记忆食物垃圾：", "음식물 쓰레기 구분법: ", "How to identify food waste: ")}</strong>{t("不知道是不是剩饭？问问自己“这玩意猪和鸡能嚼碎吃吗？”如果可以（如西瓜皮、青菜叶），就是食物垃圾；嚼不碎的（如鸡骨、排骨、核桃壳、贝壳）都归为一般垃圾。", "헷갈린다면 '동물(돼지, 닭 등)이 먹을 수 있는가?' 스스로 물어보세요. 수박 껍질, 야채 잎 등 먹을 수 있다면 음식물 쓰레기이고, 닭 뼈, 갈비 뼈, 호두 껍질, 조개 껍데기 등 먹을 수 없다면 일반 쓰레기로 분류됩니다.", "If unsure, ask yourself: 'Can pigs or chickens chew and eat this?' If yes (like watermelon rinds, vegetable leaves), it is food waste. If no (like chicken bones, rib bones, walnut shells, clam shells), it is general waste.")}</span>
-              </li>
-            </ul>
-          </section>
+
 
           {/* New Rule PET */}
           <section className="bg-[#2170e4] text-white rounded-2xl p-4 shadow-sm flex items-center justify-between gap-3">
