@@ -136,24 +136,7 @@
     }
   ],
   "fallbackNotifications": [],
-  "fallbackReminders": [
-    {
-      "id": "rem_1779432720505",
-      "user_id": "stud_1779432628213",
-      "title": "考试",
-      "date": "2026-05-30",
-      "time": "12:00",
-      "enabled": true
-    },
-    {
-      "id": "rem_1779432804317",
-      "user_id": "202408151229",
-      "title": "考试",
-      "date": "2026-05-31",
-      "time": "12:00",
-      "enabled": true
-    }
-  ],
+  "fallbackReminders": [],
   "fallbackWalletHistory": [
     {
       "id": "tx_1779526620017",

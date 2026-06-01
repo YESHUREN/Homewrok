@@ -197,10 +197,11 @@ export default function App() {
   // Auto-login session recovery on mount
   React.useEffect(() => {
     let storedUserId = localStorage.getItem("service_community_user_id");
-    // Default to Zhang Wei's certified student ID "202408151229" to maintain high-fidelity mock data out-of-the-box
     if (!storedUserId) {
-      storedUserId = "202408151229";
-      localStorage.setItem("service_community_user_id", storedUserId);
+      // Keep guest mode (default logged out state)
+      setProfile(prev => ({ ...prev, isLoggedIn: false }));
+      fetchPosts();
+      return;
     }
 
     fetch(`/api/profile?userId=${storedUserId}`)
@@ -2460,12 +2461,12 @@ export default function App() {
                         <div className="space-y-1">
                           <h4 className="text-[11px] uppercase tracking-wider font-bold text-teal-100 flex items-center gap-1">
                             <Calendar className="w-3.5 h-3.5 inline text-yellow-300" />
-                            {activeReminder.id === "rem_visa" || activeReminder.title.includes("签证")
+                            {reminders.length === 0 ? (language === 'zh' ? "暂无倒数日程" : language === 'ko' ? "디데이 일정 없음" : "No Countdown Schedule") : activeReminder.id === "rem_visa" || activeReminder.title.includes("签证")
                               ? (language === 'zh' ? "在韩签证到期提醒倒计时" : language === 'ko' ? "재한 비자 만료 디데이" : "Visa Expiry D-Day Countdown")
                               : `${activeReminder.title} ${language === 'zh' ? '提醒倒计时' : language === 'ko' ? '디데이' : 'Countdown'}`}
                           </h4>
                           <h2 className="text-xs text-white opacity-95">
-                            {activeReminder.id === "rem_visa"
+                            {reminders.length === 0 ? (language === 'zh' ? "在日历中添加考试、学费缴纳等重要提醒" : language === 'ko' ? "캘린더에서 시험, 학비 납부 등 중요 일정을 추가하세요" : "Add reminders for exams, tuition fees, etc.") : activeReminder.id === "rem_visa"
                               ? `${language === 'zh' ? '到期日：2026年12月15日 (留学生签)' : language === 'ko' ? '만료일: 2026년 12월 15일 (D-2 비자)' : 'Due Date: Dec 15, 2026 (D-2 Visa)'}`
                               : `${language === 'zh' ? '到期日：' : language === 'ko' ? '만료일: ' : 'Due Date: '}${activeReminder.date} (${activeReminder.time})`}
                           </h2>
@@ -2508,7 +2509,9 @@ export default function App() {
 
                       <div className="mb-4">
                         <div className="flex items-baseline gap-1.5">
-                          <span className="text-5xl font-black text-white leading-none tracking-tight">{nextReminderCountdownDays}</span>
+                          <span className="text-5xl font-black text-white leading-none tracking-tight">
+                            {reminders.length === 0 ? "—" : nextReminderCountdownDays}
+                          </span>
                           <span className="text-sm font-semibold text-teal-200">{t('days')}</span>
                         </div>
                       </div>
@@ -2517,7 +2520,7 @@ export default function App() {
                         onClick={() => setScreen(ActiveScreen.CALENDAR)}
                         className="w-full bg-white hover:bg-slate-50 text-[#00685f] py-3.5 text-xs font-bold rounded-xl transition-all shadow-sm text-center cursor-pointer"
                       >
-                        {t('view_full_calendar')}
+                        {reminders.length === 0 ? (language === 'zh' ? "去日历添加提醒" : language === 'ko' ? "캘린더로 이동하여 추가" : "Go to Calendar") : t('view_full_calendar')}
                       </button>
                     </section>
 

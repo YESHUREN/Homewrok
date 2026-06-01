@@ -118,12 +118,7 @@ let fallbackBookmarks: any[] = [];
 
 let fallbackNotifications: any[] = [];
 
-let fallbackReminders = [
-  { id: "rem_visa", user_id: "202408151229", title: "在韩签证到期提醒 (留学生签)", date: "2026-12-15", time: "23:59", enabled: true },
-  { id: "rem_1", user_id: "202408151229", title: "TOPIK 考试注册截止", date: "2026-05-13", time: "18:00", enabled: true },
-  { id: "rem_2", user_id: "202408151229", title: "学费缴纳截止提醒", date: "2026-05-16", time: "14:00", enabled: true },
-  { id: "rem_3", user_id: "202408151229", title: "签证延期HiKorea在线材料提交", date: "2026-05-06", time: "10:30", enabled: true }
-];
+let fallbackReminders: any[] = [];
 
 // Removed wallet history fallbacks
 
