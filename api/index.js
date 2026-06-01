@@ -171,7 +171,8 @@ export default async function handler(req, res) {
           .from("comments").select("*").eq("post_id", p.id).order("created_at", { ascending: true });
         const commentsList = (cr || []).map(c => ({
           id: c.id, username: c.username, avatar: c.avatar,
-          text: c.text, time: formatTime(c.created_at)
+          text: c.text, time: formatTime(c.created_at),
+          userId: c.user_id
         }));
         return {
           id: p.id, username: p.username, avatar: p.avatar,
@@ -289,8 +290,18 @@ export default async function handler(req, res) {
       }
       return res.json({
         success: true,
-        comment: { id: data.id, username: data.username, avatar: data.avatar, text: data.text, time: "刚刚" }
+        comment: { id: data.id, username: data.username, avatar: data.avatar, text: data.text, time: "刚刚", userId: data.user_id }
       });
+    }
+
+    // ── DELETE /comments/:id ──────────────────────────────────────────────
+    const delCmtM = path.match(/^\/comments\/([^/]+)$/);
+    if (delCmtM && method === "DELETE") {
+      const { userId } = req.body || {};
+      if (!userId) return res.status(400).json({ error: "用户未登录，无法删除评论！" });
+      const { error } = await sb.from("comments").delete().eq("id", delCmtM[1]).eq("user_id", userId);
+      if (error) return res.status(500).json({ error: error.message });
+      return res.json({ success: true });
     }
 
     // ── GET /reminders ────────────────────────────────────────────────────

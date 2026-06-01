@@ -736,6 +736,54 @@ export default function App() {
       });
   };
 
+  // Handle Delete Comment
+  const handleDeleteComment = (postId: string, commentId: string) => {
+    if (!profile.isLoggedIn) {
+      triggerSystemTip("请先登录再进行该操作！");
+      setScreen(ActiveScreen.LOGIN);
+      return;
+    }
+
+    fetch(`/api/comments/${commentId}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: profile.studentId })
+    })
+      .then(res => {
+        if (!res.ok) throw new Error("删除评论失败");
+        return res.json();
+      })
+      .then(data => {
+        if (data.success) {
+          setPosts(prev => prev.map(p => {
+            if (p.id === postId) {
+              return {
+                ...p,
+                commentsCount: Math.max(0, p.commentsCount - 1),
+                commentsList: p.commentsList.filter(c => c.id !== commentId)
+              };
+            }
+            return p;
+          }));
+          triggerSystemTip("您的评论已成功删除并同步至后台！");
+        }
+      })
+      .catch(() => {
+        // Offline Fallback
+        setPosts(prev => prev.map(p => {
+          if (p.id === postId) {
+            return {
+              ...p,
+              commentsCount: Math.max(0, p.commentsCount - 1),
+              commentsList: p.commentsList.filter(c => c.id !== commentId)
+            };
+          }
+          return p;
+        }));
+        triggerSystemTip("评论已从本地缓存删除！");
+      });
+  };
+
   // Handle Publish Post
   const handlePublishPost = () => {
     if (!profile.isLoggedIn) {
@@ -1716,13 +1764,35 @@ export default function App() {
                     ))}
                     
                     <button 
-                      onClick={() => triggerSystemTip(language === 'en' ? 'This version only supports pre-set media uploads.' : language === 'ko' ? '이 버전은 사전 설정된 미디어 업로드만 지원합니다.' : '此版本仅支持前置演示媒体上传')}
+                      onClick={() => document.getElementById("local-photo-input")?.click()}
                       type="button"
-                      className="aspect-square rounded-xl bg-slate-50 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 hover:bg-slate-100 transition-colors"
+                      className="aspect-square rounded-xl bg-slate-50 border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 hover:bg-slate-100 transition-colors cursor-pointer"
                     >
                       <Camera className="w-5 h-5 mb-1" />
                       <span className="text-[10px]">{language === 'en' ? 'Add Photo' : language === 'ko' ? '사진 추가' : '添加照片'}</span>
                     </button>
+                    <input 
+                      id="local-photo-input"
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (!file) return;
+                        if (file.size > 4 * 1024 * 1024) {
+                          triggerSystemTip(language === 'zh' ? "图片体积过大，请选择4MB以内的图片！" : "Image too large, please select under 4MB!");
+                          return;
+                        }
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                          const base64String = reader.result as string;
+                          setNewPostAttachedPhotos(prev => [...prev, base64String]);
+                          triggerSystemTip(language === 'zh' ? "本地照片读取成功，已添加至待上传队列！" : "Photo added successfully!");
+                        };
+                        reader.readAsDataURL(file);
+                        e.target.value = "";
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -3764,7 +3834,22 @@ export default function App() {
                         <div className="flex-1 space-y-1">
                           <div className="flex justify-between items-baseline">
                             <span className="text-[11px] font-bold text-slate-800">{c.username}</span>
-                            <span className="text-[9px] text-slate-400">{c.time}</span>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              <span className="text-[9px] text-slate-400">{c.time}</span>
+                              {profile.isLoggedIn && (c.userId === profile.studentId || c.username === profile.name || matchedPost.userId === profile.studentId || matchedPost.username === profile.name) && (
+                                <button 
+                                  onClick={() => {
+                                    if (confirm(language === 'en' ? 'Delete this comment?' : language === 'ko' ? '이 댓글을 삭제하시겠습니까?' : '确定要删除这条评论吗？')) {
+                                      handleDeleteComment(matchedPost.id, c.id);
+                                    }
+                                  }}
+                                  className="text-slate-450 hover:text-red-500 p-0.5 hover:bg-slate-100 rounded-sm transition-colors cursor-pointer"
+                                  title={language === 'en' ? 'Delete Comment' : language === 'ko' ? '댓글 삭제' : '删除评论'}
+                                >
+                                  <Trash2 className="w-2.5 h-2.5" />
+                                </button>
+                              )}
+                            </div>
                           </div>
                           <p className="text-[11px] text-slate-600 leading-normal">{c.text}</p>
                         </div>
