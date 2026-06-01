@@ -40,14 +40,37 @@ export default async function handler(req, res) {
   const path = rawUrl.replace(/^\/api/, "").split("?")[0];
   const method = (req.method || "GET").toUpperCase();
 
-  // Debug endpoint
+  // Debug endpoint – tests actual DB connectivity
   if (path === "/debug") {
     const sb = getSupabase();
+    if (!sb) {
+      return res.json({ supabaseConfigured: false, urlSet: !!SUPABASE_URL, keySet: !!SUPABASE_KEY });
+    }
+    // Test 1: read profiles count
+    const { data: profiles, error: readErr } = await sb.from("profiles").select("id, username").limit(5);
+    // Test 2: try a write + delete (non-destructive test)
+    const testId = `_debug_test_${Date.now()}`;
+    const { error: writeErr } = await sb.from("profiles").insert({
+      id: testId, username: testId, password: "test", phone: null,
+      name: "Debug Test", nickname: "Debug Test", avatar: "",
+      tag: "认证学生", university: "测试大学", major: "测试", gender: "Male", birthday: "2000-01-01"
+    });
+    let deleteErr = null;
+    if (!writeErr) {
+      const { error: de } = await sb.from("profiles").delete().eq("id", testId);
+      deleteErr = de;
+    }
     return res.json({
-      supabaseConfigured: !!sb,
-      urlSet: !!SUPABASE_URL,
-      keySet: !!SUPABASE_KEY,
-      urlPrefix: SUPABASE_URL.slice(0, 35) || "(empty)"
+      supabaseConfigured: true,
+      dbReadOK: !readErr,
+      dbReadError: readErr?.message || null,
+      dbWriteOK: !writeErr,
+      dbWriteError: writeErr?.message || null,
+      dbDeleteOK: !deleteErr,
+      existingAccounts: (profiles || []).map(p => p.username),
+      message: (!readErr && !writeErr && !deleteErr)
+        ? "✅ 数据库读写完全正常！现在注册新账号会保存到云端，其他设备可以登录。"
+        : "❌ 数据库有问题，请查看具体错误信息"
     });
   }
 
