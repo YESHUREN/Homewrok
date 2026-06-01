@@ -531,22 +531,7 @@ export default function GuideDetail({
 
 
 
-          {/* New Rule PET */}
-          <section className="bg-[#2170e4] text-white rounded-2xl p-4 shadow-sm flex items-center justify-between gap-3">
-            <div className="flex-1">
-              <span className="bg-white/20 text-white text-[9px] font-bold px-2 py-0.5 rounded-full inline-block mb-1">{t("新规特别提醒", "신규 규정 특별 안내", "Special Reminder on New Policy")}</span>
-              <h4 className="font-bold text-sm mb-1">{t("透明塑料瓶必须“去标压扁”", "투명 페트병 분리배출 의무화", "Transparent PET Bottles Must Be Label-Free & Flattened")}</h4>
-              <p className="text-[11px] opacity-90 leading-relaxed">{t("为了高能促进绿色材料回收循环，透明无色矿泉水PET胶瓶必须：1. 排干 2. 剥离外面塑料标签纸 3. 压扁压小，方可投放至无色塑料专用框中。", "투명 페트병의 재활용율을 높이기 위해, 투명 페트병 배출 시 반드시: 1. 내용물 비우기 2. 비닐 라벨 떼어내기 3. 찌그러뜨려 부피 줄이기 절차를 거친 후 투명 페트병 전용 수거함에 버려야 합니다.", "To promote high-quality recycling, transparent plastic PET bottles must be: 1. Emptied 2. Label peeled off 3. Flattened and compressed, then put into the dedicated box for clear plastic.")}</p>
-            </div>
-            <div className="w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/20 overflow-hidden">
-              <img 
-                className="w-full h-full object-cover"
-                alt="Recycle icon"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSnDNGGcAlwE2omwnCgFLl64AzoWhBkgR1PWDRiNJ3_YxFHVpguC6o0pYuXITarXaz9uGOr1AA_e4ZVy_rpjb0WhBOr2iAPuy7cUyrTgHmBnF4JjFzgGoAUTPrTctPz050MQRhfD6Y2Wt7SlXzoxpvOOFjk9aXPHJpBZrY54qzxJQkfU2We3jf218x7XjF2LD_gcAFe9f8jInGucAGiA8IvdwFDs2y8K37iqc86S7mzkrb8uFbKF1u89dVqleKq1f6tA_ZzTek-HLb"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </section>
+
         </main>
         {showShareAlert && (
           <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-full z-50 shadow-lg">
