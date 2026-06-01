@@ -91,93 +91,31 @@ for page_id, info in items_dict.items():
             # Plain text
             blocks.append(("text", line))
             
-    # Now let's build sections based on headers/types
-    current_section = "intro"
-    
+    # Now let's extract 100% of the text blocks into checklist_items in chronological order
+    checklist_items = []
     bullet_idx = 1
-    step_idx = 1
-    faq_idx = 1
     
-    # If the file is very short, let's just make list items
     for btype, bcontent in blocks:
         if not bcontent:
             continue
             
         bcontent_clean = clean_text(bcontent)
         
-        # Check if we should switch section
-        lower_content = bcontent_clean.lower()
-        if "材料" in bcontent_clean or "准备" in bcontent_clean or "资格" in bcontent_clean or "필수" in bcontent_clean or "서류" in bcontent_clean or "제출" in bcontent_clean:
-            current_section = "checklist"
-        elif "步骤" in bcontent_clean or "流程" in bcontent_clean or "方法" in bcontent_clean or "절차" in bcontent_clean or "방법" in bcontent_clean or "단계" in bcontent_clean:
-            current_section = "steps"
-        elif "注意" in bcontent_clean or "常见问题" in bcontent_clean or "faq" in lower_content or "참고" in bcontent_clean or "警告" in bcontent_clean:
-            current_section = "faq"
-            
-        # Parse based on btype and current_section
-        if btype in ["sub_header", "sub_sub_header", "header"]:
-            if "intro" in current_section:
-                hero_desc_zh = bcontent_clean
-                hero_desc_ko = f"강원대 삼척 {info['ko']} 관련: {bcontent_clean}"
-                hero_desc_en = f"KNU Samcheok {info['en']}: {bcontent_clean}"
+        # Skip structural layout-only blocks that carry no content text
+        if btype in ["column_list", "column", "divider", "image"]:
             continue
             
-        if btype == "callout" or (btype == "quote" and len(bcontent_clean) > 10):
-            hero_desc_zh = bcontent_clean
-            hero_desc_ko = f"강원대 삼척 {info['ko']}: {bcontent_clean}"
-            hero_desc_en = f"KNU Samcheok {info['en']}: {bcontent_clean}"
-            continue
-            
-        if btype in ["bulleted_list", "table_row", "text"]:
-            # If it's a table row or bullet, check what it contains
-            if current_section == "checklist" or len(checklist_items) < 4:
-                # Add to checklist
-                if len(bcontent_clean) > 3 and not bcontent_clean.startswith("http") and bcontent_clean not in [item["name"] for item in checklist_items]:
-                    key = f"item_{bullet_idx}"
-                    checklist_items.append({
-                        "key": key,
-                        "name": bcontent_clean,
-                        "desc": f"江原大学官方 {name} 相关重要项或说明。"
-                    })
-                    bullet_idx += 1
-            elif current_section == "faq" or len(faqs) < 3:
-                if len(bcontent_clean) > 8 and bcontent_clean not in [faq["answer"] for faq in faqs]:
-                    # Make a FAQ
-                    q_zh = f"关于 {name} 的相关规定/注意事项是什么？" if faq_idx == 1 else f"如何理解 {bcontent_clean[:10]}... 的说明？"
-                    faqs.append({
-                        "id": f"faq_{faq_idx}",
-                        "question": q_zh,
-                        "answer": bcontent_clean
-                    })
-                    faq_idx += 1
-                    
-        if btype in ["numbered_list"]:
-            if len(bcontent_clean) > 4:
-                steps.append({
-                    "title": f"步骤 {step_idx}: {bcontent_clean[:15]}...",
-                    "desc": bcontent_clean
-                })
-                step_idx += 1
-
-    # Fallbacks if items are empty
-    if not checklist_items:
-        checklist_items = [
-            {"key": "passport", "name": "1. 护照与外国人登录证", "desc": "在学期间办理一切业务的核心有效身份证件。"},
-            {"key": "student_id", "name": "2. 江原大学学生证", "desc": "在校内出入图书馆、教学楼或宿舍的身份证明。"},
-            {"key": "portal", "name": "3. K-Cloud 门户账号", "desc": "江原大学统一教务系统的登录账号（学号及密码）。"}
-        ]
-    if not steps:
-        steps = [
-            {"title": "第一步：仔细阅读本指南核心条款", "desc": f"认真了解江原大学三陟校区关于 {name} 的官方政策与具体要求。"},
-            {"title": "第二步：按要求准备相关支撑材料", "desc": "备齐所需的纸质文件、电子证件或申请表单，避免出现遗漏。"},
-            {"title": "第三步：前往指定办公室或在线办理", "desc": "在工作时间内前往绿色能源馆910室或登录学校K-Cloud/e-루리门户提交申请并完成办理。"}
-        ]
-    if not faqs:
-        faqs = [
-            {"id": "faq_1", "question": f"办理 {name} 业务时，有什么需要特别注意的时限吗？", "answer": f"通常学籍、学费、选课以及签证相关的业务都有严格的申请期限。请务必在学校公布的规定时段内完成办理，逾期将可能产生极其严重的影响（如延期罚款或学籍注销）。"},
-            {"id": "faq_2", "question": "如果在办理过程中遇到不明白的专业术语或语言障碍怎么办？", "answer": "您可以直接拨打三陟校区国际交流处咨询热线 033-570-6891。大楼内配有专门支持外国留学生的中文老师和主务官，会全力为您提供细致、无语言障碍的解答。"}
-        ]
+        checklist_items.append({
+            "key": f"{btype}_{bullet_idx}",
+            "name": bcontent_clean,
+            "desc": btype
+        })
+        bullet_idx += 1
         
+    # We will keep steps and faqs empty for KNU guides to let them render as a unified Notion article flow
+    steps = []
+    faqs = []
+
     # Standardize links text
     if "hikorea" in link_url.lower():
         link_text_zh = "前往 HiKorea 在线服务官网"
@@ -197,6 +135,9 @@ for page_id, info in items_dict.items():
         link_text_en = "Go to KNU Dormitory Website"
 
     guides_content[page_id] = {
+        "titleZh": name,
+        "titleKo": info["ko"],
+        "titleEn": info["en"],
         "heroDesc": {
             "zh": hero_desc_zh,
             "ko": hero_desc_ko,
@@ -268,8 +209,8 @@ for page_id, data in guides_content.items():
     ts_lines.append('    checklistItems: [')
     for item in data["checklistItems"]:
         desc_zh = item["desc"]
-        desc_ko = f"강원대 삼척 {name} 관련: {item['name']}"
-        desc_en = f"Required item for KNU Samcheok: {item['name']}"
+        desc_ko = f"강원대 삼척 {data['titleKo']} 관련: {item['name']}"
+        desc_en = f"Required item for KNU Samcheok {data['titleEn']}: {item['name']}"
         ts_lines.append(f'      {{ key: "{item["key"]}", name: t("{item["name"]}", "{item["name"]}", "{item["name"]}"), desc: t("{desc_zh}", "{desc_ko}", "{desc_en}") }},')
     ts_lines.append('    ],')
     
