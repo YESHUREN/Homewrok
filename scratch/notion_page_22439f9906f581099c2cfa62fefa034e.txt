@@ -1,0 +1,23 @@
+PAGE: 外国人登录证补发 (ID: 22439f9906f581099c2cfa62fefa034e)
+[sub_sub_header] 📌 补发事由
+[text] 符合以下任一情况时，必须在14天以内申请补发外国人登录证：
+[bulleted_list] 外国人登录证遗失时
+[bulleted_list] 外国人登录证磨损或破损无法使用时
+[bulleted_list] 填写空间不足时
+[bulleted_list] *登录事项（姓名、性别、出生日期、国籍）**中有变更时
+[divider] 
+[sub_sub_header] 🗂️ 提交材料
+[table] 
+  [table_row] 内容
+  [table_row] 提交原件
+  [table_row] 可在出入境事务所现场填写
+  [table_row] - 遗失：派出所或警察局出具的遗失申报书- 其他情况：破损的旧证、变更事由相关证明材料等
+  [table_row] 3.5cm × 4.5cm，6个月内拍摄
+  [table_row] （如因破损、信息变更、栏位不足等需提交）
+  [table_row] 30,000韩元（可刷卡或现金支付）
+[divider] 
+[sub_sub_header] 📍 申请地点
+[text] 👉 东海出入境·外国人事务所
+[bulleted_list] 地址：江原特别自治道 东海市 海岸路225号
+[bulleted_list] 电话：033-535-5721
+[divider] 

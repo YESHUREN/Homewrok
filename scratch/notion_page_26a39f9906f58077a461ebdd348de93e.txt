@@ -1,0 +1,105 @@
+PAGE: K-Cloud 与 KNU 应用使用指南 (ID: 26a39f9906f58077a461ebdd348de93e)
+[text] ※ 新生必须仔细阅读以下项目，并按顺序完成。
+[column_list] 
+  [column] 
+    [callout] 
+      [text] 한국어
+  [column] 
+    [callout] 
+      [text] 中国
+  [column] 
+    [callout] 
+      [text] English
+[callout] 
+  [sub_header] 首先要确认的事项
+  [text] ① 在电脑上登录 K-Cloud
+② 在电脑 K-Cloud 完成首次认证（仅一次）
+  [text] ③ 在电脑 K-Cloud 修改 两项个人信息（韩国银行账户 / 韩国手机号）
+④ 在智能手机上安装 KNU 应用
+⑤ 登录 KNU 应用并完成邮箱认证
+⑥ 在 KNU 应用中查看课程表
+⑦ 熟悉 KNU 应用中的 4种考勤方式 [点名, AP(Wi-Fi), 验证码, QR码]
+⑧ 在 e-루리 查看在线课程学习方法
+[sub_header] ① 在电脑上登录 K-Cloud
+[image]
+[bulleted_list] 地址: https://kcloud.kangwon.ac.kr/login
+[bulleted_list] 第一次必须使用电脑登录。
+[bulleted_list] 必须先在电脑上登录，才能正常使用校园 Wi-Fi “KNU-WLAN-Secure”
+[image]
+[bulleted_list] ID: 学号 / PW: 出生日期6位数 (YYMMDD)
+[sub_header] ② 在电脑 K-Cloud 完成认证（首次）
+[image]
+[numbered_list] 点击 “메일ˮ
+[numbered_list] 点击 “인증번호 발송ˮ
+[numbered_list] 在邮箱中确认验证码并输入
+[numbered_list] 点击 “인증ˮ
+[sub_header] ③ 在电脑 K-Cloud 修改两项个人信息(1. 输入韩国银行账户)
+[column_list] 
+  [column] 
+    [image]
+    [bulleted_list] 登录 https://kcloud.kangwon.ac.kr/login
+    [image]
+    [bulleted_list] 点击 “학부생서비스” - “교과” 
+      [image]
+    [bulleted_list] 点击 “신상정보변경”
+  [column] 
+    [image]
+    [numbered_list] 选择您开设的韩国银行
+    [numbered_list] 在 “예금주” 中输入护照英文姓名
+    [numbered_list] 输入您开设的韩国银行账号
+    [image]
+    [bulleted_list] 点击 “저장”
+[sub_header] ③ 在电脑 K-Cloud 修改两项个人信息(2. 输入韩国手机号)
+[column_list] 
+  [column] 
+    [image]
+    [bulleted_list] 登录 https://kcloud.kangwon.ac.kr/login
+    [image]
+    [bulleted_list] 点击 “학부생서비스” - “교과” 
+    [image]
+    [bulleted_list] 点击 “신상정보변경”
+  [column] 
+    [image]
+    [bulleted_list] 删除原有（中国）号码，输入新的韩国手机号 (010-0000-0000)
+    [image]
+    [bulleted_list] 点击 “저장”
+[sub_header] ④ 在智能手机上安装 KNU 应用
+[column_list] 
+  [column] 
+    [image]
+  [column] 
+    [image]
+    [text] 
+[sub_header] ⑤ 登录 KNU 应用（需邮箱认证）
+[column_list] 
+  [column] 
+    [image]
+    [bulleted_list] ID: 学号 / PW: 出生日期6位数
+      [image]
+      [bulleted_list] 点击 “E-Mail로 인증” 
+      [text] 
+  [column] 
+    [image]
+    [numbered_list] 确认邮箱是否正确
+    [numbered_list] 点击 “인증 요청”
+    [numbered_list] 在邮箱中查看验证码并输入
+    [image]
+    [bulleted_list] 点击 “확인”
+[sub_header] ⑥ 在 KNU 应用中查看课程表
+[column_list] 
+[sub_header] ⑦ KNU 应用中的四种考勤方式 [ 1. 点名 ]
+[text] ※ 每位教授方式不同，请务必熟悉所有方法。
+[text] 
+[image]
+[bulleted_list] 点名: 教授叫到名字时举手或回答 “네ˮ。
+[text] 
+[sub_header] ⑦ KNU 应用中的四种考勤方式 [ 2. AP(Wi-Fi) ]
+[column_list] 
+[sub_header] ⑦ KNU 应用中的四种考勤方式 [ 3. 验证码 ]
+[column_list] 
+[sub_header] ⑦ KNU 应用中的四种考勤方式 [ 4. QR码 ]
+[column_list] 
+[sub_header] ⑧ 在 e-루리 上学习在线课程
+[text] ※ 请参考 “查看及下载ˮ 文件确认上课步骤
+[callout] 
+[text] 

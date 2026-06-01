@@ -1,0 +1,92 @@
+PAGE: 国际化团队介绍 | 47 lines
+  First lines: ['PAGE: 国际化团队介绍 (ID: 22439f9906f581d0b8bed755a0ac04f5)', '[column_list]', '[column]', '[sub_sub_header] 🏢 国际化团队指南', '[bulleted_list] 位置: 绿色能源研究馆 910号', '[bulleted_list] 运营时间: 工作日 09:00 ~ 18:00', '(午餐时间 12:00 ~ 13:00 除外)', '[bulleted_list] 电话号码: 033-570-6891~2', '[bulleted_list] 主要业务', '[bulleted_list] 入学相关业务']
+PAGE: 学年日程指南 | 90 lines
+  First lines: ['PAGE: 学年日程指南 (ID: 23039f9906f580f59fa0f5a39915fddb)', '[sub_header] 📙 2026年 学事日程 / 第1学期 (1月~6月)', '[table]', '[table_row] 日期', '[table_row] 5', '[table_row] 6', '[table_row] 8-14', '[table_row] 15', '[table_row] 21', '[table_row] 12-2.27']
+PAGE: 学费 | 56 lines
+  First lines: ['PAGE: 学费 (ID: 22439f9906f5813aa3dedbda97cbd28b)', '[sub_sub_header] 🔹缴纳学费', '[bulleted_list] 缴费时间', '[bulleted_list] 第一学期：每年2月', '[bulleted_list] 第二学期：每年8月', '[bulleted_list] 缴费流程', '[numbered_list] 公布学费缴纳计划（缴费期开始前2~3周）', '[numbered_list] 申请分期付款（仅限在校生，通过KNU门户网站申请）', '[numbered_list] 打印学费账单 → 汇款至个人虚拟账户', '[numbered_list] 缴纳学费（至指定银行）']
+PAGE: 课程注册 | 56 lines
+  First lines: ['PAGE: 课程注册 (ID: 22439f9906f581abb1bfd2dc4e0f043f)', '[sub_sub_header] 📌 课程注册（毕业所需学分标准 - 本科生）', '[table]', '[table_row] 备注', '[table_row] 130学分以上', '[table_row] 护理学院、工科学院、师范学院适用', '[table_row] 兽医学院、药学院', '[table_row] 建筑学5年制专业', '[text] ※ 上一学期平均成绩为3.75以上者，可多选3学分', '[text] ※ 成绩警告者，课程注册上限减少3学分']
+PAGE: 奖学金 | 46 lines
+  First lines: ['PAGE: 奖学金 (ID: 22439f9906f581a28240c37e730a1f04)', '[sub_sub_header] 🎓 奖学金指南', '[callout]', '[text] 校内奖学金由国际化团队每学期根据以下标准自动评定，无需单独申请，相关信息可通过缴费账单确认。', '[divider]', '[sub_sub_header] 📌 新生奖学金（本科生）', '[table]', '[table_row] 奖学金名称', '[table_row] 新生特别奖学金', '[table_row] 全额减免学费']
+PAGE: 成绩查询与季节学期课程 | 41 lines
+  First lines: ['PAGE: 成绩查询与季节学期课程 (ID: 22439f9906f5810599d9f1198063f5ac)', '[sub_sub_header] 🔹 成绩查询', '[sub_sub_header] 📌 本科生成绩等级对照表', '[table]', '[table_row] 分数范围', '[table_row] 95~100', '[table_row] 90~94', '[table_row] 85~89', '[table_row] 80~84', '[table_row] 75~79']
+PAGE: 学籍变动（休学・复学・警告・退学） | 26 lines
+  First lines: ['PAGE: 学籍变动（休学・复学・警告・退学） (ID: 22439f9906f581c6b814cd8900fdd879)', '[sub_sub_header] 🔹 休学', '[numbered_list] 仅在“休学申请期间”内可申请免缴学费休学（学期开始后需先缴纳学费，方可申请休学）', '[numbered_list] 缴费后休学仅限不可抗力原因（如家庭困难、疾病、怀孕等），且须在授课日数1/3以内，通过所属院系与国际化团队提交休学申请材料至行政办公室', '[numbered_list] 注意事项：', '[bulleted_list] 若休学期满未复学，将被视为自动退学', '[bulleted_list] 新生在第一学期、在校生在上课1/3后不可申请休学', '[text] （育儿、怀孕、疾病、分娩等情况除外）', '[bulleted_list] 每次休学期限为最多两学期（1年），需延长期限者须在规定时间内提交延长申请', '[bulleted_list] 未缴费休学必须在“当学期休学申请期间”内提交材料']
+PAGE: 毕业语言要求 | 8 lines
+  First lines: ['PAGE: 毕业语言要求 (ID: 22439f9906f581ef8c9bf1ade836852c)', '[text] (TOPIK、TOEIC 成绩单须在有效期内提交至所属院系）', '[table]', '[table_row] 毕业语言要求（两项中任选其一）', '[table_row] ① 在毕业前取得韩国语能力考试（TOPIK）4级以上。※ 若属于以下专业，可接受TOPIK 3级：工科学院建设融合部（建筑工程专业、建筑学专业）、新材料工程系、能源工科学院（能源化学工程专业）、AI软件学系（计算机工程专业、软件媒体融合专业）、地球环境系统工程系，以及韩国政府奖学金生、外国政府奖学金生。② 取得以下任一英语成绩：TOEFL（PBT 550分、CBT 210分、iBT 80分）、IELTS 5.5分、TEPS 600分、New TEPS 327分、TOEIC 700分以上。③ 四年级插班生修满12学分以上的韩国语及韩国学相关课程即可满足毕业要求。', '[table_row] ① 在申请学位论文审查前取得TOPIK 4级以上。※ 韩国政府奖学金生、外国政府奖学金生可接受TOPIK 3级。② 取得以下任一英语成绩：TOEFL（PBT 550分、CBT 210分、iBT 80分）、IELTS 5.5分、TEPS 600分、New TEPS 327分、TOEIC 700分以上。', '[table_row] ① 入学于艺术类相关专业者。② 母语为英语的国家（美国、英国、澳大利亚、南非、加拿大、新西兰、爱尔兰）国籍者。③ 通过 KOICA 国际合作项目入学者。', '[divider]']
+PAGE: 未来规划咨询及韩语水平评估 | 19 lines
+  First lines: ['PAGE: 未来规划咨询及韩语水平评估 (ID: 22439f9906f58152be6cf9dfd930ded8)', '[sub_header] 🧭 梦想规划咨询', '[bulleted_list] 目的：通过分配责任教授，从入学开始引导学生提前规划梦想，并持续进行个别咨询，帮助学生实现具体目标。', '[text] • 学分：0.5学分（成绩评定：通过 / 不通过）', '[text] • 运营与修读方式：', '[text] ① 以咨询为主的课程运营', '[text] ② 毕业前必须完成4个学期（共2学分）以上的履修要求', '[divider]', '[sub_header] 🖋️ 韩国语水平评估', '[bulleted_list] 所有外国研究生必须参加由通识教育中心组织的韩国语水平评估']
+PAGE: 非课程活动 | 9 lines
+  First lines: ['PAGE: 非课程活动 (ID: 22439f9906f581368738c8aac70c7321)', '[table]', '[table_row] 项目名称', '[table_row] 导师制度（Mentoring Program）', '[table_row] Global Supporters 活动', '[table_row] 与外国留学生一起的地方文化探访', '[table_row] 外国留学生体育大会', '[table_row] 外国留学生传统文化体验项目', '[table_row] 语言交换项目']
+PAGE: K-Cloud 与 KNU 应用使用指南 | 105 lines
+  First lines: ['PAGE: K-Cloud 与 KNU 应用使用指南 (ID: 26a39f9906f58077a461ebdd348de93e)', '[text] ※ 新生必须仔细阅读以下项目，并按顺序完成。', '[column_list]', '[column]', '[callout]', '[text] 한국어', '[column]', '[callout]', '[text] 中国', '[column]']
+PAGE: K-Cloud 个人信息更新通知 | 8 lines
+  First lines: ['PAGE: K-Cloud 个人信息更新通知 (ID: 31039f9906f58024b826d31ca6a9c599)', '[image] 343.2 KiB', '[image] 238.9 KiB', '[image] 144.1 KiB', '[image] 211.7 KiB', '[image] 205.6 KiB', '[image] 241.5 KiB', '[text]']
+PAGE: e-루리 사용법/How to use e-루리/e-RURI使用指南 (2) | 11 lines
+  First lines: ['PAGE: e-루리 사용법/How to use e-루리/e-RURI使用指南 (2) (ID: 31939f9906f5800599f0ed9605268593)', '[text] K-Cloud : https://kcloud.kangwon.ac.kr/login', '[image] 222 KiB', '[text]', '[text] K-Cloud 로그인', '[image] 373.8 KiB', '[text]', '[image] 269.3 KiB', '[text]', '[file] 2.9 MiB']
+PAGE: 各类证明文件的申请与办理 | 50 lines
+  First lines: ['PAGE: 各类证明文件的申请与办理 (ID: 22439f9906f581cbb847d811cb0a2ac8)', '[sub_sub_header] 🪪 学生证办理', '[bulleted_list] 新生学生证领取：入学后可在所属院系办公室领取', '[bulleted_list] 补办学生证：请前往教育支援处 学生事务组（绿色能源馆 409室 ☎033-570-6217）', '[text] ※ 江原大学学生证可用于图书馆及保安门（SECOM）出入', '[divider]', '[column_list]', '[column]', '[sub_sub_header] 📄 证明文件申请（线下）', '[bulleted_list] 地点和方法:']
+PAGE: 图书馆（施工中🔧） | 27 lines
+  First lines: ['PAGE: 图书馆（施工中🔧） (ID: 22439f9906f581a594f4e3f495abd4c5)', '[column_list]', '[column]', '[sub_header] 📚 图书馆使用指南', '[bulleted_list] 📌 主页：http://library.kangwon.ac.kr', '[text] ☎️ 电话：033-570-6274', '[column]', '[image]', '[text]', '[divider]']
+PAGE: 宿舍 | 74 lines
+  First lines: ['PAGE: 宿舍 (ID: 22439f9906f581389897fc510572de62)', '[sub_header] ✅ 中文页面（简体）', '[sub_sub_header] 🏠 三陟校区宿舍', '[text] http://dormitory.kangwon.ac.kr/', '[table]', '[table_row] 管理费（韩元）/ 每学期（4个月）', '[table_row] 1,065,180韩元', '[table_row] 909,130韩元', '[table_row] 740,710韩元', '[text] ※ 餐费为自选，每餐3,000韩元']
+PAGE: 学校体育设施 | 25 lines
+  First lines: ['PAGE: 学校体育设施 (ID: 22439f9906f5813b9623de1a8f6e83fd)', '[sub_header] 🏃 体育设施使用指南', '[table]', '[table_row] 使用时间', '[table_row] 09:00 ~ 18:00', '[table_row] 09:00 ~ 18:00', '[table_row] 09:00 ~ 18:00', '[table_row] 学期中：09:00 ~ 22:00假期（周中）：09:00 ~ 18:00', '[divider]', '[divider]']
+PAGE: 保健室 | 20 lines
+  First lines: ['PAGE: 保健室 (ID: 22439f9906f58160a388f12fab960737)', '[sub_sub_header] 🩺 保健诊疗室', '[column_list]', '[column]', '[bulleted_list] 📍 三陟校区保健室：绿色能源研究楼 2层', '[text] 诊疗时间：09:00 ~ 18:00（中午休息时间：12:00 ~ 13:00）', '[text] ☎ 033-570-6222', '[column]', '[image]', '[text]']
+PAGE: 通勤班车运营指南 | 37 lines
+  First lines: ['PAGE: 通勤班车运营指南 (ID: 22439f9906f581bcaa79dc2ee00e6454)', '[text] 🚌 三陟市内循环班车指南（2025年第一学期）', '[text] 运行期间：2025年3月4日（星期二）至6月20日（星期五） / 周末及公休日停运', '[text] 🚨 乘车注意事项', '[bulleted_list] 出现发热（37.5℃以上）、咳嗽等新冠症状者禁止乘车', '[bulleted_list] 推荐佩戴口罩', '[bulleted_list] 禁止校外人士乘车（如有需要，将确认学生证）', '[bulleted_list] 车内禁止饮食并尽量避免交谈', '[divider]', '[sub_sub_header] 🚌 1. 市内循环路线']
+PAGE: 便利设施 | 54 lines
+  First lines: ['PAGE: 便利设施 (ID: 22439f9906f5817db33be7255c840921)', '[column_list]', '[column]', '[text] 🏫 三陟校区 校内福利设施一览', '[table]', '[table_row] 分类', '[table_row] 第五工程馆便利店', '[table_row] 第五工程馆咖啡厅', '[table_row] 第五工程馆食堂', '[table_row] 造型馆 Design Dream']
+PAGE: Wi-Fi 及 应用程序 | 69 lines
+  First lines: ['PAGE: Wi-Fi 及 应用程序 (ID: 22439f9906f581a2b16ec868a83f7b3d)', '[sub_header] 🖥 无线网络的使用与连接方法', '[bulleted_list] 无线网络服务范围', '[bulleted_list] 学习空间（图书馆、自习室、讲义室（30人以上）等）', '[bulleted_list] 多人使用建筑（学生会馆、食堂、休息空间、大楼大厅等）', '[table]', '[table_row] 无线网络说明及密码', '[table_row] 安全无线网络 - ID：K-Cloud ID（学号）- PW：K-Cloud 密码(初始密码/出生年月日6位)', '[divider]', '[sub_sub_header] 📋 无线网络（WiFi）列表及账户信息']
+PAGE: 校园导览图 | 57 lines
+  First lines: ['PAGE: 校园导览图 (ID: 22439f9906f581c38390dc0d87bfbeab)', '[column_list]', '[column]', '[sub_sub_header] 🏢 三陟校区建筑指南', '[table]', '[table_row] 编号', '[table_row] 101', '[table_row] 102', '[table_row] 103', '[table_row] 104']
+PAGE: 东海出入境事务所 | 16 lines
+  First lines: ['PAGE: 东海出入境事务所 (ID: 22439f9906f5810d8cd3fd9eb82d244a)', '[sub_sub_header] 🛂 出入境及支援', '[sub_sub_header] 📍 东海出入境管理事务所位置', '[bulleted_list] 电话：033-535-5721', '[bulleted_list] 地址：江原道东海市海岸路225号', '[text] 📌 地图参考', '[text] （位于东海市政府、易买得附近，靠近江原道东海教育支援厅）', '[image]', '[divider]', '[sub_sub_header] 🚌 交通方式']
+PAGE: 外籍人士综合服务中心（1345） | 27 lines
+  First lines: ['PAGE: 外籍人士综合服务中心（1345） (ID: 22439f9906f581deb495ea6abbb907af)', '[quote] 这是为居住在韩国的外国人而设的韩国政府官方服务热线。当您对韩国生活有疑问或需要行政帮助时，您可以通过这一个电话得到无语言障碍的解答和帮助。', '[sub_sub_header] 💡 主要服务', '[bulleted_list] 出入境、滞留及国籍相关', '[bulleted_list] 签证、外国人登录、滞留期限延长、邀请。', '[bulleted_list] 国籍取得、难民申请相关流程咨询。', '[bulleted_list] 生活及行政信息', '[bulleted_list] 社会统合项目(KIIP)介绍。', '[bulleted_list] 外国人支援政策及相关机构信息咨询。', '[bulleted_list] 翻译及报案支援']
+PAGE: 海韩国访问预约方法 | 29 lines
+  First lines: ['PAGE: 海韩国访问预约方法 (ID: 22439f9906f581bc9538ff49f8a8115a)', '[sub_sub_header] 📌 为什么需要预约？', '[bulleted_list] 出入境管理事务所必须提前预约访问。', '[bulleted_list] 未预约者将无法办理业务。', '[bulleted_list] 请在访问前准备好所需材料（有时间限制）。', '[divider]', '[sub_sub_header] 🗓️ 预约网站', '[bulleted_list] Hi Korea（하이코리아）', '[text] 👉 https://www.hikorea.go.kr', '[divider]']
+PAGE: Hi Korea 在线电子民愿申请方法指南 | 39 lines
+  First lines: ['PAGE: Hi Korea 在线电子民愿申请方法指南 (ID: 22439f9906f581219af0cf9b54161181)', '[sub_sub_header] 📌 可在线申请的业务', '[text] 通过 Hi Korea 的电子民愿服务，', '[text] 可在线办理以下业务，无需亲自前往出入境事务所。', '[text] 可申请业务如下：', '[divider]', '[text] 再入境许可申请', '[divider]', '[text] 变更居留资格（仅限已登记外国人）', '[divider]']
+PAGE: 签证延期（延长滞留期限） | 51 lines
+  First lines: ['PAGE: 签证延期（延长滞留期限） (ID: 22439f9906f58161b892f63329f9e2e3)', '[sub_sub_header] 📌 适用对象', '[bulleted_list] 持有 D-2（留学）或 D-4（语言研修）签证的外国留学生', '[bulleted_list] 包括交换生、延长学期者、成绩未达标者、准备论文者', '[divider]', '[sub_sub_header] 📆 可申请时间', '[bulleted_list] 从滞留期限前4个月起可申请', '[bulleted_list] 最迟必须在滞留到期日前一天完成申请', '[divider]', '[sub_sub_header] 💻 申请方法（三选一）']
+PAGE: 兼职工作（打工） | 60 lines
+  First lines: ['PAGE: 兼职工作（打工） (ID: 22439f9906f58107af1dfa876b27167c)', '[sub_sub_header] 📌 什么是兼职工作（时间制就业）？', '[text] 原则上，外国留学生在韩国不得就业，', '[text] 但在获得所在大学确认书及出入境管理事务所事前许可的情况下，', '[text] 可在限定条件下进行简单兼职工作。', '[divider]', '[sub_sub_header] ✅ 申请资格（须同时满足以下所有条件）', '[numbered_list] 签证条件：', '[bulleted_list] 持有 D-2（学位课程）签证者', '[bulleted_list] 排除语言研修（D-4）、研究（D-2-5）、访问（D-2-8）、入境未满6个月者']
+PAGE: 居住地变更申报 | 36 lines
+  First lines: ['PAGE: 居住地变更申报 (ID: 22439f9906f581bb80cec409c760dad6)', '[text] 外国留学生在韩国变更居住地址时，必须根据以下规定进行居住地变更申报。', '[text] 如未按时申报，可能会被处以罚款。', '[divider]', '[sub_sub_header] 📌 申报对象', '[bulleted_list] 持有外国人登录证的留学生中，更换住所的学生', '[divider]', '[sub_sub_header] 🕒 申报期限', '[bulleted_list] 自地址变更日起14天以内', '[divider]']
+PAGE: 外国人登录证返还指南 | 23 lines
+  First lines: ['PAGE: 外国人登录证返还指南 (ID: 22439f9906f5813e9133d146a4934953)', '[text] 在韩国结束滞留后出境、获得永久居留权或归化入籍时，必须返还外国人登录证。', '[divider]', '[sub_sub_header] 📌 返还对象', '[bulleted_list] 结束在韩滞留并出境的人', '[bulleted_list] 因变更滞留资格而无需持有登录证的人', '[bulleted_list] 取得永住权（F-5）、国籍等不再需要外国人登录的人', '[divider]', '[sub_sub_header] 🕒 返还时间', '[bulleted_list] 出境时在机场或港口的出入境审查台当场返还']
+PAGE: 就业活动滞留资格变更 | 37 lines
+  First lines: ['PAGE: 就业活动滞留资格变更 (ID: 22439f9906f581438807d91fc0959bfb)', '[text] 外国留学生在完成学位课程毕业后仍希望继续在韩国从事就业或职业探索活动时，必须将滞留资格从 D-2（留学）变更为 D-10-1（求职活动）。', '[divider]', '[sub_sub_header] 📌 申请资格', '[bulleted_list] 江原大学毕业生', '[bulleted_list] 毕业后希望就业活动或正在准备创业、研究等活动者', '[bulleted_list] 即将毕业者也可申请（须提交毕业预定证明）', '[divider]', '[sub_sub_header] 🕒 申请时机', '[bulleted_list] 毕业日前后30天内']
+PAGE: 外国人登录证补发 | 23 lines
+  First lines: ['PAGE: 外国人登录证补发 (ID: 22439f9906f581099c2cfa62fefa034e)', '[sub_sub_header] 📌 补发事由', '[text] 符合以下任一情况时，必须在14天以内申请补发外国人登录证：', '[bulleted_list] 外国人登录证遗失时', '[bulleted_list] 外国人登录证磨损或破损无法使用时', '[bulleted_list] 填写空间不足时', '[bulleted_list] *登录事项（姓名、性别、出生日期、国籍）**中有变更时', '[divider]', '[sub_sub_header] 🗂️ 提交材料', '[table]']
+PAGE: 护照信息变更 | 55 lines
+  First lines: ['PAGE: 护照信息变更 (ID: 23b39f9906f580ff8c41f20f153701c6)', '[sub_header] 外国人登录事项变更申报指南', '[quote] 如果您重新签发了护照，或护照号码、签发日期、有效期等发生变更，必须按照韩国出入境管理法进行外国人登录事项变更申报。', '[divider]', '[sub_sub_header] 🟠 1. 申报对象（护照相关变更）', '[table]', '[table_row] 是否需要申报', '[table_row] ✅ 需要', '[table_row] ✅ 需要', '[table_row] ✅ 需要']
+PAGE: 保险 | 42 lines
+  First lines: ['PAGE: 保险 (ID: 22439f9906f5815eb7adcb50091f6dd7)', '[sub_header] 🩺 韩国生活中必备的保险指南', '[sub_sub_header] 📌 所有外国留学生将自动加入国民健康保险！', '[bulleted_list] 自2021年3月起，完成外国人登录的留学生无需另行申请，将自动加入国民健康保险（NHIS）', '[bulleted_list] 若无法确认收入与财产情况，则按平均保费征收', '[divider]', '[sub_sub_header] 🏥 国民健康保险（NHIS）', '[sub_sub_header] 💡 有哪些好处？', '[bulleted_list] 就诊、检查、处方等可报销约30~70%的医疗费用', '[bulleted_list] 例如：医院费用为100,000韩元，自付金额约为30,000韩元']
+PAGE: 韩国手机开通 | 70 lines
+  First lines: ['PAGE: 韩国手机开通 (ID: 23039f9906f580668a0dc28e903dfa70)', '[sub_header] 📱 韩国手机开通指南（KT电信）', '[text] 江原大学三陟校区已与KT正式签订合作协议，', '[text] 为外国留学生提供快速开通韩国手机的服务。', '[quote] 💡 入境后一周内，KT工作人员将在校内设有驻点服务，', '[text] 学生可自行前往办理开通手续。', '[divider]', '[sub_sub_header] ✅ 套餐信息（KT 5G Welcome 1）', '[table]', '[table_row] 项目']
+PAGE: 开设韩国银行账户 | 38 lines
+  First lines: ['PAGE: 开设韩国银行账户 (ID: 22439f9906f581dca53ff60a08dd68ae)', '[sub_header] 🏦 在韩国办理银行账户的方法（How to Open a Bank Account in Korea）', '[sub_sub_header] 📌 准备材料', '[bulleted_list] 外国人登录证（ARC: Alien Registration Card）', '[bulleted_list] 护照（Passport）', '[bulleted_list] 韩国手机号', '[text] → 没有韩国手机号码将无法办理账户', '[text] → 👉 请先确认 [韩国手机开通指南]', '[divider]', '[sub_sub_header] 🏁 到银行后办理流程']
+PAGE: 住房、自己做饭生活（合租/独居）、搬家 | 35 lines
+  First lines: ['PAGE: 住房、自己做饭生活（合租/独居）、搬家 (ID: 22439f9906f581bf8d37d5f08185711b)', '[sub_sub_header] 🏡 不同居住形式比较', '[table]', '[table_row] 预估费用', '[table_row] 约 700,000韩元/学期（可选择是否使用食堂）', '[table_row] 约 400,000韩元/月（不含餐费）', '[quote] 📌 月租：每月支付固定房租（签约时需支付押金）', '[text] 📌 全租：签约期间支付一次性大额租金，合同结束时退还（通常1~2年合同）', '[divider]', '[sub_sub_header] 🧾 选择自炊房时必确认事项']
+PAGE: 对韩国生活有用的应用程序 | 93 lines
+  First lines: ['PAGE: 对韩国生活有用的应用程序 (ID: 23039f9906f5806b8d2dd7bce200f47e)', '[sub_sub_header] 💬', '1. 移动通讯App（必备）', '[column_list]', '[column]', '[table]', '[table_row] 应用名称', '[table_row] KakaoTalk', '[table_row] Naver Band']
+PAGE: 邮政与快递 | 56 lines
+  First lines: ['PAGE: 邮政与快递 (ID: 22439f9906f581fe8245d7b5b1f4ea24)', '[sub_header] 📬 邮政与快递服务指南（以三陟校区为准）', '[divider]', '[sub_sub_header] 🏫 校内邮政与快递服务', '[bulleted_list] 服务地点：三陟校区 学生会馆 1楼（邮局窗口）', '[bulleted_list] 营业时间：工作日 09:00 ~ 18:00（12:00 ~ 13:00 午休）', '[text] ※ 周末与节假日休息', '[bulleted_list] 咨询电话：☎️ 033-570-6753', '[bulleted_list] 主要服务内容：', '[bulleted_list] 普通邮寄（国内/国际）']
+PAGE: 医疗设施 | 22 lines
+  First lines: ['PAGE: 医疗设施 (ID: 22439f9906f581678e3ec69d141cb27b)', '[sub_header] 🏥 医疗设施指南（三陟）', '[quote] 为您介绍三陟地区外国留学生可使用的医院与药局信息。请确认诊疗时间、地址及主要服务内容。', '[divider]', '[sub_sub_header] 📋 医院与药局信息', '[table]', '[table_row] 机构名称', '[table_row] 三陟保健所', '[table_row] 三陟医疗院', '[table_row] 善良邻居医院']
+PAGE: 公共设施 | 20 lines
+  First lines: ['PAGE: 公共设施 (ID: 22439f9906f581ef9d19f31cc0d7c99c)', '[sub_header] 🏛 三陟其他公共设施指南', '[quote] 为您整理了在三陟生活期间所需的行政、交通、邮政、安全等公共服务机构信息。请同时确认各机构的位置与使用时间。', '[divider]', '[sub_sub_header] 📋 主要机构一览', '[table]', '[table_row] 类别', '[table_row] 警察局、安全', '[table_row] 巴士总站', '[table_row] 邮局']
+PAGE: 主要购物场所 | 33 lines
+  First lines: ['PAGE: 主要购物场所 (ID: 22439f9906f5811db761efd199c881b2)', '[sub_sub_header] 🔒 主要购物场所', '[table]', '[table_row] 地址', '[table_row] 江原特别自治道 三陟市 中央路 258', '[table_row] 江原特别自治道 三陟市 校洞路 46', '[table_row] 江原特别自治道 三陟市 中央路 266', '[table_row] 江原特别自治道 三陟市 正常路 78', '[table_row] 江原特别自治道 三陟市 珍珠路 12-21 中央市场 B-Na 栋 2层', '[table_row] 江原特别自治道 三陟市 珍珠路 26 新世纪商厦 1层 102号']
+PAGE: 三陟旅游景点 | 33 lines
+  First lines: ['PAGE: 三陟旅游景点 (ID: 22439f9906f581228bd4ee06f0604a44)', '[sub_sub_header] 📸 三陟旅游景点', '[table]', '[table_row] 景点名称', '[table_row] 三陟海洋轨道自行车', '[table_row] 三陟海上缆车（长湖站）', '[table_row] 竹西楼', '[table_row] 葛南港', '[table_row] 长湖港', '[table_row] Sol Beach 三陟 Ocean Play']
+PAGE: 三陟餐厅 | 33 lines
+  First lines: ['PAGE: 三陟餐厅 (ID: 22439f9906f5810e9387d121d8ff26fc)', '[sub_header] 🍽️ 三陟餐厅推荐', '[table]', '[table_row] 店名', '[table_row] Hansot 便当 三陟江原大学店', '[table_row] 24小时全州名家豆芽汤饭 三陟店', '[table_row] Gong Dae-hyun Sushi', '[table_row] Durebap村', '[table_row] Lotteria 三陟店', "[table_row] Mom's Touch 三陟大学店"]
+PAGE: 三陟节庆 | 25 lines
+  First lines: ['PAGE: 三陟节庆 (ID: 22439f9906f581f6bf2bcc2f2755bf10)', '[sub_header] 📸 三陟节庆指南', '[table]', '[table_row] 地址', '[table_row] 江原道三陟市近德面上孟芳里215-1', '[table_row] 江原道三陟市正常洞416', '[table_row] 三陟市区', '[table_row] 三陟海边', '[table_row] 三陟市10个场所', '[table_row] 江原道三陟市中央路296（校洞）']
+PAGE: 如何在三陟租房 | 98 lines
+  First lines: ['PAGE: 如何在三陟租房 (ID: 2a439f9906f58131b0c2c10627af353b)', '[text] 搬出宿舍，在三陟寻找你的第一个“自炊房”（자취방，即单间公寓）可能是一个巨大的挑战。但是，只要你一步步遵循本指南，就能找到一个安全、理想的住处。', '[divider]', '[sub_sub_header] 1. 在三陟租房的三种方法（真实生活小贴士）', '[text] 三陟与大城市不同，仅仅使用租房软件（APP）可能不是最好的方法。正如你提供的信息所示，三陟的学生主要使用以下三种方法。', '[sub_sub_header] 方法一：房产软件 (Zigbang/Dabang) - 用于了解市场价格', '[text] 这些是韩国最有名的租房软件。', '[image] 68.8 KiB', '[bulleted_list] 软件名称： Zigbang (직방), Dabang (다방)', '[bulleted_list] 使用方法：']

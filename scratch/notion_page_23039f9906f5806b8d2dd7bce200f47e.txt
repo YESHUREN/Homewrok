@@ -1,0 +1,93 @@
+PAGE: 对韩国生活有用的应用程序 (ID: 23039f9906f5806b8d2dd7bce200f47e)
+[sub_sub_header] 💬
+1. 移动通讯App（必备）
+
+[column_list] 
+  [column] 
+    [table] 
+      [table_row] 应用名称
+      [table_row] KakaoTalk
+      [table_row] Naver Band
+    [text] 
+  [column] 
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🔍 2. 搜索·信息门户App
+    [table] 
+      [table_row] 应用名称
+      [table_row] Naver
+      [table_row] Daum
+      [table_row] Google
+  [column] 
+    [image]
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🗺️ 3. 地图·导航App
+    [table] 
+      [table_row] 说明
+      [table_row] 提供详细路线、餐厅评价、公交/地铁信息等
+      [table_row] 支持实时交通、最短路径、地点评论
+      [table_row] 界面友好但韩国公交/地铁信息有限
+  [column] 
+    [image]
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🚌 4. 公共交通信息App
+    [table] 
+      [table_row] 应用名称
+      [table_row] Kakao Bus
+      [table_row] Kakao Subway
+    [text] 
+  [column] 
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🚖 5. 打车App
+    [table] 
+      [table_row] 说明
+      [table_row] 打车、自动支付、共享位置功能，韩国全国适用
+      [table_row] Kakao T 的替代方案，UI 适合外国人使用
+  [column] 
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🚄 6. 火车·长途车订票App
+    [table] 
+      [table_row] 应用名称
+      [table_row] Tmoney GO
+      [table_row] Korail Talk
+  [column] 
+    [image]
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🍔 7. 外卖/点餐App
+    [table] 
+      [table_row] 说明
+      [table_row] 韩国代表性App，支持评论、图片、下单与支付
+      [table_row] 可查找多种餐厅，优惠券多
+    [text] 
+  [column] 
+    [image]
+    [image]
+[divider] 
+[column_list] 
+[divider] 
+[column_list] 
+[divider] 
+[column_list] 
+[divider] 

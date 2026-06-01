@@ -1,0 +1,27 @@
+PAGE: 外籍人士综合服务中心（1345） (ID: 22439f9906f581deb495ea6abbb907af)
+[quote] 这是为居住在韩国的外国人而设的韩国政府官方服务热线。当您对韩国生活有疑问或需要行政帮助时，您可以通过这一个电话得到无语言障碍的解答和帮助。
+[sub_sub_header] 💡 主要服务
+[bulleted_list] 出入境、滞留及国籍相关
+  [bulleted_list] 签证、外国人登录、滞留期限延长、邀请。
+  [bulleted_list] 国籍取得、难民申请相关流程咨询。
+[bulleted_list] 生活及行政信息
+  [bulleted_list] 社会统合项目(KIIP)介绍。
+  [bulleted_list] 外国人支援政策及相关机构信息咨询。
+[bulleted_list] 翻译及报案支援
+  [bulleted_list] 为与公共机构、医院等沟通提供三方翻译服务。
+  [bulleted_list] 支援犯罪及性暴力受害报案。
+[sub_sub_header] 🗣️ 支持语言 (共20种)
+[text] 韩语、英语、中文、日语、越南语、泰语、蒙古语、印尼语、法语、孟加拉语、乌尔都语、俄语、尼泊尔语、柬埔寨语、缅甸语、德语、西班牙语、菲律宾语、阿拉伯语、僧伽罗语。
+[sub_sub_header] 🕘 运营时间
+[bulleted_list] 工作日: 09:00 ~ 22:00
+  [bulleted_list] 夜间时段 (18:00以后): 仅提供韩语、英语、中文服务。
+[bulleted_list] 休息日: 周六及法定节假日。
+[sub_sub_header] ☎️ 联系方式
+[bulleted_list] 在韩国境内: (无需区号) 1345
+[bulleted_list] 从海外拨打: +82-2-1345
+[sub_sub_header] 🧭 如何接通多语言客服
+[numbered_list] 拨打 1345。
+[numbered_list] 根据自动语音提示(ARS)，按您所需语言对应的号码。
+[numbered_list] 最后请务必按  (星号)键，即可直接接通相应语言的客服人员。
+[divider] 
+[text] 

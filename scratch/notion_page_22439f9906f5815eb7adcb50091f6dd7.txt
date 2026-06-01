@@ -1,0 +1,42 @@
+PAGE: 保险 (ID: 22439f9906f5815eb7adcb50091f6dd7)
+[sub_header] 🩺 韩国生活中必备的保险指南
+[sub_sub_header] 📌 所有外国留学生将自动加入国民健康保险！
+[bulleted_list] 自2021年3月起，完成外国人登录的留学生无需另行申请，将自动加入国民健康保险（NHIS）
+[bulleted_list] 若无法确认收入与财产情况，则按平均保费征收
+[divider] 
+[sub_sub_header] 🏥 国民健康保险（NHIS）
+[sub_sub_header] 💡 有哪些好处？
+[bulleted_list] 就诊、检查、处方等可报销约30~70%的医疗费用
+[bulleted_list] 例如：医院费用为100,000韩元，自付金额约为30,000韩元
+[sub_sub_header] 🧾 缴费方法
+[numbered_list] 确认缴费通知书：通过邮寄方式发送至注册住址
+[numbered_list] 缴费方式：
+  [bulleted_list] 使用健康保险App或官网缴纳
+  [bulleted_list] 银行自动转账、银行卡支付、虚拟账户汇款均可
+  [bulleted_list] 也可在便利店CD机缴费
+[sub_sub_header] 💸 每月保费
+[bulleted_list] 以2023年为准：₩71,920（每年可能调整）
+[sub_sub_header] 📱 咨询电话
+[bulleted_list] NHIS客服：1577-1000
+[bulleted_list] 外语服务：033-811-2000
+[quote] 🔍 忘记缴费会怎样？→ 将产生滞纳金，并影响签证延期审核！请务必每月初确认缴费。
+[divider] 
+[sub_sub_header] 💼 意外伤害保险（推荐额外加入）
+[sub_sub_header] 为什么需要？
+[bulleted_list] 国民健康保险仅报销部分住院或门诊费用
+[bulleted_list] 意外保险可全额报销意外事故导致的费用（如急诊手术、骨折治疗等）
+[sub_sub_header] 加入方式
+[bulleted_list] 可通过私营保险公司或学校合作计划加入
+[bulleted_list] 常见公司：LIG保险、Hanwha保险、DB保险等
+[sub_sub_header] 年保费参考
+[bulleted_list] 约 ₩180,000 / 年 起
+[divider] 
+[sub_sub_header] 🏫 校方团体保险（在校生自动加入）
+[sub_sub_header] 学校经营者责任保险
+[bulleted_list] 学生在校内使用设施时发生意外（如摔倒、运动中受伤）时，可报销治疗费用
+[sub_sub_header] 申请流程
+[numbered_list] 自事故发生日起6个月以内
+[numbered_list] 准备所需材料并提交至保健组
+  [bulleted_list] 位置：三陟校区 绿色能源研究馆 2楼
+  [bulleted_list] 咨询电话：☎️ 033-570-6222
+[divider] 

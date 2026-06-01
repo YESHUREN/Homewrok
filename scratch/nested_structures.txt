@@ -1,0 +1,40 @@
+Keys in public page data:
+  - pageId: 22439f99-06f5-810e-9387-d121d8ff26fc
+  - spaceName: 강원대학교 국제화팀
+  - spaceId: db713885-d348-4029-9b04-7f3d52d07387
+  - betaEnabled: False
+  - spaceDomain: knusamcheokoia
+  - spaceShortId: 15562508021
+  - userHasExplicitAccess: False
+  - collectionId: 22439f99-06f5-81bf-ab98-000bda27f933
+  - collectionSchema: type=<class 'dict'>
+  - collectionFormat: type=<class 'dict'>
+  - canRequestAccess: False
+  - requireInterstitial: https://knusamcheokoia.notion.site/22439f9906f5810e9387d121d8ff26fc
+  - requireLogin: False
+  - publicAccessRole: reader
+  - securitySettings: type=<class 'dict'>
+  - isDeleted: False
+  - publicDomainName: knusamcheokoia
+  - isDLSViewer: False
+  - domainLinkSharingEnabledDomains: type=<class 'list'>
+  - isPublicShareLink: False
+  - isEditableOrCommentableSite: False
+
+Nested block/recordMap scanning:
+
+Detailed nested structures:
+  - collectionSchema: dict with 1 keys
+  - collectionSchema.title: dict with 2 keys
+  - collectionFormat: dict with 12 keys
+  - collectionFormat.collection_mode: dict with 2 keys
+  - collectionFormat.collection_mode.root_page_pointer: dict with 3 keys
+  - collectionFormat.copied_from_pointer: dict with 3 keys
+  - collectionFormat.property_visibility: list of length 4
+  - collectionFormat.ai_suggested_properties: list of length 10
+  - collectionFormat.collection_page_properties: list of length 5
+  - securitySettings: dict with 3 keys
+  - securitySettings.publicAccess: dict with 1 keys
+  - securitySettings.disableExport: dict with 1 keys
+  - securitySettings.guestSetting: dict with 1 keys
+  - domainLinkSharingEnabledDomains: list of length 0

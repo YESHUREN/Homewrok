@@ -1,0 +1,70 @@
+PAGE: 韩国手机开通 (ID: 23039f9906f580668a0dc28e903dfa70)
+[sub_header] 📱 韩国手机开通指南（KT电信）
+[text] 江原大学三陟校区已与KT正式签订合作协议，
+[text] 为外国留学生提供快速开通韩国手机的服务。
+[quote] 💡 入境后一周内，KT工作人员将在校内设有驻点服务，
+  [text] 学生可自行前往办理开通手续。
+[divider] 
+[sub_sub_header] ✅ 套餐信息（KT 5G Welcome 1）
+[table] 
+  [table_row] 项目
+  [table_row] 📅 月资费
+  [table_row] ☎️ 通话
+  [table_row] 💬 短信
+  [table_row] 🌐 流量
+  [table_row] 📝 合同
+  [table_row] 🎁 优惠
+[quote] ℹ️ 超出套餐内容使用将会产生额外费用
+[divider] 
+[sub_sub_header] 📌 留学生注意事项
+[numbered_list] 在韩国仅凭护照无法开通后付费手机卡
+  [bulleted_list] KT提供凭护照可使用3个月的临时服务
+  [bulleted_list] 之后需取得外国人登录证并进行实名登记（更改姓名）
+[numbered_list] 未进行实名登记将有以下风险
+  [text] → 使用满90天后，可能被自动停机或解约
+[numbered_list] 完成实名登记后，必须注册自动转账账户
+  [bulleted_list] 必须是本人名下银行账户，并设置自动扣费
+[divider] 
+[sub_sub_header] 📨 实名变更及材料提交方法
+[bulleted_list] 提交材料：外国人登录证 + 银行账户信息
+[bulleted_list] 提交方式：KakaoTalk / WeChat / WhatsApp（KT工作人员将引导）
+[bulleted_list] 面对面提交：江原大学宿舍一楼KT服务台（具体日期将提前通知）
+[divider] 
+[sub_sub_header] ✋ 开通前请确认以下事项
+[bulleted_list] 请确认手机是否支持韩国使用的USIM卡
+[bulleted_list] 虽有LG U+ / SKT等电信公司，江原大学仅与KT签约合作
+[divider] 
+[sub_sub_header] ❗出国前请务必注销手机服务！
+[text] 如果外国留学生未在出国前注销韩国手机号，将会出现以下问题：
+[bulleted_list] 💸 费用继续累计，产生欠费
+[bulleted_list] 📉 留下信用污点，影响以后再入境韩国
+[bulleted_list] 📬 可能在国外仍收到催款通知
+[text] 📌 提醒：即使因滞留期限到期被停用，仍将继续产生费用，
+[text] 因此必须办理正式注销手续。
+[quote] ✅ 推荐注销时间：出国前1~2天为最佳
+[divider] 
+[sub_sub_header] 💬 需要帮助？
+[bulleted_list] 入境后约一周内可前往KT现场服务台
+[bulleted_list] 有关开通、姓名更改、自动转账设置、注销等问题
+  [text] 可通过下方QR码进入聊天咨询
+[divider] 
+[sub_sub_header] 📲 咨询用聊天频道QR码
+[column_list] 
+  [column] 
+    [text] 🟡 KakaoTalk（韩国常用）
+    [text] 快速进行开通、问题咨询
+    [text] 📸 扫描下方QR码
+    [image]
+  [column] 
+    [text] 🟢 WeChat（中文服务）
+    [text] 适合中国学生使用，可中文咨询
+    [text] 📸 扫描下方QR码
+    [image]
+    [text] 
+  [column] 
+    [text] 🟢 WhatsApp（全球适用）
+    [text] 支持英文服务的国际咨询通道
+    [text] 📸 扫描下方QR码
+    [image]
+    [text] 
+[divider] 

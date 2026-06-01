@@ -1,0 +1,458 @@
+[
+  {
+    "id": "22439f99-06f5-81d0-b8be-d755a0ac04f5",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "国际化团队介绍",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "23039f99-06f5-80f5-9fa0-f5a39915fddb",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "学年日程指南",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-813a-a3de-dbda97cbd28b",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "学费",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81ab-b1bf-d2dc4e0f043f",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "课程注册",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81a2-8240-c37e730a1f04",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "奖学金",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8105-99d9-f1198063f5ac",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "成绩查询与季节学期课程",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81c6-b814-cd8900fdd879",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "学籍变动（休学・复学・警告・退学）",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81ef-8c9b-f1ade836852c",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "毕业语言要求",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8152-be6c-f9dfd930ded8",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "未来规划咨询及韩语水平评估",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8136-8738-c8aac70c7321",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "非课程活动",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "26a39f99-06f5-8077-a461-ebdd348de93e",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "K-Cloud 与 KNU 应用使用指南",
+    "properties_keys": [
+      "title"
+    ]
+  },
+  {
+    "id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "K-Cloud 个人信息更新通知",
+    "properties_keys": [
+      "title"
+    ]
+  },
+  {
+    "id": "31939f99-06f5-8005-99f0-ed9605268593",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "e-루리 사용법/How to use e-루리/e-RURI使用指南 (2)",
+    "properties_keys": [
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81cb-b847-d811cb0a2ac8",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "各类证明文件的申请与办理",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81a5-94f4-e3f495abd4c5",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "图书馆（施工中🔧）",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8138-9897-fc510572de62",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "宿舍",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-813b-9623-de1a8f6e83fd",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "学校体育设施",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8160-a388-f12fab960737",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "保健室",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81bc-aa79-dc2ee00e6454",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "通勤班车运营指南",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-817d-b33b-e7255c840921",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "便利设施",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81a2-b16e-c868a83f7b3d",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "Wi-Fi 及 应用程序",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81c3-8390-dc0d87bfbeab",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "校园导览图",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-810d-8cd3-fd9eb82d244a",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "东海出入境事务所",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81de-b495-ea6abbb907af",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "外籍人士综合服务中心（1345）",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81bc-9538-ff49f8a8115a",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "海韩国访问预约方法",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8121-9af0-cf9b54161181",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "Hi Korea 在线电子民愿申请方法指南",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8161-b892-f63329f9e2e3",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "签证延期（延长滞留期限）",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8107-af1d-fa876b27167c",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "兼职工作（打工）",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81bb-80ce-c409c760dad6",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "居住地变更申报",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-813e-9133-d146a4934953",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "外国人登录证返还指南",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8143-8807-d91fc0959bfb",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "就业活动滞留资格变更",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8109-9c2c-fa62fefa034e",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "外国人登录证补发",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "23b39f99-06f5-80ff-8c41-f20f153701c6",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "护照信息变更",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-815e-b7ad-cb50091f6dd7",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "保险",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "23039f99-06f5-8066-8a0d-c28e903dfa70",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "韩国手机开通",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81dc-a53f-f60a08dd68ae",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "开设韩国银行账户\n",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81bf-8d37-d5f08185711b",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "住房、自己做饭生活（合租/独居）、搬家",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "23039f99-06f5-806b-8d2d-d7bce200f47e",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "对韩国生活有用的应用程序",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81fe-8245-d7b5b1f4ea24",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "邮政与快递",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8167-8e3e-c69d141cb27b",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "医疗设施",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81ef-9d19-f31cc0d7c99c",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "公共设施",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-811d-b761-efd199c881b2",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "主要购物场所",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-8122-8bd4-ee06f0604a44",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "三陟旅游景点",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-810e-9387-d121d8ff26fc",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "三陟餐厅",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "22439f99-06f5-81f6-bf2b-cc2f2755bf10",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "三陟节庆",
+    "properties_keys": [
+      "^LRo",
+      "title"
+    ]
+  },
+  {
+    "id": "2a439f99-06f5-8131-b0c2-c10627af353b",
+    "parent_table": "block",
+    "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+    "title": "如何在三陟租房",
+    "properties_keys": [
+      "title"
+    ]
+  }
+]

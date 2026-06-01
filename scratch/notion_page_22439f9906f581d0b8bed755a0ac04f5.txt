@@ -1,0 +1,47 @@
+PAGE: 国际化团队介绍 (ID: 22439f9906f581d0b8bed755a0ac04f5)
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏢 国际化团队指南
+    [bulleted_list] 位置: 绿色能源研究馆 910号
+    [bulleted_list] 运营时间: 工作日 09:00 ~ 18:00 
+(午餐时间 12:00 ~ 13:00 除外)
+    [bulleted_list] 电话号码: 033-570-6891~2
+    [bulleted_list] 主要业务
+      [bulleted_list] 入学相关业务
+      [bulleted_list] GKS奖学金学生支持
+      [bulleted_list] 交换生及语言研修支持
+    [table] 
+      [table_row] 负责人电话号码
+      [table_row] 033-570-6892
+      [table_row] 033-570-6879
+      [table_row] 033-570-6228
+      [table_row] 033-570-6893
+    [text] 
+  [column] 
+    [text] 
+    [image]
+[divider] 
+[sub_sub_header] ☎ 校内主要机构电话号码（三陟校区基准）
+[table] 
+  [table_row] 业务
+  [table_row] 教务
+  [table_row] 课程、学籍
+  [table_row] 证明书发放
+  [table_row] 研究生院
+  [table_row] 学生生活咨询中心
+  [table_row] 三陟
+  [table_row] 道溪
+  [table_row] 职业规划、就业
+  [table_row] 图书馆运营
+  [table_row] 咨询
+  [table_row] 邮件发送等
+  [table_row] 药品领取等
+  [table_row] 心理咨询等
+  [table_row] 学生支援
+  [table_row] 志愿活动
+  [table_row] 奖学金
+  [table_row] 学习支援等
+  [table_row] 美容
+  [table_row] 文具购买
+  [table_row] 专业及教养书籍购买
+[divider] 

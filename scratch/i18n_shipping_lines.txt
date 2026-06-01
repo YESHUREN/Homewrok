@@ -1,0 +1,3 @@
+Line 39: guide_shipping: "国际物流",
+Line 182: guide_shipping: "Shipping",
+Line 325: guide_shipping: "국제 물류",

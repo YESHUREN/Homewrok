@@ -1,0 +1,60 @@
+PAGE: 兼职工作（打工） (ID: 22439f9906f58107af1dfa876b27167c)
+[sub_sub_header] 📌 什么是兼职工作（时间制就业）？
+[text] 原则上，外国留学生在韩国不得就业，
+[text] 但在获得所在大学确认书及出入境管理事务所事前许可的情况下，
+[text] 可在限定条件下进行简单兼职工作。
+[divider] 
+[sub_sub_header] ✅ 申请资格（须同时满足以下所有条件）
+[numbered_list] 签证条件：
+  [bulleted_list] 持有 D-2（学位课程）签证者
+  [bulleted_list] 排除语言研修（D-4）、研究（D-2-5）、访问（D-2-8）、入境未满6个月者
+[numbered_list] 学习成绩条件：
+  [bulleted_list] 上一学期平均成绩需达2.0（C）以上
+  [bulleted_list] 韩语能力：TOPIK 3级以上（本科3-4年级及研究生需TOPIK 4级以上）
+  [bulleted_list] 或英语成绩：TOEFL IBT 71、IELTS 5.5、TEPS 601（新327分）、CEFR B2以上
+[numbered_list] 工作条件：
+  [bulleted_list] 无语言成绩时：本科生每周最多10小时，研究生每周最多15小时
+  [bulleted_list] 英语国家学生也需提交语言成绩
+[numbered_list] 其他条件：
+  [bulleted_list] 当前居住在韩国
+  [bulleted_list] 必须先与国际事务处留学生负责人进行咨询并获得签字
+[divider] 
+[sub_sub_header] 🕒 允许工作时间
+[table] 
+  [table_row] 有语言成绩（TOPIK等）
+  [table_row] 学期中每周最多25小时 / 假期不限
+  [table_row] 学期中每周最多30小时 / 假期不限
+[text] ※ 即使是假期，也必须满足许可条件，未经许可不得工作
+[divider] 
+[sub_sub_header] 📝 申请流程
+[table] 
+  [table_row] 负责人
+  [table_row] 雇主
+  [table_row] 金智媛 主务官
+  [table_row] 学生本人
+  [table_row] 学生本人
+[divider] 
+[sub_sub_header] 📂 提交材料清单（与国际事务处面谈后提交）
+[bulleted_list] 时间制就业确认书（含雇主签字）
+[bulleted_list] 劳动合同（注明工作内容、时薪、时间、地点等）
+[bulleted_list] 营业执照复印件
+[bulleted_list] 护照复印件
+[bulleted_list] 外国人登录证复印件
+[bulleted_list] 成绩单
+[bulleted_list] 语言成绩证明材料（TOPIK或TOEFL等）
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[numbered_list] 未经许可就业将被处罚
+  [bulleted_list] 违反出入境管理法第18条 → 可判处最高3年以下有期徒刑或3000万韩元以下罚款
+  [bulleted_list] 第一次违规：禁止兼职1年 / 第二次违规：可能被强制遣返
+[numbered_list] 违反许可条件时
+  [bulleted_list] 第一次：1年内不予许可
+  [bulleted_list] 第二次：永久不予许可
+  [bulleted_list] 第三次：取消留学资格
+[numbered_list] 超学期学生不得从事兼职工作
+[divider] 
+[sub_sub_header] 🚨 三陟校区特别提醒
+[bulleted_list] 最近部分学生未获得事前许可就开始打工。
+  [text] → 请务必前往绿色能源馆910室（国际事务处），
+  [text] 获得正式许可后再进行兼职工作。
+[divider] 

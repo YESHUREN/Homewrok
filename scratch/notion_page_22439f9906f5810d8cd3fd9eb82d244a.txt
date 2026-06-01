@@ -1,0 +1,16 @@
+PAGE: 东海出入境事务所 (ID: 22439f9906f5810d8cd3fd9eb82d244a)
+[sub_sub_header] 🛂 出入境及支援
+[sub_sub_header] 📍 东海出入境管理事务所位置
+[bulleted_list] 电话：033-535-5721
+[bulleted_list] 地址：江原道东海市海岸路225号
+[text] 📌 地图参考
+[text] （位于东海市政府、易买得附近，靠近江原道东海教育支援厅）
+[image]
+[divider] 
+[sub_sub_header] 🚌 交通方式
+[table] 
+  [table_row] 内容
+  [table_row] 从（江原大学后门）CU便利店前公交站乘车 → 东海保健所下车（步行5分钟）→ 出入境管理事务所
+  [table_row] 从出入境管理事务所（步行5分钟）→ NH农协前公交站（东海市保健所对面）乘车 → （江原大学后门）CU便利店前公交站下车
+[quote] ※ 访问前需在 Hi Korea 官网进行预约
+[text] 

@@ -1,0 +1,57 @@
+PAGE: 校园导览图 (ID: 22439f9906f581c38390dc0d87bfbeab)
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏢 三陟校区建筑指南
+    [table] 
+      [table_row] 编号
+      [table_row] 101
+      [table_row] 102
+      [table_row] 103
+      [table_row] 104
+      [table_row] 105
+      [table_row] 106
+      [table_row] 107
+      [table_row] 108
+      [table_row] 109
+      [table_row] 110
+      [table_row] 111
+      [table_row] 112
+      [table_row] 113
+      [table_row] 114
+      [table_row] 115
+      [table_row] 116
+      [table_row] 117
+      [table_row] 118
+      [table_row] 119
+      [table_row] 120
+      [table_row] 121
+      [table_row] 122
+      [table_row] 123
+      [table_row] 124
+      [table_row] 125
+      [table_row] 126
+      [table_row] 127
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏫 道溪校区建筑指南
+    [table] 
+      [table_row] 建筑名称
+      [table_row] 大学本馆
+      [table_row] 创造科学馆
+      [table_row] 保健科学馆
+      [table_row] 综合讲义楼
+      [table_row] 图书馆
+      [table_row] 学生会馆
+      [table_row] 室内体育馆
+      [table_row] 大运动场
+      [table_row] 笼式足球场
+      [table_row] 网球场
+      [table_row] 黄鸟生活馆
+  [column] 
+    [image]
+    [text] 
+[divider] 

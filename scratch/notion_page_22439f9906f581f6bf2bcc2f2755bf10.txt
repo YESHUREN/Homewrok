@@ -1,0 +1,25 @@
+PAGE: 三陟节庆 (ID: 22439f9906f581f6bf2bcc2f2755bf10)
+[sub_header] 📸 三陟节庆指南
+[table] 
+  [table_row] 地址
+  [table_row] 江原道三陟市近德面上孟芳里215-1
+  [table_row] 江原道三陟市正常洞416
+  [table_row] 三陟市区
+  [table_row] 三陟海边
+  [table_row] 三陟市10个场所
+  [table_row] 江原道三陟市中央路296（校洞）
+  [table_row] 三陟世博广场
+  [table_row] 江原大学三陟校区
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 

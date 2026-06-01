@@ -1,0 +1,56 @@
+PAGE: 邮政与快递 (ID: 22439f9906f581fe8245d7b5b1f4ea24)
+[sub_header] 📬 邮政与快递服务指南（以三陟校区为准）
+[divider] 
+[sub_sub_header] 🏫 校内邮政与快递服务
+[bulleted_list] 服务地点：三陟校区 学生会馆 1楼（邮局窗口）
+[bulleted_list] 营业时间：工作日 09:00 ~ 18:00（12:00 ~ 13:00 午休）
+  [text] ※ 周末与节假日休息
+[bulleted_list] 咨询电话：☎️ 033-570-6753
+[bulleted_list] 主要服务内容：
+  [bulleted_list] 普通邮寄（国内/国际）
+  [bulleted_list] EMS及国际快递
+  [bulleted_list] 快递接收与寄送
+  [bulleted_list] 挂号信、证明文件发放等各类邮局业务
+[quote] 💡 外籍学生持护照或外国人登录证即可使用邮政/快递服务。
+  [text] 📦 快递纸箱与包装材料 可现场购买或提前自备。
+[divider] 
+[sub_sub_header] 📦 国内快递使用方法
+[numbered_list] 准备包装
+  [bulleted_list] 可自备纸箱，也可现场购买
+[numbered_list] 填写运单
+  [bulleted_list] 写明姓名、联系方式、寄件地址与收件人地址
+  [bulleted_list] 请使用韩语填写（可借助翻译软件）
+[numbered_list] 称重与支付
+  [bulleted_list] 根据重量与尺寸确定费用
+  [bulleted_list] 支持刷卡或现金支付
+[numbered_list] 领取收据
+  [bulleted_list] 请务必保留包含运单编号的收据，以便追踪
+[text] 以下为常见快递公司信息：
+[bulleted_list] CJ大韩通运：cjlogistics.com / 1588-1255
+[bulleted_list] Logen（罗津快递）：ilogen.com / 1588-9988
+[bulleted_list] 邮政快递（우체국택배）：parcel.epost.go.kr / 1588-1300
+[bulleted_list] 韩进快递：hanjin.com / 1588-0011
+[divider] 
+[sub_sub_header] 🌍 国际快递使用方法
+[numbered_list] 确认目的国是否可寄送
+  [bulleted_list] 受政治或航班情况影响，部分国家可能限制寄送
+  [bulleted_list] 可通过 韩国邮政EMS官网 查询
+[numbered_list] 准确填写收件人信息（英文）
+  [bulleted_list] 姓名、联系电话、完整地址、邮编等
+[numbered_list] 申报物品内容
+  [bulleted_list] 详细用英文描述所寄物品
+[numbered_list] 支付费用并寄送
+  [bulleted_list] 费用根据重量、国家、寄送方式（EMS、空运、海运）而异
+[text] 主要国际快递公司信息如下：
+[bulleted_list] DHL：dhl.com/kr-ko / 1588-0001
+[bulleted_list] 邮政EMS：epost.go.kr / 1588-1300
+[bulleted_list] FedEx：fedex.com/kr / 1588-0588
+[bulleted_list] 韩进国际快递：hanjin.com / 1588-1612
+[quote] 🧾 EMS 最为普遍，可直接在三陟校区邮局办理
+  [text] 📦 DHL/FedEx 需通过外部代理点或在线预约后上门取件
+[divider] 
+[sub_sub_header] ✏️ 外籍学生特别提示
+[bulleted_list] 推荐使用翻译APP：填写运单时建议使用 Papago 或 Google Translate
+[bulleted_list] 邮局是否可提供外语服务：简单英语可沟通，复杂事项建议使用翻译软件
+[bulleted_list] 运单编号追踪：如遇延迟，可通过收据上的运单编号进行物流追踪
+[divider] 

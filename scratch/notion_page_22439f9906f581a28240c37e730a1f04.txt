@@ -1,0 +1,46 @@
+PAGE: 奖学金 (ID: 22439f9906f581a28240c37e730a1f04)
+[sub_sub_header] 🎓 奖学金指南
+[callout] 
+  [text] 校内奖学金由国际化团队每学期根据以下标准自动评定，无需单独申请，相关信息可通过缴费账单确认。
+[divider] 
+[sub_sub_header] 📌 新生奖学金（本科生）
+[table] 
+  [table_row] 奖学金名称
+  [table_row] 新生特别奖学金
+  [table_row] 全额减免学费
+  [table_row] 减免约35%的学费
+  [table_row] 减免约35%的学费
+  [table_row] 
+[divider] 
+[sub_sub_header] 📌 新生奖学金（研究生）
+[table] 
+  [table_row] 奖学金名称
+  [table_row] 新生特别奖学金（仅限第一学期）
+  [table_row] ② 姐妹大学毕业生
+  [table_row] ③ 从江原大学韩国语研修课程毕业，且TOPIK 3级以上或完成4级课程（学习6个月以上且出勤率达到80%以上）
+  [table_row] ④ 海外同胞奖学金（通过“海外同胞国内教育课程”项目入学的学生）
+  [table_row] BEST-KNU 奖学金
+[divider] 
+[sub_sub_header] 📌 在校生奖学金（本科生）
+[table] 
+  [table_row] 减免内容
+  [table_row] ① 前1%：全额减免学费② 前5%：减免约70%③ 前10%：减免约35%④ 前30%：减免约20%
+  [table_row] -
+[divider] 
+[sub_sub_header] 📌 在校生奖学金（研究生）
+[table] 
+  [table_row] 减免内容
+  [table_row] 减免约40%的学费
+  [table_row] 全额减免学费 + 支付保险费
+  [table_row] -
+[divider] 
+[sub_sub_header] 🌏 政府邀请奖学金（GKS）
+[table] 
+  [table_row] 条件
+  [table_row] 被韩国国家国际教育院选为“GKS政府邀请奖学金生”者
+[divider] 
+[text] 📌 注意事项
+[bulleted_list] BEST-KNU 与 GKS 奖学金仅限新生申请（在校生不可申请）
+[bulleted_list] 成绩优秀奖学金的减免比例可能因预算而有所调整
+[bulleted_list] 韩语能力优秀奖学金须取得语言成绩后由本人向国际化团队提出申请
+[divider] 

@@ -1,0 +1,242 @@
+{
+  "pageId": "22439f99-06f5-810e-9387-d121d8ff26fc",
+  "spaceName": "강원대학교 국제화팀",
+  "spaceId": "db713885-d348-4029-9b04-7f3d52d07387",
+  "betaEnabled": false,
+  "spaceDomain": "knusamcheokoia",
+  "spaceShortId": "15562508021",
+  "userHasExplicitAccess": false,
+  "collectionId": "22439f99-06f5-81bf-ab98-000bda27f933",
+  "collectionSchema": {
+    "title": {
+      "name": "제목",
+      "type": "title"
+    }
+  },
+  "collectionFormat": {
+    "page_icon": "📓",
+    "page_cover": "https://images.unsplash.com/photo-1546776230-bb86256870ce?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb",
+    "block_locked": false,
+    "app_config_uri": "notion://wiki_collection",
+    "block_locked_by": "d0a8cba1-b998-46a3-bcd1-0efb420410b1",
+    "collection_mode": {
+      "type": "page_tree",
+      "root_page_pointer": {
+        "id": "22439f99-06f5-8061-82d4-ff4e48d59c70",
+        "table": "block",
+        "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+      }
+    },
+    "copied_from_pointer": {
+      "id": "22239f99-06f5-80d5-8855-000b0ec86730",
+      "table": "collection",
+      "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+    },
+    "page_cover_position": 0.7887,
+    "property_visibility": [
+      {
+        "property": "notion://wiki/owner_property",
+        "visibility": "hide_if_empty"
+      },
+      {
+        "property": "pwFZ",
+        "visibility": "hide_if_empty"
+      },
+      {
+        "property": "^LRo",
+        "visibility": "show"
+      },
+      {
+        "property": "k{^d",
+        "visibility": "hide"
+      }
+    ],
+    "ai_suggested_properties": [
+      {
+        "name": "국적",
+        "type": "select",
+        "options": [
+          {
+            "id": "KlIO",
+            "color": "yellow",
+            "value": "한국"
+          },
+          {
+            "id": "Pzlg",
+            "color": "purple",
+            "value": "미국"
+          },
+          {
+            "id": "mAoh",
+            "color": "default",
+            "value": "중국"
+          },
+          {
+            "id": "n`az",
+            "color": "blue",
+            "value": "일본"
+          },
+          {
+            "id": "d}k;",
+            "color": "orange",
+            "value": "베트남"
+          },
+          {
+            "id": "th<x",
+            "color": "brown",
+            "value": "기타"
+          }
+        ]
+      },
+      {
+        "name": "연락처",
+        "type": "phone_number"
+      },
+      {
+        "name": "이메일",
+        "type": "email"
+      },
+      {
+        "name": "거주지 주소",
+        "type": "text"
+      },
+      {
+        "name": "입학 연도",
+        "type": "date"
+      },
+      {
+        "name": "전공",
+        "type": "select",
+        "options": [
+          {
+            "id": "Taaf",
+            "color": "red",
+            "value": "컴퓨터공학"
+          },
+          {
+            "id": "tryR",
+            "color": "gray",
+            "value": "경영학"
+          },
+          {
+            "id": "]:C]",
+            "color": "blue",
+            "value": "생물학"
+          },
+          {
+            "id": "MiFM",
+            "color": "yellow",
+            "value": "물리학"
+          },
+          {
+            "id": "XFhy",
+            "color": "orange",
+            "value": "사회학"
+          },
+          {
+            "id": "lcfM",
+            "color": "brown",
+            "value": "기타"
+          }
+        ]
+      },
+      {
+        "name": "학생증 파일",
+        "type": "file"
+      },
+      {
+        "name": "언어 능력",
+        "type": "multi_select",
+        "options": [
+          {
+            "id": "Datv",
+            "color": "brown",
+            "value": "한국어"
+          },
+          {
+            "id": "LHFm",
+            "color": "pink",
+            "value": "영어"
+          },
+          {
+            "id": ";H]d",
+            "color": "red",
+            "value": "중국어"
+          },
+          {
+            "id": "A|wX",
+            "color": "orange",
+            "value": "일본어"
+          },
+          {
+            "id": "vAI;",
+            "color": "gray",
+            "value": "스페인어"
+          },
+          {
+            "id": "cdZC",
+            "color": "default",
+            "value": "기타"
+          }
+        ]
+      },
+      {
+        "name": "학생 상태",
+        "type": "status"
+      },
+      {
+        "name": "추천 활동",
+        "type": "text"
+      }
+    ],
+    "collection_cover_position": 0.3706,
+    "collection_page_properties": [
+      {
+        "width": 300,
+        "visible": true,
+        "property": "title"
+      },
+      {
+        "width": 150,
+        "visible": true,
+        "property": "notion://wiki/owner_property"
+      },
+      {
+        "width": 150,
+        "visible": true,
+        "property": "pwFZ"
+      },
+      {
+        "width": 150,
+        "visible": true,
+        "property": "^LRo"
+      },
+      {
+        "width": 250,
+        "visible": true,
+        "property": "k{^d"
+      }
+    ]
+  },
+  "canRequestAccess": false,
+  "requireInterstitial": "https://knusamcheokoia.notion.site/22439f9906f5810e9387d121d8ff26fc",
+  "requireLogin": false,
+  "publicAccessRole": "reader",
+  "securitySettings": {
+    "publicAccess": {
+      "disabled": false
+    },
+    "disableExport": {
+      "disabled": false
+    },
+    "guestSetting": {
+      "type": "can_add"
+    }
+  },
+  "isDeleted": false,
+  "publicDomainName": "knusamcheokoia",
+  "isDLSViewer": false,
+  "domainLinkSharingEnabledDomains": [],
+  "isPublicShareLink": false,
+  "isEditableOrCommentableSite": false
+}

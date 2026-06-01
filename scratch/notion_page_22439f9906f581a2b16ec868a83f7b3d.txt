@@ -1,0 +1,69 @@
+PAGE: Wi-Fi 及 应用程序 (ID: 22439f9906f581a2b16ec868a83f7b3d)
+[sub_header] 🖥 无线网络的使用与连接方法
+[bulleted_list] 无线网络服务范围
+  [bulleted_list] 学习空间（图书馆、自习室、讲义室（30人以上）等）
+  [bulleted_list] 多人使用建筑（学生会馆、食堂、休息空间、大楼大厅等）
+[table] 
+  [table_row] 无线网络说明及密码
+  [table_row] 安全无线网络 - ID：K-Cloud ID（学号）- PW：K-Cloud 密码(初始密码/出生年月日6位)
+[divider] 
+[sub_sub_header] 📋 无线网络（WiFi）列表及账户信息
+[quote] ※ K-Cloud 密码可在 K-Cloud → [找回密码]中确认
+[sub_sub_header] 1. KNU-WLAN-Secure
+[bulleted_list] 安全认证 WiFi，快速又安全
+[bulleted_list] 登录方式：
+  [text] 输入 K-Cloud ID（学号、职号） + 密码（初始密码/出生年月日6位）
+[divider] 
+[sub_sub_header] 📱 各设备 WiFi 连接方法
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Android
+    [numbered_list] 输入 ID 和密码 → EAP方式：PEAP
+    [numbered_list] CA证书：不认证
+    [numbered_list] 二次认证方式：GTC
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ iOS（iPhone）
+    [numbered_list] 输入 ID 和密码
+    [numbered_list] 在认证书页面右上角点击 信任
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Windows
+    [numbered_list] 输入 ID 和密码（无需其他设置即可使用）
+    [numbered_list] 如已安装旧版无线认证程序（Cuvic），请先删除后再使用
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Mac
+    [numbered_list] 输入 ID 和密码
+    [numbered_list] 在认证书确认页面点击下方 继续
+    [numbered_list] 在信任设置弹窗中输入电脑密码后点击 更新设置
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[sub_header] 📱 K-Cloud 手机App连接方法
+[table] 
+  [table_row] 内容
+  [table_row] App Store/Play Store → 搜索“江原大学” → 安装App※ 为确保功能顺畅使用，请在安装时允许所有权限
+  [table_row] ID（学号）/密码 → 多重认证（指纹、Face ID、PIN、图案）※ 与K-Cloud登录ID/密码相同
+  [table_row] - 学籍（按日期的课程表、学籍信息等）- 授课（课程表、每日课程表、选课记录查询、成绩查询、课程评价、教学大纲查询、智能考勤等）- 注册/奖学金（学费通知、学费分期缴纳申请等）- K-Friends、电子出入、元宇宙等
+[divider] 
+[sub_header] 💻 K-Cloud PC连接方法
+[table] 
+  [table_row] 分类
+  [table_row] 使用方法
+  [table_row] 登录方法
+  [table_row] 提供服务
+[divider] 

@@ -1,0 +1,56 @@
+PAGE: 学费 (ID: 22439f9906f5813aa3dedbda97cbd28b)
+[sub_sub_header] 🔹缴纳学费
+[bulleted_list] 缴费时间
+  [bulleted_list] 第一学期：每年2月
+  [bulleted_list] 第二学期：每年8月
+[bulleted_list] 缴费流程
+  [numbered_list] 公布学费缴纳计划（缴费期开始前2~3周）
+  [numbered_list] 申请分期付款（仅限在校生，通过KNU门户网站申请）
+  [numbered_list] 打印学费账单 → 汇款至个人虚拟账户
+  [numbered_list] 缴纳学费（至指定银行）
+[bulleted_list] 分期付款申请
+  [bulleted_list] 因经济原因一次性缴纳困难者可申请
+  [bulleted_list] 可将学费分为四期缴纳
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🔹分期付款申请方法
+    [numbered_list] 访问江原大学官网
+      [text] https://www.kangwon.ac.kr
+    [numbered_list] 点击主页上方的“K-Cloud”
+    [numbered_list] 登录
+      [bulleted_list] ID：学号
+      [bulleted_list] 密码：出生年月日6位（如990101）
+    [numbered_list] 点击“One-Stop服务” → “分期付款申请”标签
+    [numbered_list] 访问江原大学主页 / 2. 点击‘K-Cloud’
+    [numbered_list] 登录
+    [text] 4. 点击“One-Stop服务” → “分期付款申请”标签
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[sub_header] 💰 学费信息（以2023年为准，单位：韩元）
+[table] 
+  [table_row] 学科领域
+  [table_row] 人文社会
+  [table_row] 自然科学
+  [table_row] 工科
+  [table_row] 体育
+  [table_row] 艺术
+  [table_row] 人文社会
+  [table_row] 自然科学
+  [table_row] 工科
+  [table_row] 艺术体育
+  [table_row] 医学
+[divider] 
+[sub_header] 💸 学费退还政策
+[table] 
+  [table_row] 入学费（新生）
+  [table_row] 全额退还
+  [table_row] 不退还
+  [table_row] 同上
+  [table_row] 同上
+  [table_row] 同上
+[divider] 

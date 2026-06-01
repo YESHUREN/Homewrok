@@ -1,0 +1,20 @@
+PAGE: 公共设施 (ID: 22439f9906f581ef9d19f31cc0d7c99c)
+[sub_header] 🏛 三陟其他公共设施指南
+[quote] 为您整理了在三陟生活期间所需的行政、交通、邮政、安全等公共服务机构信息。请同时确认各机构的位置与使用时间。
+[divider] 
+[sub_sub_header] 📋 主要机构一览
+[table] 
+  [table_row] 类别
+  [table_row] 警察局、安全
+  [table_row] 巴士总站
+  [table_row] 邮局
+  [table_row] 行政机关
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+[divider] 

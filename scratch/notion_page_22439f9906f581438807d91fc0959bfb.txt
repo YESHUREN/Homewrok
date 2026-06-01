@@ -1,0 +1,37 @@
+PAGE: 就业活动滞留资格变更 (ID: 22439f9906f581438807d91fc0959bfb)
+[text] 外国留学生在完成学位课程毕业后仍希望继续在韩国从事就业或职业探索活动时，必须将滞留资格从 D-2（留学）变更为 D-10-1（求职活动）。
+[divider] 
+[sub_sub_header] 📌 申请资格
+[bulleted_list] 江原大学毕业生
+[bulleted_list] 毕业后希望就业活动或正在准备创业、研究等活动者
+[bulleted_list] 即将毕业者也可申请（须提交毕业预定证明）
+[divider] 
+[sub_sub_header] 🕒 申请时机
+[bulleted_list] 毕业日前后30天内
+[bulleted_list] 毕业后必须在滞留期限到期前申请完毕
+[divider] 
+[sub_sub_header] 📝 准备材料
+[table] 
+  [table_row] 提交材料说明
+  [table_row] 护照、外国人登录证、申请书、标准入学许可书、成绩单或毕业预定/毕业证明
+  [table_row] 余额在500万韩元以上的银行存款证明（可为境内外银行）
+  [table_row] 包含求职或创业、研究计划的滞留活动计划书
+  [table_row] 租赁合同或住宿提供确认书（若本人不是房东时需提供）
+[divider] 
+[sub_sub_header] 🏢 受理机关及方式
+[bulleted_list] 线下申请
+  [bulleted_list] 访问东海出入境·外国人事务所
+  [bulleted_list] 必须提前预约：Hi Korea预约系统
+[bulleted_list] 线上申请
+  [bulleted_list] 通过 Hi Korea 或
+  [bulleted_list] HiRE Visa（需支付额外手续费）
+[divider] 
+[sub_sub_header] 💰 手续费
+[bulleted_list] 线下/Hi Korea申请：60,000韩元（政府收入印花）
+[bulleted_list] HiRE Visa申请：60,000韩元 + 手续费15,000韩元 = 共75,000韩元
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[bulleted_list] 即使滞留期限尚未到期，毕业后D-2滞留资格将不再有效
+[bulleted_list] 若未申请，将处于非法滞留状态，可能面临遣返
+[bulleted_list] D-10资格最多可赋予6个月
+[divider] 

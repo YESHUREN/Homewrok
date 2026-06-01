@@ -1,0 +1,56 @@
+PAGE: 课程注册 (ID: 22439f9906f581abb1bfd2dc4e0f043f)
+[sub_sub_header] 📌 课程注册（毕业所需学分标准 - 本科生）
+[table] 
+  [table_row] 备注
+  [table_row] 130学分以上
+  [table_row] 护理学院、工科学院、师范学院适用
+  [table_row] 兽医学院、药学院
+  [table_row] 建筑学5年制专业
+[text] ※ 上一学期平均成绩为3.75以上者，可多选3学分
+[text] ※ 成绩警告者，课程注册上限减少3学分
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅课程注册方法（本科及交换学生）
+    [text] ① 访问选课网站 https://sugang.kangwon.ac.kr
+    [text] ② 登录
+    [bulleted_list] 用户名：学号
+    [bulleted_list] 初始密码：出生年月日6位（如990101）
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [text] ✅ 课程注册方法（研究生）
+    [text] ① 访问江原大学官网：https://www.kangwon.ac.kr
+    [text] ② 点击页面顶部 “K-Cloud”
+    [text] ③ 登录后 → 进入 “One-Stop服务” → 点击 “研究生课程注册” 标签
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[sub_sub_header] 📘 课程评价
+[sub_sub_header] 📌 目的与意义
+[numbered_list] 向教授传达学生对课程内容和形式的意见，提升教学质量
+[numbered_list] 全程匿名，不会对学生产生不利影响
+[numbered_list] 评价内容为授课内容，不针对教授个人
+[numbered_list] 必须在成绩公布前完成评价，才能查看期末成绩
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ 评价方法与时间
+    [bulleted_list] 参与对象：所有本科学生
+    [bulleted_list] 评价课程：所有已开设课程（实习课/小班课程5人以下除外）
+    [bulleted_list] 评价流程：
+      [numbered_list] 访问江原大学官网：https://www.kangwon.ac.kr
+      [numbered_list] 点击页面顶部“K-Cloud”
+      [numbered_list] 登录（学号 / 出生年月日6位）
+      [numbered_list] 进入“One-Stop服务” → 点击“课程评价申请”标签
+  [column] 
+    [image]
+    [image]
+    [image]
+[divider] 

@@ -1,0 +1,19 @@
+PAGE: 未来规划咨询及韩语水平评估 (ID: 22439f9906f58152be6cf9dfd930ded8)
+[sub_header] 🧭 梦想规划咨询
+[bulleted_list] 目的：通过分配责任教授，从入学开始引导学生提前规划梦想，并持续进行个别咨询，帮助学生实现具体目标。
+[text] • 学分：0.5学分（成绩评定：通过 / 不通过）
+[text] • 运营与修读方式：
+[text] ① 以咨询为主的课程运营
+[text] ② 毕业前必须完成4个学期（共2学分）以上的履修要求
+[divider] 
+[sub_header] 🖋️ 韩国语水平评估
+[bulleted_list] 所有外国研究生必须参加由通识教育中心组织的韩国语水平评估
+[text] • 研究生需至少修读至 Korean II 课程（但根据评估结果，部分学生可获免修）
+[text] • 考试时间：每学期开学后14日内进行2次（仅需参加其中1次）
+[text] • 考试内容：韩语阅读、写作与面试
+[table] 
+  [table_row] 第一学期
+  [table_row] 可申请 Korean III（持有TOPIK 6级者可免修）
+  [table_row] Korean II 必修
+  [table_row] Korean I 必修
+[divider] 

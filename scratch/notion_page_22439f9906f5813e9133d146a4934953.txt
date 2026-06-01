@@ -1,0 +1,23 @@
+PAGE: 外国人登录证返还指南 (ID: 22439f9906f5813e9133d146a4934953)
+[text] 在韩国结束滞留后出境、获得永久居留权或归化入籍时，必须返还外国人登录证。
+[divider] 
+[sub_sub_header] 📌 返还对象
+[bulleted_list] 结束在韩滞留并出境的人
+[bulleted_list] 因变更滞留资格而无需持有登录证的人
+[bulleted_list] 取得永住权（F-5）、国籍等不再需要外国人登录的人
+[divider] 
+[sub_sub_header] 🕒 返还时间
+[bulleted_list] 出境时在机场或港口的出入境审查台当场返还
+[bulleted_list] 或者也可在出境前提前向管辖出入境事务所或居民中心提交
+[divider] 
+[sub_sub_header] 📝 返还方式
+[table] 
+  [table_row] 提交方式
+  [table_row] 出境时当场提交外国人登录证
+  [table_row] 可亲访或邮寄（建议事先咨询）
+  [table_row] 可亲自提交（江原大学三陟校区学生可就近使用）
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[bulleted_list] 若未返还，将在日后再次入境韩国时产生问题
+[bulleted_list] 若登录证遗失，需提交遗失申报书和情况说明书
+[divider] 

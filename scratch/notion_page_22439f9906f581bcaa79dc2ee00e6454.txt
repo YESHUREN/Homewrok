@@ -1,0 +1,37 @@
+PAGE: 通勤班车运营指南 (ID: 22439f9906f581bcaa79dc2ee00e6454)
+[text] 🚌 三陟市内循环班车指南（2025年第一学期）
+[text] 运行期间：2025年3月4日（星期二）至6月20日（星期五） / 周末及公休日停运
+[text] 🚨 乘车注意事项
+[bulleted_list] 出现发热（37.5℃以上）、咳嗽等新冠症状者禁止乘车
+[bulleted_list] 推荐佩戴口罩
+[bulleted_list] 禁止校外人士乘车（如有需要，将确认学生证）
+[bulleted_list] 车内禁止饮食并尽量避免交谈
+[divider] 
+[sub_sub_header] 🚌 1. 市内循环路线
+[table] 
+  [table_row] 途经地
+  [table_row] 商工会议所对面(08:22) → 新韩银行旁公交站(08:24) → 高速巴士客运站(08:27) → Gosen美容院前(08:28) → 正罗小学前(08:32) → 青松1期公寓站(08:33) → 校洞Hanaro超市前(08:34) → 校洞现代公寓对面公交站(08:38)
+  [table_row] 校洞现代公寓对面公交站(08:35)
+  [table_row] 商工会议所对面(09:27) → 新韩银行旁公交站(09:29) → 高速巴士客运站(09:32) → Gosen美容院前(09:33) → 正罗小学前(09:37) → 青松1期公寓站(09:38) → 校洞Hanaro超市前(09:39) → 校洞现代公寓对面公交站(09:43)
+[text] ※ 出发地及到达地为校园公交站（位于学生会馆前）
+[divider] 
+[sub_sub_header] 🚍 2. 三陟↔道溪校区路线（包含教职员工上下班）
+[table] 
+  [table_row] 车次
+  [table_row] 第1班
+  [table_row] 第2班
+[divider] 
+[sub_sub_header] 🚍 3. 三陟↔道溪校区路线（学生专用）
+[table] 
+  [table_row] 备注
+  [table_row] 包车（东川旅行社）
+  [table_row] 巴士C
+  [table_row] 巴士D
+  [table_row] 巴士B
+  [table_row] 巴士C
+  [table_row] 巴士C
+  [table_row] 巴士B
+  [table_row] 巴士B
+  [table_row] 巴士C
+  [table_row] 包车（东川旅行社）
+[divider] 

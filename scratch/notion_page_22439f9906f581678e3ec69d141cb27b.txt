@@ -1,0 +1,22 @@
+PAGE: 医疗设施 (ID: 22439f9906f581678e3ec69d141cb27b)
+[sub_header] 🏥 医疗设施指南（三陟）
+[quote] 为您介绍三陟地区外国留学生可使用的医院与药局信息。请确认诊疗时间、地址及主要服务内容。
+[divider] 
+[sub_sub_header] 📋 医院与药局信息
+[table] 
+  [table_row] 机构名称
+  [table_row] 三陟保健所
+  [table_row] 三陟医疗院
+  [table_row] 善良邻居医院
+  [table_row] 三陟钟路药局
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [text] 
+  [column] 
+    [image]
+    [image]
+[divider] 
+[text] 

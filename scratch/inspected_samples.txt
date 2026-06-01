@@ -1,0 +1,197 @@
+
+==================== notion_page_22439f9906f581d0b8bed755a0ac04f5.txt ====================
+PAGE: 国际化团队介绍 (ID: 22439f9906f581d0b8bed755a0ac04f5)
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏢 国际化团队指南
+    [bulleted_list] 位置: 绿色能源研究馆 910号
+    [bulleted_list] 运营时间: 工作日 09:00 ~ 18:00 
+(午餐时间 12:00 ~ 13:00 除外)
+    [bulleted_list] 电话号码: 033-570-6891~2
+    [bulleted_list] 主要业务
+      [bulleted_list] 入学相关业务
+      [bulleted_list] GKS奖学金学生支持
+      [bulleted_list] 交换生及语言研修支持
+    [table] 
+      [table_row] 负责人电话号码
+      [table_row] 033-570-6892
+      [table_row] 033-570-6879
+      [table_row] 033-570-6228
+      [table_row] 033-570-6893
+    [text] 
+  [column] 
+    [text] 
+    [image]
+[divider] 
+[sub_sub_header] ☎ 校内主要机构电话号码（三陟校区基准）
+[table] 
+  [table_row] 业务
+  [table_row] 教务
+  [table_row] 课程、学籍
+  [table_row] 证明书发放
+  [table_row] 研究生院
+  [table_row] 学生生活咨询中心
+  [table_row] 三陟
+  [table_row] 道溪
+  [table_row] 职业规划、就业
+  [table_row] 图书馆运营
+  [table_row] 咨询
+  [table_row] 邮件发送等
+  [table_row] 药品领取等
+  [table_row] 心理咨询等
+  [table_row] 学生支援
+  [table_row] 志愿活动
+  [table_row] 奖学金
+  [table_row] 学习支援等
+  [table_row] 美容
+  [table_row] 文具购买
+  [table_row] 专业及教养书籍购买
+[divider] 
+==================== notion_page_23039f9906f580f59fa0f5a39915fddb.txt ====================
+PAGE: 学年日程指南 (ID: 23039f9906f580f59fa0f5a39915fddb)
+[sub_header] 📙 2026年 学事日程 / 第1学期 (1月~6月)
+[table] 
+  [table_row] 日期
+  [table_row] 5
+  [table_row] 6
+  [table_row] 8-14
+  [table_row] 15
+  [table_row] 21
+  [table_row] 12-2.27
+  [table_row] 15-23
+  [table_row] 5-6
+  [table_row] 10-27
+  [table_row] 11-12
+  [table_row] 19
+  [table_row] 20
+  [table_row] 23-26
+  [table_row] 24-27
+  [table_row] 27
+  [table_row] 2
+  [table_row] 3
+  [table_row] 3-12
+  [table_row] 13
+  [table_row] 13-17
+  [table_row] 28
+  [table_row] 1
+  [table_row] 11-21
+  [table_row] 13
+  [table_row] 19-21
+  [table_row] 27-29
+  [table_row] 3
+  [table_row] 14
+  [table_row] 15-25
+  [table_row] 16-19
+  [table_row] 19
+  [table_row] 24
+  [table_row] 26-7.2
+[divider] 
+[sub_header] 📙 2026年 学事日程 / 第2学期 (7月~12月)
+[table] 
+  [table_row] 内容
+  [table_row] 第一学期成绩确定 
+  [table_row] 季节学期课程评价 
+  [table_row] 第二学期复学申请 
+  [table_row] 第二学期优先减免奖学金申请 
+  [table_row] 季节学期结课及成绩录入 
+  [table_row] 季节学期成绩确定 
+  [table_row] 第二学期教学大纲(课程计划书)录入 
+  [table_row] 第二学期预选课 
+  [table_row] 第二学期选课 
+  [table_row] 第二学期休学申请 
+  [table_row] 学费缴纳期间 
+  [table_row] 后期学位授予仪式 (三陟, 江陵) 
+  [table_row] 后期学位授予仪式 (春川, 原州) 
+  [table_row] 第二学期开课 
+  [table_row] 第二学期选课变更及取消 
+  [table_row] KNU 大同祭 (春川) 
+  [table_row] 教学日数 1/3 基准线 
+  [table_row] 第二学期期中课程评价 
+  [table_row] 教学日数 1/2 基准线及第二学期期中考试结束日 
+  [table_row] 季节学期选课 
+  [table_row] 副专业·辅修专业申请 
+  [table_row] 教学日数 2/3 基准线 
+  [table_row] 季节学期学费缴纳 
+  [table_row] 转专业申请 
+  [table_row] 随申(招生)面试评价 
+  [table_row] 补课期间 
+  [table_row] 第二学期成绩录入 
+  [table_row] 结课及第二学期期末考试结束日 
+  [table_row] 季节学期开课 
+  [table_row] 第二学期期末课程评价及成绩确定前公开 
+[divider] 
+[sub_header] 📙 2027年 学事日程 (1月~2月)
+[table] 
+  [table_row] 内容
+  [table_row] 开工仪式 (始务式) 
+  [table_row] 第二学期期末课程评价结束 
+  [table_row] 第二学期成绩确定前公开结束 
+  [table_row] 第二学期成绩确定 
+  [table_row] 季节学期课程评价 
+  [table_row] 季节学期结课 
+  [table_row] 季节学期成绩录入开始 
+  [table_row] 季节学期成绩录入结束 
+  [table_row] 第一学期教学大纲(课程计划书)录入 
+  [table_row] 成绩确定 
+  [table_row] 第一学期预选课 
+  [table_row] 前期学位授予仪式 (原州等) 
+  [table_row] 前期学位授予仪式 (春川等) 
+  [table_row] 入学仪式 (三陟, 江陵等) 
+  [table_row] 入学仪式 (春川, 原州等) 
+==================== notion_page_22439f9906f5813aa3dedbda97cbd28b.txt ====================
+PAGE: 学费 (ID: 22439f9906f5813aa3dedbda97cbd28b)
+[sub_sub_header] 🔹缴纳学费
+[bulleted_list] 缴费时间
+  [bulleted_list] 第一学期：每年2月
+  [bulleted_list] 第二学期：每年8月
+[bulleted_list] 缴费流程
+  [numbered_list] 公布学费缴纳计划（缴费期开始前2~3周）
+  [numbered_list] 申请分期付款（仅限在校生，通过KNU门户网站申请）
+  [numbered_list] 打印学费账单 → 汇款至个人虚拟账户
+  [numbered_list] 缴纳学费（至指定银行）
+[bulleted_list] 分期付款申请
+  [bulleted_list] 因经济原因一次性缴纳困难者可申请
+  [bulleted_list] 可将学费分为四期缴纳
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🔹分期付款申请方法
+    [numbered_list] 访问江原大学官网
+      [text] https://www.kangwon.ac.kr
+    [numbered_list] 点击主页上方的“K-Cloud”
+    [numbered_list] 登录
+      [bulleted_list] ID：学号
+      [bulleted_list] 密码：出生年月日6位（如990101）
+    [numbered_list] 点击“One-Stop服务” → “分期付款申请”标签
+    [numbered_list] 访问江原大学主页 / 2. 点击‘K-Cloud’
+    [numbered_list] 登录
+    [text] 4. 点击“One-Stop服务” → “分期付款申请”标签
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[sub_header] 💰 学费信息（以2023年为准，单位：韩元）
+[table] 
+  [table_row] 学科领域
+  [table_row] 人文社会
+  [table_row] 自然科学
+  [table_row] 工科
+  [table_row] 体育
+  [table_row] 艺术
+  [table_row] 人文社会
+  [table_row] 自然科学
+  [table_row] 工科
+  [table_row] 艺术体育
+  [table_row] 医学
+[divider] 
+[sub_header] 💸 学费退还政策
+[table] 
+  [table_row] 入学费（新生）
+  [table_row] 全额退还
+  [table_row] 不退还
+  [table_row] 同上
+  [table_row] 同上
+  [table_row] 同上
+[divider] 

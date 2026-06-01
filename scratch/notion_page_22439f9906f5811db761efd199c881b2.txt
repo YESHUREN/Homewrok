@@ -1,0 +1,33 @@
+PAGE: 主要购物场所 (ID: 22439f9906f5811db761efd199c881b2)
+[sub_sub_header] 🔒 主要购物场所
+[table] 
+  [table_row] 地址
+  [table_row] 江原特别自治道 三陟市 中央路 258
+  [table_row] 江原特别自治道 三陟市 校洞路 46
+  [table_row] 江原特别自治道 三陟市 中央路 266
+  [table_row] 江原特别自治道 三陟市 正常路 78
+  [table_row] 江原特别自治道 三陟市 珍珠路 12-21 中央市场 B-Na 栋 2层
+  [table_row] 江原特别自治道 三陟市 珍珠路 26 新世纪商厦 1层 102号
+  [table_row] 江原特别自治道 三陟市 中央市场街 48-55
+  [table_row] 江原特别自治道 三陟市 珍珠路 12-21
+  [table_row] 江原特别自治道 三陟市 中央路 258
+  [table_row] 江原特别自治道 三陟市 陟州路 10 地下1层
+  [table_row] 江原特别自治道 三陟市 珍珠路 9
+  [table_row] 江原特别自治道 三陟市 南阳洞 55-21
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 

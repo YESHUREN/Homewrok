@@ -1,0 +1,768 @@
+=== 图书馆（施工中🔧） (22439f9906f581a594f4e3f495abd4c5) ===
+PAGE: 图书馆（施工中🔧） (ID: 22439f9906f581a594f4e3f495abd4c5)
+[column_list] 
+  [column] 
+    [sub_header] 📚 图书馆使用指南
+    [bulleted_list] 📌 主页：http://library.kangwon.ac.kr
+      [text] ☎️ 电话：033-570-6274
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[sub_sub_header] 📍 三陟校区图书馆
+[table] 
+  [table_row] 分类
+  [table_row] 主题资料室 / 休息空间（휴-brary）
+  [table_row] 多媒体室 / 小组研讨室
+  [table_row] 普通阅览室
+[divider] 
+[sub_sub_header] 📍 道溪校区图书馆
+[table] 
+  [table_row] 分类
+  [table_row] 主题资料室、多媒体室、视频研讨室、小组研讨室
+  [table_row] 普通阅览室
+[divider] 
+[quote] 📌 休馆日：周六、周日及法定节假日
+  [text] ※ 若经图书馆长认定为必要，可实行缩短运营或临时关闭。
+[divider] 
+[text] 
+========================================
+
+=== 宿舍 (22439f9906f581389897fc510572de62) ===
+PAGE: 宿舍 (ID: 22439f9906f581389897fc510572de62)
+[sub_header] ✅ 中文页面（简体）
+[sub_sub_header] 🏠 三陟校区宿舍
+[text] http://dormitory.kangwon.ac.kr/
+[table] 
+  [table_row] 管理费（韩元）/ 每学期（4个月）
+  [table_row] 1,065,180韩元
+  [table_row] 909,130韩元
+  [table_row] 740,710韩元
+[text] ※ 餐费为自选，每餐3,000韩元
+[divider] 
+[sub_sub_header] 🏠 道溪校区宿舍
+[text] http://dorm.kangwon.ac.kr/
+[table] 
+  [table_row] 备注
+  [table_row] 1,528,870韩元
+  [table_row] 1,346,090韩元
+  [table_row] 1,519,240韩元
+  [table_row] 1,439,190韩元
+[text] ※ 餐费为自选，每餐2,110 ~ 2,380韩元
+[divider] 
+[sub_header] 🛏️ 宿舍指南
+[bulleted_list] 📞 三陟宿舍：033-570-6471~4
+[bulleted_list] 📞 道溪宿舍：033-541-0536
+[sub_sub_header] 📷 宿舍建筑
+[bulleted_list] 三陟：Haesol-gwan, Doota-gwan, Eonjang-gwan
+[bulleted_list] 道溪：Hwangjo-gwan, Dowon-gwan, Gaon-gwan
+[sub_sub_header] 🏠 各宿舍现况
+[table] 
+  [table_row] 容纳人数
+  [table_row] 326人
+  [table_row] 330人
+  [table_row] 300人
+  [table_row] 740人
+  [table_row] 252人
+  [table_row] 636人
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[sub_header] 🚫 宿舍规定
+[bulleted_list] 禁止高声喧哗
+[bulleted_list] 禁止在宿舍赌博
+[bulleted_list] 禁止在指定场所以外吸烟
+[bulleted_list] 禁止辱骂或诽谤他人
+[bulleted_list] 禁止在宿舍内做饭
+[bulleted_list] 禁止饮酒
+[bulleted_list] 禁止携带电热器具
+[bulleted_list] 禁止异性进入宿舍及楼内
+[bulleted_list] 注意防火
+[bulleted_list] 妥善保管个人贵重物品
+[bulleted_list] 节约用水用电
+[bulleted_list] 保持清洁卫生
+[divider] 
+[sub_sub_header] 📝 入住宿舍申请及所需材料
+[bulleted_list] 📮 申请方式：通过NAVER外国留学生Band公告 > 汇总申请人信息后通知结果
+[bulleted_list] 📄 提交材料：
+  [bulleted_list] 结核检查结果（胸部X光）、住宿誓约书、新冠调查表、住宿守则同意书
+  [bulleted_list] 个人信息使用同意书（入住时提交）
+  [bulleted_list] 详细材料请参考三陟宿舍官网内的入住宿舍指南页面
+[text] ⏰ 出入限制时间：01:00 ~ 05:00
+[text] 📌 禁止饮酒、吸烟等妨碍学习氛围的行为 / 依规定给予处分或奖励
+[text] 📌 须携带出入卡，并参加点名
+[text] 📌 公共设施：食堂、休息室、健身房、阅览室、洗衣房等
+[divider] 
+[text] 
+========================================
+
+=== 学校体育设施 (22439f9906f5813b9623de1a8f6e83fd) ===
+PAGE: 学校体育设施 (ID: 22439f9906f5813b9623de1a8f6e83fd)
+[sub_header] 🏃 体育设施使用指南
+[table] 
+  [table_row] 使用时间
+  [table_row] 09:00 ~ 18:00
+  [table_row] 09:00 ~ 18:00
+  [table_row] 09:00 ~ 18:00
+  [table_row] 学期中：09:00 ~ 22:00假期（周中）：09:00 ~ 18:00
+[divider] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_header] 🏃 体育设施使用指南
+    [bulleted_list] 🏟️ 综合运动场
+    [bulleted_list] ⚽ 五人制足球场
+    [bulleted_list] 🎾 网球场
+    [bulleted_list] 🏋️ 健身房
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+========================================
+
+=== 保健室 (22439f9906f58160a388f12fab960737) ===
+PAGE: 保健室 (ID: 22439f9906f58160a388f12fab960737)
+[sub_sub_header] 🩺 保健诊疗室
+[column_list] 
+  [column] 
+    [bulleted_list] 📍 三陟校区保健室：绿色能源研究楼 2层
+      [text] 诊疗时间：09:00 ~ 18:00（中午休息时间：12:00 ~ 13:00）
+      [text] ☎ 033-570-6222
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [bulleted_list] 📍 道溪校区保健室：学生会馆 309号
+      [text] 诊疗时间：09:00 ~ 18:00（中午休息时间：12:00 ~ 13:00）
+      [text] ☎ 033-540-3240
+  [column] 
+    [image]
+    [text] 
+[divider] 
+========================================
+
+=== 通勤班车运营指南 (22439f9906f581bcaa79dc2ee00e6454) ===
+PAGE: 通勤班车运营指南 (ID: 22439f9906f581bcaa79dc2ee00e6454)
+[text] 🚌 三陟市内循环班车指南（2025年第一学期）
+[text] 运行期间：2025年3月4日（星期二）至6月20日（星期五） / 周末及公休日停运
+[text] 🚨 乘车注意事项
+[bulleted_list] 出现发热（37.5℃以上）、咳嗽等新冠症状者禁止乘车
+[bulleted_list] 推荐佩戴口罩
+[bulleted_list] 禁止校外人士乘车（如有需要，将确认学生证）
+[bulleted_list] 车内禁止饮食并尽量避免交谈
+[divider] 
+[sub_sub_header] 🚌 1. 市内循环路线
+[table] 
+  [table_row] 途经地
+  [table_row] 商工会议所对面(08:22) → 新韩银行旁公交站(08:24) → 高速巴士客运站(08:27) → Gosen美容院前(08:28) → 正罗小学前(08:32) → 青松1期公寓站(08:33) → 校洞Hanaro超市前(08:34) → 校洞现代公寓对面公交站(08:38)
+  [table_row] 校洞现代公寓对面公交站(08:35)
+  [table_row] 商工会议所对面(09:27) → 新韩银行旁公交站(09:29) → 高速巴士客运站(09:32) → Gosen美容院前(09:33) → 正罗小学前(09:37) → 青松1期公寓站(09:38) → 校洞Hanaro超市前(09:39) → 校洞现代公寓对面公交站(09:43)
+[text] ※ 出发地及到达地为校园公交站（位于学生会馆前）
+[divider] 
+[sub_sub_header] 🚍 2. 三陟↔道溪校区路线（包含教职员工上下班）
+[table] 
+  [table_row] 车次
+  [table_row] 第1班
+  [table_row] 第2班
+[divider] 
+[sub_sub_header] 🚍 3. 三陟↔道溪校区路线（学生专用）
+[table] 
+  [table_row] 备注
+  [table_row] 包车（东川旅行社）
+  [table_row] 巴士C
+  [table_row] 巴士D
+  [table_row] 巴士B
+  [table_row] 巴士C
+  [table_row] 巴士C
+  [table_row] 巴士B
+  [table_row] 巴士B
+  [table_row] 巴士C
+  [table_row] 包车（东川旅行社）
+[divider] 
+========================================
+
+=== 便利设施 (22439f9906f5817db33be7255c840921) ===
+PAGE: 便利设施 (ID: 22439f9906f5817db33be7255c840921)
+[column_list] 
+  [column] 
+    [text] 🏫 三陟校区 校内福利设施一览
+    [table] 
+      [table_row] 分类
+      [table_row] 第五工程馆便利店
+      [table_row] 第五工程馆咖啡厅
+      [table_row] 第五工程馆食堂
+      [table_row] 造型馆 Design Dream
+      [table_row] Raum-EPL 咖啡厅
+      [table_row] 文具店
+      [table_row] 美发店
+      [table_row] 复印室
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [text] 🏫 道溪校区 校内福利设施一览
+    [table] 
+      [table_row] 分类
+      [table_row] Americano 咖啡店
+      [table_row] CU 便利店
+      [table_row] 复印室
+      [table_row] 江大猪排饭
+      [table_row] Mom’s Touch 汉堡
+      [table_row] 书店
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[text] 🍽️ 校内食堂
+[table] 
+  [table_row] 位置
+  [table_row] 第五工程馆 1楼
+  [table_row] 学生活动中心 2楼
+  [table_row] 学生活动中心 2楼
+[divider] 
+========================================
+
+=== Wi-Fi 及 应用程序 (22439f9906f581a2b16ec868a83f7b3d) ===
+PAGE: Wi-Fi 及 应用程序 (ID: 22439f9906f581a2b16ec868a83f7b3d)
+[sub_header] 🖥 无线网络的使用与连接方法
+[bulleted_list] 无线网络服务范围
+  [bulleted_list] 学习空间（图书馆、自习室、讲义室（30人以上）等）
+  [bulleted_list] 多人使用建筑（学生会馆、食堂、休息空间、大楼大厅等）
+[table] 
+  [table_row] 无线网络说明及密码
+  [table_row] 安全无线网络 - ID：K-Cloud ID（学号）- PW：K-Cloud 密码(初始密码/出生年月日6位)
+[divider] 
+[sub_sub_header] 📋 无线网络（WiFi）列表及账户信息
+[quote] ※ K-Cloud 密码可在 K-Cloud → [找回密码]中确认
+[sub_sub_header] 1. KNU-WLAN-Secure
+[bulleted_list] 安全认证 WiFi，快速又安全
+[bulleted_list] 登录方式：
+  [text] 输入 K-Cloud ID（学号、职号） + 密码（初始密码/出生年月日6位）
+[divider] 
+[sub_sub_header] 📱 各设备 WiFi 连接方法
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Android
+    [numbered_list] 输入 ID 和密码 → EAP方式：PEAP
+    [numbered_list] CA证书：不认证
+    [numbered_list] 二次认证方式：GTC
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ iOS（iPhone）
+    [numbered_list] 输入 ID 和密码
+    [numbered_list] 在认证书页面右上角点击 信任
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Windows
+    [numbered_list] 输入 ID 和密码（无需其他设置即可使用）
+    [numbered_list] 如已安装旧版无线认证程序（Cuvic），请先删除后再使用
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] ✅ Mac
+    [numbered_list] 输入 ID 和密码
+    [numbered_list] 在认证书确认页面点击下方 继续
+    [numbered_list] 在信任设置弹窗中输入电脑密码后点击 更新设置
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[sub_header] 📱 K-Cloud 手机App连接方法
+[table] 
+  [table_row] 内容
+  [table_row] App Store/Play Store → 搜索“江原大学” → 安装App※ 为确保功能顺畅使用，请在安装时允许所有权限
+  [table_row] ID（学号）/密码 → 多重认证（指纹、Face ID、PIN、图案）※ 与K-Cloud登录ID/密码相同
+  [table_row] - 学籍（按日期的课程表、学籍信息等）- 授课（课程表、每日课程表、选课记录查询、成绩查询、课程评价、教学大纲查询、智能考勤等）- 注册/奖学金（学费通知、学费分期缴纳申请等）- K-Friends、电子出入、元宇宙等
+[divider] 
+[sub_header] 💻 K-Cloud PC连接方法
+[table] 
+  [table_row] 分类
+  [table_row] 使用方法
+  [table_row] 登录方法
+  [table_row] 提供服务
+[divider] 
+========================================
+
+=== 校园导览图 (22439f9906f581c38390dc0d87bfbeab) ===
+PAGE: 校园导览图 (ID: 22439f9906f581c38390dc0d87bfbeab)
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏢 三陟校区建筑指南
+    [table] 
+      [table_row] 编号
+      [table_row] 101
+      [table_row] 102
+      [table_row] 103
+      [table_row] 104
+      [table_row] 105
+      [table_row] 106
+      [table_row] 107
+      [table_row] 108
+      [table_row] 109
+      [table_row] 110
+      [table_row] 111
+      [table_row] 112
+      [table_row] 113
+      [table_row] 114
+      [table_row] 115
+      [table_row] 116
+      [table_row] 117
+      [table_row] 118
+      [table_row] 119
+      [table_row] 120
+      [table_row] 121
+      [table_row] 122
+      [table_row] 123
+      [table_row] 124
+      [table_row] 125
+      [table_row] 126
+      [table_row] 127
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏫 道溪校区建筑指南
+    [table] 
+      [table_row] 建筑名称
+      [table_row] 大学本馆
+      [table_row] 创造科学馆
+      [table_row] 保健科学馆
+      [table_row] 综合讲义楼
+      [table_row] 图书馆
+      [table_row] 学生会馆
+      [table_row] 室内体育馆
+      [table_row] 大运动场
+      [table_row] 笼式足球场
+      [table_row] 网球场
+      [table_row] 黄鸟生活馆
+  [column] 
+    [image]
+    [text] 
+[divider] 
+========================================
+
+=== 住房、自己做饭生活（合租/独居）、搬家 (22439f9906f581bf8d37d5f08185711b) ===
+PAGE: 住房、自己做饭生活（合租/独居）、搬家 (ID: 22439f9906f581bf8d37d5f08185711b)
+[sub_sub_header] 🏡 不同居住形式比较
+[table] 
+  [table_row] 预估费用
+  [table_row] 约 700,000韩元/学期（可选择是否使用食堂）
+  [table_row] 约 400,000韩元/月（不含餐费）
+[quote] 📌 月租：每月支付固定房租（签约时需支付押金）
+  [text] 📌 全租：签约期间支付一次性大额租金，合同结束时退还（通常1~2年合同）
+[divider] 
+[sub_sub_header] 🧾 选择自炊房时必确认事项
+[numbered_list] 配置有哪些？（空调、书桌、床等）
+[numbered_list] 是否有洗衣机？
+[numbered_list] 水电煤气费是否另行支付，还是包含在内？
+[numbered_list] 每月管理费多少？
+[numbered_list] 是否免费提供网络？
+[numbered_list] 垃圾投放方式如何？（因地区而异）
+[numbered_list] 浴室和厨房热水供应是否稳定？
+[numbered_list] 建筑清洁状况（墙纸、地板等）如何？
+[quote] 📌 若通过中介签约，请仔细确认合同内容及押金条款。
+[divider] 
+[sub_sub_header] 🚚 搬家方式指南
+[table] 
+  [table_row] 特点
+  [table_row] 费用低，但劳动量大
+  [table_row] 适合行李不多时
+  [table_row] 方便，但需签合同+费用较高
+[divider] 
+[sub_sub_header] 💡 补充说明
+[bulleted_list] 签订月租合同时注意事项
+  [bulleted_list] 外国人也可签约，但通常需支付押金（一般30万~50万韩元以上）
+  [bulleted_list] 必须签订合同，并确认房东身份及联系方式
+[bulleted_list] 垃圾处理
+  [bulleted_list] 按地区需购买计量垃圾袋（超市/便利店可购得）
+  [bulleted_list] 餐厨垃圾与普通垃圾需分类投放
+[divider] 
+========================================
+
+=== 邮政与快递 (22439f9906f581fe8245d7b5b1f4ea24) ===
+PAGE: 邮政与快递 (ID: 22439f9906f581fe8245d7b5b1f4ea24)
+[sub_header] 📬 邮政与快递服务指南（以三陟校区为准）
+[divider] 
+[sub_sub_header] 🏫 校内邮政与快递服务
+[bulleted_list] 服务地点：三陟校区 学生会馆 1楼（邮局窗口）
+[bulleted_list] 营业时间：工作日 09:00 ~ 18:00（12:00 ~ 13:00 午休）
+  [text] ※ 周末与节假日休息
+[bulleted_list] 咨询电话：☎️ 033-570-6753
+[bulleted_list] 主要服务内容：
+  [bulleted_list] 普通邮寄（国内/国际）
+  [bulleted_list] EMS及国际快递
+  [bulleted_list] 快递接收与寄送
+  [bulleted_list] 挂号信、证明文件发放等各类邮局业务
+[quote] 💡 外籍学生持护照或外国人登录证即可使用邮政/快递服务。
+  [text] 📦 快递纸箱与包装材料 可现场购买或提前自备。
+[divider] 
+[sub_sub_header] 📦 国内快递使用方法
+[numbered_list] 准备包装
+  [bulleted_list] 可自备纸箱，也可现场购买
+[numbered_list] 填写运单
+  [bulleted_list] 写明姓名、联系方式、寄件地址与收件人地址
+  [bulleted_list] 请使用韩语填写（可借助翻译软件）
+[numbered_list] 称重与支付
+  [bulleted_list] 根据重量与尺寸确定费用
+  [bulleted_list] 支持刷卡或现金支付
+[numbered_list] 领取收据
+  [bulleted_list] 请务必保留包含运单编号的收据，以便追踪
+[text] 以下为常见快递公司信息：
+[bulleted_list] CJ大韩通运：cjlogistics.com / 1588-1255
+[bulleted_list] Logen（罗津快递）：ilogen.com / 1588-9988
+[bulleted_list] 邮政快递（우체국택배）：parcel.epost.go.kr / 1588-1300
+[bulleted_list] 韩进快递：hanjin.com / 1588-0011
+[divider] 
+[sub_sub_header] 🌍 国际快递使用方法
+[numbered_list] 确认目的国是否可寄送
+  [bulleted_list] 受政治或航班情况影响，部分国家可能限制寄送
+  [bulleted_list] 可通过 韩国邮政EMS官网 查询
+[numbered_list] 准确填写收件人信息（英文）
+  [bulleted_list] 姓名、联系电话、完整地址、邮编等
+[numbered_list] 申报物品内容
+  [bulleted_list] 详细用英文描述所寄物品
+[numbered_list] 支付费用并寄送
+  [bulleted_list] 费用根据重量、国家、寄送方式（EMS、空运、海运）而异
+[text] 主要国际快递公司信息如下：
+[bulleted_list] DHL：dhl.com/kr-ko / 1588-0001
+[bulleted_list] 邮政EMS：epost.go.kr / 1588-1300
+[bulleted_list] FedEx：fedex.com/kr / 1588-0588
+[bulleted_list] 韩进国际快递：hanjin.com / 1588-1612
+[quote] 🧾 EMS 最为普遍，可直接在三陟校区邮局办理
+  [text] 📦 DHL/FedEx 需通过外部代理点或在线预约后上门取件
+[divider] 
+[sub_sub_header] ✏️ 外籍学生特别提示
+[bulleted_list] 推荐使用翻译APP：填写运单时建议使用 Papago 或 Google Translate
+[bulleted_list] 邮局是否可提供外语服务：简单英语可沟通，复杂事项建议使用翻译软件
+[bulleted_list] 运单编号追踪：如遇延迟，可通过收据上的运单编号进行物流追踪
+[divider] 
+========================================
+
+=== 医疗设施 (22439f9906f581678e3ec69d141cb27b) ===
+PAGE: 医疗设施 (ID: 22439f9906f581678e3ec69d141cb27b)
+[sub_header] 🏥 医疗设施指南（三陟）
+[quote] 为您介绍三陟地区外国留学生可使用的医院与药局信息。请确认诊疗时间、地址及主要服务内容。
+[divider] 
+[sub_sub_header] 📋 医院与药局信息
+[table] 
+  [table_row] 机构名称
+  [table_row] 三陟保健所
+  [table_row] 三陟医疗院
+  [table_row] 善良邻居医院
+  [table_row] 三陟钟路药局
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [text] 
+  [column] 
+    [image]
+    [image]
+[divider] 
+[text] 
+========================================
+
+=== 公共设施 (22439f9906f581ef9d19f31cc0d7c99c) ===
+PAGE: 公共设施 (ID: 22439f9906f581ef9d19f31cc0d7c99c)
+[sub_header] 🏛 三陟其他公共设施指南
+[quote] 为您整理了在三陟生活期间所需的行政、交通、邮政、安全等公共服务机构信息。请同时确认各机构的位置与使用时间。
+[divider] 
+[sub_sub_header] 📋 主要机构一览
+[table] 
+  [table_row] 类别
+  [table_row] 警察局、安全
+  [table_row] 巴士总站
+  [table_row] 邮局
+  [table_row] 行政机关
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+[divider] 
+========================================
+
+=== 主要购物场所 (22439f9906f5811db761efd199c881b2) ===
+PAGE: 主要购物场所 (ID: 22439f9906f5811db761efd199c881b2)
+[sub_sub_header] 🔒 主要购物场所
+[table] 
+  [table_row] 地址
+  [table_row] 江原特别自治道 三陟市 中央路 258
+  [table_row] 江原特别自治道 三陟市 校洞路 46
+  [table_row] 江原特别自治道 三陟市 中央路 266
+  [table_row] 江原特别自治道 三陟市 正常路 78
+  [table_row] 江原特别自治道 三陟市 珍珠路 12-21 中央市场 B-Na 栋 2层
+  [table_row] 江原特别自治道 三陟市 珍珠路 26 新世纪商厦 1层 102号
+  [table_row] 江原特别自治道 三陟市 中央市场街 48-55
+  [table_row] 江原特别自治道 三陟市 珍珠路 12-21
+  [table_row] 江原特别自治道 三陟市 中央路 258
+  [table_row] 江原特别自治道 三陟市 陟州路 10 地下1层
+  [table_row] 江原特别自治道 三陟市 珍珠路 9
+  [table_row] 江原特别自治道 三陟市 南阳洞 55-21
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 
+========================================
+
+=== 三陟旅游景点 (22439f9906f581228bd4ee06f0604a44) ===
+PAGE: 三陟旅游景点 (ID: 22439f9906f581228bd4ee06f0604a44)
+[sub_sub_header] 📸 三陟旅游景点
+[table] 
+  [table_row] 景点名称
+  [table_row] 三陟海洋轨道自行车
+  [table_row] 三陟海上缆车（长湖站）
+  [table_row] 竹西楼
+  [table_row] 葛南港
+  [table_row] 长湖港
+  [table_row] Sol Beach 三陟 Ocean Play
+  [table_row] 孟芳海水浴场
+  [table_row] 大金窟
+  [table_row] 德丰溪谷
+  [table_row] 江原综合博物馆
+  [table_row] 三陟海水浴场
+  [table_row] 三陟玫瑰公园
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 
+========================================
+
+=== 三陟餐厅 (22439f9906f5810e9387d121d8ff26fc) ===
+PAGE: 三陟餐厅 (ID: 22439f9906f5810e9387d121d8ff26fc)
+[sub_header] 🍽️ 三陟餐厅推荐
+[table] 
+  [table_row] 店名
+  [table_row] Hansot 便当 三陟江原大学店
+  [table_row] 24小时全州名家豆芽汤饭 三陟店
+  [table_row] Gong Dae-hyun Sushi
+  [table_row] Durebap村
+  [table_row] Lotteria 三陟店
+  [table_row] Mom's Touch 三陟大学店
+  [table_row] 黄色炸鸡
+  [table_row] BHC炸鸡 三陟校洞店
+  [table_row] Banolim比萨
+  [table_row] Domino比萨
+  [table_row] Ilmi Eodam
+  [table_row] PPR
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 
+========================================
+
+=== 三陟节庆 (22439f9906f581f6bf2bcc2f2755bf10) ===
+PAGE: 三陟节庆 (ID: 22439f9906f581f6bf2bcc2f2755bf10)
+[sub_header] 📸 三陟节庆指南
+[table] 
+  [table_row] 地址
+  [table_row] 江原道三陟市近德面上孟芳里215-1
+  [table_row] 江原道三陟市正常洞416
+  [table_row] 三陟市区
+  [table_row] 三陟海边
+  [table_row] 三陟市10个场所
+  [table_row] 江原道三陟市中央路296（校洞）
+  [table_row] 三陟世博广场
+  [table_row] 江原大学三陟校区
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 
+========================================
+
+=== 如何在三陟租房 (2a439f9906f58131b0c2c10627af353b) ===
+PAGE: 如何在三陟租房 (ID: 2a439f9906f58131b0c2c10627af353b)
+[text] 搬出宿舍，在三陟寻找你的第一个“自炊房”（자취방，即单间公寓）可能是一个巨大的挑战。但是，只要你一步步遵循本指南，就能找到一个安全、理想的住处。
+[divider] 
+[sub_sub_header] 1. 在三陟租房的三种方法（真实生活小贴士）
+[text] 三陟与大城市不同，仅仅使用租房软件（APP）可能不是最好的方法。正如你提供的信息所示，三陟的学生主要使用以下三种方法。
+[sub_sub_header] 方法一：房产软件 (Zigbang/Dabang) - 用于了解市场价格
+[text] 这些是韩国最有名的租房软件。
+[image] 68.8 KiB
+[bulleted_list] 软件名称： Zigbang (직방), Dabang (다방)
+[bulleted_list] 使用方法：
+  [numbered_list] 从您的应用商店下载。
+  [numbered_list] 在地图上选择 '강원도 삼척시'（江原道三陟市），并以学校附近（如：교동 "校洞", 정상동 "亭上洞"）为中心进行搜索。
+  [numbered_list] 在筛选器中设置“单间”(One-Room)，以及“保证金”(Bojeunggeum)和“月租”(Wolse)的价格范围。
+[bulleted_list] ⚠️ 在三陟的局限性：
+  [text] 在像三陟这样的中小型城市，软件上的房源可能很少，或者信息可能已经过时。
+  [text] 结论： 使用这些软件主要是为了了解**“三陟单间的市场价格”**。与其试图租在软件上看到的房子，不如将方法二和方法三作为你的主要策略。
+[sub_sub_header] 方法二：访问当地的“公认中介士”（最安全、最可靠的方法）
+[text] “公认中介士”(Gongin-junggaesa) 是政府许可的房地产专业人士。这是最推荐给外国留学生的方法。
+[bulleted_list] 使用方法：
+  [numbered_list] 寻找在学校正门、后门或市中心（如：남양동 "南阳洞", 당저동 "堂底洞"）挂有“공인중개사 사무소”（公认中介士事务所）招牌的办公室，并亲自拜访。
+  [numbered_list] 进去后，坦诚地说明："외국인 유학생인데, 기숙사에서 나와서 원룸을 구하고 있습니다." （我是外国留学生，从宿舍搬出来，想租一个单间。）
+  [numbered_list] 明确说明你期望的价格（保证金/月租）、位置（正门/后门等）以及其他条件（配套设施、不要一楼等）。
+[bulleted_list] 优点：
+  [bulleted_list] 安全： 他们将帮助你签订具有法律约束力的合同。
+  [bulleted_list] 准确： 他们会立即向你展示符合你情况的真实房源。
+  [bulleted_list] 协商： 他们可以帮你与房东协商价格或维修请求。
+[bulleted_list] 参考：三陟市中心的房地产中介列表（根据提供的信息）
+  [text] （注意：这些位于市中心；最好是拜访离学校最近的，因为它们可能更专注于学生住房。）
+  [bulleted_list] 부동산뱅크공인중개사 (南阳洞, 010-6216-8842)
+  [bulleted_list] 미다스공인중개사 (南阳洞, 010-7416-7307)
+  [bulleted_list] 현대부동산공인중개사 (南阳洞, 033-573-8949)
+  [bulleted_list] 신성공인중개사 (堂底洞, 033-573-1992)
+  [bulleted_list] 이사부공인중개사 (南阳洞, 033-576-4989)
+  [bulleted_list] 이구춘공인중개사 (南阳洞, 033-574-4480)
+  [bulleted_list] 리츠공인중개사 (南阳洞, 033-573-0080)
+  [bulleted_list] 로얄공인중개사 (南阳洞, 033-572-6469)
+  [bulleted_list] 한마음공인중개사 (堂底洞, 033-574-9989)
+  [bulleted_list] 21세기공인중개사 (亭上洞, 033-575-1114)
+  [bulleted_list] 공인중개사사무소이종순 (亭上洞, 033-574-6666)
+[sub_sub_header] 方法三：自己找房子 和社区（当地学生的方法）
+[bulleted_list] 自己找房子： 这个词的意思是“用你的脚”，即亲自四处走动。当你在学校后门或正门附近的单间公寓楼（One-Room）周围走动时，你会看到墙上或窗户上挂着**“원룸 임대”（单间出租）的横幅或标志，上面有房东(Landlord)的电话号码**。
+  [bulleted_list] 优点： 你或许可以省下中介费。
+  [bulleted_list] 缺点： 你必须韩语流利，并且在签订合同时要自行承担所有风险。不建议初次租房的学生使用此方法。
+[bulleted_list] 社区 (Everytime, Facebook)： 你可能会在大学软件“Everytime”（在“自炊房”或住宿板块）或 Facebook 群组中，找到即将毕业或搬走的学生发布的租房信息。
+[divider] 
+[sub_sub_header] 2. 韩国租赁术语和制度（留学生必知）
+[text] 在签订合同之前，你必须了解这些词。
+[bulleted_list] 보증금 (Bojeunggeum - 保证金/押金): 签订合同时交给房东的一大笔钱。这是在合同结束、你搬走时可以拿回来的钱。（三陟的市场行情通常为100万至500万韩元）
+※ 注意：若设施损坏或卫生状态不佳，相应费用将从押金中扣除。
+[bulleted_list] 월세 (Wolse - 月租): 你每个月付给房东的房费。
+[bulleted_list] 선세 (Seonse - 年付/预付租金): 这是像三陟这样的韩国大学城中常见的制度。 这是一种在签订合同时一次性支付6个月或1年租金的方式。
+  [bulleted_list] 优点： 保证金（Bojeunggeum）非常低，甚至是零。
+  [bulleted_list] 缺点： 即使假期回家也无法拿回房租。你需要一次性支付一大笔现金。
+[bulleted_list] 관리비 (Gwanlibi - 管理费): 除月租外，你每月支付的额外费用。
+  [bulleted_list] 🔥 重要提示： 在签字之前，你必须询问管理费包含什么（网络？水费？电视？）。 通常，电费和燃气费（用于供暖）是单独支付的。
+[bulleted_list] 계약금 (Gyeyakgeum - 合同定金): 当你选定一个房间后，你会通过支付一小部分押金（通常是保证金的10%）来“预订”它。
+  [bulleted_list] ⚠️ 警告： 如果你因为个人原因改变主意，你将永远拿不回这笔钱。在支付之前一定要非常确定。
+[divider] 
+[sub_sub_header] 3. 三陟校区周边位置指南（哪里好？）
+[text] 你需要根据你的生活方式来决定一个位置（你是否经常去学校？你是否更喜欢安静的地方？）。
+[sub_sub_header] 📍 后门 (Back Gate)
+[bulleted_list] [在此处插入后门区域的照片]
+[bulleted_list] [在此处插入后门区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 上学便利性第一名（最适合步行上学）
+  [bulleted_list] 有大型便利店（CU, GS）和许多餐馆
+  [bulleted_list] 有许多新建的单间公寓（신축 sinchuk）
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 吵闹（深夜的酒局、汽车噪音等）
+  [bulleted_list] 比正门区域贵
+  [bulleted_list] 去市中心（如Homeplus）有点不方便
+[bulleted_list] 💰 租金 (参考):
+  [bulleted_list] 约 35万 - 45万 韩元/月（新楼可能超过50万）
+[sub_sub_header] 📍 正门 (Main Gate)
+[bulleted_list] [在此处插入正门区域的照片]
+[bulleted_list] [在此处插入正门区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 比后门更便宜、更安静
+  [bulleted_list] 到市中心的交通便利性还不错
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 一个巨大的坡（你可能每天都得爬山）
+  [bulleted_list] 缺乏便利设施（只有一个小超市和一个CU）
+[bulleted_list] 💰 租金 (参考):
+  [bulleted_list] 约 30万 - 40万 韩元/月
+[sub_sub_header] 📍 校洞 (Gyodong)
+[bulleted_list] [在此处插入校洞区域的照片]
+[bulleted_list] [在此处插入校洞区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 有许多餐馆、咖啡馆和便利设施
+  [bulleted_list] 这是一个干净的公寓小区，人流量大
+  [bulleted_list] 有许多新的单间公寓（例如：保证金300万/月租45万）
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 离学校很远（需要乘坐校车）
+  [bulleted_list] 你需要走很长一段路才能到市中心
+[bulleted_list] 💰 租金 (参考):
+[sub_sub_header] 📍 市政厅 / Homeplus 区域 (City Hall / Homeplus Area)
+[bulleted_list] [在此处插入市政厅/Homeplus区域的照片]
+[bulleted_list] [在此处插入市政厅/Homeplus区域的GPS（地图）链接]
+========================================

@@ -1,0 +1,27 @@
+PAGE: 图书馆（施工中🔧） (ID: 22439f9906f581a594f4e3f495abd4c5)
+[column_list] 
+  [column] 
+    [sub_header] 📚 图书馆使用指南
+    [bulleted_list] 📌 主页：http://library.kangwon.ac.kr
+      [text] ☎️ 电话：033-570-6274
+  [column] 
+    [image]
+    [text] 
+[divider] 
+[sub_sub_header] 📍 三陟校区图书馆
+[table] 
+  [table_row] 分类
+  [table_row] 主题资料室 / 休息空间（휴-brary）
+  [table_row] 多媒体室 / 小组研讨室
+  [table_row] 普通阅览室
+[divider] 
+[sub_sub_header] 📍 道溪校区图书馆
+[table] 
+  [table_row] 分类
+  [table_row] 主题资料室、多媒体室、视频研讨室、小组研讨室
+  [table_row] 普通阅览室
+[divider] 
+[quote] 📌 休馆日：周六、周日及法定节假日
+  [text] ※ 若经图书馆长认定为必要，可实行缩短运营或临时关闭。
+[divider] 
+[text] 

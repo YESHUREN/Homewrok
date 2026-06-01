@@ -1,0 +1,26 @@
+PAGE: 学籍变动（休学・复学・警告・退学） (ID: 22439f9906f581c6b814cd8900fdd879)
+[sub_sub_header] 🔹 休学
+[numbered_list] 仅在“休学申请期间”内可申请免缴学费休学（学期开始后需先缴纳学费，方可申请休学）
+[numbered_list] 缴费后休学仅限不可抗力原因（如家庭困难、疾病、怀孕等），且须在授课日数1/3以内，通过所属院系与国际化团队提交休学申请材料至行政办公室
+[numbered_list] 注意事项：
+  [bulleted_list] 若休学期满未复学，将被视为自动退学
+  [bulleted_list] 新生在第一学期、在校生在上课1/3后不可申请休学
+    [text] （育儿、怀孕、疾病、分娩等情况除外）
+  [bulleted_list] 每次休学期限为最多两学期（1年），需延长期限者须在规定时间内提交延长申请
+  [bulleted_list] 未缴费休学必须在“当学期休学申请期间”内提交材料
+[divider] 
+[sub_sub_header] 🔹 复学
+[numbered_list] 完成预选课与正式选课（请联系院系办公室）
+[numbered_list] 缴纳学费（休学前已缴纳者无需重复缴费）
+[numbered_list] 在“复学申请期间”提交复学申请
+[numbered_list] 休学期满或休学事由消失时，应在规定时间内通过院系与国际化团队提交复学申请材料
+[divider] 
+[sub_sub_header] 🔹 警告（学业警告）
+[bulleted_list] 本科生：每学期平均成绩低于1.75
+[bulleted_list] 研究生：每学期平均成绩低于3.0
+[divider] 
+[sub_sub_header] 🔹 退学处理
+[numbered_list] 连续收到学业警告（本科生3次、研究生2次）
+[numbered_list] 未缴纳学费
+[numbered_list] 未完成课程注册（即使缴纳学费也不算完成）
+[divider] 

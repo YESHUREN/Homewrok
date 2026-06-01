@@ -1,0 +1,33 @@
+PAGE: 三陟餐厅 (ID: 22439f9906f5810e9387d121d8ff26fc)
+[sub_header] 🍽️ 三陟餐厅推荐
+[table] 
+  [table_row] 店名
+  [table_row] Hansot 便当 三陟江原大学店
+  [table_row] 24小时全州名家豆芽汤饭 三陟店
+  [table_row] Gong Dae-hyun Sushi
+  [table_row] Durebap村
+  [table_row] Lotteria 三陟店
+  [table_row] Mom's Touch 三陟大学店
+  [table_row] 黄色炸鸡
+  [table_row] BHC炸鸡 三陟校洞店
+  [table_row] Banolim比萨
+  [table_row] Domino比萨
+  [table_row] Ilmi Eodam
+  [table_row] PPR
+[divider] 
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+[divider] 

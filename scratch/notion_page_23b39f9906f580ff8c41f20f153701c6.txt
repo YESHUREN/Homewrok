@@ -1,0 +1,55 @@
+PAGE: 护照信息变更 (ID: 23b39f9906f580ff8c41f20f153701c6)
+[sub_header] 外国人登录事项变更申报指南
+[quote] 如果您重新签发了护照，或护照号码、签发日期、有效期等发生变更，必须按照韩国出入境管理法进行外国人登录事项变更申报。
+[divider] 
+[sub_sub_header] 🟠 1. 申报对象（护照相关变更）
+[table] 
+  [table_row] 是否需要申报
+  [table_row] ✅ 需要
+  [table_row] ✅ 需要
+  [table_row] ✅ 需要
+  [table_row] ✅ 需要
+[text] 📌 如果护照信息发生变化但外国人登录证上的信息仍为旧数据，可能导致与出入境管理记录不一致，影响签证延期、变更滞留资格、再入境许可等程序。
+[divider] 
+[sub_sub_header] 📅 2. 申报期限与处罚
+[bulleted_list] 需在变更事由发生后14日内申报
+  [bulleted_list] 在韩国境内补发护照：以领取日为准
+  [bulleted_list] 在海外补发后入境者：以入境日为准
+[bulleted_list] 逾期未申报将被处以罚款
+  [bulleted_list] 最高罚款金额为 100万韩元（视签证种类及延期时间而定）
+[divider] 
+[sub_sub_header] 🧾 3. 提交材料
+[table] 
+  [table_row] 材料
+  [table_row] 📝 综合申请书
+  [table_row] 🪪 护照原件及复印件
+  [table_row] 🧾 外国人登录证（ARC）
+  [table_row] 📎 其他（如适用）
+[divider] 
+[sub_sub_header] 💻 4. 申报方式详细说明（以HiKorea为主）
+[sub_sub_header] 🔹 [方式①] HiKorea电子申报（推荐）
+[numbered_list] 访问：www.hikorea.go.kr
+[numbered_list] 注册或登录（已有账号可跳过）
+  [bulleted_list] 使用外国人登录号登录
+  [bulleted_list] 不需要数字认证书
+[numbered_list] 点击【电子民愿】→【登录事项变更申报】
+[numbered_list] 填写申请书
+  [bulleted_list] 输入护照变更信息
+  [bulleted_list] 上传护照扫描件与外国人登录证
+[numbered_list] 在【我的页面】中确认处理状态
+[text] 📌 提交后请注意查收邮件或短信，有可能接到补充材料的通知。
+[divider] 
+[sub_sub_header] 🔹 [方式②] 亲自访问出入境事务所
+[numbered_list] 通过HiKorea预约系统：预约链接
+[numbered_list] 携带护照、登录证、申请书于预约时间到场
+[numbered_list] 工作人员核对信息后完成变更登记
+[text] 📝 无预约不可现场办理。请务必提前预约。
+[divider] 
+[sub_sub_header] 🔍 常见问答示例
+[quote] Q：护照遗失后重新签发，号码发生变化，是否需要申报？
+  [text] A：必须申报。 护照号码的变更属于必须申报事项。
+[quote] Q：护照的有效期延长，也需要申报吗？
+  [text] A：是的，即使只变更了有效期也需在14日内申报。
+[quote] Q：我已经申请了签证延期，但护照信息之后变了，该怎么办？
+  [text] A：请立即申报变更事项，并通知签证负责人补充新信息。
+[divider] 

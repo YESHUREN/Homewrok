@@ -1,0 +1,98 @@
+PAGE: 如何在三陟租房 (ID: 2a439f9906f58131b0c2c10627af353b)
+[text] 搬出宿舍，在三陟寻找你的第一个“自炊房”（자취방，即单间公寓）可能是一个巨大的挑战。但是，只要你一步步遵循本指南，就能找到一个安全、理想的住处。
+[divider] 
+[sub_sub_header] 1. 在三陟租房的三种方法（真实生活小贴士）
+[text] 三陟与大城市不同，仅仅使用租房软件（APP）可能不是最好的方法。正如你提供的信息所示，三陟的学生主要使用以下三种方法。
+[sub_sub_header] 方法一：房产软件 (Zigbang/Dabang) - 用于了解市场价格
+[text] 这些是韩国最有名的租房软件。
+[image] 68.8 KiB
+[bulleted_list] 软件名称： Zigbang (직방), Dabang (다방)
+[bulleted_list] 使用方法：
+  [numbered_list] 从您的应用商店下载。
+  [numbered_list] 在地图上选择 '강원도 삼척시'（江原道三陟市），并以学校附近（如：교동 "校洞", 정상동 "亭上洞"）为中心进行搜索。
+  [numbered_list] 在筛选器中设置“单间”(One-Room)，以及“保证金”(Bojeunggeum)和“月租”(Wolse)的价格范围。
+[bulleted_list] ⚠️ 在三陟的局限性：
+  [text] 在像三陟这样的中小型城市，软件上的房源可能很少，或者信息可能已经过时。
+  [text] 结论： 使用这些软件主要是为了了解**“三陟单间的市场价格”**。与其试图租在软件上看到的房子，不如将方法二和方法三作为你的主要策略。
+[sub_sub_header] 方法二：访问当地的“公认中介士”（最安全、最可靠的方法）
+[text] “公认中介士”(Gongin-junggaesa) 是政府许可的房地产专业人士。这是最推荐给外国留学生的方法。
+[bulleted_list] 使用方法：
+  [numbered_list] 寻找在学校正门、后门或市中心（如：남양동 "南阳洞", 당저동 "堂底洞"）挂有“공인중개사 사무소”（公认中介士事务所）招牌的办公室，并亲自拜访。
+  [numbered_list] 进去后，坦诚地说明："외국인 유학생인데, 기숙사에서 나와서 원룸을 구하고 있습니다." （我是外国留学生，从宿舍搬出来，想租一个单间。）
+  [numbered_list] 明确说明你期望的价格（保证金/月租）、位置（正门/后门等）以及其他条件（配套设施、不要一楼等）。
+[bulleted_list] 优点：
+  [bulleted_list] 安全： 他们将帮助你签订具有法律约束力的合同。
+  [bulleted_list] 准确： 他们会立即向你展示符合你情况的真实房源。
+  [bulleted_list] 协商： 他们可以帮你与房东协商价格或维修请求。
+[bulleted_list] 参考：三陟市中心的房地产中介列表（根据提供的信息）
+  [text] （注意：这些位于市中心；最好是拜访离学校最近的，因为它们可能更专注于学生住房。）
+  [bulleted_list] 부동산뱅크공인중개사 (南阳洞, 010-6216-8842)
+  [bulleted_list] 미다스공인중개사 (南阳洞, 010-7416-7307)
+  [bulleted_list] 현대부동산공인중개사 (南阳洞, 033-573-8949)
+  [bulleted_list] 신성공인중개사 (堂底洞, 033-573-1992)
+  [bulleted_list] 이사부공인중개사 (南阳洞, 033-576-4989)
+  [bulleted_list] 이구춘공인중개사 (南阳洞, 033-574-4480)
+  [bulleted_list] 리츠공인중개사 (南阳洞, 033-573-0080)
+  [bulleted_list] 로얄공인중개사 (南阳洞, 033-572-6469)
+  [bulleted_list] 한마음공인중개사 (堂底洞, 033-574-9989)
+  [bulleted_list] 21세기공인중개사 (亭上洞, 033-575-1114)
+  [bulleted_list] 공인중개사사무소이종순 (亭上洞, 033-574-6666)
+[sub_sub_header] 方法三：自己找房子 和社区（当地学生的方法）
+[bulleted_list] 自己找房子： 这个词的意思是“用你的脚”，即亲自四处走动。当你在学校后门或正门附近的单间公寓楼（One-Room）周围走动时，你会看到墙上或窗户上挂着**“원룸 임대”（单间出租）的横幅或标志，上面有房东(Landlord)的电话号码**。
+  [bulleted_list] 优点： 你或许可以省下中介费。
+  [bulleted_list] 缺点： 你必须韩语流利，并且在签订合同时要自行承担所有风险。不建议初次租房的学生使用此方法。
+[bulleted_list] 社区 (Everytime, Facebook)： 你可能会在大学软件“Everytime”（在“自炊房”或住宿板块）或 Facebook 群组中，找到即将毕业或搬走的学生发布的租房信息。
+[divider] 
+[sub_sub_header] 2. 韩国租赁术语和制度（留学生必知）
+[text] 在签订合同之前，你必须了解这些词。
+[bulleted_list] 보증금 (Bojeunggeum - 保证金/押金): 签订合同时交给房东的一大笔钱。这是在合同结束、你搬走时可以拿回来的钱。（三陟的市场行情通常为100万至500万韩元）
+※ 注意：若设施损坏或卫生状态不佳，相应费用将从押金中扣除。
+[bulleted_list] 월세 (Wolse - 月租): 你每个月付给房东的房费。
+[bulleted_list] 선세 (Seonse - 年付/预付租金): 这是像三陟这样的韩国大学城中常见的制度。 这是一种在签订合同时一次性支付6个月或1年租金的方式。
+  [bulleted_list] 优点： 保证金（Bojeunggeum）非常低，甚至是零。
+  [bulleted_list] 缺点： 即使假期回家也无法拿回房租。你需要一次性支付一大笔现金。
+[bulleted_list] 관리비 (Gwanlibi - 管理费): 除月租外，你每月支付的额外费用。
+  [bulleted_list] 🔥 重要提示： 在签字之前，你必须询问管理费包含什么（网络？水费？电视？）。 通常，电费和燃气费（用于供暖）是单独支付的。
+[bulleted_list] 계약금 (Gyeyakgeum - 合同定金): 当你选定一个房间后，你会通过支付一小部分押金（通常是保证金的10%）来“预订”它。
+  [bulleted_list] ⚠️ 警告： 如果你因为个人原因改变主意，你将永远拿不回这笔钱。在支付之前一定要非常确定。
+[divider] 
+[sub_sub_header] 3. 三陟校区周边位置指南（哪里好？）
+[text] 你需要根据你的生活方式来决定一个位置（你是否经常去学校？你是否更喜欢安静的地方？）。
+[sub_sub_header] 📍 后门 (Back Gate)
+[bulleted_list] [在此处插入后门区域的照片]
+[bulleted_list] [在此处插入后门区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 上学便利性第一名（最适合步行上学）
+  [bulleted_list] 有大型便利店（CU, GS）和许多餐馆
+  [bulleted_list] 有许多新建的单间公寓（신축 sinchuk）
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 吵闹（深夜的酒局、汽车噪音等）
+  [bulleted_list] 比正门区域贵
+  [bulleted_list] 去市中心（如Homeplus）有点不方便
+[bulleted_list] 💰 租金 (参考):
+  [bulleted_list] 约 35万 - 45万 韩元/月（新楼可能超过50万）
+[sub_sub_header] 📍 正门 (Main Gate)
+[bulleted_list] [在此处插入正门区域的照片]
+[bulleted_list] [在此处插入正门区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 比后门更便宜、更安静
+  [bulleted_list] 到市中心的交通便利性还不错
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 一个巨大的坡（你可能每天都得爬山）
+  [bulleted_list] 缺乏便利设施（只有一个小超市和一个CU）
+[bulleted_list] 💰 租金 (参考):
+  [bulleted_list] 约 30万 - 40万 韩元/月
+[sub_sub_header] 📍 校洞 (Gyodong)
+[bulleted_list] [在此处插入校洞区域的照片]
+[bulleted_list] [在此处插入校洞区域的GPS（地图）链接]
+[bulleted_list] 👍 优点 (Pros):
+  [bulleted_list] 有许多餐馆、咖啡馆和便利设施
+  [bulleted_list] 这是一个干净的公寓小区，人流量大
+  [bulleted_list] 有许多新的单间公寓（例如：保证金300万/月租45万）
+[bulleted_list] 👎 缺点 (Cons):
+  [bulleted_list] 离学校很远（需要乘坐校车）
+  [bulleted_list] 你需要走很长一段路才能到市中心
+[bulleted_list] 💰 租金 (参考):
+[sub_sub_header] 📍 市政厅 / Homeplus 区域 (City Hall / Homeplus Area)
+[bulleted_list] [在此处插入市政厅/Homeplus区域的照片]
+[bulleted_list] [在此处插入市政厅/Homeplus区域的GPS（地图）链接]

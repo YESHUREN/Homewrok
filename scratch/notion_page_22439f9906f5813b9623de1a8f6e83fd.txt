@@ -1,0 +1,25 @@
+PAGE: 学校体育设施 (ID: 22439f9906f5813b9623de1a8f6e83fd)
+[sub_header] 🏃 体育设施使用指南
+[table] 
+  [table_row] 使用时间
+  [table_row] 09:00 ~ 18:00
+  [table_row] 09:00 ~ 18:00
+  [table_row] 09:00 ~ 18:00
+  [table_row] 学期中：09:00 ~ 22:00假期（周中）：09:00 ~ 18:00
+[divider] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_header] 🏃 体育设施使用指南
+    [bulleted_list] 🏟️ 综合运动场
+    [bulleted_list] ⚽ 五人制足球场
+    [bulleted_list] 🎾 网球场
+    [bulleted_list] 🏋️ 健身房
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 

@@ -1,0 +1,38 @@
+PAGE: 开设韩国银行账户 (ID: 22439f9906f581dca53ff60a08dd68ae)
+[sub_header] 🏦 在韩国办理银行账户的方法（How to Open a Bank Account in Korea）
+[sub_sub_header] 📌 准备材料
+[bulleted_list] 外国人登录证（ARC: Alien Registration Card）
+[bulleted_list] 护照（Passport）
+[bulleted_list] 韩国手机号
+[text] → 没有韩国手机号码将无法办理账户
+[text] → 👉 请先确认 [韩国手机开通指南]
+[divider] 
+[sub_sub_header] 🏁 到银行后办理流程
+[sub_sub_header] 1️⃣ 领取号码牌
+[bulleted_list] 在银行入口处的触摸屏上领取号码牌，等待叫号
+[bulleted_list] 屏幕显示本人号码后前往对应窗口
+[sub_sub_header] 2️⃣ 填写申请表
+[bulleted_list] 对窗口职员说：“bank book, check card 만들러 왔어요”（我想办理存折和借记卡）
+[bulleted_list] 在申请表上填写以下信息：
+  [bulleted_list] 📞 韩国电话号码
+  [bulleted_list] 📍 地址：（例如）江原特别自治道 三陟市 中央路346 三陟生活馆
+[sub_sub_header] 3️⃣ 设置密码
+[bulleted_list] 职员提示时输入自己设置的4位数字密码
+[bulleted_list] 此密码用于转账/取款
+[sub_sub_header] 4️⃣ 领取存折和卡
+[bulleted_list] 确认领取好银行存折和借记卡
+[divider] 
+[sub_sub_header] 💬 参考信息
+[table] 
+  [table_row] 分类
+  [table_row] 📍 银行营业时间
+  [table_row] 🛑 周六、周日及法定节假日休息
+  [table_row] 👤 需本人亲自前往办理
+  [table_row] 🗣️ 银行职员可能不会说英语，建议准备简单韩语或翻译App
+[divider] 
+[sub_sub_header] 🗺️ 三陟地区银行信息
+[table] 
+  [table_row] 联系电话
+  [table_row] ☎ 033-573-5070
+  [table_row] ☎ 033-574-1201
+[divider] 

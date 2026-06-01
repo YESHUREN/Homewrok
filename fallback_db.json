@@ -1,0 +1,231 @@
+{
+  "fallbackProfiles": [
+    {
+      "id": "202408151229",
+      "username": "zhangwei",
+      "password": "123456",
+      "phone": "+821012345678",
+      "name": "张伟",
+      "nickname": "张伟 (Zhang Wei)",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LMd9XwZ6qzUAikT0dPgWRO5KzNVD3jnudXacqdhE6_wwT37Oc41sFONztxoHJ6pZ0XbRGFrXj9rK9kKlRwEnRueqVvfglpM1X62opXAugUXar8w27wtO8Tsmn8TUJmcyG4v_QhXIPTuy0TqToXMUfbY8XcbJMGnE4VYXBpgtlmRn6_eHkov9YiAIYS7XurXSvTEs-FNQLC9-OJPgoypMMg2x64X1C-hqd8jRuKc8AHB0qcYRK6mjefiBbdusLnR8qBUyb6n2Tkea",
+      "tag": "认证学生",
+      "university": "首尔大学",
+      "major": "计算机科学与工程",
+      "gender": "男 (Male)",
+      "birthday": "2002-05-20",
+      "wallet_balance": 1240
+    },
+    {
+      "id": "user_minji",
+      "username": "minji",
+      "password": "123456",
+      "phone": "+821099998888",
+      "name": "Minji Kim",
+      "nickname": "Minji Kim",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G",
+      "tag": "认证学生",
+      "university": "梨花女子大学",
+      "major": "化学系",
+      "gender": "女 (Female)",
+      "birthday": "2003-09-12",
+      "wallet_balance": 0
+    },
+    {
+      "id": "user_liwei",
+      "username": "liwei",
+      "password": "123456",
+      "phone": "+821077776666",
+      "name": "Li Wei",
+      "nickname": "Li Wei",
+      "avatar": "",
+      "tag": "认证学生",
+      "university": "延世大学",
+      "major": "商业管理",
+      "gender": "男 (Male)",
+      "birthday": "2001-02-28",
+      "wallet_balance": 0
+    },
+    {
+      "id": "user_shinchon",
+      "username": "shinchon",
+      "password": "123456",
+      "phone": "+821055554444",
+      "name": "新村生活指南",
+      "nickname": "新村生活指南",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuD5VM6jNr3eiQYgbwiL9M9HKBaIBN_Rer3s6IAaemgNiVq8qgc7gCrQrIMhLztIPToLv0owCkl4GIAHck_62PjCToCweyIagqfi_668pIv2jIgmbJp4lZPIFDOir6fTmHHYjrqDc3r10gvjN9b7W55Ul4G2HMHSg5YTm9NMCDbuk6KrXWf4yTuCceeeOt6zc5n7fiAqfqKPqxPbf1F9zx2N4gE2oYr8kUl5pyvYh4kerioTT4PkMNzK79PloE5yKNwB9u1b6i0UgtQY",
+      "tag": "认证机构",
+      "university": "延世大学",
+      "major": "社会学",
+      "gender": "男 (Male)",
+      "birthday": "1999-10-10",
+      "wallet_balance": 0
+    },
+    {
+      "id": "stud_1779432628213",
+      "username": "kaoye",
+      "password": "111111",
+      "phone": null,
+      "name": "叶淑仁",
+      "nickname": "叶淑仁 (Student)",
+      "avatar": "",
+      "tag": "认证学生",
+      "university": "首尔大学",
+      "major": "AI",
+      "gender": "男 (Male)",
+      "birthday": "2004-02-27",
+      "wallet_balance": 10001674.95
+    }
+  ],
+  "fallbackPosts": [
+    {
+      "id": "post_1779451508781",
+      "user_id": "stud_1779432628213",
+      "username": "叶淑仁",
+      "avatar": "",
+      "area": "首尔",
+      "category": "闲置交易",
+      "text": "【111】111 #首尔探店",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzdAyZmAoaXCTEBxwtNg_XRXtYAiXisxA7D8tTRc7CqrLs5uz0PKDyyo0M8bR0vP9s1p3Dg4N5DcDm5nthcjcsFTNhZ9Je5yT5dM6Imaq661EEV5V63E4kjeni5cAbPvlziDwhDwfYjsRO2lZJxlN_OSGlHFjCB3MYNTgE1Vl1rmNGr_XgFDtDDudj68kutfsX1ZtSdwa-f7vTxZT1Fjaac_PMepU1B4lEPxYgMl_qYOEE7xrwkv1QFRN9cmLWIA9a9M4ADgMCjPbg",
+      "likes_count": 2,
+      "created_at": "2026-05-22T12:05:08.781Z"
+    }
+  ],
+  "fallbackComments": [
+    {
+      "id": "comment_1779451522270",
+      "post_id": "post_1779451508781",
+      "user_id": "stud_1779432628213",
+      "username": "叶淑仁",
+      "avatar": "",
+      "text": "111",
+      "created_at": "2026-05-22T12:05:22.270Z"
+    },
+    {
+      "id": "comment_1779451544076",
+      "post_id": "post_1779451508781",
+      "user_id": "202408151229",
+      "username": "张伟",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LMd9XwZ6qzUAikT0dPgWRO5KzNVD3jnudXacqdhE6_wwT37Oc41sFONztxoHJ6pZ0XbRGFrXj9rK9kKlRwEnRueqVvfglpM1X62opXAugUXar8w27wtO8Tsmn8TUJmcyG4v_QhXIPTuy0TqToXMUfbY8XcbJMGnE4VYXBpgtlmRn6_eHkov9YiAIYS7XurXSvTEs-FNQLC9-OJPgoypMMg2x64X1C-hqd8jRuKc8AHB0qcYRK6mjefiBbdusLnR8qBUyb6n2Tkea",
+      "text": "111",
+      "created_at": "2026-05-22T12:05:44.076Z"
+    },
+    {
+      "id": "comment_1780207329988",
+      "post_id": "post_1779451508781",
+      "user_id": "202408151229",
+      "username": "张伟",
+      "avatar": "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LMd9XwZ6qzUAikT0dPgWRO5KzNVD3jnudXacqdhE6_wwT37Oc41sFONztxoHJ6pZ0XbRGFrXj9rK9kKlRwEnRueqVvfglpM1X62opXAugUXar8w27wtO8Tsmn8TUJmcyG4v_QhXIPTuy0TqToXMUfbY8XcbJMGnE4VYXBpgtlmRn6_eHkov9YiAIYS7XurXSvTEs-FNQLC9-OJPgoypMMg2x64X1C-hqd8jRuKc8AHB0qcYRK6mjefiBbdusLnR8qBUyb6n2Tkea",
+      "text": "111",
+      "created_at": "2026-05-31T06:02:09.988Z"
+    }
+  ],
+  "fallbackLikes": [
+    {
+      "user_id": "stud_1779432628213",
+      "post_id": "post_1779451508781"
+    },
+    {
+      "user_id": "202408151229",
+      "post_id": "post_1779451508781"
+    }
+  ],
+  "fallbackBookmarks": [
+    {
+      "user_id": "stud_1779432628213",
+      "post_id": "post_1779451508781"
+    }
+  ],
+  "fallbackNotifications": [],
+  "fallbackReminders": [
+    {
+      "id": "rem_1779432720505",
+      "user_id": "stud_1779432628213",
+      "title": "考试",
+      "date": "2026-05-30",
+      "time": "12:00",
+      "enabled": true
+    },
+    {
+      "id": "rem_1779432804317",
+      "user_id": "202408151229",
+      "title": "考试",
+      "date": "2026-05-31",
+      "time": "12:00",
+      "enabled": true
+    }
+  ],
+  "fallbackWalletHistory": [
+    {
+      "id": "tx_1779526620017",
+      "user_id": "stud_1779432628213",
+      "title": "微信 / 支付宝快捷充值",
+      "amount": "+¥ 10000000.00",
+      "type": "plus",
+      "created_at": "2026-05-23 17:57"
+    },
+    {
+      "id": "tx_1779526603934",
+      "user_id": "stud_1779432628213",
+      "title": "微信 / 支付宝快捷充值",
+      "amount": "+¥ 500.00",
+      "type": "plus",
+      "created_at": "2026-05-23 17:56"
+    },
+    {
+      "id": "tx_1779445164028",
+      "user_id": "stud_1779432628213",
+      "title": "微信 / 支付宝快捷充值",
+      "amount": "+¥ 100.00",
+      "type": "plus",
+      "created_at": "2026-05-22 19:19"
+    },
+    {
+      "id": "tx_1779445157429",
+      "user_id": "stud_1779432628213",
+      "title": "消费: 预订梨花安好自修室",
+      "amount": "-¥ 25.05",
+      "type": "minus",
+      "created_at": "2026-05-22 19:19"
+    },
+    {
+      "id": "tx_1779432865208",
+      "user_id": "stud_1779432628213",
+      "title": "微信 / 支付宝快捷充值",
+      "amount": "+¥ 100.00",
+      "type": "plus",
+      "created_at": "2026-05-22 15:54"
+    },
+    {
+      "id": "tx_1779432628213",
+      "user_id": "stud_1779432628213",
+      "title": "注册赠予初始钱包额度",
+      "amount": "+¥ 1,000.00",
+      "type": "plus",
+      "created_at": "2026-05-22T06:50:28.213Z"
+    },
+    {
+      "id": "tx_1",
+      "user_id": "202408151229",
+      "title": "系统初始赠予",
+      "amount": "+¥ 1,000.00",
+      "type": "plus",
+      "created_at": "2026-05-20 14:30"
+    },
+    {
+      "id": "tx_2",
+      "user_id": "202408151229",
+      "title": "韩元法币极速兑换",
+      "amount": "+¥ 300.00",
+      "type": "plus",
+      "created_at": "2026-05-21 09:15"
+    },
+    {
+      "id": "tx_3",
+      "user_id": "202408151229",
+      "title": "校巴电子乘车码扣款",
+      "amount": "-¥ 60.00",
+      "type": "minus",
+      "created_at": "2026-05-21 16:40"
+    }
+  ]
+}

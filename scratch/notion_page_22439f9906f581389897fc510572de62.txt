@@ -1,0 +1,74 @@
+PAGE: 宿舍 (ID: 22439f9906f581389897fc510572de62)
+[sub_header] ✅ 中文页面（简体）
+[sub_sub_header] 🏠 三陟校区宿舍
+[text] http://dormitory.kangwon.ac.kr/
+[table] 
+  [table_row] 管理费（韩元）/ 每学期（4个月）
+  [table_row] 1,065,180韩元
+  [table_row] 909,130韩元
+  [table_row] 740,710韩元
+[text] ※ 餐费为自选，每餐3,000韩元
+[divider] 
+[sub_sub_header] 🏠 道溪校区宿舍
+[text] http://dorm.kangwon.ac.kr/
+[table] 
+  [table_row] 备注
+  [table_row] 1,528,870韩元
+  [table_row] 1,346,090韩元
+  [table_row] 1,519,240韩元
+  [table_row] 1,439,190韩元
+[text] ※ 餐费为自选，每餐2,110 ~ 2,380韩元
+[divider] 
+[sub_header] 🛏️ 宿舍指南
+[bulleted_list] 📞 三陟宿舍：033-570-6471~4
+[bulleted_list] 📞 道溪宿舍：033-541-0536
+[sub_sub_header] 📷 宿舍建筑
+[bulleted_list] 三陟：Haesol-gwan, Doota-gwan, Eonjang-gwan
+[bulleted_list] 道溪：Hwangjo-gwan, Dowon-gwan, Gaon-gwan
+[sub_sub_header] 🏠 各宿舍现况
+[table] 
+  [table_row] 容纳人数
+  [table_row] 326人
+  [table_row] 330人
+  [table_row] 300人
+  [table_row] 740人
+  [table_row] 252人
+  [table_row] 636人
+[column_list] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[sub_header] 🚫 宿舍规定
+[bulleted_list] 禁止高声喧哗
+[bulleted_list] 禁止在宿舍赌博
+[bulleted_list] 禁止在指定场所以外吸烟
+[bulleted_list] 禁止辱骂或诽谤他人
+[bulleted_list] 禁止在宿舍内做饭
+[bulleted_list] 禁止饮酒
+[bulleted_list] 禁止携带电热器具
+[bulleted_list] 禁止异性进入宿舍及楼内
+[bulleted_list] 注意防火
+[bulleted_list] 妥善保管个人贵重物品
+[bulleted_list] 节约用水用电
+[bulleted_list] 保持清洁卫生
+[divider] 
+[sub_sub_header] 📝 入住宿舍申请及所需材料
+[bulleted_list] 📮 申请方式：通过NAVER外国留学生Band公告 > 汇总申请人信息后通知结果
+[bulleted_list] 📄 提交材料：
+  [bulleted_list] 结核检查结果（胸部X光）、住宿誓约书、新冠调查表、住宿守则同意书
+  [bulleted_list] 个人信息使用同意书（入住时提交）
+  [bulleted_list] 详细材料请参考三陟宿舍官网内的入住宿舍指南页面
+[text] ⏰ 出入限制时间：01:00 ~ 05:00
+[text] 📌 禁止饮酒、吸烟等妨碍学习氛围的行为 / 依规定给予处分或奖励
+[text] 📌 须携带出入卡，并参加点名
+[text] 📌 公共设施：食堂、休息室、健身房、阅览室、洗衣房等
+[divider] 
+[text] 

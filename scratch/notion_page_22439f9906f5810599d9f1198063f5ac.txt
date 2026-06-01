@@ -1,0 +1,41 @@
+PAGE: 成绩查询与季节学期课程 (ID: 22439f9906f5810599d9f1198063f5ac)
+[sub_sub_header] 🔹 成绩查询
+[sub_sub_header] 📌 本科生成绩等级对照表
+[table] 
+  [table_row] 分数范围
+  [table_row] 95~100
+  [table_row] 90~94
+  [table_row] 85~89
+  [table_row] 80~84
+  [table_row] 75~79
+  [table_row] 70~74
+  [table_row] 65~69
+  [table_row] 60~64
+  [table_row] 0~59
+[sub_sub_header] 📌 研究生成绩等级对照表
+[table] 
+  [table_row] 等级
+  [table_row] A+
+  [table_row] A0
+  [table_row] B+
+  [table_row] B0
+  [table_row] C+
+  [table_row] C0
+  [table_row] F
+  [table_row] 成绩保留
+  [table_row] 合格
+  [table_row] NP（不合格）
+[divider] 
+[sub_sub_header] 🔹 季节学期课程（暑期/寒假）
+[sub_sub_header] 📌 开设目的
+[text] 为希望提前毕业、修读副修/双学位或重修课程的学生提供额外学分修习机会。
+[sub_sub_header] 📌 日程与方法
+[numbered_list] 开课时间：每年暑假、寒假（年2次）
+[numbered_list] 授课周期：假期中连续授课15天
+[numbered_list] 报名资格：完成至少2个学期的在校生或休学生
+[numbered_list] 报名方式：通过K-Cloud在线申请选课
+[numbered_list] 可选学分：每季最多6学分
+[numbered_list] 学分费用：
+  [bulleted_list] 讲座/理论课程：每学分 23,000韩元
+  [bulleted_list] 实验/实践课程：每学分 26,000韩元
+[divider] 

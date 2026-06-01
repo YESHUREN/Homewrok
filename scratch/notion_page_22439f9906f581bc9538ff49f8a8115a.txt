@@ -1,0 +1,29 @@
+PAGE: 海韩国访问预约方法 (ID: 22439f9906f581bc9538ff49f8a8115a)
+[sub_sub_header] 📌 为什么需要预约？
+[bulleted_list] 出入境管理事务所必须提前预约访问。
+[bulleted_list] 未预约者将无法办理业务。
+[bulleted_list] 请在访问前准备好所需材料（有时间限制）。
+[divider] 
+[sub_sub_header] 🗓️ 预约网站
+[bulleted_list] Hi Korea（하이코리아）
+  [text] 👉 https://www.hikorea.go.kr
+[divider] 
+[sub_sub_header] 📝 访问预约申请流程
+[numbered_list] 进入 Hi Korea 官网 → www.hikorea.go.kr
+[numbered_list] 注册并登录（非会员也可申请）
+[numbered_list] 点击页面顶部菜单栏中的 [访问预约]
+[numbered_list] 选择 [访问预约申请（出入境）]
+[numbered_list] 填写申请表
+[numbered_list] 选择管辖事务所
+  [bulleted_list] 例：江原大学三陟校区 → 东海出入境·外国人事务所
+[numbered_list] 选择接待窗口类型
+  [bulleted_list] 普通国家 / 中国国籍者 / 签证 / 国籍等
+[numbered_list] 输入访客信息
+  [bulleted_list] 姓名、联系方式、办理业务内容、预约日期和时间、访问目的等
+[numbered_list] 申请完成后打印受理单
+  [bulleted_list] 现场等候时，根据受理单上的叫号号码，看到号码出现在电子屏上后前往对应窗口办理
+[divider] 
+[sub_sub_header] 📍 参考：东海出入境·外国人事务所
+[bulleted_list] 地址：江原特别自治道 东海市 海岸路225号
+[bulleted_list] 电话：033-535-5721
+[divider] 

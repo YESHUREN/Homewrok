@@ -1,0 +1,143 @@
+
+==================== notion_page_22439f9906f5810599d9f1198063f5ac.txt ====================
+PAGE: 成绩查询与季节学期课程 (ID: 22439f9906f5810599d9f1198063f5ac)
+[sub_sub_header] 🔹 成绩查询
+[sub_sub_header] 📌 本科生成绩等级对照表
+[table] 
+  [table_row] 分数范围
+  [table_row] 95~100
+  [table_row] 90~94
+  [table_row] 85~89
+  [table_row] 80~84
+  [table_row] 75~79
+  [table_row] 70~74
+  [table_row] 65~69
+  [table_row] 60~64
+  [table_row] 0~59
+[sub_sub_header] 📌 研究生成绩等级对照表
+[table] 
+  [table_row] 等级
+  [table_row] A+
+  [table_row] A0
+  [table_row] B+
+  [table_row] B0
+  [table_row] C+
+  [table_row] C0
+  [table_row] F
+  [table_row] 成绩保留
+  [table_row] 合格
+  [table_row] NP（不合格）
+[divider] 
+[sub_sub_header] 🔹 季节学期课程（暑期/寒假）
+[sub_sub_header] 📌 开设目的
+[text] 为希望提前毕业、修读副修/双学位或重修课程的学生提供额外学分修习机会。
+[sub_sub_header] 📌 日程与方法
+[numbered_list] 开课时间：每年暑假、寒假（年2次）
+[numbered_list] 授课周期：假期中连续授课15天
+[numbered_list] 报名资格：完成至少2个学期的在校生或休学生
+[numbered_list] 报名方式：通过K-Cloud在线申请选课
+[numbered_list] 可选学分：每季最多6学分
+[numbered_list] 学分费用：
+  [bulleted_list] 讲座/理论课程：每学分 23,000韩元
+  [bulleted_list] 实验/实践课程：每学分 26,000韩元
+[divider] 
+==================== notion_page_22439f9906f58107af1dfa876b27167c.txt ====================
+PAGE: 兼职工作（打工） (ID: 22439f9906f58107af1dfa876b27167c)
+[sub_sub_header] 📌 什么是兼职工作（时间制就业）？
+[text] 原则上，外国留学生在韩国不得就业，
+[text] 但在获得所在大学确认书及出入境管理事务所事前许可的情况下，
+[text] 可在限定条件下进行简单兼职工作。
+[divider] 
+[sub_sub_header] ✅ 申请资格（须同时满足以下所有条件）
+[numbered_list] 签证条件：
+  [bulleted_list] 持有 D-2（学位课程）签证者
+  [bulleted_list] 排除语言研修（D-4）、研究（D-2-5）、访问（D-2-8）、入境未满6个月者
+[numbered_list] 学习成绩条件：
+  [bulleted_list] 上一学期平均成绩需达2.0（C）以上
+  [bulleted_list] 韩语能力：TOPIK 3级以上（本科3-4年级及研究生需TOPIK 4级以上）
+  [bulleted_list] 或英语成绩：TOEFL IBT 71、IELTS 5.5、TEPS 601（新327分）、CEFR B2以上
+[numbered_list] 工作条件：
+  [bulleted_list] 无语言成绩时：本科生每周最多10小时，研究生每周最多15小时
+  [bulleted_list] 英语国家学生也需提交语言成绩
+[numbered_list] 其他条件：
+  [bulleted_list] 当前居住在韩国
+  [bulleted_list] 必须先与国际事务处留学生负责人进行咨询并获得签字
+[divider] 
+[sub_sub_header] 🕒 允许工作时间
+[table] 
+  [table_row] 有语言成绩（TOPIK等）
+  [table_row] 学期中每周最多25小时 / 假期不限
+  [table_row] 学期中每周最多30小时 / 假期不限
+[text] ※ 即使是假期，也必须满足许可条件，未经许可不得工作
+[divider] 
+[sub_sub_header] 📝 申请流程
+[table] 
+  [table_row] 负责人
+  [table_row] 雇主
+  [table_row] 金智媛 主务官
+  [table_row] 学生本人
+  [table_row] 学生本人
+[divider] 
+[sub_sub_header] 📂 提交材料清单（与国际事务处面谈后提交）
+[bulleted_list] 时间制就业确认书（含雇主签字）
+[bulleted_list] 劳动合同（注明工作内容、时薪、时间、地点等）
+[bulleted_list] 营业执照复印件
+[bulleted_list] 护照复印件
+[bulleted_list] 外国人登录证复印件
+[bulleted_list] 成绩单
+[bulleted_list] 语言成绩证明材料（TOPIK或TOEFL等）
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[numbered_list] 未经许可就业将被处罚
+  [bulleted_list] 违反出入境管理法第18条 → 可判处最高3年以下有期徒刑或3000万韩元以下罚款
+  [bulleted_list] 第一次违规：禁止兼职1年 / 第二次违规：可能被强制遣返
+[numbered_list] 违反许可条件时
+  [bulleted_list] 第一次：1年内不予许可
+  [bulleted_list] 第二次：永久不予许可
+  [bulleted_list] 第三次：取消留学资格
+[numbered_list] 超学期学生不得从事兼职工作
+[divider] 
+[sub_sub_header] 🚨 三陟校区特别提醒
+[bulleted_list] 最近部分学生未获得事前许可就开始打工。
+  [text] → 请务必前往绿色能源馆910室（国际事务处），
+  [text] 获得正式许可后再进行兼职工作。
+[divider] 
+==================== notion_page_22439f9906f581dca53ff60a08dd68ae.txt ====================
+PAGE: 开设韩国银行账户 (ID: 22439f9906f581dca53ff60a08dd68ae)
+[sub_header] 🏦 在韩国办理银行账户的方法（How to Open a Bank Account in Korea）
+[sub_sub_header] 📌 准备材料
+[bulleted_list] 外国人登录证（ARC: Alien Registration Card）
+[bulleted_list] 护照（Passport）
+[bulleted_list] 韩国手机号
+[text] → 没有韩国手机号码将无法办理账户
+[text] → 👉 请先确认 [韩国手机开通指南]
+[divider] 
+[sub_sub_header] 🏁 到银行后办理流程
+[sub_sub_header] 1️⃣ 领取号码牌
+[bulleted_list] 在银行入口处的触摸屏上领取号码牌，等待叫号
+[bulleted_list] 屏幕显示本人号码后前往对应窗口
+[sub_sub_header] 2️⃣ 填写申请表
+[bulleted_list] 对窗口职员说：“bank book, check card 만들러 왔어요”（我想办理存折和借记卡）
+[bulleted_list] 在申请表上填写以下信息：
+  [bulleted_list] 📞 韩国电话号码
+  [bulleted_list] 📍 地址：（例如）江原特别自治道 三陟市 中央路346 三陟生活馆
+[sub_sub_header] 3️⃣ 设置密码
+[bulleted_list] 职员提示时输入自己设置的4位数字密码
+[bulleted_list] 此密码用于转账/取款
+[sub_sub_header] 4️⃣ 领取存折和卡
+[bulleted_list] 确认领取好银行存折和借记卡
+[divider] 
+[sub_sub_header] 💬 参考信息
+[table] 
+  [table_row] 分类
+  [table_row] 📍 银行营业时间
+  [table_row] 🛑 周六、周日及法定节假日休息
+  [table_row] 👤 需本人亲自前往办理
+  [table_row] 🗣️ 银行职员可能不会说英语，建议准备简单韩语或翻译App
+[divider] 
+[sub_sub_header] 🗺️ 三陟地区银行信息
+[table] 
+  [table_row] 联系电话
+  [table_row] ☎ 033-573-5070
+  [table_row] ☎ 033-574-1201
+[divider] 

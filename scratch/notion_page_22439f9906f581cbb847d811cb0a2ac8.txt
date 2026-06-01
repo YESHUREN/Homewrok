@@ -1,0 +1,50 @@
+PAGE: 各类证明文件的申请与办理 (ID: 22439f9906f581cbb847d811cb0a2ac8)
+[sub_sub_header] 🪪 学生证办理
+[bulleted_list] 新生学生证领取：入学后可在所属院系办公室领取
+[bulleted_list] 补办学生证：请前往教育支援处 学生事务组（绿色能源馆 409室 ☎033-570-6217）
+[text] ※ 江原大学学生证可用于图书馆及保安门（SECOM）出入
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 📄 证明文件申请（线下）
+    [bulleted_list] 地点和方法:
+    [numbered_list] 使用校内的自助办理机: 您可以在以下地点找到自助打印机：
+      [bulleted_list] 学生会馆, 1楼
+      [bulleted_list] 第5工学馆, 1楼
+      [bulleted_list] 大学本部, 1楼
+      [bulleted_list] 绿色能源馆, 1楼
+    [bulleted_list] 访问办公室申请：您也可以前往教育지원处学士组办公室申请打印。
+      [bulleted_list] 办公室地址：绿色能源研究관, 5楼, 506室
+    [text] ※ 温馨提示：可以办理韩文和英文两种版本的证明材料。
+  [column] 
+    [image]
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 💻 证明文件申请（线上）
+    [bulleted_list] 申请路径：
+      [numbered_list] 登录 K-Cloud（ID：学号 / 密码：出生年月日6位）
+      [numbered_list] 点击“인터넷 증명（网络证明）”
+      [numbered_list] 点击“증명서 출력（打印证明）”
+      [numbered_list] 点击“신청하기（申请）”
+      [numbered_list] 选择韩文或英文
+      [numbered_list] 选择所需证明 → 点击“申请”
+    [bulleted_list] 可申请的证明种类：
+      [bulleted_list] 在学证明书
+      [bulleted_list] 成绩单
+      [bulleted_list] 学籍表
+      [bulleted_list] 教育费缴纳证明书
+      [bulleted_list] 志愿服务完成证明
+      [bulleted_list] 结业证明
+      [bulleted_list] 奖学金获得证明书
+      [bulleted_list] 奖学金推荐信
+      [bulleted_list] 未获校内奖学金确认书 等
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 

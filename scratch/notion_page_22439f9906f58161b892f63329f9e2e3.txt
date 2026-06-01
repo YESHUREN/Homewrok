@@ -1,0 +1,51 @@
+PAGE: 签证延期（延长滞留期限） (ID: 22439f9906f58161b892f63329f9e2e3)
+[sub_sub_header] 📌 适用对象
+[bulleted_list] 持有 D-2（留学）或 D-4（语言研修）签证的外国留学生
+[bulleted_list] 包括交换生、延长学期者、成绩未达标者、准备论文者
+[divider] 
+[sub_sub_header] 📆 可申请时间
+[bulleted_list] 从滞留期限前4个月起可申请
+[bulleted_list] 最迟必须在滞留到期日前一天完成申请
+[divider] 
+[sub_sub_header] 💻 申请方法（三选一）
+[table] 
+  [table_row] 路径
+  [table_row] hirevisa.com/kangwon
+  [table_row] 东海出入境·外国人事务所（需预约Hi Korea）
+  [table_row] hikorea.go.kr
+[text] 📍 东海出入境·外国人事务所
+[bulleted_list] 地址：江原特别自治道 东海市 海岸路225号
+[bulleted_list] 电话：033-535-5721
+[divider] 
+[sub_sub_header] 🗂️ 所需材料清单
+[sub_sub_header] 📌 共同材料（所有留学生）
+[bulleted_list] 延长滞留许可申请书（统一申请表）
+[bulleted_list] 外国人登录证
+[bulleted_list] 护照
+[bulleted_list] 在学证明
+[bulleted_list] 成绩单
+[bulleted_list] 居住地证明材料
+[bulleted_list] 学费缴纳证明 或 奖学金受领证明
+[bulleted_list] 手续费缴纳收据
+[sub_sub_header] 📌 延长学期者（超过修业年限）
+[bulleted_list] 提交共同材料 +
+[bulleted_list] 指导教授确认书
+[sub_sub_header] 📌 成绩平均未达2.0者
+[bulleted_list] 提交共同材料 +
+[bulleted_list] 银行存款证明
+[bulleted_list] 父母外汇汇款证明
+[bulleted_list] 亲属关系证明
+[bulleted_list] 学习不振说明书
+[sub_sub_header] 📌 准备论文者
+[bulleted_list] 提交共同材料 +
+[bulleted_list] 指导教授确认书
+[bulleted_list] 银行存款证明
+[bulleted_list] 结业证明书（如适用）
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[bulleted_list] 若未在滞留期满前申请，将处以罚款
+[bulleted_list] 所有文件须为近期开具
+[bulleted_list] 成绩不达标者、准备论文者、延长期者必须提交附加材料
+[bulleted_list] 请务必确认护照及外国人登录证有效期限
+[divider] 
+[text] 

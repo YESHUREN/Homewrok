@@ -1,0 +1,36 @@
+PAGE: 居住地变更申报 (ID: 22439f9906f581bb80cec409c760dad6)
+[text] 外国留学生在韩国变更居住地址时，必须根据以下规定进行居住地变更申报。
+[text] 如未按时申报，可能会被处以罚款。
+[divider] 
+[sub_sub_header] 📌 申报对象
+[bulleted_list] 持有外国人登录证的留学生中，更换住所的学生
+[divider] 
+[sub_sub_header] 🕒 申报期限
+[bulleted_list] 自地址变更日起14天以内
+[divider] 
+[sub_sub_header] 📝 申报方式
+[table] 
+  [table_row] 说明
+  [table_row] 访问 Hi Korea官网 → 使用居住地变更申报菜单
+  [table_row] 亲访东海出入境·外国人事务所办理（需提前预约）
+  [table_row] 到**主管居民中心（三陟市政府）**民愿室 → 可办理居住地变更申报
+[divider] 
+[sub_sub_header] 🏢 管辖机关信息
+[bulleted_list] 东海出入境·外国人事务所
+  [bulleted_list] 地址：江原特别自治道 东海市 海岸路225号
+  [bulleted_list] 电话：033-535-5721
+  [bulleted_list] 备注：江原大学三陟校区留学生的主管机关
+[bulleted_list] 三陟市政府民愿室
+  [bulleted_list] 地址：江原特别自治道 三陟市 中央路296号
+  [bulleted_list] 电话：033-570-2011
+  [bulleted_list] 备注：亦可在居民中心或市政府办理
+[divider] 
+[sub_sub_header] 🧾 提交材料
+[bulleted_list] 外国人登录证原件
+[bulleted_list] 新住址的租赁合同复印件或宿舍入住确认书
+[bulleted_list] 居住提供确认书（※若本人不是合同上的承租人，例如与室友共同居住）
+[divider] 
+[sub_sub_header] ⚠️ 注意事项
+[bulleted_list] 超过申报期限（14天）将被处以最高不超过100万韩元的罚款
+[bulleted_list] 地址变更信息不会自动更新到外国人登录证上，如需更新须另外申请
+[divider] 

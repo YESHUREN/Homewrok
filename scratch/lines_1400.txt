@@ -1,0 +1,70 @@
+1391:             { key: "arc", name: t("1. 外国人登录证 / 护照", "1. 외국인등록증 / 여권", "1. ARC or Passport"), desc: t("出示身份后系统会自动拉取您的健康保险状态。", "신원 확인 및 건강보험 조회를 위해 반드시 지참해야 합니다.", "Required for registration and looking up your active NHI insurance.") },
+1392:             { key: "receipt", name: t("2. 诊疗收据与处方笺", "2. 진료비 계산서 및 처방전", "2. Hospital Receipt & Prescription"), desc: t("在医院付费后开具的纸质凭证，去药店拿药的必备单据。", "병원 수납 후 처방전을 받아 약국에 제출하여 약을 구매합니다.", "Official documents from hospital billing for claims and pharmacy dispensing.") }
+1393:           ],
+1394:           stepsTitle: t("校内外就医及保险报销步骤", "보건실 및 교외 병원 이용 단계", "Medical Steps"),
+1395:           steps: [
+1396:             { title: t("第一步：轻微不适前往校内保健室", "1단계: 가벼운 증상은 교내 보건실 방문", "Step 1: Visit Campus Health Clinic (Free)"), desc: t("如果只是轻微的感冒、发烧、擦伤或消化不良，可携带学生证前往校内图书馆一侧的保健室 (Infirmary)。保健医生会提供免费的基础治疗和常备药。", "가벼운 두통, 소화불량 등은 학생증을 지참하여 도서관 근처 보건실에 가면 무료로 일반 의약품 처방을 받을 수 있습니다.", "For cold, headache, or small wounds, bring Student ID to the campus Infirmary (보건실) for free basic treatment and pills.") },
+1397:             { title: t("第二步：严重疾病前往三陟医疗院", "2단계: 전문 진료는 삼척의료원 방문", "Step 2: Visit Samcheok Medical Center"), desc: t("如需详细化验检查或牙科、外科专业诊疗，可携带外国人登录证前往市中心的三陟医疗院 (Samcheok Medical Center)。系统自动扣减，只需缴纳 30%-50% 的个人自付部分。", "정밀 검사나 전문의 진료가 필요한 경우 삼척의료원을 방문하세요. 외국인등록을 마쳤다면 건강보험이 즉시 자동 적용됩니다.", "For professional tests, go to Samcheok Medical Center (삼척의료원) with your ARC. The NHI deduction applies automatically.") },
+1398:             { title: t("第三步：持处方笺在附近药店取药", "3단계: 처방전을 통한 약국 조제", "Step 3: Collect Medicine at Pharmacy"), desc: t("到医院附近的任意药店 (약국) 递交医生开具的处方笺，缴纳药费并拿取处方药。国民健康保险同样会对处方药进行高比例报销。", "의사에게 받은 처방전을 가지고 병원 인근 약국에 가서 약을 구매합니다. 약값 또한 건강보험 혜택이 적용됩니다.", "Take prescription to any pharmacy (약국). Pay highly subsidized fee and collect your medicines.") }
+1399:           ],
+1400:           faqTitle: t("就医健康常见问题", "의료/보험 자주 묻는 질문", "Medical & Insurance FAQ"),
+1401:           faqs: [
+1402:             { id: "nhi", question: t("国民健康保险是留学生强制必须交的吗？", "국민건강보험은 유학생 의무 가입인가요?", "Is National Health Insurance mandatory?"), answer: t("是的，根据韩国法律，所有入境长期学习的留学生在完成外国人登录后，会被出入境和健康保险公团强制自动加入国民健康保险 (NHI)。按月交纳保费，逾期将影响未来的签证延期申请！", "네, 한국에 장기 체류하는 유학생은 국민건강보험에 의무적으로 가입하게 되며 매달 보험료를 납부해야 합니다. 체납 시 비자 연장이 불가능할 수 있습니다.", "Yes, under Korean law, all foreign students with D-2 visa are automatically enrolled in the National Health Insurance (NHI) upon registering their ARC. Timely payment is mandatory, as delinquency will impact visa extensions.") },
+1403:             { id: "pharmacy", question: t("韩国可以直接买到消炎药和退烧药吗？", "처방전 없이 약국에서 소염진통제 등을 살 수 있나요?", "Can I buy prescription pills over-the-counter?"), answer: t("感冒药、退烧药、止痛药属于一般药品 (일반의약품)，可以直接在任意药店或 24小时便利店 直接免处方购买。但强效抗生素和消炎药必须由医生开具处方笺才能在药店拿取。", "일반 감기약, 진통제는 약국이나 편의점에서 처방전 없이 구매할 수 있습니다. 다만 항생제나 강력 소염제 등은 의사 처방이 필수적입니다.", "Basic cold pills, fevers reducers, and pain killers can be bought over-the-counter at pharmacies or 24h convenience stores. Strong antibiotics and anti-inflammatories strictly require a doctor's prescription.") }
+1404:           ],
+1405:           linkText: t("前往韩国国民健康保险官网", "국민건강보험공단 공식 사이트 이동", "Go to NHI Website"),
+1406:           linkUrl: "https://www.nhis.or.kr",
+1407:           contactPhone: "033-811-2000",
+1408:           contactName: t("国民健康保险公团客服中心", "국민건강보험공단 고객센터", "National Health Insurance Service (NHIS)")
+1409:         };
+1410:       }
+1411: 
+1412:       // Scenario 7: Wifi / SIM / Mobile Apps
+1413:       if (lowerTitle.includes("手机") || lowerTitle.includes("开通") || lowerTitle.includes("sim") || lowerTitle.includes("wi-fi") || 
+1414:           lowerTitle.includes("应用") || lowerTitle.includes("应用程序") || lowerTitle.includes("app") || lowerTitle.includes("应用程序")) {
+1415:         return {
+1416:           heroDesc: t("畅享校园高速免费 Wi-Fi，极速完成电话卡开通，掌握韩国生活核心 App 玩转日常社交。", 
+1417:                       "교내 초고속 무료 Wi-Fi 연동, 알뜰한 선불폰/요금제 개통 방법 및 한국 생활 필수 앱들을 완벽히 활용하세요.", 
+1418:                       "Connect to campus Wi-Fi instantly, choose the right mobile SIM card, and install the most helpful apps for life in Korea."),
+1419:           checklistTitle: t("网络与智能设备准备清单", "인터넷 및 스마트폰 개통 준비", "Network & Phone Checklist"),
+1420:           checklistItems: [
+1421:             { key: "passport", name: t("1. 护照或 ARC 实物", "1. 여권 또는 외국인등록증 실물", "1. Passport or ARC"), desc: t("办理电话卡签约的唯一法定证明材料。", "전화카드 개통을 위해 신분 증명이 필수적입니다.", "Required legal ID for mobile carrier registration.") },
+1422:             { key: "phone", name: t("2. 智能手机", "2. 언락 스마트폰", "2. Unlocked Smartphone"), desc: t("确保手机是解锁的（没有网络锁），能够直接插上韩国卡使用。", "해외 유심 사용 제한(컨트리락)이 해제된 단말기여야 합니다.", "Ensure your mobile device has country lock disabled and supports global LTE bands.") }
+1423:           ],
+1424:           stepsTitle: t("网络连接与电话卡办理步骤", "인터넷 및 휴대폰 개통 단계", "Mobile Setup Steps"),
+1425:           steps: [
+1426:             { title: t("第一步：连接校内 eduroam 或者是 KNU_WiFi", "1단계: 교내 와이파이 연결", "Step 1: Connect to KNU Free Wi-Fi"), desc: t("在校园无线网络列表中，选择‘KNU_WiFi’或‘eduroam’。用户名输入您的“K-Cloud 学号”，密码为您的门户网站登录密码，即可享受全校覆盖的极速无线网。", "와이파이 목록에서 KNU_WiFi를 선택하고, K-Cloud 포털 학번과 비밀번호를 입력하여 연결합니다.", "Select 'KNU_WiFi' or 'eduroam' in Wi-Fi list. Log in using your K-Cloud portal student ID and password.") },
+1427:             { title: t("第二步：去校外专营店开通预付费电话卡", "2단계: 알뜰 요금제/유심 개통", "Step 2: Purchase Mobile SIM Card"), desc: t("尚未拿到外国人登录证前，可凭“护照原件”前往校外的手机专营店或 Chingu Mobile ( 친구통신 ) 开通临时预付费电话卡 (Prepaid SIM card / 선불카드)。等登录证拿到后，可免费将实名认证升级为绑定登录证（从而支持在韩网上实名认证与网购支付）。", "외국인등록증 발급 전에는 여권으로 선불 유심을 개통하고, 추후 외국인등록증으로 명의를 변경하여 인증을 진행합니다.", "Before getting your ARC, buy a prepaid SIM card using your passport. Once you receive your ARC, upgrade registration at store to enable online identity check.") },
+1428:             { title: t("第三步：下载韩国日常必备 App 工具群", "3단계: 한국 생활 필수 앱 설치", "Step 3: Install Essential Applications"), desc: t("去应用商店集齐四大金刚 App：KakaoTalk（韩版微信）、Naver Map（地图导航）、Kakao T（快速叫出租车）以及 Baemin/배달의민족（外卖）。这些会让您的日常生活质量成倍飞跃！", "카카오톡, 네이버 지도, 카카오 T, 배달의민족 등 필수 생활 편의 앱을 다운로드합니다.", "Go to App store and download KakaoTalk (messenger), Naver Map (navigation), Kakao T (taxi call), and Baemin (food delivery).") }
+1429:           ],
+1430:           faqTitle: t("网络与软件常见问题", "IT 및 통신 자주 묻는 질문", "IT & Mobile FAQ"),
+1431:           faqs: [
+1432:             { id: "cert", question: t("为什么用护照办理的手机号无法进行网络实名认证？", "여권으로 개통한 전화번호로 실명인증이 안 되는 이유는 무엇인가요?", "Why can't I pass online verification using a passport phone number?"), answer: t("是的，韩国互联网实名制高度发达。在韩网网购、登录外卖APP以及网银转账时，实名系统只支持绑定了“外国人登录证” (ARC) 的手机卡来进行本人验证。护照开卡的手机号仅能用于电话接听和普通流量上网。请务必在拿到外国人登录证后，带上旧手机卡前往专营店进行“名义/实名认证信息变更”！", "한국의 대다수 인터넷 실명인증은 여권 번호로 처리할 수 없고, 오로지 외국인등록증 명의로 개통된 회선으로만 본인 확인 절차가 동작합니다. 매장에 방문하여 정보를 변경해야 합니다.", "Yes, online identity check in Korea requires the phone number's owner name to match your ARC profile. Passport registered numbers are limited to calls and data. Update your subscription info at store immediately upon receiving ARC card.") },
+1433:             { id: "wifi", question: t("宿舍房间里也有免费的无线网可以用吗？", "기숙사 방 안에서도 무선 인터넷을 쓸 수 있나요?", "Is there free Wi-Fi in the dorm rooms?"), answer: t("可以的，江原大学三陟校区的所有宿舍楼（如雄飞馆等）均全面实现了无线网络覆盖。您同样可以使用学号 and 密码，通过‘KNU_WiFi’或‘eduroam’高速免费连网。", "네, 기숙사 내에서도 KNU_WiFi 및 eduroam 신호가 강하게 잡히므로, 학번과 비밀번호를 이용하여 데이터 제한 없이 무료로 이용할 수 있습니다.", "Yes, high-speed Wi-Fi covers all study tables and rooms inside the dormitory buildings. You can enjoy free, unlimited connectivity using portal credentials.") }
+1434:           ],
+1435:           linkText: t("前往江原大学信息网介绍页", "강원대학교 정보화본부 공식 사이트", "Go to KNU Information & IT Center"),
+1436:           linkUrl: "https://ict.kangwon.ac.kr",
+1437:           contactPhone: "033-570-6215",
+1438:           contactName: t("三陟校区信息化支援团队", "삼척정보화지원팀", "Samcheok IT Support Team")
+1439:         };
+1440:       }
+1441: 
+1442:       // Default Scenario
+1443:       return {
+1444:         heroDesc: t("查阅三陟校区留学生指南，开启精彩纷呈、安全顺遂的在韩留学生活。", 
+1445:                     "삼척캠퍼스 유학생을 위한 맞춤형 가이드북을 통해 성공적인 한국 유학 생활을 시작해 보세요.", 
+1446:                     "Read the custom Samcheok guide directory to prepare for a successful and enjoyable stay in Korea."),
+1447:         checklistTitle: t("日常事务准备材料清单", "생활 준비 필요 서류", "Required Items Checklist"),
+1448:         checklistItems: [
+1449:           { key: "passport", name: t("1. 护照与外国人登录证", "1. 여권 및 외국인등록증", "1. Passport & ARC"), desc: t("一切韩国日常办事与民愿申请的基石身份证件。", "한국 생활 중 모든 행정 업무 처리를 위해 가장 필요한 신분증입니다.", "The absolute core identification files for all administrative workflows.") },
+1450:           { key: "portal", name: t("2. 大学 K-Cloud 账号", "2. 대학 K-Cloud 포털 계정", "2. KNU Portal Account"), desc: t("用于登录选课、成绩、宿舍与缴费教务功能。", "학사, 수강, 장학, 생활관 업무 처리를 위한 단일 계정입니다.", "Single unified account for course registration, dorm application, and grades.") }
+1451:         ],
+1452:         stepsTitle: t("留学生生活起航步骤", "유학생 정착 안내 단계", "Daily Relocation Steps"),
+1453:         steps: [
+1454:           { title: t("第一步：到校在国际交流处登记报到", "1단계: 교내 국제교류처 방문 및 등록", "Step 1: Visit OIA Office on Campus"), desc: t("到达三陟校区后，第一时间前往大学行政大楼的国际交流处进行报到登记，提交护照信息，领取新生手册与欢迎资料。", "입국 후 가장 먼저 대학본부 4층에 위치한 국제교류처를 찾아 유학생 신원 등록을 완료하고 안내 책자를 받습니다.", "Visit Office of International Affairs (OIA) at admin building immediately upon arrival, submit details and collect guide kits.") },
+1455:           { title: t("第二步：尽快预约并办理外国人登录证", "2단계: 하이코리아 방문 예약 및 등록증 신청", "Step 2: Apply for ARC as Early as Possible"), desc: t("入境90天内，到 HiKorea 在线预约东海出入境事务所，准时前往录入指纹提交纸质文件办理外国人登录证。", "입국 90일 이내에 하이코리아를 통해 동해출입국사무소 방문 예약을 진행하고 서류를 제출합니다.", "Book slot on HiKorea for Donghae immigration office. File paper documents and register fingerprints inside 90 days.") },
+1456:           { title: t("第三步：加入CSSA同乡会并关注官方通知", "3단계: CSSA 학우회 가입 및 공지 확인", "Step 3: Join Student Unions & Subscribe Announcements"), desc: t("加入校内CSSA学联微信群与社群板块，跟学长学姐交流生活经验；定期登录官网留意出入境政策和奖学金的最新动态通知。", "중국인 유학생회(CSSA)에 가입하여 선배들의 생활 노하우를 공유하고 기숙사, 학사 공지를 정기적으로 조회합니다.", "Join campus student organizations (CSSA) to get student peer advice. Check KNU and OIA web announcements for rules updates.") }
+1457:         ],
+1458:         faqTitle: t("留学生综合指导常见问题", "유학생 종합 안내 자주 묻는 질문", "General Campus FAQ"),
+1459:         faqs: [
+1460:           { id: "oia", question: t("遇到任何困难我应该向谁求助？", "유학 생활 중 어려운 점이 생기면 어디에 도움을 요청하나요?", "Who can I consult when encountering difficulties?"), answer: t("您可以直接到大学本馆行政楼4楼的 国际交流处 寻求官方老师的协助，或者关注我们的 App 社区论坛，在线发帖询问同学和学长学姐，大家都会热情为您答疑！", "대학본부 4층 국제교류과를 방문하여 전담 지도 선생님께 자문을 구하거나, 앱 내 커뮤니티 게시판을 통해 질문을 남겨보세요.", "Visit the Office of International Affairs (OIA) on the 4th floor of the Main Administration Building to consult coordinators, or post a question inside our Community tab to ask student peers.") },

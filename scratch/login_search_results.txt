@@ -1,0 +1,30 @@
+Line 438: triggerSystemTip("请先登录再进行收藏！");
+Line 515: triggerSystemTip("请先登录再进行点赞！");
+Line 560: triggerSystemTip("请先登录再发表回复评论！");
+Line 615: triggerSystemTip("请先登录再进行该操作！");
+Line 647: triggerSystemTip("请先登录再进行发布动态！");
+Line 840: throw new Error(data.error || "登录失败！");
+Line 875: console.warn("登录接口请求失败，尝试本地 Mock 登录", err);
+Line 903: triggerSystemTip("本地缓存模式登录成功！");
+Line 935: triggerSystemTip("本地体验模式登录成功！");
+Line 1020: triggerSystemTip("注册成功并已自动登录！");
+Line 1083: triggerSystemTip("本地体验模式注册成功并自动登录！");
+Line 1722: triggerSystemTip(language === 'zh' ? "请先登录查看通知！" : language === 'ko' ? "알림을 확인하려면 먼저 로그인하세요!" : "Please log in to view notifications!");
+Line 1909: triggerSystemTip(language === 'zh' ? "请先登录查看通知！" : language === 'ko' ? "알림을 확인하려면 먼저 로그인하세요!" : "Please log in to view notifications!");
+Line 2264: <span className="text-[10px] text-slate-400 font-bold">{language === 'en' ? 'Other Sign-in Options' : language === 'ko' ? '다른 로그인 수단' : '其他登录账户'}</span>
+Line 2272: triggerSystemTip(language === 'en' ? 'Kakao quick login successful!' : language === 'ko' ? '카카오 로그인 성공!' : 'Kakao快捷通道登录成功！');
+Line 2278: Kakao
+Line 2283: triggerSystemTip(language === 'en' ? 'WeChat login connected!' : language === 'ko' ? '위챗 로그인 연결 성공!' : '微信一键登入通道连接成功！');
+Line 2289: WeChat
+Line 2443: {t('already_have_acct')} {language === 'en' ? 'Sign In' : language === 'ko' ? '로그인' : '立即返回登录'}
+Line 2472: triggerSystemTip(language === 'zh' ? "请先登录查看通知！" : language === 'ko' ? "알림을 확인하려면 먼저 로그인하세요!" : "Please log in to view notifications!");
+Line 2663: triggerSystemTip(language === 'zh' ? "请先登录查看通知！" : language === 'ko' ? "알림을 확인하려면 먼저 로그인하세요!" : "Please log in to view notifications!");
+Line 2797: triggerSystemTip("请登录后查看您的发布！");
+Line 2958: triggerSystemTip(language === 'en' ? 'Please sign in to publish a post.' : language === 'ko' ? '게시물을 작성하려면 먼저 로그인하세요.' : '请先登录再进行发布动态！');
+Line 2982: triggerSystemTip(language === 'zh' ? "请先登录查看通知！" : language === 'ko' ? "알림을 확인하려면 먼저 로그인하세요!" : "Please log in to view notifications!");
+Line 3040: <p className="text-xs text-slate-400 max-w-[240px] leading-relaxed mb-4">{language === 'en' ? 'Sign in to sync bookmarks, publish posts, and receive Korean service packages.' : language === 'ko' ? '로그인하여 북마크 동기화, 게시물 작성 및 한국 현지 서비스 혜택을 누리세요.' : '登录后即可同步收藏、发布留学指南动态并领取韩国在地服务礼包。'}</p>
+Line 3045: {language === 'en' ? 'Sign In / Register' : language === 'ko' ? '로그인 / 가입' : '登录 / 注册'}
+Line 3059: triggerSystemTip("请先登录再查看发布内容！");
+Line 3076: triggerSystemTip("请先登录再查看您的收藏！");
+Line 3132: triggerSystemTip(language === 'en' ? 'Signed out successfully.' : language === 'ko' ? '로그아웃되었습니다.' : '已成功安全退出登录');
+Line 3136: {language === 'en' ? 'Sign Out' : language === 'ko' ? '로그아웃' : '退出登录'}

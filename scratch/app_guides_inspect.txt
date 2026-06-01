@@ -1,0 +1,14 @@
+Line 8: NavigationTab, ActiveScreen, GuideCategory, Post, UserProfile, CalendarReminder, Notification
+Line 61: const [activeGuideCategory, setActiveGuideCategory] = useState<GuideCategory>(GuideCategory.INSURANCE);
+Line 1519: {screen === ActiveScreen.GUIDE_DETAIL ? (
+Line 1522: category={activeGuideCategory}
+Line 2570: category: GuideCategory.KNU,
+Line 2577: category: GuideCategory.INSURANCE,
+Line 2584: category: GuideCategory.BANK,
+Line 2591: category: GuideCategory.ARC,
+Line 2598: category: GuideCategory.RECYCLE,
+Line 2605: category: GuideCategory.HOUSING,
+Line 2612: category: GuideCategory.TRANSIT,
+Line 2619: category: GuideCategory.SHIPPING,
+Line 2629: setActiveGuideCategory(serv.category);
+Line 2630: setScreen(ActiveScreen.GUIDE_DETAIL);

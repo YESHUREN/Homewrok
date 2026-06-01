@@ -1,0 +1,42 @@
+{
+  "22439f99-06f5-81bf-ab98-000bda27f933": {
+    "name": " 江原大学三陟校区留学生指南",
+    "schema": {
+      "title": {
+        "name": "제목",
+        "type": "title",
+        "options": []
+      }
+    }
+  },
+  "22239f99-06f5-80d5-8855-000b0ec86730": {
+    "name": " 강원대 삼척캠퍼스 유학생 생활 안내 / KNU Samcheok Campus International Student Guide / 江原大学三陟校区留学生指南",
+    "schema": {
+      "title": {
+        "name": "제목",
+        "type": "title",
+        "options": []
+      }
+    }
+  },
+  "22439f99-06f5-813a-9d1f-000b7b5d959e": {
+    "name": " KNU Samcheok Campus Internide ",
+    "schema": {
+      "title": {
+        "name": "제목",
+        "type": "title",
+        "options": []
+      }
+    }
+  },
+  "22239f99-06f5-8059-96ef-000b231d5f99": {
+    "name": "비교과 프로그램 활동 사진",
+    "schema": {
+      "title": {
+        "name": "이름",
+        "type": "title",
+        "options": []
+      }
+    }
+  }
+}

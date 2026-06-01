@@ -1,0 +1,54 @@
+PAGE: 便利设施 (ID: 22439f9906f5817db33be7255c840921)
+[column_list] 
+  [column] 
+    [text] 🏫 三陟校区 校内福利设施一览
+    [table] 
+      [table_row] 分类
+      [table_row] 第五工程馆便利店
+      [table_row] 第五工程馆咖啡厅
+      [table_row] 第五工程馆食堂
+      [table_row] 造型馆 Design Dream
+      [table_row] Raum-EPL 咖啡厅
+      [table_row] 文具店
+      [table_row] 美发店
+      [table_row] 复印室
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [text] 🏫 道溪校区 校内福利设施一览
+    [table] 
+      [table_row] 分类
+      [table_row] Americano 咖啡店
+      [table_row] CU 便利店
+      [table_row] 复印室
+      [table_row] 江大猪排饭
+      [table_row] Mom’s Touch 汉堡
+      [table_row] 书店
+    [text] 
+  [column] 
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [image]
+    [text] 
+[divider] 
+[text] 🍽️ 校内食堂
+[table] 
+  [table_row] 位置
+  [table_row] 第五工程馆 1楼
+  [table_row] 学生活动中心 2楼
+  [table_row] 学生活动中心 2楼
+[divider] 

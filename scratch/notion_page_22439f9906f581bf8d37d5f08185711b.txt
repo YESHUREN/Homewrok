@@ -1,0 +1,35 @@
+PAGE: 住房、自己做饭生活（合租/独居）、搬家 (ID: 22439f9906f581bf8d37d5f08185711b)
+[sub_sub_header] 🏡 不同居住形式比较
+[table] 
+  [table_row] 预估费用
+  [table_row] 约 700,000韩元/学期（可选择是否使用食堂）
+  [table_row] 约 400,000韩元/月（不含餐费）
+[quote] 📌 月租：每月支付固定房租（签约时需支付押金）
+  [text] 📌 全租：签约期间支付一次性大额租金，合同结束时退还（通常1~2年合同）
+[divider] 
+[sub_sub_header] 🧾 选择自炊房时必确认事项
+[numbered_list] 配置有哪些？（空调、书桌、床等）
+[numbered_list] 是否有洗衣机？
+[numbered_list] 水电煤气费是否另行支付，还是包含在内？
+[numbered_list] 每月管理费多少？
+[numbered_list] 是否免费提供网络？
+[numbered_list] 垃圾投放方式如何？（因地区而异）
+[numbered_list] 浴室和厨房热水供应是否稳定？
+[numbered_list] 建筑清洁状况（墙纸、地板等）如何？
+[quote] 📌 若通过中介签约，请仔细确认合同内容及押金条款。
+[divider] 
+[sub_sub_header] 🚚 搬家方式指南
+[table] 
+  [table_row] 特点
+  [table_row] 费用低，但劳动量大
+  [table_row] 适合行李不多时
+  [table_row] 方便，但需签合同+费用较高
+[divider] 
+[sub_sub_header] 💡 补充说明
+[bulleted_list] 签订月租合同时注意事项
+  [bulleted_list] 外国人也可签约，但通常需支付押金（一般30万~50万韩元以上）
+  [bulleted_list] 必须签订合同，并确认房东身份及联系方式
+[bulleted_list] 垃圾处理
+  [bulleted_list] 按地区需购买计量垃圾袋（超市/便利店可购得）
+  [bulleted_list] 餐厨垃圾与普通垃圾需分类投放
+[divider] 

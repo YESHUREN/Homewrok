@@ -1,0 +1,9 @@
+PAGE: 非课程活动 (ID: 22439f9906f581368738c8aac70c7321)
+[table] 
+  [table_row] 项目名称
+  [table_row] 导师制度（Mentoring Program）
+  [table_row] Global Supporters 活动
+  [table_row] 与外国留学生一起的地方文化探访
+  [table_row] 外国留学生体育大会
+  [table_row] 外国留学生传统文化体验项目
+  [table_row] 语言交换项目

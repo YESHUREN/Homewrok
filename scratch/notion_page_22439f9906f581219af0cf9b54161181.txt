@@ -1,0 +1,39 @@
+PAGE: Hi Korea 在线电子民愿申请方法指南 (ID: 22439f9906f581219af0cf9b54161181)
+[sub_sub_header] 📌 可在线申请的业务
+[text] 通过 Hi Korea 的电子民愿服务，
+[text] 可在线办理以下业务，无需亲自前往出入境事务所。
+[text] 可申请业务如下：
+[divider] 
+[text] 再入境许可申请
+[divider] 
+[text] 变更居留资格（仅限已登记外国人）
+[divider] 
+[text] 延长居留期间
+[divider] 
+[text] 兼职工作许可
+[divider] 
+[text] 居住地变更申报
+[divider] 
+[text] 登记事项变更（如：护照信息变更）
+[divider] 
+[quote] 📍 所有申请须通过 Hi Korea 网站进行。
+  [text] https://www.hikorea.go.kr
+[divider] 
+[sub_sub_header] 📝 电子民愿申请流程
+[numbered_list] 访问 Hi Korea 官网 → www.hikorea.go.kr
+[numbered_list] 注册并登录
+[numbered_list] 点击页面上方菜单中的 [民愿申请] → [电子民愿]
+[numbered_list] 选择 [电子民愿申请] 菜单
+[numbered_list] 选择所需申请项目后，点击 “申请电子民愿” 按钮
+[numbered_list] 输入 已登记外国人编号和姓名
+[numbered_list] 填写并提交民愿申请书
+[numbered_list] 缴纳手续费（根据申请类型不同）
+[numbered_list] 上传申请材料（扫描件或PDF文件）
+[numbered_list] 确认处理结果
+[bulleted_list] 可在 [我的页面] → [电子民愿申请现况] 中查看
+[divider] 
+[sub_sub_header] ✅ 注意事项
+[bulleted_list] 所有申请信息及附件材料必须准确填写及提交。
+[bulleted_list] 部分申请可能会被要求补充材料。
+[bulleted_list] 电子民愿的处理结果将通过**短信或官网“我的页面”**告知。
+[divider] 
