@@ -1883,17 +1883,89 @@ export default function GuideDetail({
                       // The first row of table items acts as headers
                       const headerRaw = block.items[0].name;
                       const headers = headerRaw.split(' | ').map((h: string) => h.trim());
-                      const rows = block.items.slice(1).map(item => ({
-                        key: item.key,
-                        cells: item.name.split(' | ').map((c: string) => c.trim())
-                      }));
+                      
+                      const dateIdx = headers.findIndex(h => h.includes('日期'));
+                      const monthIdx = headers.findIndex(h => h.includes('月份'));
+                      const contentIdx = headers.findIndex(h => h.includes('内容'));
+                      
+                      const isCalendarTable = dateIdx !== -1 && monthIdx !== -1 && contentIdx !== -1;
+                      
+                      const finalHeaders = isCalendarTable 
+                        ? [t('月份', '월', 'Month'), t('日期', '날짜', 'Date'), t('内容', '내용', 'Content')]
+                        : headers;
+                      
+                      let lastSeenMonth = "";
+                      
+                      // Helper to translate months on the fly
+                      const formatCell = (cellValue: string, isMonthCol: boolean) => {
+                        if (!cellValue) return "";
+                        if (isMonthCol) {
+                          const monthNumMatch = cellValue.match(/^(\d+)月$/);
+                          if (monthNumMatch) {
+                            const num = parseInt(monthNumMatch[1], 10);
+                            if (num >= 1 && num <= 12) {
+                              if (language === 'ko') return `${num}월`;
+                              if (language === 'en') {
+                                const engMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                                return engMonths[num - 1];
+                              }
+                            }
+                          }
+                        }
+                        return cellValue;
+                      };
+                      
+                      const rows = block.items.slice(1).map(item => {
+                        const rawCells = item.name.split(' | ').map((c: string) => c.trim());
+                        const alignedCells = new Array(headers.length).fill("");
+                        
+                        if (rawCells.length === headers.length) {
+                          rawCells.forEach((c, idx) => {
+                            alignedCells[idx] = c;
+                          });
+                        } else {
+                          // Self-healing cell alignment heuristics
+                          rawCells.forEach((cell) => {
+                            if (/^\d+月$/.test(cell) || cell.endsWith('月')) {
+                              if (monthIdx !== -1) alignedCells[monthIdx] = cell;
+                            } else if (cell.length < 15 && (/^\d+/.test(cell) || cell.includes('-') || cell.includes('.'))) {
+                              if (dateIdx !== -1) alignedCells[dateIdx] = cell;
+                            } else {
+                              if (contentIdx !== -1) alignedCells[contentIdx] = cell;
+                            }
+                          });
+                        }
+                        
+                        // Inherit last seen month if this row's month cell is empty
+                        if (monthIdx !== -1) {
+                          if (alignedCells[monthIdx]) {
+                            lastSeenMonth = alignedCells[monthIdx];
+                          } else if (lastSeenMonth) {
+                            alignedCells[monthIdx] = lastSeenMonth;
+                          }
+                        }
+                        
+                        // Map alignedCells to the finalHeaders order if isCalendarTable
+                        const finalCells = isCalendarTable
+                          ? [
+                              formatCell(alignedCells[monthIdx], true), 
+                              alignedCells[dateIdx], 
+                              alignedCells[contentIdx]
+                            ]
+                          : alignedCells;
+                        
+                        return {
+                          key: item.key,
+                          cells: finalCells
+                        };
+                      });
                       
                       return (
                         <div key={block.key} className="overflow-x-auto rounded-xl border border-slate-150/70 shadow-sm my-4 bg-white">
                           <table className="w-full text-left border-collapse text-[10px]">
                             <thead>
                               <tr className="bg-[#00685f]/5 border-b border-slate-200 text-[#00685f]">
-                                {headers.map((h, i) => (
+                                {finalHeaders.map((h, i) => (
                                   <th key={i} className="px-3 py-2.5 font-extrabold whitespace-nowrap">{h}</th>
                                 ))}
                               </tr>
@@ -1901,9 +1973,21 @@ export default function GuideDetail({
                             <tbody>
                               {rows.map((row, rIdx) => (
                                 <tr key={row.key || rIdx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/30 transition-colors">
-                                  {row.cells.map((cell, cIdx) => (
-                                    <td key={cIdx} className="px-3 py-2.5 font-semibold text-slate-700 whitespace-pre-wrap">{cell}</td>
-                                  ))}
+                                  {row.cells.map((cell, cIdx) => {
+                                    let cellStyle = "px-3 py-2.5 font-semibold text-slate-700 whitespace-pre-wrap";
+                                    if (isCalendarTable) {
+                                      if (cIdx === 0) { // Month
+                                        cellStyle = "px-3 py-2.5 font-extrabold text-[#00685f] whitespace-nowrap text-xs bg-teal-50/20";
+                                      } else if (cIdx === 1) { // Date
+                                        cellStyle = "px-3 py-2.5 font-bold text-amber-700 whitespace-nowrap bg-amber-50/10";
+                                      } else { // Content
+                                        cellStyle = "px-3 py-2.5 font-medium text-slate-800 whitespace-pre-wrap leading-relaxed";
+                                      }
+                                    }
+                                    return (
+                                      <td key={cIdx} className={cellStyle}>{cell}</td>
+                                    );
+                                  })}
                                 </tr>
                               ))}
                             </tbody>
