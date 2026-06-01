@@ -3068,28 +3068,7 @@ export default function App() {
                       </div>
                     </section>
 
-                    {/* Auto Sign-In Coupon Card promo */}
-                    <section className="bg-[#008378] text-white rounded-2xl p-4 shadow-sm relative overflow-hidden flex flex-col justify-between">
-                      <div className="relative z-10 max-w-[200px]">
-                        <h3 className="font-bold text-sm mb-1 leading-none">{language === 'en' ? 'New Member Package' : language === 'ko' ? '신규 회원 혜택' : '新人专享礼包'}</h3>
-                        <p className="text-[10px] text-teal-100 opacity-90 leading-tight">{language === 'en' ? 'Register and get exclusive coupons for local restaurants, mobile discounts, and more.' : language === 'ko' ? '가입 시 한국 현지 맛집, 통신비 할인 등 특별 쿠폰을 제공합니다.' : '注册即送韩国在地大林美食、手机话费减免等超值优惠券。'}</p>
-                        <button 
-                          onClick={() => {
-                            if (profile.isLoggedIn) {
-                              triggerSystemTip(language === 'en' ? 'New member gifts claimed successfully!' : language === 'ko' ? '신규 회원 선물이 성공적으로 수령되었습니다!' : '新人专属礼包已成功领取！');
-                            } else {
-                              setScreen(ActiveScreen.LOGIN);
-                            }
-                          }}
-                          className="bg-white text-[#008378] hover:bg-slate-100 px-4 py-1.5 rounded-lg text-[10px] font-bold mt-3 inline-block shadow-sm transition-transform active:scale-95 cursor-pointer"
-                        >
-                          {language === 'en' ? 'View Now' : language === 'ko' ? '확인하기' : '去查看'}
-                        </button>
-                      </div>
-                      <div className="absolute right-4 bottom-4 text-white/10 select-none pointer-events-none">
-                        <Shield className="w-20 h-20" />
-                      </div>
-                    </section>
+
 
                     {/* Log out option */}
                     {profile.isLoggedIn && (
