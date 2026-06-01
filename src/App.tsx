@@ -2533,16 +2533,57 @@ export default function App() {
                         </span>
                       </div>
 
+                      {/* Custom Redesigned KNU Samcheok Premium Entrance Banner */}
+                      <div 
+                        onClick={() => {
+                          setActiveGuideCategory(GuideCategory.KNU);
+                          setScreen(ActiveScreen.GUIDE_DETAIL);
+                        }}
+                        className="bg-gradient-to-br from-[#00685f]/5 via-[#00685f]/8 to-[#fea619]/5 border border-[#00685f]/20 hover:border-[#00685f]/40 p-4 rounded-2xl cursor-pointer hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between min-h-[120px] active:scale-[0.99] shadow-sm"
+                      >
+                        {/* Decorative Background Glows */}
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#fea619] rounded-full blur-2xl opacity-10 -mr-6 -mt-6"></div>
+                        <div className="absolute bottom-0 left-0 w-20 h-20 bg-teal-300 rounded-full blur-2xl opacity-10 -ml-6 -mb-6"></div>
+                        
+                        <div className="relative z-10 flex flex-col justify-between h-full gap-2">
+                          <div className="flex justify-between items-start gap-4">
+                            <div>
+                              <div className="flex items-center gap-1.5 mb-1.5">
+                                <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#00685f] text-white flex items-center gap-1">
+                                  <span className="w-1 h-1 bg-[#fea619] rounded-full animate-ping"></span>
+                                  {language === 'zh' ? '专属特区' : language === 'ko' ? '삼척 캠퍼스' : 'KNU Samcheok'}
+                                </span>
+                                <span className="text-[9px] font-bold text-slate-500 bg-slate-100/80 px-2 py-0.5 rounded-full">
+                                  {language === 'zh' ? '官方同步' : language === 'ko' ? '실시간 동기화' : 'Synced'}
+                                </span>
+                              </div>
+                              <h4 className="text-sm font-black text-[#00685f] leading-snug tracking-tight">
+                                {language === 'zh' ? '江原大学三陟校区' : language === 'ko' ? '강원대학교 삼척캠퍼스' : 'KNU Samcheok Campus'}
+                              </h4>
+                              <p className="text-[10px] text-slate-500 font-medium mt-1 leading-relaxed max-w-[280px]">
+                                {language === 'zh' ? '为在韩三陟校区留学生量身定制的46项办事、学校系统与周边生活图文指南。' : language === 'ko' ? '삼척캠퍼스 유학생들을 위해 마련된 46가지 맞춤형 종합 행정 및 대학 생활 정보.' : 'Complete trilingual guide covering 46 academic, administration, and campus life items.'}
+                              </p>
+                            </div>
+
+                            <div className="w-9 h-9 rounded-full bg-white group-hover:bg-[#00685f] flex items-center justify-center border border-[#00685f]/10 group-hover:border-[#00685f] shrink-0 shadow-sm group-hover:shadow-md transition-all self-center">
+                              <span className="text-base font-black text-[#00685f] group-hover:text-white group-hover:translate-x-0.5 transition-all">
+                                →
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Stat Highlights Row */}
+                          <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200/40 relative z-10 text-[9px] font-bold text-[#00685f]/80">
+                            <span className="bg-[#00685f]/5 px-2 py-0.5 rounded-md">✦ 46项全能图文</span>
+                            <span className="bg-[#00685f]/5 px-2 py-0.5 rounded-md">✦ 智能列表勾选</span>
+                            <span className="bg-[#00685f]/5 px-2 py-0.5 rounded-md">✦ 原生流畅交互</span>
+                          </div>
+                        </div>
+                      </div>
+
                       {/* Asymmetric Bento Layout grid */}
                       <div className="grid grid-cols-2 gap-3">
                         {[
-                          { 
-                            category: GuideCategory.KNU, 
-                            name: t('guide_knu'), 
-                            desc: language === 'zh' ? '46项留学生办事图文指南' : language === 'ko' ? '46가지 유학생 생활 가이드' : '46 Rich Campus Guides', 
-                            color: "bg-gradient-to-br from-emerald-500/10 to-teal-500/15 text-[#00685f] border-emerald-250/60 col-span-2 shadow-sm hover:shadow-teal-100", 
-                            label: language === 'zh' ? '专属特区' : language === 'ko' ? '삼척 캠퍼스' : 'KNU Samcheok'
-                          },
                           { 
                             category: GuideCategory.INSURANCE, 
                             name: t('guide_insurance'), 

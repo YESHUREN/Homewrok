@@ -10,7 +10,8 @@ import { KNU_GUIDE_CONTENT } from "./knu_guides_content";
 import { 
   ArrowLeft, Bell, Share2, Shield, FileText, CheckCircle2, AlertTriangle, Info, Map, 
   Bus, CreditCard, ShoppingBag, Trash2, HelpCircle, ChevronRight, Key, Smartphone,
-  Layers, Package, Sparkles, Send, PhoneCall, Gift, Search, RefreshCw, Home
+  Layers, Package, Sparkles, Send, PhoneCall, Gift, Search, RefreshCw, Home,
+  MapPin, Clock, GraduationCap, Award, Coins, BookOpen
 } from "lucide-react";
 
 interface GuideDetailProps {
@@ -1716,6 +1717,82 @@ export default function GuideDetail({
         catStyle = "bg-amber-50 text-amber-800 border-amber-100";
       }
 
+      // Filter out redundant template placeholder steps & FAQs
+      const realSteps = content.steps.filter(step => {
+        const title = step.title;
+        return !(
+          title.includes("仔细阅读本指南") || 
+          title.includes("准备相关支撑材料") || 
+          title.includes("前往指定办公室") ||
+          title.includes("단계:") ||
+          title.includes("Step:")
+        );
+      });
+
+      const realFaqs = content.faqs.filter(faq => {
+        const q = faq.question;
+        return !(
+          q.includes("相关规定/注意事项是什么") || 
+          q.includes("如何理解") ||
+          q.includes("질문:") ||
+          q.includes("Q:")
+        );
+      });
+
+      // Helper to parse name into icon and text, and identify block style
+      const parseNotionBlock = (nameStr: string) => {
+        let text = nameStr.trim();
+        let icon = "•";
+        let isCallout = false;
+        let calloutType: 'info' | 'warning' | 'default' = 'default';
+        
+        // Match emoji at the beginning of the string
+        const emojiMatch = text.match(/^([\uD800-\uDBFF][\uDC00-\uDFFF]|\u260e|[\u2700-\u27BF]|[\u2000-\u3300])/);
+        if (emojiMatch) {
+          icon = emojiMatch[1];
+          text = text.substring(icon.length).trim();
+          
+          if (icon.trim() === "🚨" || icon.trim() === "※" || icon.trim() === "🚫") {
+            isCallout = true;
+            calloutType = 'warning';
+          } else if (icon.trim() === "📌" || icon.trim() === "💡" || icon.trim() === "📢" || icon.trim() === "★" || icon.trim() === "✦") {
+            isCallout = true;
+            calloutType = 'info';
+          }
+        } else {
+          // Dynamic fallback emojis based on keywords
+          const lowerText = text.toLowerCase();
+          if (lowerText.includes("位置") || lowerText.includes("地址") || lowerText.includes("室") || lowerText.includes("관할")) {
+            icon = "📍";
+          } else if (lowerText.includes("时间") || lowerText.includes("时段") || lowerText.includes("일정") || lowerText.includes("기간") || lowerText.includes("诊疗")) {
+            icon = "🕒";
+          } else if (lowerText.includes("电话") || lowerText.includes("号码") || lowerText.includes("문의") || lowerText.includes("연락")) {
+            icon = "☎";
+          } else if (lowerText.includes("材料") || lowerText.includes("文件") || lowerText.includes("证") || lowerText.includes("서류") || lowerText.includes("증명")) {
+            icon = "📄";
+          } else if (lowerText.includes("学费") || lowerText.includes("费用") || lowerText.includes("奖学金") || lowerText.includes("비용")) {
+            icon = "💵";
+          } else if (lowerText.includes("运行") || lowerText.includes("班车") || lowerText.includes("公交") || lowerText.includes("버스")) {
+            icon = "🚌";
+          } else if (lowerText.includes("注意事项") || lowerText.includes("警告") || lowerText.includes("주의") || lowerText.startsWith("※")) {
+            icon = "🚨";
+            isCallout = true;
+            calloutType = 'warning';
+          }
+        }
+        
+        // Format labels (split by first colon ： or :)
+        let label = "";
+        let val = text;
+        const colonIdx = text.indexOf("：") !== -1 ? text.indexOf("：") : text.indexOf(":");
+        if (colonIdx > 0 && colonIdx < 30) {
+          label = text.substring(0, colonIdx).trim();
+          val = text.substring(colonIdx + 1).trim();
+        }
+        
+        return { icon, text, label, val, isCallout, calloutType };
+      };
+
       return (
         <div className="flex flex-col bg-[#f8f9ff] min-h-screen">
           {/* Top App Bar */}
@@ -1758,101 +1835,129 @@ export default function GuideDetail({
               </div>
             </section>
 
-            {/* Checklist Section */}
-            <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100/80 mb-4">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
-                  <CheckCircle2 className="w-4 h-4" />
-                </div>
-                <h3 className="font-bold text-sm text-slate-800">{content.checklistTitle}</h3>
-              </div>
-              <p className="text-[10px] text-slate-400 mb-4">{t("※ 点击可勾选或取消，方便跟踪准备进度：", "※ 클릭하여 체크하거나 취소할 수 있어 준비 상태를 쉽게 추적할 수 있습니다:", "* Tap to check or uncheck items to track your preparation progress:")}</p>
-
-              <div className="space-y-2.5">
-                {content.checklistItems.map((doc) => {
-                  const checkKey = `${activeKnuItemId}-${doc.key}`;
-                  const isChecked = !!knuChecks[checkKey];
+            {/* Notion-style Page Canvas */}
+            <section className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100/80 mb-4">
+              <div className="space-y-4">
+                {content.checklistItems.map((doc, idx) => {
+                  const { icon, label, val, isCallout, calloutType } = parseNotionBlock(doc.name);
+                  
+                  if (isCallout) {
+                    const bgColor = calloutType === 'warning' ? 'bg-amber-50/40 border-amber-250/50 text-amber-950' : 'bg-teal-50/40 border-teal-200/50 text-[#00685f]';
+                    return (
+                      <div key={doc.key || idx} className={`p-3.5 rounded-xl border flex items-start gap-2.5 text-[11px] ${bgColor}`}>
+                        <span className="text-sm shrink-0 leading-none mt-0.5">{icon}</span>
+                        <div className="leading-relaxed font-medium">
+                          {label ? (
+                            <>
+                              <strong className="font-extrabold text-slate-900">{label}</strong>: {val}
+                            </>
+                          ) : (
+                            val
+                          )}
+                        </div>
+                      </div>
+                    );
+                  }
+                  
                   return (
-                    <div 
-                      key={doc.key}
-                      onClick={() => setKnuChecks(prev => ({ ...prev, [checkKey]: !prev[checkKey] }))}
-                      className={`border p-3 rounded-xl flex items-start gap-3 cursor-pointer transition-colors ${
-                        isChecked ? "border-emerald-250 bg-emerald-50/20" : "border-slate-105 hover:border-slate-350"
-                      }`}
-                    >
-                      <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${
-                        isChecked ? "text-emerald-500 fill-emerald-100" : "text-slate-300"
-                      }`} />
-                      <div>
-                        <h4 className={`text-xs font-bold leading-none ${isChecked ? "text-emerald-800" : "text-slate-800"}`}>
-                          {doc.name}
-                        </h4>
-                        <p className={`text-[10px] mt-1.5 leading-relaxed ${isChecked ? "text-emerald-600" : "text-slate-500"}`}>
-                          {doc.desc}
-                        </p>
+                    <div key={doc.key || idx} className="flex items-start gap-3.5 text-[11px] leading-relaxed group p-0.5">
+                      {/* Left icon bullet representing clean Notion list bullet */}
+                      <div className="w-6 h-6 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 text-slate-600 text-xs mt-0.5">
+                        {icon}
+                      </div>
+                      
+                      <div className="flex-1 text-slate-700 font-medium pt-0.5">
+                        {label ? (
+                          <>
+                            <strong className="font-extrabold text-slate-950">{label}</strong>: <span className="text-slate-800 font-bold">{val}</span>
+                          </>
+                        ) : (
+                          <span className="text-slate-800 font-bold">{val}</span>
+                        )}
                       </div>
                     </div>
                   );
                 })}
               </div>
-            </section>
 
-            {/* Step-by-Step Instructions */}
-            <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100/80 mb-4">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                  <FileText className="w-4 h-4" />
-                </div>
-                <h3 className="font-bold text-sm text-slate-800">{content.stepsTitle}</h3>
-              </div>
-
-              <div className="space-y-5 relative pl-4 before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
-                {content.steps.map((step, idx) => (
-                  <div key={idx} className="relative flex gap-4">
-                    <span className="absolute -left-[23px] w-5 h-5 rounded-full bg-[#00685f] text-white font-black text-[10px] flex items-center justify-center border border-white shadow-sm shrink-0">
-                      {idx + 1}
-                    </span>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-bold text-slate-800 leading-normal">{step.title}</h4>
-                      <p className="text-[10px] text-slate-500 leading-relaxed mt-1">{step.desc}</p>
-                    </div>
+              {/* Render custom steps only if they are not dummy placeholders */}
+              {realSteps.length > 0 && (
+                <div className="mt-6 pt-5 border-t border-slate-100">
+                  <h3 className="font-bold text-xs text-[#00685f] mb-4 flex items-center gap-2">
+                    <FileText className="w-4 h-4" />
+                    {content.stepsTitle}
+                  </h3>
+                  
+                  <div className="relative pl-6 before:absolute before:left-[14px] before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-100 space-y-4">
+                    {realSteps.map((step, idx) => (
+                      <div key={idx} className="relative flex flex-col pl-1">
+                        <span className="absolute -left-[27px] top-0.5 w-5 h-5 rounded-full bg-[#00685f]/10 text-[#00685f] font-extrabold text-[10px] flex items-center justify-center border border-white shadow-sm shrink-0">
+                          {idx + 1}
+                        </span>
+                        <h4 className="text-[11px] font-bold text-slate-800 leading-normal">{step.title}</h4>
+                        {step.desc && <p className="text-[10px] text-slate-500 leading-relaxed mt-1 font-medium">{step.desc}</p>}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </section>
-
-            {/* FAQs Accordions */}
-            <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100/80 mb-4">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center text-amber-600">
-                  <HelpCircle className="w-4 h-4" />
                 </div>
-                <h3 className="font-bold text-sm text-slate-800">{content.faqTitle}</h3>
-              </div>
+              )}
 
-              <div className="space-y-3.5 mt-2.5">
-                {content.faqs.map((faq) => {
-                  const faqKey = `${activeKnuItemId}-${faq.id}`;
-                  const isOpen = !!faqOpen[faqKey];
-                  return (
-                    <div key={faq.id} className="border border-slate-100 rounded-xl overflow-hidden">
-                      <button
-                        onClick={() => toggleFaq(faqKey)}
-                        className="w-full flex items-center justify-between p-3.5 bg-slate-50/50 hover:bg-slate-50 text-left text-xs font-bold text-slate-800 transition-colors"
-                      >
-                        <span className="pr-4">{faq.question}</span>
-                        <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isOpen ? "rotate-90 text-[#00685f]" : "text-slate-400"}`} />
-                      </button>
-                      
-                      {isOpen && (
-                        <div className="p-3.5 bg-white text-[10px] text-slate-500 leading-relaxed border-t border-slate-50">
-                          {faq.answer}
+              {/* Render custom FAQs only if they are not dummy placeholders */}
+              {realFaqs.length > 0 && (
+                <div className="mt-6 pt-5 border-t border-slate-100">
+                  <h3 className="font-bold text-xs text-[#00685f] mb-4 flex items-center gap-2">
+                    <HelpCircle className="w-4 h-4" />
+                    {content.faqTitle}
+                  </h3>
+                  
+                  <div className="space-y-3">
+                    {realFaqs.map((faq) => {
+                      const faqKey = `${activeKnuItemId}-${faq.id}`;
+                      const isOpen = !!faqOpen[faqKey];
+                      return (
+                        <div 
+                          key={faq.id} 
+                          className={`rounded-xl overflow-hidden border transition-all ${
+                            isOpen 
+                              ? "border-[#00685f]/25 bg-white shadow-sm" 
+                              : "border-slate-150/70 bg-white hover:border-slate-300"
+                          }`}
+                        >
+                          <button
+                            onClick={() => toggleFaq(faqKey)}
+                            className={`w-full flex items-center justify-between p-3.5 text-left text-xs font-bold text-slate-800 transition-colors ${
+                              isOpen ? "bg-[#00685f]/5 text-[#00685f]" : "bg-slate-50/30 hover:bg-slate-50"
+                            }`}
+                          >
+                            <div className="flex items-center gap-2 pr-4 min-w-0">
+                              <span className={`w-4 h-4 rounded text-[9px] font-black flex items-center justify-center shrink-0 border ${
+                                isOpen 
+                                  ? "bg-[#00685f] text-white border-[#00685f]" 
+                                  : "bg-teal-50 text-[#00685f] border-teal-200"
+                              }`}>
+                                Q
+                              </span>
+                              <span className="truncate leading-normal">{faq.question}</span>
+                            </div>
+                            <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${
+                              isOpen ? "rotate-90 text-[#00685f]" : "text-slate-400"
+                            }`} />
+                          </button>
+                          
+                          {isOpen && (
+                            <div className="p-4 bg-white text-[10px] text-slate-650 leading-relaxed border-t border-slate-50/80 font-medium relative pl-9">
+                              <span className="absolute left-3 top-4 w-4 h-4 rounded bg-slate-100 text-slate-700 border border-slate-200 text-[9px] font-black flex items-center justify-center">
+                                A
+                              </span>
+                              {faq.answer}
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </section>
 
             {/* Actions: Add to Schedule and Ask in Forum */}
