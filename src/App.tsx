@@ -544,7 +544,7 @@ export default function App() {
       .then(data => {
         if (data.success) {
           setPosts(prev => prev.map(p => p.id === postId ? { ...p, isBookmarked: data.isBookmarked } : p));
-          triggerSystemTip(data.isBookmarked ? "📌 已成功保存到首尔校区【收藏夹】！" : "🗑️ 已从【收藏夹】中取消收藏！");
+          triggerSystemTip(data.isBookmarked ? "📌 已成功保存到【收藏夹】！" : "🗑️ 已从【收藏夹】中取消收藏！");
         }
       })
       .catch(() => {
@@ -3184,7 +3184,7 @@ export default function App() {
                       <button
                         onClick={() => {
                           setCommunityFilter("ALL");
-                          triggerSystemTip("显示首尔校区【全部校友动态】");
+                          triggerSystemTip("显示【全部校友动态】");
                         }}
                         className={`flex-1 py-1.5 rounded-lg text-center transition-all ${
                           communityFilter === "ALL"
@@ -3198,7 +3198,7 @@ export default function App() {
                         onClick={() => {
                           if (profile.isLoggedIn) {
                             setCommunityFilter("MINE");
-                            triggerSystemTip("已为您筛选出首尔校区【我的发布】");
+                            triggerSystemTip("已为您筛选出【我的发布】");
                           } else {
                             triggerSystemTip("请登录后查看您的发布！");
                             setScreen(ActiveScreen.LOGIN);
@@ -3215,7 +3215,7 @@ export default function App() {
                       <button
                         onClick={() => {
                           setCommunityFilter("BOOKMARKED");
-                          triggerSystemTip("已为您筛选出首尔校区【收藏动态】");
+                          triggerSystemTip("已为您筛选出【收藏动态】");
                         }}
                         className={`flex-1 py-1.5 rounded-lg text-center transition-all ${
                           communityFilter === "BOOKMARKED"
