@@ -91,7 +91,11 @@ export default function App() {
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostText, setNewPostText] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("#首尔探店");
-  const [newPostLocation, setNewPostLocation] = useState("首尔市, 延世大学校区");
+  const [newPostLocation, setNewPostLocation] = useState("首尔");
+  const [showLocationPicker, setShowLocationPicker] = useState(false);
+  const [customTopics, setCustomTopics] = useState<string[]>([]);
+  const [showTopicInput, setShowTopicInput] = useState(false);
+  const [topicInputValue, setTopicInputValue] = useState("");
   const [newPostAnonymous, setNewPostAnonymous] = useState(false);
   const [newPostAttachedPhotos, setNewPostAttachedPhotos] = useState<string[]>([
     "https://lh3.googleusercontent.com/aida-public/AB6AXuDzdAyZmAoaXCTEBxwtNg_XRXtYAiXisxA7D8tTRc7CqrLs5uz0PKDyyo0M8bR0vP9s1p3Dg4N5DcDm5nthcjcsFTNhZ9Je5yT5dM6Imaq661EEV5V63E4kjeni5cAbPvlziDwhDwfYjsRO2lZJxlN_OSGlHFjCB3MYNTgE1Vl1rmNGr_XgFDtDDudj68kutfsX1ZtSdwa-f7vTxZT1Fjaac_PMepU1B4lEPxYgMl_qYOEE7xrwkv1QFRN9cmLWIA9a9M4ADgMCjPbg",
@@ -100,6 +104,30 @@ export default function App() {
 
   // Publish success alert overlay toggle
   const [showPublishSuccess, setShowPublishSuccess] = useState(false);
+
+  // DB Diagnostic & Cloud Connection states
+  const [dbDiagnostic, setDbDiagnostic] = useState<{
+    tested: boolean;
+    connected: boolean;
+    errorMsg: string | null;
+    existingAccounts: string[];
+  }>({
+    tested: false,
+    connected: false,
+    errorMsg: null,
+    existingAccounts: []
+  });
+  const [showDbInfoModal, setShowDbInfoModal] = useState(false);
+
+  // Global trending topics state
+  const [globalTopics, setGlobalTopics] = useState<string[]>([
+    "#首尔探店", "#签证攻略", "#韩语备考", "#租房经验", "#江原大学", "#吃喝玩乐", "#兼职求职"
+  ]);
+  const [selectedGlobalTopic, setSelectedGlobalTopic] = useState<string | null>(null);
+  const [showManageTopics, setShowManageTopics] = useState(false);
+
+  // Custom location typing input in location picker
+  const [customLocationText, setCustomLocationText] = useState("");
 
   // Active Comment Post ID tracker - null when comment drawer is closed
   const [activeCommentPostId, setActiveCommentPostId] = useState<string | null>(null);
@@ -180,6 +208,15 @@ export default function App() {
       })
       .catch(err => console.error("Error loading posts:", err));
   };
+
+  // Auto-refresh posts every 12 seconds so likes/comments from other users are visible
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      const storedUserId = localStorage.getItem("service_community_user_id");
+      fetchPosts(storedUserId || undefined);
+    }, 12000);
+    return () => clearInterval(interval);
+  }, []);
 
   const fetchReminders = (userId: string) => {
     fetch(`/api/reminders?userId=${userId}`)
@@ -355,6 +392,47 @@ export default function App() {
     fetchLiveLocation();
   }, [fetchLiveLocation]);
 
+  // DB diagnostic check on mount
+  useEffect(() => {
+    fetch("/api/debug")
+      .then(res => {
+        if (!res.ok) throw new Error("Backend offline");
+        return res.json();
+      })
+      .then(data => {
+        if (data.supabaseConfigured && data.dbReadOK && data.dbWriteOK) {
+          setDbDiagnostic({
+            tested: true,
+            connected: true,
+            errorMsg: null,
+            existingAccounts: data.existingAccounts || []
+          });
+          console.log("🚀 [ANTIGRAVITY] Cloud Database diagnostic: CONNECTED!");
+        } else {
+          let err = "配置未完成";
+          if (data.supabaseConfigured) {
+            err = `数据库读写测试失败: ${data.dbReadError || data.dbWriteError || "权限受限"}`;
+          }
+          setDbDiagnostic({
+            tested: true,
+            connected: false,
+            errorMsg: err,
+            existingAccounts: []
+          });
+          console.warn("⚠️ [ANTIGRAVITY] Cloud Database diagnostic: RUNNING IN FALLBACK LOCAL MODE!", err);
+        }
+      })
+      .catch(err => {
+        setDbDiagnostic({
+          tested: true,
+          connected: false,
+          errorMsg: "无法连接到后端服务器 API 接口",
+          existingAccounts: []
+        });
+        console.warn("⚠️ [ANTIGRAVITY] Cloud Database diagnostic: API OFFLINE!", err);
+      });
+  }, []);
+
   // Fetch user notifications
   const fetchNotifications = useCallback(() => {
     if (!profile.studentId) return;
@@ -364,10 +442,20 @@ export default function App() {
         return res.json();
       })
       .then(data => {
-        setNotifications(data);
+        if (Array.isArray(data)) {
+          setNotifications(prev => {
+            const hasNew = prev.length !== data.length || 
+                           data.some((n, idx) => !prev[idx] || prev[idx].id !== n.id || prev[idx].isRead !== n.isRead);
+            if (hasNew) {
+              console.log("♻️ [ANTIGRAVITY] New notifications detected, instantly refreshing posts list!");
+              fetchPosts(profile.studentId || undefined);
+            }
+            return data;
+          });
+        }
       })
       .catch(err => console.error("Error fetching notifications:", err));
-  }, [profile.studentId]);
+  }, [profile.studentId, fetchPosts]);
 
   // Polling notifications every 3 seconds
   useEffect(() => {
@@ -401,6 +489,7 @@ export default function App() {
 
   // Mark a single notification as read
   const handleMarkNotificationAsRead = (id: string) => {
+    const notif = notifications.find(n => n.id === id);
     fetch(`/api/notifications/${id}/read`, {
       method: "POST"
     })
@@ -410,6 +499,11 @@ export default function App() {
       })
       .then(() => {
         setNotifications(prev => prev.map(n => n.id === id ? { ...n, isRead: true } : n));
+        if (notif && notif.postId) {
+          setActiveCommentPostId(notif.postId);
+          setShowNotificationDrawer(false);
+          console.log(`🔔 [ANTIGRAVITY] Opened comments drawer for post: ${notif.postId}`);
+        }
       })
       .catch(err => console.error("Error marking read:", err));
   };
@@ -654,6 +748,11 @@ export default function App() {
       return;
     }
 
+    // Auto-sync custom topic to globalTopics list
+    if (selectedTopic && selectedTopic.startsWith('#') && !globalTopics.includes(selectedTopic)) {
+      setGlobalTopics(prev => [...prev, selectedTopic]);
+    }
+
     fetch("/api/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -664,7 +763,7 @@ export default function App() {
         category: newPostCategory,
         text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText} ${selectedTopic}`,
         image: newPostAttachedPhotos.length > 0 ? newPostAttachedPhotos[0] : undefined,
-        area: "首尔",
+        area: newPostLocation || "首尔",
         anonymous: newPostAnonymous
       })
     })
@@ -691,7 +790,7 @@ export default function App() {
           username: newPostAnonymous ? "匿名校友" : profile.name,
           avatar: newPostAnonymous ? "" : profile.avatar,
           time: "刚刚",
-          area: "首尔",
+          area: newPostLocation || "首尔",
           category: newPostCategory,
           text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText} ${selectedTopic}`,
           image: newPostAttachedPhotos.length > 0 ? newPostAttachedPhotos[0] : undefined,
@@ -1147,7 +1246,7 @@ export default function App() {
       });
   };
 
-  // Filter posts based on search query and tab filter
+  // Filter posts based on search query, tab filter, and hot topic
   const filteredPosts = useMemo(() => {
     let result = posts;
     
@@ -1155,6 +1254,10 @@ export default function App() {
       result = result.filter(p => p.username === "张伟" || p.username === profile.name);
     } else if (communityFilter === "BOOKMARKED") {
       result = result.filter(p => p.isBookmarked);
+    }
+
+    if (selectedGlobalTopic) {
+      result = result.filter(p => p.text.includes(selectedGlobalTopic));
     }
 
     if (communitySearchQuery.trim()) {
@@ -1169,7 +1272,7 @@ export default function App() {
     } else {
       return [...result]; // NEWEST (pre-sorted or manually added)
     }
-  }, [posts, communitySearchQuery, communitySortDir, communityFilter, profile.name]);
+  }, [posts, communitySearchQuery, communitySortDir, communityFilter, profile.name, selectedGlobalTopic]);
 
   // Dynamic Calendar Generator based on active calendarYear and calendarMonth states
   const calendarDays = useMemo(() => {
@@ -1625,9 +1728,51 @@ export default function App() {
 
                 {/* Popular Tags */}
                 <div className="space-y-1.5">
-                  <h3 className="text-[11px] font-bold text-slate-400 px-1">{language === 'en' ? 'Trending Topics' : language === 'ko' ? '인기 주제' : '热门话题'}</h3>
+                  <div className="flex items-center justify-between px-1">
+                    <h3 className="text-[11px] font-bold text-slate-400">{language === 'en' ? 'Trending Topics' : language === 'ko' ? '인기 주제' : '热门话题'}</h3>
+                    <button
+                      onClick={() => setShowTopicInput(v => !v)}
+                      className="text-[10px] text-[#008378] font-semibold flex items-center gap-0.5 hover:opacity-75"
+                    >
+                      <span className="text-sm leading-none font-bold">+</span>&nbsp;{language === 'en' ? 'Custom' : language === 'ko' ? '추가' : '自定义'}
+                    </button>
+                  </div>
+                  {showTopicInput && (
+                    <div className="flex gap-2 items-center">
+                      <input
+                        className="flex-1 border border-slate-200 rounded-full px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-[#008378]"
+                        placeholder={language === 'en' ? '#MyTopic' : language === 'ko' ? '#나의화제' : '#自定义话题'}
+                        value={topicInputValue}
+                        onChange={e => setTopicInputValue(e.target.value)}
+                        onKeyDown={e => {
+                          if (e.key === 'Enter' && topicInputValue.trim()) {
+                            const t = topicInputValue.trim().startsWith('#') ? topicInputValue.trim() : '#' + topicInputValue.trim();
+                            setCustomTopics(prev => [...prev.filter(x => x !== t), t]);
+                            setSelectedTopic(t);
+                            setTopicInputValue('');
+                            setShowTopicInput(false);
+                          }
+                        }}
+                      />
+                      <button
+                        onClick={() => {
+                          if (topicInputValue.trim()) {
+                            const t = topicInputValue.trim().startsWith('#') ? topicInputValue.trim() : '#' + topicInputValue.trim();
+                            setCustomTopics(prev => [...prev.filter(x => x !== t), t]);
+                            setSelectedTopic(t);
+                            setTopicInputValue('');
+                            setShowTopicInput(false);
+                          }
+                        }}
+                        className="px-3 py-1.5 bg-[#008378] text-white rounded-full text-[11px] font-medium"
+                      >{language === 'en' ? 'Add' : language === 'ko' ? '추가' : '确定'}</button>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
-                    {(language === 'en' ? ["#Seoul Eats", "#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#서울맛집", "#비자꿀팁", "#한국어공부", "#방구하기"] : ["#首尔探店", "#签证攻略", "#韩语备考", "#租房经验"]).map((topic) => (
+                    {[
+                      ...(language === 'en' ? ["#Seoul Eats", "#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#서울맛집", "#비자꿀팁", "#한국어공부", "#방구하기"] : ["#首尔探店", "#签证攻略", "#韩语备考", "#租房经验"]),
+                      ...customTopics
+                    ].map((topic) => (
                       <button
                         key={topic}
                         onClick={() => setSelectedTopic(topic)}
@@ -1645,12 +1790,15 @@ export default function App() {
 
                 {/* Additional Settings */}
                 <div className="bg-white rounded-xl border border-slate-105 shadow-sm divide-y divide-slate-100">
-                  <div className="flex justify-between items-center p-3">
+                  <div
+                    className="flex justify-between items-center p-3 cursor-pointer active:bg-slate-50 hover:bg-slate-50 transition-colors"
+                    onClick={() => setShowLocationPicker(true)}
+                  >
                     <div className="flex items-center gap-2.5">
                       <MapPin className="w-4 h-4 text-[#00685f]" />
                       <div>
                         <p className="text-xs font-bold text-slate-800 leading-none">{language === 'en' ? 'Add Location' : language === 'ko' ? '위치 추가' : '添加位置'}</p>
-                        <p className="text-[10px] text-slate-400 mt-1">{newPostLocation}</p>
+                        <p className="text-[10px] text-[#008378] mt-1 font-medium">{newPostLocation || (language === 'en' ? 'Tap to select' : language === 'ko' ? '탭하여 선택' : '点击选择')}</p>
                       </div>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-300" />
@@ -1685,6 +1833,119 @@ export default function App() {
                   </button>
                 </div>
               </main>
+
+              {/* Location Picker Bottom Sheet */}
+              <AnimatePresence>
+                {showLocationPicker && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-end"
+                    onClick={() => setShowLocationPicker(false)}
+                  >
+                    <motion.div
+                      initial={{ y: 300 }}
+                      animate={{ y: 0 }}
+                      exit={{ y: 300 }}
+                      transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                      className="w-full bg-white rounded-t-2xl p-5 pb-8 shadow-2xl"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      <div className="w-10 h-1 bg-slate-200 rounded-full mx-auto mb-4" />
+                      <h3 className="font-bold text-sm text-slate-800 mb-4 text-center">
+                        {language === 'en' ? 'Select Location' : language === 'ko' ? '위치 선택' : '选择位置'}
+                      </h3>
+
+                      {/* Custom Location Text Input */}
+                      <div className="mb-4">
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="text"
+                            placeholder={language === 'en' ? 'Type custom location name...' : language === 'ko' ? '직접 위치 입력...' : '✍️ 手动输入任意自定义位置...'}
+                            value={customLocationText}
+                            onChange={e => setCustomLocationText(e.target.value)}
+                            className="flex-1 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-[#008378]"
+                            onKeyDown={e => {
+                              if (e.key === 'Enter' && customLocationText.trim()) {
+                                setNewPostLocation(customLocationText.trim());
+                                setCustomLocationText("");
+                                setShowLocationPicker(false);
+                              }
+                            }}
+                          />
+                          <button
+                            onClick={() => {
+                              if (customLocationText.trim()) {
+                                setNewPostLocation(customLocationText.trim());
+                                setCustomLocationText("");
+                                setShowLocationPicker(false);
+                              }
+                            }}
+                            className="px-4 py-2 bg-[#008378] text-white rounded-xl text-xs font-semibold hover:bg-[#00685f] shrink-0"
+                          >
+                            {language === 'en' ? 'Confirm' : language === 'ko' ? '확인' : '确认'}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Live Location Shortcut */}
+                      <button
+                        onClick={() => {
+                          if (locationName && locationName !== "正在获取实时位置...") {
+                            setNewPostLocation(locationName);
+                            setShowLocationPicker(false);
+                          } else {
+                            triggerSystemTip(language === 'en' ? 'Retrieving live GPS coordinates...' : language === 'ko' ? '실시간 GPS 좌표를 조회 중입니다...' : '正在获取您的实时位置信息...');
+                            fetchLiveLocation();
+                          }
+                        }}
+                        className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold text-teal-700 bg-teal-50 border border-teal-100/80 mb-3 hover:bg-teal-100/40 transition-colors"
+                      >
+                        <span className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-[#008378] animate-bounce shrink-0" />
+                          {language === 'en' ? 'Use Live Location' : language === 'ko' ? '현재 실시간 위치 사용' : '🌐 使用当前实时定位'}
+                        </span>
+                        <span className="text-[10px] text-teal-600 max-w-[150px] truncate font-medium">
+                          {locationName}
+                        </span>
+                      </button>
+
+                      <div className="space-y-1 max-h-60 overflow-y-auto">
+                        {[
+                          { label: language === 'en' ? 'Seoul - Sinchon/Yonsei' : language === 'ko' ? '서울 - 신촌/연세' : '首尔 · 新村/延世大学', value: language === 'zh' ? '首尔·新村' : 'Seoul · Sinchon' },
+                          { label: language === 'en' ? 'Seoul - Hongik/Hapjeong' : language === 'ko' ? '서울 - 홍대/합정' : '首尔 · 弘大/合井', value: language === 'zh' ? '首尔·弘大' : 'Seoul · Hongik' },
+                          { label: language === 'en' ? 'Seoul - Gwanak/SNU' : language === 'ko' ? '서울 - 관악/서울대' : '首尔 · 冠岳/首尔大学', value: language === 'zh' ? '首尔·冠岳' : 'Seoul · Gwanak' },
+                          { label: language === 'en' ? 'Seoul - Mapo/Ewha' : language === 'ko' ? '서울 - 마포/이화' : '首尔 · 麻浦/梨花女大', value: language === 'zh' ? '首尔·梨大' : 'Seoul · Ewha' },
+                          { label: language === 'en' ? 'Seoul - Gangnam' : language === 'ko' ? '서울 - 강남' : '首尔 · 江南', value: language === 'zh' ? '首尔·江南' : 'Seoul · Gangnam' },
+                          { label: language === 'en' ? 'Seoul - Itaewon' : language === 'ko' ? '서울 - 이태원' : '首尔 · 梨泰院', value: language === 'zh' ? '首尔·梨泰院' : 'Seoul · Itaewon' },
+                          { label: language === 'en' ? 'Busan' : language === 'ko' ? '부산' : '釜山', value: language === 'zh' ? '釜山' : 'Busan' },
+                          { label: language === 'en' ? 'Daejeon/KAIST' : language === 'ko' ? '대전/카이스트' : '大田/KAIST', value: language === 'zh' ? '大田' : 'Daejeon' },
+                          { label: language === 'en' ? 'Daegu/Kyungpook' : language === 'ko' ? '대구/경북대' : '大邱/庆北大学', value: language === 'zh' ? '大邱' : 'Daegu' },
+                          { label: language === 'en' ? 'Incheon' : language === 'ko' ? '인천' : '仁川', value: language === 'zh' ? '仁川' : 'Incheon' },
+                          { label: language === 'en' ? 'Jeju Island' : language === 'ko' ? '제주도' : '济州岛', value: language === 'zh' ? '济州岛' : 'Jeju' },
+                        ].map(opt => (
+                          <button
+                            key={opt.value}
+                            onClick={() => {
+                              setNewPostLocation(opt.value);
+                              setShowLocationPicker(false);
+                            }}
+                            className={`w-full text-left px-4 py-2.5 rounded-xl text-sm transition-colors ${
+                              newPostLocation === opt.value
+                                ? 'bg-teal-50 text-[#008378] font-semibold'
+                                : 'text-slate-700 hover:bg-slate-50'
+                            }`}
+                          >
+                            {opt.label}
+                            {newPostLocation === opt.value && <span className="float-right text-[#008378]">✓</span>}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Publish overlay */}
               <AnimatePresence>
@@ -2183,6 +2444,29 @@ export default function App() {
                     <h1 className="font-bold text-xl text-slate-900 mb-1.5 font-sans tracking-tight">{t('welcome_back')}</h1>
                     <p className="text-xs text-slate-500">{t('login_subtitle')}</p>
                   </div>
+
+                  {/* Database Cloud Sync Status Diagnostic Banner */}
+                  {dbDiagnostic.tested && !dbDiagnostic.connected && (
+                    <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl p-3.5 shadow-xs flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm">⚠️</span>
+                        <div className="flex-1">
+                          <span className="text-xs font-black text-amber-800 block">
+                            当前运行模式：本地体验版
+                          </span>
+                          <span className="text-[10px] text-amber-600 block mt-0.5 leading-normal font-medium">
+                            由于系统未成功连接到云端数据库，在此模式下注册创建的账号<strong>无法在其他设备登录</strong>。
+                          </span>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => setShowDbInfoModal(true)}
+                        className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-[10px] py-2 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer"
+                      >
+                        <span>🛠️</span> 查看原因与云端配置恢复指引
+                      </button>
+                    </div>
+                  )}
 
                   {/* Form inputs */}
                   <div className="space-y-4">
@@ -2735,6 +3019,47 @@ export default function App() {
                       </div>
                     </section>
 
+                    {/* 热门话题 (Trending Hot Topics scroll pill bar) */}
+                    <section className="space-y-1.5 px-0.5">
+                      <div className="flex justify-between items-center px-1">
+                        <h3 className="text-xs font-bold text-slate-800 flex items-center gap-1 leading-none">
+                          <Hash className="w-3.5 h-3.5 text-[#00685f]" />
+                          {language === 'en' ? 'Trending Topics' : language === 'ko' ? '인기 주제' : '热门话题'}
+                        </h3>
+                        <button 
+                          onClick={() => setShowManageTopics(true)}
+                          className="text-[9px] text-[#008378] font-bold hover:underline bg-teal-50/50 hover:bg-teal-50 px-2 py-0.5 rounded-md border border-teal-100/40 transition-colors flex items-center gap-0.5"
+                        >
+                          <span>⚙️</span>&nbsp;{language === 'en' ? 'Manage' : language === 'ko' ? '관리' : '管理话题'}
+                        </button>
+                      </div>
+                      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+                        <button
+                          onClick={() => setSelectedGlobalTopic(null)}
+                          className={`px-3 py-1 rounded-full text-[10px] font-bold shrink-0 transition-all ${
+                            selectedGlobalTopic === null
+                              ? "bg-[#008378] text-white shadow-xs"
+                              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                          }`}
+                        >
+                          {language === 'en' ? 'All' : language === 'ko' ? '전체' : '全部'}
+                        </button>
+                        {globalTopics.map(t => (
+                          <button
+                            key={t}
+                            onClick={() => setSelectedGlobalTopic(selectedGlobalTopic === t ? null : t)}
+                            className={`px-3 py-1 rounded-full text-[10px] font-bold shrink-0 transition-all ${
+                              selectedGlobalTopic === t
+                                ? "bg-[#008378] text-white shadow-xs ring-2 ring-teal-100/80"
+                                : "bg-slate-100 text-slate-605 hover:bg-slate-200"
+                            }`}
+                          >
+                            {t}
+                          </button>
+                        ))}
+                      </div>
+                    </section>
+
                     {/* Sorted dropdown filters */}
                     <section className="flex justify-between items-center">
                       {/* Search Bar Input */}
@@ -3009,6 +3334,29 @@ export default function App() {
 
                   <div className="px-4 space-y-4 pb-20">
                     
+                    {/* Database Cloud Sync Status Diagnostic Banner */}
+                    {dbDiagnostic.tested && !dbDiagnostic.connected && (
+                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl p-3.5 shadow-xs flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-base leading-none">⚠️</span>
+                          <div className="flex-1">
+                            <span className="text-xs font-black text-amber-800 block">
+                              正在运行：本地体验模式
+                            </span>
+                            <span className="text-[9px] text-amber-650 block mt-0.5 leading-normal font-medium">
+                              云端数据同步未激活。您目前的数据仅储存在当前浏览器中，多设备无法共享。
+                            </span>
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => setShowDbInfoModal(true)}
+                          className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-[10px] py-2 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1 active:scale-[0.98] cursor-pointer"
+                        >
+                          <span>🛠️</span> 诊断详情 & 一键云端同步教程
+                        </button>
+                      </div>
+                    )}
+
                     {profile.isLoggedIn ? (
                       // 1. LOGGED IN profile block (Mockup 3)
                       <section 
@@ -3134,6 +3482,230 @@ export default function App() {
             </div>
           )}
         </div>
+
+        {/* ---------------------------------------------------- */}
+        {/* INTERACTIVE HOT TOPICS DRAWER MODAL */}
+        {/* ---------------------------------------------------- */}
+        <AnimatePresence>
+          {showManageTopics && (
+            <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex flex-col justify-end">
+              <motion.div 
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 350 }}
+                className="bg-white rounded-t-3xl max-h-[85%] flex flex-col pb-8 border-t border-slate-200"
+              >
+                {/* Header bar of drawer */}
+                <div className="flex justify-between items-center p-4 border-b border-slate-100 mb-4">
+                  <span className="text-xs font-black text-slate-800 flex items-center gap-1.5">
+                    <Hash className="w-4 h-4 text-[#00685f]" />
+                    {language === 'en' ? 'Manage Trending Topics' : language === 'ko' ? '인기 주제 관리' : '管理热门话题'}
+                  </span>
+                  <button 
+                    onClick={() => {
+                      setShowManageTopics(false);
+                      setTopicInputValue("");
+                    }}
+                    className="p-1 hover:bg-slate-100 rounded-full"
+                  >
+                    <X className="w-5 h-5 text-slate-400" />
+                  </button>
+                </div>
+
+                <div className="px-4 space-y-4 flex-1 overflow-y-auto">
+                  {/* Add Custom Topic Input */}
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      {language === 'en' ? 'Add New Topic' : language === 'ko' ? '새 주제 추가' : '添加新话题'}
+                    </label>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        placeholder={language === 'en' ? 'e.g. #StudyTips' : language === 'ko' ? '예: #시험공부' : '例如 #江原大学'}
+                        value={topicInputValue}
+                        onChange={e => setTopicInputValue(e.target.value)}
+                        onKeyDown={e => {
+                          if (e.key === 'Enter' && topicInputValue.trim()) {
+                            const trimmed = topicInputValue.trim();
+                            const val = trimmed.startsWith('#') ? trimmed : '#' + trimmed;
+                            if (!globalTopics.includes(val)) {
+                              setGlobalTopics(prev => [...prev, val]);
+                              triggerSystemTip(`已成功新增话题标签: ${val}`);
+                            } else {
+                              triggerSystemTip("该话题已存在于热榜中！");
+                            }
+                            setTopicInputValue("");
+                          }
+                        }}
+                        className="flex-1 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-[#008378]"
+                      />
+                      <button
+                        onClick={() => {
+                          if (topicInputValue.trim()) {
+                            const trimmed = topicInputValue.trim();
+                            const val = trimmed.startsWith('#') ? trimmed : '#' + trimmed;
+                            if (!globalTopics.includes(val)) {
+                              setGlobalTopics(prev => [...prev, val]);
+                              triggerSystemTip(`已成功新增话题标签: ${val}`);
+                            } else {
+                              triggerSystemTip("该话题已存在于热榜中！");
+                            }
+                            setTopicInputValue("");
+                          }
+                        }}
+                        className="px-4 py-2 bg-[#008378] text-white rounded-xl text-xs font-semibold hover:bg-[#00685f] shrink-0"
+                      >
+                        {language === 'en' ? 'Add' : language === 'ko' ? '추가' : '添加'}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Active Topics List */}
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      {language === 'en' ? 'Active Trending Topics' : language === 'ko' ? '현재 활성화된 주제' : '当前热门话题列表'}
+                    </label>
+                    <div className="flex flex-wrap gap-2 max-h-56 overflow-y-auto pb-4">
+                      {globalTopics.map(t => (
+                        <div 
+                          key={t}
+                          className="flex items-center gap-1.5 bg-slate-50 border border-slate-150 pl-3 pr-2 py-1.5 rounded-full text-xs text-slate-700 font-semibold shadow-xs"
+                        >
+                          <span>{t}</span>
+                          <button
+                            onClick={() => {
+                              setGlobalTopics(prev => prev.filter(x => x !== t));
+                              if (selectedGlobalTopic === t) {
+                                setSelectedGlobalTopic(null);
+                              }
+                              triggerSystemTip(`已移出话题: ${t}`);
+                            }}
+                            className="p-0.5 hover:bg-slate-200 text-slate-400 hover:text-rose-500 rounded-full transition-colors shrink-0"
+                            title={language === 'en' ? 'Remove' : language === 'ko' ? '삭제' : '删除'}
+                          >
+                            <X className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+
+        {/* ---------------------------------------------------- */}
+        {/* CLOUD DB DIAGNOSTICS & RESTORE GUIDE MODAL */}
+        {/* ---------------------------------------------------- */}
+        <AnimatePresence>
+          {showDbInfoModal && (
+            <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="bg-white rounded-2xl w-full max-w-sm max-h-[85%] flex flex-col shadow-2xl overflow-hidden border border-slate-100"
+              >
+                {/* Header */}
+                <div className="p-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <Database className="w-4 h-4 animate-pulse" />
+                    <span className="text-xs font-black tracking-wide">云端恢复与数据库同步诊断</span>
+                  </div>
+                  <button 
+                    onClick={() => setShowDbInfoModal(false)}
+                    className="p-1 hover:bg-white/10 rounded-full text-white"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="p-5 flex-1 overflow-y-auto space-y-4 text-slate-700 leading-relaxed text-[11px] font-medium">
+                  <div className="p-3 bg-amber-50 rounded-xl border border-amber-100 flex flex-col gap-1 text-[10px] text-amber-850">
+                    <span className="font-bold">⚠️ 当前状态：系统正在以“本地体验模式”运行</span>
+                    <span>这代表您在当前浏览器注册的账号、发布帖子的数据均储存在本地浏览器缓存中。由于数据未写入云端数据库，所以在其他手机或浏览器上登录会提示“账号不存在”。</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <span className="font-bold text-slate-800 text-xs block">💡 什么是云端存储？</span>
+                    <p>系统完全支持连接到您的 Supabase 云端数据库进行永久化存储。完成配置后，您的账号、个人资料、提醒事项、帖子及评论将在云端加密存储，实现多设备互通登录。</p>
+                  </div>
+
+                  <div className="space-y-3 pt-1">
+                    <span className="font-bold text-slate-800 text-xs block">🛠️ 手把手恢复云端教程：</span>
+                    
+                    <div className="flex gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 font-bold text-[10px] flex items-center justify-center shrink-0">1</div>
+                      <div className="space-y-0.5">
+                        <span className="font-bold text-slate-800 block">注册并创建 Supabase 项目</span>
+                        <span>访问 <a href="https://supabase.com" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline font-bold">supabase.com</a> 免费注册一个项目，并在 Settings &rarr; API 中找到您的项目 URL 以及 `anon` public key。</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 font-bold text-[10px] flex items-center justify-center shrink-0">2</div>
+                      <div className="space-y-0.5">
+                        <span className="font-bold text-slate-800 block">在 Vercel 部署后台中配置环境变量</span>
+                        <span>打开您的 Vercel 项目控制台，进入 <strong>Settings &rarr; Environment Variables</strong> 面板。</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 font-bold text-[10px] flex items-center justify-center shrink-0">3</div>
+                      <div className="space-y-0.5 flex-1">
+                        <span className="font-bold text-slate-800 block">添加以下两个环境变量：</span>
+                        <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 font-mono text-[9px] text-slate-650 select-all space-y-1 block mt-1">
+                          <div><strong>SUPABASE_URL</strong> = 你的_Supabase_API_URL</div>
+                          <div><strong>SUPABASE_ANON_KEY</strong> = 你的_Supabase_API_Anon_Key</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 font-bold text-[10px] flex items-center justify-center shrink-0">4</div>
+                      <div className="space-y-0.5 flex-1">
+                        <span className="font-bold text-slate-800 block">重新部署 (Redeploy)</span>
+                        <span>保存环境变量后，在 Vercel <strong>Deployments</strong> 选项卡中点击最新部署的右侧三个点，选择 <strong>Redeploy</strong> 进行重新发布以应用环境变量。</span>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2.5">
+                      <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center shrink-0">✓</div>
+                      <div className="space-y-0.5">
+                        <span className="font-bold text-emerald-850 block">大功告成！</span>
+                        <span>重新打开网页，您就会发现本地体验版警告消失，您可以在不同设备上无缝注册和共享同一个账号啦！</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer */}
+                <div className="p-4 bg-slate-50 border-t border-slate-100 flex gap-2">
+                  <button
+                    onClick={() => {
+                      setShowDbInfoModal(false);
+                      triggerSystemTip("正在为您自动同步最新缓存数据...");
+                    }}
+                    className="flex-1 bg-slate-200 hover:bg-slate-350 text-slate-700 font-bold text-xs py-2.5 rounded-xl transition-colors cursor-pointer"
+                  >
+                    我知道了
+                  </button>
+                  <button
+                    onClick={() => {
+                      window.open("https://supabase.com", "_blank");
+                    }}
+                    className="flex-1 bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs py-2.5 rounded-xl transition-colors shadow-sm cursor-pointer"
+                  >
+                    前往 Supabase 官网
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
 
         {/* ---------------------------------------------------- */}
         {/* INTERACTIVE COMMENTS DRAWER MODAL */}
