@@ -51,7 +51,7 @@ export default async function handler(req, res) {
     // Test 2: try a write + delete (non-destructive test)
     const testId = `_debug_test_${Date.now()}`;
     const { error: writeErr } = await sb.from("profiles").insert({
-      id: testId, username: testId, password: "test", phone: null,
+      id: testId, username: testId, password: "test", phone: "",
       name: "Debug Test", nickname: "Debug Test", avatar: "",
       tag: "认证学生", university: "测试大学", major: "测试", gender: "Male", birthday: "2000-01-01"
     });
@@ -103,7 +103,7 @@ export default async function handler(req, res) {
         .from("profiles").select("id").eq("username", username).maybeSingle();
       if (existing) return res.status(400).json({ error: "该账号已存在，请换一个用户名！" });
       const newProfile = {
-        id: `stud_${Date.now()}`, username, password, phone: null, name,
+        id: `stud_${Date.now()}`, username, password, phone: "", name,
         nickname: `${name} (Student)`, avatar: "", tag: "认证学生",
         university, major: "未指定", gender, birthday
       };
