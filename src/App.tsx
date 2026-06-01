@@ -1257,13 +1257,13 @@ export default function App() {
     }
 
     if (selectedGlobalTopic) {
-      result = result.filter(p => p.text.includes(selectedGlobalTopic));
+      result = result.filter(p => (p.text || "").includes(selectedGlobalTopic));
     }
 
     if (communitySearchQuery.trim()) {
       const query = communitySearchQuery.toLowerCase();
       result = result.filter(p => 
-        p.text.toLowerCase().includes(query) || p.username.toLowerCase().includes(query)
+        (p.text || "").toLowerCase().includes(query) || (p.username || "").toLowerCase().includes(query)
       );
     }
     
@@ -3178,7 +3178,7 @@ export default function App() {
                                 />
                               ) : (
                                 <div className="w-10 h-10 rounded-full bg-amber-500 text-white font-black text-sm flex items-center justify-center border border-[#855300]/10 shrink-0">
-                                  {p.username[0]?.toUpperCase() || "校"}
+                                  {(p.username?.[0] || "校").toUpperCase()}
                                 </div>
                               )}
                               
@@ -3758,7 +3758,7 @@ export default function App() {
                           />
                         ) : (
                           <div className="w-8 h-8 rounded-full bg-slate-300 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                            {c.username[0]?.toUpperCase()}
+                            {(c.username?.[0] || "评").toUpperCase()}
                           </div>
                         )}
                         <div className="flex-1 space-y-1">
