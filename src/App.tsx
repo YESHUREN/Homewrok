@@ -151,7 +151,7 @@ export default function App() {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerName, setRegisterName] = useState("");
-  const [registerUniversity, setRegisterUniversity] = useState("首尔大学");
+  const [registerUniversity, setRegisterUniversity] = useState("");
   const [registerGender, setRegisterGender] = useState("男 (Male)");
   const [registerBirthday, setRegisterBirthday] = useState("");
   const [registerError, setRegisterError] = useState("");
@@ -2682,24 +2682,13 @@ export default function App() {
                     {/* University Block */}
                     <div className="space-y-1">
                       <label className="text-xs font-bold text-slate-500 pl-1">4. {t('university')}</label>
-                      <select 
+                      <input 
+                        type="text" 
+                        placeholder={language === 'en' ? 'Enter your university, e.g. Yonsei University' : language === 'ko' ? '대학교를 입력하세요, 예: 연세대학교' : '请输入您的大学名称，如 延世大学'}
                         value={registerUniversity}
                         onChange={(e) => setRegisterUniversity(e.target.value)}
-                        className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-700 cursor-pointer outline-none focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f]"
-                      >
-                        <option value="首尔大学">首尔大学 (Seoul National University)</option>
-                        <option value="延世大学">延世大学 (Yonsei University)</option>
-                        <option value="高丽大学">高丽大学 (Korea University)</option>
-                        <option value="梨花女子大学">梨花女子大学 (Ewha Womans University)</option>
-                        <option value="庆熙大学">庆熙大学 (Kyung Hee University)</option>
-                        <option value="汉阳大学">汉阳大学 (Hanyang University)</option>
-                        <option value="成均馆大学">成均馆大学 (Sungkyunkwan University)</option>
-                        <option value="中央大学">中央大学 (Chung-Ang University)</option>
-                        <option value="西江大学">西江大学 (Sogang University)</option>
-                        <option value="建国大学">建国大学 (Konkuk University)</option>
-                        <option value="釜山大学">釜山大学 (Pusan National University)</option>
-                        <option value="其他高校">{language === 'en' ? 'Other University' : language === 'ko' ? '기타 대학교' : '其他高校'}</option>
-                      </select>
+                        className="w-full px-3 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 placeholder:text-slate-350 focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all outline-none"
+                      />
                     </div>
 
                     {/* Gender and Birthday Grid */}
