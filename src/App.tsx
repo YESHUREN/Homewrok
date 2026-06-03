@@ -3490,7 +3490,7 @@ export default function App() {
                           <User className="w-8 h-8 text-slate-400" />
                         </div>
                         <h2 className="font-bold text-sm text-slate-800 mb-1">{language === 'en' ? 'Start Your Study Journey' : language === 'ko' ? '유학 생활을 시작하세요' : '开启你的留学之旅'}</h2>
-                        <p className="text-xs text-slate-400 max-w-[240px] leading-relaxed mb-4">{language === 'en' ? 'Sign in to sync bookmarks, publish posts, and receive Korean service packages.' : language === 'ko' ? '로그인하여 북마크 동기화, 게시물 작성 및 한국 현지 서비스 혜택을 누리세요.' : '登录后即可同步收藏、发布留学指南动态并领取韩国在地服务礼包。'}</p>
+                        <p className="text-xs text-slate-400 max-w-[240px] leading-relaxed mb-4">{language === 'en' ? 'Sign in to sync bookmarks and publish posts.' : language === 'ko' ? '로그인하여 북마크 동기화 및 게시물을 작성해 보세요.' : '登录后即可同步收藏、发布留学指南动态。'}</p>
                         <button 
                           onClick={() => setScreen(ActiveScreen.LOGIN)}
                           className="bg-[#00685f] hover:bg-[#005049] text-white font-bold text-xs px-8 py-3 rounded-full shadow-md transition-transform active:scale-95 cursor-pointer"
