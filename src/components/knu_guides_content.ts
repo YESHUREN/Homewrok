@@ -607,26 +607,59 @@ export const KNU_GUIDE_CONTENT: Record<string, (t: (zh: string, ko: string, en: 
     contactName: t("三陟校区国际交流处 (OIA)", "삼척 국제교류과 (OIA)", "Samcheok Office of International Affairs (OIA)"),
   }),
   "31939f9906f5800599f0ed9605268593": (t) => ({
-    heroDesc: t("获取江原大学三陟校区 e-루리 사용법/How to use e-루리/e-RURI使用指南 (2) 的官方指南与核心信息。", "강원대학교 삼척캠퍼스 e-루리 사용법에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok How to use e-RURI."),
+    heroDesc: t("获取江原大学三陟校区 e-루리 使用指南的官方步骤与核心信息。", "강원대학교 삼척캠퍼스 e-루리 사용법에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok e-RURI Usage Guide."),
     checklistTitle: t("官方指南与参考图解", "공식 가이드 및 참고 자료", "Official Guides & References"),
     checklistItems: [
-      { key: "text_1", name: t("K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login"), desc: t("text", "K-Cloud 링크", "K-Cloud login link") },
-      { key: "text_2", name: t("(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login", "(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login", "(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login"), desc: t("text", "Step 1", "Step 1") },
-      { key: "image_3", name: "/eruri_login.png", desc: t("image", "K-Cloud 로그인 화면", "K-Cloud login screen") },
-      { key: "sub_header_4", name: t("K-Cloud 로그인", "K-Cloud 로그인", "K-Cloud 로그인"), desc: t("sub_header", "K-Cloud 로그인", "K-Cloud 로그인") },
-      { key: "image_5", name: "/eruri_dashboard.png", desc: t("image", "K-Cloud 서비스 통합 플랫폼", "K-Cloud integrated portal platform") },
-      { key: "file_6", name: t("2.9 MiB", "2.9 MiB", "2.9 MiB"), desc: t("file", "e-루리 사용법 매뉴얼 파일", "e-RURI guide manual file") },
+      { key: "text_1", name: t("e-루리 (https://eruri.kangwon.ac.kr) 是江原大学的官方智能学习管理系统 (LMS)，用于在线视频课程、Zoom 实时课堂、作业提交和测验考试。在使用前，请确保您已激活并登录了 K-Cloud 账号。", "e-루리(https://eruri.kangwon.ac.kr)는 강원대학교의 공식 스마트 학습관리시스템(LMS)입니다. 온라인 동영상 강의 수강, 실시간 화상 강의(Zoom) 참여, 과제 제출 및 퀴즈 응시 등에 사용됩니다. 사용 전에 K-Cloud 계정이 활성화되어 있는지 확인해 주세요.", "e-RURI (https://eruri.kangwon.ac.kr) is KNU's official Smart Learning Management System (LMS) used for online video classes, live Zoom lectures, assignments, and quizzes. Please ensure your K-Cloud account is active before logging in."), desc: t("text", "intro", "intro") },
+      { key: "divider_2", name: "---", desc: t("divider", "divider", "divider") },
+      { key: "sub_header_3", name: t("💻 e-루리 智能学习平台主页与登录", "💻 e-루리 로그인 및 서비스 통합 플랫폼", "💻 e-RURI Login & Integrated Platform"), desc: t("sub_header", "eruri_dashboard_header", "eruri_dashboard_header") },
+      { key: "image_4", name: "/eruri_dashboard.png", desc: t("image", "e-루리 대시보드 화면", "e-RURI dashboard screen") },
+      { key: "file_5", name: t("2.9 MiB", "2.9 MiB", "2.9 MiB"), desc: t("file", "e-루리 사용법 매뉴얼 파일", "e-RURI guide manual file") },
     ],
-    stepsTitle: t("业务办理步骤与流程说明", "진행 절차 및 단계 안내", "Processing Steps & Procedures"),
+    stepsTitle: t("e-루리 在线课堂核心使用流程", "e-루리 핵심 이용 절차 및 단계 안내", "e-RURI Course Usage Flow"),
     steps: [
+      {
+        title: t("1. 访问 e-루리 官方平台", "1. e-루리 공식 사이트 혹은 앱 접속", "1. Access e-RURI Website or App"),
+        desc: t("通过电脑浏览器访问官网：https://eruri.kangwon.ac.kr (推荐 Chrome 或 Edge)。移动端用户需下载安装“코스모스 (Cosmos)”移动端 APP 才能正常上课。", "컴퓨터 브라우저(Chrome/Edge 권장)로 https://eruri.kangwon.ac.kr 에 접속하거나 모바일에서 '코스모스' 앱을 설치하여 접속합니다.", "Access https://eruri.kangwon.ac.kr via computer browser (Chrome/Edge recommended) or install the 'Cosmos' mobile app.")
+      },
+      {
+        title: t("2. 账号登录（同 K-Cloud 凭证）", "2. 계정 로그인 (K-Cloud와 동일)", "2. Account Login"),
+        desc: t("登录账号和密码与您的 K-Cloud 账号完全一致（账号为学号，初始密码为生日6位 yymmdd）。新入学学生必须先登录一次 K-Cloud 激活账号后，才能登录 e-루리 平台。", "K-Cloud 통합 포털 아이디(학번) 및 비밀번호를 사용하여 로그인합니다. 신입생은 최초 접속 시 반드시 K-Cloud에 먼저 로그인하여 계정을 활성화해야 e-루리 로그인이 가능합니다.", "Log in using your K-Cloud credentials (ID is your student number, initial password is yymmdd). New students must log in to K-Cloud first to activate the account.")
+      },
+      {
+        title: t("3. 进入课程教室（My Courses）", "3. 강의실 입장 (내가 수강하는 과목)", "3. Enter Course Room"),
+        desc: t("登录成功后在主页的 [我听的课程 / 내가 수강하는 과목] 中选择当前学期要修读的课程，点击课程名称进入该科目的在线学习主页。", "로그인 후 메인 화면의 '내가 수강하는 과목' 목록에서 수강 중인 강좌를 선택하여 온라인 강의실로 입장합니다.", "After logging in, select the desired course under the 'My Courses' list to enter the online course page.")
+      },
+      {
+        title: t("4. 观看在线视频并确认出勤", "4. 동영상 강의 수강 및 출석 완료 확인", "4. Watch Lectures & Verify Attendance"),
+        desc: t("点击对应周次的视频进行学习。观看进度必须达到 100% 且进度条后显示绿色的出勤对勾 (✔️) 标记，才算做出勤成功。请务必在每周指定的截止日期前看完。", "주차별 동영상 강의를 수강합니다. 진도율이 100%에 도달하고 출석 인정 체크(✔️) 아이콘이 표시되었는지 반드시 확인하세요. 매주 지정된 마감 기한 전에 시청을 완료해야 합니다.", "Play and study the weekly video lectures. Ensure your progress reaches 100% and displays the attendance checkmark (✔️). Videos must be completed before the weekly deadline.")
+      },
+      {
+        title: t("5. 在线提交作业与参加测验", "5. 학습 활동 수행 (과제 및 퀴즈 제출)", "5. Submit Assignments & Take Quizzes"),
+        desc: t("根据课程教学计划，按时在系统教室里提交写好的作业 (과제) 并参与线上小测验 (퀴즈)。系统会在截止时间到达时自动关闭提交入口，请提早准备。", "강의실 내 개설된 과제 제출 링크를 통해 과제를 업로드하거나 온라인 퀴즈에 응시합니다. 마감 기한 엄수가 필수이며, 기한 연장은 불가하오니 주의하세요.", "Submit homework assignments or complete online quizzes inside the course room. Ensure submissions are made before deadlines, as the system closes automatically.")
+      },
+      {
+        title: t("6. 参加 Zoom 实时直播教学", "6. 실시간 화상 수업 (Zoom) 참여", "6. Join Live Zoom Classes"),
+        desc: t("如果科目包含实时互动课，在课程页面点击“실시간 화상수업(Zoom)”下的会议图标或链接，系统会自动唤醒 Zoom 客户端加入会议。进入后请将大称修改为“学号+姓名”以便教授核对出勤。", "실시간 화상 강의가 진행되는 경우, e-루리 강좌 내의 Zoom 연결 링크를 클릭하여 회의실에 참여합니다. 대화명을 '학번 + 이름'으로 변경하여 교수님이 출석을 정상 체크할 수 있도록 하세요.", "For real-time online classes, click the Zoom link in the course room. The system will launch the Zoom app automatically. Rename your display name to 'Student ID + Name' for attendance check.")
+      }
     ],
     faqTitle: t("重要注意事项与常见问题", "자주 묻는 질문 및 중요 안내", "Important Notices & FAQ"),
     faqs: [
+      {
+        id: "eruri_attendance",
+        question: t("Q：为什么看完视频后进度条没有达到100%或显示出勤？", "Q: 동영상을 시청했는데 진도율이 100%가 되지 않거나 출석 처리가 안 됩니다.", "Q: Why is my video progress not 100% or attendance checked?"),
+        answer: t("A：1. 请勿直接使用手机浏览器（如 Safari/Chrome 网页版）看课，这极易导致出勤记录丢失；请务必使用 PC 端浏览器或手机 Cosmos 官方 App 观看。\n2. 视频必须从头到尾完整播放完毕，拖动进度条、快进或跳过视频会造成累计观看时间不足，从而无法获得出勤对勾。", "A: 1. 모바일 웹 브라우저(크롬, 사파리 등)로 접속하여 강의를 시청하는 경우 학습 추적이 되지 않아 출석 누락이 자주 발생합니다. 반드시 PC 브라우저나 '코스모스' 전용 앱을 이용해 주세요.\n2. 배속 재생, 건너뛰기, 또는 중간에 동영상을 끄는 경우 실제 학습 시간이 총 비디오 분량보다 짧아 출석 인정(✔️)이 되지 않습니다.", "A: 1. Watching via mobile web browsers (Safari, Chrome web) often fails to track progress, causing attendance loss. Always use a PC browser or the Cosmos app.\n2. Fast forwarding, skipping, or closing the video early will result in insufficient study time, preventing the attendance checkmark (✔️) from appearing.")
+      },
+      {
+        id: "eruri_zoom",
+        question: t("Q：通过 e-루리 参加 Zoom 课堂需要注意什么？", "Q: e-루리를 통해 실시간 Zoom 수업에 들어갈 때 주의할 점은 무엇인가요?", "Q: What should I keep in mind when joining Zoom via e-RURI?"),
+        answer: t("A：请确保您的电脑或手机上已安装好 Zoom 官方客户端。加入会议后，必须使用“学号 + 中文姓名/韩文姓名”作为您的会议昵称。若昵称不清晰或使用匿名，教授在课后导出考勤记录时将无法核对您的身份，可能会记为缺勤。", "A: PC 또는 모바일에 Zoom 앱이 미리 설치되어 있어야 링크 클릭 시 자동으로 회의실이 연결됩니다. 입장 시 닉네임을 반드시 '학번 + 이름'으로 설정하셔야 합니다. 익명 또는 불분명한 이름을 사용하는 경우 출석 확인이 불가능하여 결석 처리될 수 있습니다.", "A: Make sure the Zoom app is pre-installed. You must set your display name to 'Student ID + Name'. Using anonymous or unclear names will make it impossible for the professor to verify your attendance, leading to an absence.")
+      }
     ],
-    linkText: t("登录 K-Cloud 教务门户网站", "K-Cloud 학사 포털 사이트 이동", "Log into K-Cloud Portal"),
-    linkUrl: "https://kcloud.kangwon.ac.kr/login",
-    contactPhone: "033-570-6891",
-    contactName: t("三陟校区国际交流处 (OIA)", "삼척 국제교류과 (OIA)", "Samcheok Office of International Affairs (OIA)"),
+    linkText: t("前往 e-루리 在线学习平台", "e-루리 사이트 이동", "Go to e-RURI Portal"),
+    linkUrl: "https://eruri.kangwon.ac.kr",
+    contactPhone: "033-250-7161",
+    contactName: t("江原大学 教育创新院 (LMS 系统咨询)", "강원대학교 교육혁신원 (LMS 문의)", "KNU Institute of Education Innovation (LMS Support)"),
   }),
   "22439f9906f581cbb847d811cb0a2ac8": (t) => ({
     heroDesc: t("获取江原大学三陟校区 各类证明文件的申请与办理 的官方指南与核心信息。", "강원대학교 삼척캠퍼스 각종 증명서 발급 및 신청에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok Application & Issuance of Certificates."),
