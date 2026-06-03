@@ -36,6 +36,7 @@ export default function GuideDetail({
   };
   // Share prompt
   const [showShareAlert, setShowShareAlert] = useState(false);
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
   
   // KNU Campus guide states
   const [knuSearch, setKnuSearch] = useState("");
@@ -1811,6 +1812,43 @@ export default function GuideDetail({
 
             {/* Notion-style Page Canvas */}
             <section className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100/80 mb-4">
+              {activeKnuItemId === "22439f9906f581c38390dc0d87bfbeab" && (
+                <div className="space-y-4 mb-6 pb-5 border-b border-slate-100">
+                  <div 
+                    onClick={() => setZoomImage("/map_samcheok.png")}
+                    className="group rounded-xl overflow-hidden border border-slate-150 shadow-sm bg-slate-50 cursor-zoom-in transition-all duration-300 hover:shadow-md hover:scale-[1.01]"
+                  >
+                    <img 
+                      src="/map_samcheok.png" 
+                      alt="Samcheok Campus Map" 
+                      className="w-full h-auto object-cover max-h-[300px]"
+                    />
+                    <div className="p-3 bg-white border-t border-slate-100 text-center">
+                      <p className="text-xs font-bold text-slate-800 flex items-center justify-center gap-1.5">
+                        <span>🗺️</span>
+                        <span>{t("三陟校区地图", "삼척캠퍼스 안내도", "Samcheok Campus Map")}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div 
+                    onClick={() => setZoomImage("/map_dogye.png")}
+                    className="group rounded-xl overflow-hidden border border-slate-150 shadow-sm bg-slate-50 cursor-zoom-in transition-all duration-300 hover:shadow-md hover:scale-[1.01]"
+                  >
+                    <img 
+                      src="/map_dogye.png" 
+                      alt="Dogye Campus Map" 
+                      className="w-full h-auto object-cover max-h-[300px]"
+                    />
+                    <div className="p-3 bg-white border-t border-slate-100 text-center">
+                      <p className="text-xs font-bold text-slate-800 flex items-center justify-center gap-1.5">
+                        <span>🗺️</span>
+                        <span>{t("道溪校区地图", "도계캠퍼스 안내도", "Dogye Campus Map")}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="space-y-3.5">
                 {(() => {
                   // 1. Group consecutive table_row items
@@ -2228,6 +2266,22 @@ export default function GuideDetail({
           {showShareAlert && (
             <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-full z-50 shadow-lg">
               {t("链接复制成功，快去分享给同学吧！", "링크가 복사되었습니다! 친구들에게 공유해 보세요.", "Link copied successfully! Share with your classmates.")}
+            </div>
+          )}
+
+          {zoomImage && (
+            <div 
+              className="fixed inset-0 z-[100] bg-black/95 flex flex-col justify-center items-center p-4 cursor-zoom-out"
+              onClick={() => setZoomImage(null)}
+            >
+              <div className="absolute top-4 right-4 text-white text-[10px] bg-white/10 px-3 py-1.5 rounded-full font-bold backdrop-blur-sm">
+                {t("点击任意处关闭", "닫기", "Click anywhere to close")}
+              </div>
+              <img 
+                src={zoomImage} 
+                alt="Zoomed Map" 
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-all duration-300"
+              />
             </div>
           )}
         </div>
