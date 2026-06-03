@@ -1299,7 +1299,7 @@ export default function App() {
     let result = posts;
     
     if (communityFilter === "MINE") {
-      result = result.filter(p => p.username === "张伟" || p.username === profile.name);
+      result = result.filter(p => p.userId === profile.studentId);
     } else if (communityFilter === "BOOKMARKED") {
       result = result.filter(p => p.isBookmarked);
     }
@@ -3198,7 +3198,7 @@ export default function App() {
                             : "text-slate-400 hover:text-slate-600"
                         }`}
                       >
-                        我的发布 ({posts.filter(p => p.username === "张伟" || p.username === profile.name).length})
+                        我的发布 ({profile.isLoggedIn ? posts.filter(p => p.userId === profile.studentId).length : 0})
                       </button>
                       <button
                         onClick={() => {
@@ -3479,7 +3479,7 @@ export default function App() {
                         className="bg-white p-3.5 rounded-xl border border-slate-101 shadow-sm text-center cursor-pointer hover:bg-slate-50 transition-all active:scale-95 duration-100"
                       >
                         <p className="text-lg font-bold text-[#00685f]">
-                          {profile.isLoggedIn ? posts.filter(p => p.username === "张伟" || p.username === profile.name).length : "0"}
+                          {profile.isLoggedIn ? posts.filter(p => p.userId === profile.studentId).length : "0"}
                         </p>
                         <p className="text-[10px] font-bold text-slate-500">{language === 'en' ? 'My Posts' : language === 'ko' ? '내 게시물' : '我的发布'}</p>
                       </div>
