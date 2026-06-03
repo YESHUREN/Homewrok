@@ -63,48 +63,6 @@ let fallbackProfiles = [
     major: "计算机科学与工程",
     gender: "男 (Male)",
     birthday: "2002-05-20"
-  },
-  {
-    id: "user_minji",
-    username: "minji",
-    password: "123456",
-    phone: "+821099998888",
-    name: "Minji Kim",
-    nickname: "Minji Kim",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G",
-    tag: "认证学生",
-    university: "梨花女子大学",
-    major: "化学系",
-    gender: "女 (Female)",
-    birthday: "2003-09-12"
-  },
-  {
-    id: "user_liwei",
-    username: "liwei",
-    password: "123456",
-    phone: "+821077776666",
-    name: "Li Wei",
-    nickname: "Li Wei",
-    avatar: "",
-    tag: "认证学生",
-    university: "延世大学",
-    major: "商业管理",
-    gender: "男 (Male)",
-    birthday: "2001-02-28"
-  },
-  {
-    id: "user_shinchon",
-    username: "shinchon",
-    password: "123456",
-    phone: "+821055554444",
-    name: "新村生活指南",
-    nickname: "新村生活指南",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5VM6jNr3eiQYgbwiL9M9HKBaIBN_Rer3s6IAaemgNiVq8qgc7gCrQrIMhLztIPToLv0owCkl4GIAHck_62PjCToCweyIagqfi_668pIv2jIgmbJp4lZPIFDOir6fTmHHYjrqDc3r10gvjN9b7W55Ul4G2HMHSg5YTm9NMCDbuk6KrXWf4yTuCceeeOt6zc5n7fiAqfqKPqxPbf1F9zx2N4gE2oYr8kUl5pyvYh4kerioTT4PkMNzK79PloE5yKNwB9u1b6i0UgtQY",
-    tag: "认证机构",
-    university: "延世大学",
-    major: "社会学",
-    gender: "男 (Male)",
-    birthday: "1999-10-10"
   }
 ];
 
@@ -570,18 +528,19 @@ app.delete("/api/posts/:id", async (req, res) => {
     return res.status(400).json({ error: "用户未登录，无法删除帖子！" });
   }
 
+  const isAdmin = userId === "202408151229";
+
   try {
     if (supabase) {
-      const { error } = await supabase
-        .from("posts")
-        .delete()
-        .eq("id", postId)
-        .eq("user_id", userId);
-      
+      let query = supabase.from("posts").delete().eq("id", postId);
+      if (!isAdmin) {
+        query = query.eq("user_id", userId);
+      }
+      const { error } = await query;
       if (error) return res.status(500).json({ error: error.message });
       return res.json({ success: true });
     } else {
-      const idx = fallbackPosts.findIndex(p => p.id === postId && p.user_id === userId);
+      const idx = fallbackPosts.findIndex(p => p.id === postId && (isAdmin || p.user_id === userId));
       if (idx !== -1) {
         fallbackPosts.splice(idx, 1);
         saveFallbackDb();
@@ -873,6 +832,39 @@ app.post("/api/posts/:id/comments", async (req, res) => {
       };
 
       return res.json({ success: true, comment: formatted });
+    }
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+// 12. Comments: Delete a comment
+app.delete("/api/comments/:id", async (req, res) => {
+  const commentId = req.params.id;
+  const { userId } = req.body;
+  if (!userId) {
+    return res.status(400).json({ error: "用户未登录，无法删除评论！" });
+  }
+
+  const isAdmin = userId === "202408151229";
+
+  try {
+    if (supabase) {
+      let query = supabase.from("comments").delete().eq("id", commentId);
+      if (!isAdmin) {
+        query = query.eq("user_id", userId);
+      }
+      const { error } = await query;
+      if (error) return res.status(500).json({ error: error.message });
+      return res.json({ success: true });
+    } else {
+      const idx = fallbackComments.findIndex(c => c.id === commentId && (isAdmin || c.user_id === userId));
+      if (idx !== -1) {
+        fallbackComments.splice(idx, 1);
+        saveFallbackDb();
+        return res.json({ success: true });
+      }
+      return res.status(404).json({ error: "评论不存在或无权删除！" });
     }
   } catch (err: any) {
     return res.status(500).json({ error: err.message });

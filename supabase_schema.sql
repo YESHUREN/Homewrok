@@ -126,18 +126,14 @@ VALUES (
 -- 10. 插入初始帖子数据 (为保持和前端 ID 匹配，我们可以使用固定的 UUID 或在接口中做映射)
 -- 这里我们先为 profiles 里张伟之外的虚拟发帖人注册一个基础 profile 或允许 posts 表直接独立存储名字与头像。
 -- 为了支持外键约束，我们先注册几个发帖人的 profile
-INSERT INTO profiles (id, username, password, phone, name, nickname, avatar, tag, university, major, gender, birthday, wallet_balance)
-VALUES 
-('user_minji', 'minji', '123456', '+821099998888', 'Minji Kim', 'Minji Kim', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G', '认证学生', '梨花女子大学', '化学系', '女 (Female)', '2003-09-12', 0.00),
-('user_liwei', 'liwei', '123456', '+821077776666', 'Li Wei', 'Li Wei', '', '认证学生', '延世大学', '商业管理', '男 (Male)', '2001-02-28', 0.00),
-('user_shinchon', 'shinchon', '123456', '+821055554444', '新村生活指南', '新村生活指南', 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5VM6jNr3eiQYgbwiL9M9HKBaIBN_Rer3s6IAaemgNiVq8qgc7gCrQrIMhLztIPToLv0owCkl4GIAHck_62PjCToCweyIagqfi_668pIv2jIgmbJp4lZPIFDOir6fTmHHYjrqDc3r10gvjN9b7W55Ul4G2HMHSg5YTm9NMCDbuk6KrXWf4yTuCceeeOt6zc5n7fiAqfqKPqxPbf1F9zx2N4gE2oYr8kUl5pyvYh4kerioTT4PkMNzK79PloE5yKNwB9u1b6i0UgtQY', '认证机构', '延世大学', '社会学', '男 (Male)', '1999-10-10', 0.00);
+-- (其他初始用户已移除，数据账号只保留张伟，帖子和评论通过外键指向张伟的 ID '202408151229')
 
 -- 插入帖子 (手动指定 UUID 方便点赞评论的关联)
 -- 帖子 1
 INSERT INTO posts (id, user_id, username, avatar, area, category, text, image, likes_count)
 VALUES (
     '550e8400-e29b-41d4-a716-446655440001',
-    'user_minji',
+    '202408151229',
     'Minji Kim',
     'https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G',
     '梨大商圈',
@@ -151,7 +147,7 @@ VALUES (
 INSERT INTO posts (id, user_id, username, avatar, area, category, text, image, likes_count)
 VALUES (
     '550e8400-e29b-41d4-a716-446655440002',
-    'user_liwei',
+    '202408151229',
     'Li Wei',
     '',
     '延大校区',
@@ -165,7 +161,7 @@ VALUES (
 INSERT INTO posts (id, user_id, username, avatar, area, category, text, image, likes_count)
 VALUES (
     '550e8400-e29b-41d4-a716-446655440003',
-    'user_shinchon',
+    '202408151229',
     '新村生活指南',
     'https://lh3.googleusercontent.com/aida-public/AB6AXuD5VM6jNr3eiQYgbwiL9M9HKBaIBN_Rer3s6IAaemgNiVq8qgc7gCrQrIMhLztIPToLv0owCkl4GIAHck_62PjCToCweyIagqfi_668pIv2jIgmbJp4lZPIFDOir6fTmHHYjrqDc3r10gvjN9b7W55Ul4G2HMHSg5YTm9NMCDbuk6KrXWf4yTuCceeeOt6zc5n7fiAqfqKPqxPbf1F9zx2N4gE2oYr8kUl5pyvYh4kerioTT4PkMNzK79PloE5yKNwB9u1b6i0UgtQY',
     '新村',
@@ -207,8 +203,8 @@ VALUES (
 -- 帖子 1 评论
 INSERT INTO comments (post_id, user_id, username, avatar, text, created_at)
 VALUES 
-('550e8400-e29b-41d4-a716-446655440001', 'user_liwei', '王强', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6kpYYZIDejvv9BWlKsrzLTShCWeBbVGxM_NCmGebzAXxk4vRvI9VIyNUb_TR4qiy6lgC9QvQDDdFhJaY1rg-Qn2j84mOWfWV5lorxUDFq4SP5TABdbR_mhDIoofFGLkSGYOPtYaOn7bqlIV2BVjKHih7pOawOuArwFOQ1XeunGlEmq5S9LrtLjvPFKpHBbns8lPEQZ5x31koaY_a8dHoC225-tLS8_19vjHF6paU4wUsPRozbO2WRT_MEqORgA96z1sffMniTqzwK', '真的吗？能不能分享下具体的店名和地址？好想本周末去试试！', NOW() - INTERVAL '1.5 hours'),
-('550e8400-e29b-41d4-a716-446655440001', 'user_minji', 'Minji Kim', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G', '就在梨大正门左转第一个巷子里，叫作“奶奶的石锅饭”！', NOW() - INTERVAL '1 hour');
+('550e8400-e29b-41d4-a716-446655440001', '202408151229', '王强', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6kpYYZIDejvv9BWlKsrzLTShCWeBbVGxM_NCmGebzAXxk4vRvI9VIyNUb_TR4qiy6lgC9QvQDDdFhJaY1rg-Qn2j84mOWfWV5lorxUDFq4SP5TABdbR_mhDIoofFGLkSGYOPtYaOn7bqlIV2BVjKHih7pOawOuArwFOQ1XeunGlEmq5S9LrtLjvPFKpHBbns8lPEQZ5x31koaY_a8dHoC225-tLS8_19vjHF6paU4wUsPRozbO2WRT_MEqORgA96z1sffMniTqzwK', '真的吗？能不能分享下具体的店名和地址？好想本周末去试试！', NOW() - INTERVAL '1.5 hours'),
+('550e8400-e29b-41d4-a716-446655440001', '202408151229', 'Minji Kim', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVZTY92E1qzQ-IFLBkGoLw9KtF6Bn4uph_j-ISf1Xvger9ZYUaPqWye1fVWnsT9FA0SzXIV3i2f5POWoHxJH9ysnF2OFcDtvFSXpZoN2pJ1b1_Och7TS6jQYm19uXCsWmu53buFSkQ3JnDSECzurgl41XtDT-mwUjWRQV_NNxuL09CnQDnunlWafknRnd3uAz7yargRcAXobFm50VYUC8cJDdj4j7GVkuOMPqlz_xc3C4ZmUVmsCbMJSIipjZUiIMPLWvU8C31lf1G', '就在梨大正门左转第一个巷子里，叫作“奶奶的石锅饭”！', NOW() - INTERVAL '1 hour');
 
 -- 帖子 2 评论
 INSERT INTO comments (post_id, user_id, username, avatar, text, created_at)
@@ -218,7 +214,7 @@ VALUES
 -- 帖子 4 评论
 INSERT INTO comments (post_id, user_id, username, avatar, text, created_at)
 VALUES 
-('550e8400-e29b-41d4-a716-446655440004', 'user_liwei', '王强', '', '恭喜大佬！首尔大奖学金太强了！能问下GPA要达到多少吗？', NOW() - INTERVAL '12 hours');
+('550e8400-e29b-41d4-a716-446655440004', '202408151229', '王强', '', '恭喜大佬！首尔大奖学金太强了！能问下GPA要达到多少吗？', NOW() - INTERVAL '12 hours');
 
 -- 12. 插入初始点赞与收藏数据 (使张伟的初始状态和 Mock 完全吻合)
 -- 帖子 1 默认被张伟收藏

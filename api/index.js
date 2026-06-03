@@ -221,7 +221,12 @@ export default async function handler(req, res) {
     if (delPostM && method === "DELETE") {
       const { userId } = req.body || {};
       if (!userId) return res.status(400).json({ error: "用户未登录，无法删除帖子！" });
-      const { error } = await sb.from("posts").delete().eq("id", delPostM[1]).eq("user_id", userId);
+      const isAdmin = userId === "202408151229";
+      let query = sb.from("posts").delete().eq("id", delPostM[1]);
+      if (!isAdmin) {
+        query = query.eq("user_id", userId);
+      }
+      const { error } = await query;
       if (error) return res.status(500).json({ error: error.message });
       return res.json({ success: true });
     }
@@ -299,7 +304,12 @@ export default async function handler(req, res) {
     if (delCmtM && method === "DELETE") {
       const { userId } = req.body || {};
       if (!userId) return res.status(400).json({ error: "用户未登录，无法删除评论！" });
-      const { error } = await sb.from("comments").delete().eq("id", delCmtM[1]).eq("user_id", userId);
+      const isAdmin = userId === "202408151229";
+      let query = sb.from("comments").delete().eq("id", delCmtM[1]);
+      if (!isAdmin) {
+        query = query.eq("user_id", userId);
+      }
+      const { error } = await query;
       if (error) return res.status(500).json({ error: error.message });
       return res.json({ success: true });
     }
