@@ -2120,7 +2120,44 @@ export default function GuideDetail({
                       );
                     }
                     
-                    // I. Text blocks (fallback)
+                    // I. Image blocks
+                    if (blockType === 'image') {
+                      return (
+                        <div key={block.key} className="rounded-xl overflow-hidden border border-slate-150 shadow-sm bg-slate-50 my-3">
+                          <img 
+                            src={doc.name} 
+                            alt={t("插图", "이미지", "Illustration")} 
+                            className="w-full h-auto object-contain max-h-[350px]"
+                          />
+                        </div>
+                      );
+                    }
+                    
+                    // J. File blocks
+                    if (blockType === 'file') {
+                      return (
+                        <a 
+                          key={block.key}
+                          href="https://kcloud.kangwon.ac.kr/login"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-slate-50/50 hover:bg-slate-50 transition-colors my-3"
+                        >
+                          <span className="text-xl">📄</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-[11px] font-bold text-slate-800 truncate">
+                              {t("e-루리 使用指南手册 (PDF)", "e-루리 사용법 매뉴얼 (PDF)", "e-RURI User Guide Manual (PDF)")}
+                            </p>
+                            <p className="text-[9px] text-slate-400 font-semibold">{doc.name}</p>
+                          </div>
+                          <span className="text-[9px] font-bold text-slate-400 border border-slate-200 px-2 py-0.5 rounded-md">
+                            {t("下载", "다운로드", "Download")}
+                          </span>
+                        </a>
+                      );
+                    }
+                    
+                    // K. Text blocks (fallback)
                     return (
                       <p key={block.key} className="text-[11px] text-slate-500 leading-relaxed pl-1 py-0.5 font-medium whitespace-pre-wrap">
                         {doc.name}

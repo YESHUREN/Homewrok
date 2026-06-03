@@ -572,11 +572,14 @@ export const KNU_GUIDE_CONTENT: Record<string, (t: (zh: string, ko: string, en: 
   }),
   "31939f9906f5800599f0ed9605268593": (t) => ({
     heroDesc: t("获取江原大学三陟校区 e-루리 사용법/How to use e-루리/e-RURI使用指南 (2) 的官方指南与核心信息。", "강원대학교 삼척캠퍼스 e-루리 사용법에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok How to use e-RURI."),
-    checklistTitle: t("所需材料与准备工作清单", "필요 서류 및 준비 체크리스트", "Required Checklist & Info"),
+    checklistTitle: t("官方指南与参考图解", "공식 가이드 및 참고 자료", "Official Guides & References"),
     checklistItems: [
-      { key: "text_1", name: t("K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login"), desc: t("text", "강원대 삼척 e-루리 사용법 관련: K-Cloud : https://kcloud.kangwon.ac.kr/login", "Required item for KNU Samcheok How to use e-RURI: K-Cloud : https://kcloud.kangwon.ac.kr/login") },
-      { key: "text_2", name: t("K-Cloud 로그인", "K-Cloud 로그인", "K-Cloud 로그인"), desc: t("text", "강원대 삼척 e-루리 사용법 관련: K-Cloud 로그인", "Required item for KNU Samcheok How to use e-RURI: K-Cloud 로그인") },
-      { key: "file_3", name: t("2.9 MiB", "2.9 MiB", "2.9 MiB"), desc: t("file", "강원대 삼척 e-루리 사용법 관련: 2.9 MiB", "Required item for KNU Samcheok How to use e-RURI: 2.9 MiB") },
+      { key: "text_1", name: t("K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login", "K-Cloud : https://kcloud.kangwon.ac.kr/login"), desc: t("text", "K-Cloud 링크", "K-Cloud login link") },
+      { key: "text_2", name: t("(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login", "(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login", "(Step1) K-Cloud : https://kcloud.kangwon.ac.kr/login"), desc: t("text", "Step 1", "Step 1") },
+      { key: "image_3", name: "/eruri_login.png", desc: t("image", "K-Cloud 로그인 화면", "K-Cloud login screen") },
+      { key: "sub_header_4", name: t("K-Cloud 로그인", "K-Cloud 로그인", "K-Cloud 로그인"), desc: t("sub_header", "K-Cloud 로그인", "K-Cloud 로그인") },
+      { key: "image_5", name: "/eruri_dashboard.png", desc: t("image", "K-Cloud 서비스 통합 플랫폼", "K-Cloud integrated portal platform") },
+      { key: "file_6", name: t("2.9 MiB", "2.9 MiB", "2.9 MiB"), desc: t("file", "e-루리 사용법 매뉴얼 파일", "e-RURI guide manual file") },
     ],
     stepsTitle: t("业务办理步骤与流程说明", "진행 절차 및 단계 안내", "Processing Steps & Procedures"),
     steps: [
