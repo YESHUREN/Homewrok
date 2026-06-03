@@ -2321,10 +2321,7 @@ export default function App() {
                       <Camera className="w-4 h-4" />
                     </button>
                   </div>
-                  <div className="mt-3 flex items-center gap-1 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-100">
-                    <Shield className="w-3.5 h-3.5 text-[#00685f] fill-teal-100" />
-                    <span className="text-[#00685f] font-bold text-[10px]">{language === 'en' ? 'Student ID Verified' : language === 'ko' ? '학적 실명 인증 완료' : '已通过学籍实名认证'}</span>
-                  </div>
+
                 </section>
 
                 {/* Form fields */}
@@ -3585,7 +3582,7 @@ export default function App() {
 
                     {/* Menu items row checklist */}
                     <section className="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden divide-y divide-slate-100">
-                      <div onClick={() => triggerSystemTip(language === 'en' ? 'Need help? Click the top right or dial 1345.' : language === 'ko' ? '도움이 필요하시면 우측 상단을 열거나 1345로 전화하세요.' : '有什么帮助需要，请点击右上角或拨打1345。')} className="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                      <div onClick={() => triggerSystemTip(language === 'en' ? 'Need help? Contact email: kaoyeqwq@gmail.com, tu1975992194@gmail.com' : language === 'ko' ? '도움이 필요하시면 이메일로 연락주세요: kaoyeqwq@gmail.com, tu1975992194@gmail.com' : '如有帮助需要，请联系邮箱：kaoyeqwq@gmail.com, tu1975992194@gmail.com')} className="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 transition-colors">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center text-[#00685f]">
                             <HelpCircle className="w-4.5 h-4.5" />
