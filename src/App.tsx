@@ -90,7 +90,7 @@ export default function App() {
   const [newPostCategory, setNewPostCategory] = useState("校园生活");
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostText, setNewPostText] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("#首尔探店");
+  const [selectedTopic, setSelectedTopic] = useState("");
   const [newPostLocation, setNewPostLocation] = useState("首尔");
   const [showLocationPicker, setShowLocationPicker] = useState(false);
   const [customTopics, setCustomTopics] = useState<string[]>([]);
@@ -809,7 +809,7 @@ export default function App() {
         username: profile.name,
         avatar: profile.avatar,
         category: newPostCategory,
-        text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText} ${selectedTopic}`,
+        text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText}${selectedTopic ? ` ${selectedTopic}` : ""}`,
         image: newPostAttachedPhotos.length > 0 ? newPostAttachedPhotos[0] : undefined,
         area: newPostLocation || "首尔",
         anonymous: newPostAnonymous
@@ -826,6 +826,7 @@ export default function App() {
             setNavTab(NavigationTab.COMMUNITY);
             setNewPostTitle("");
             setNewPostText("");
+            setSelectedTopic("");
             setNewPostAnonymous(false);
           }, 2000);
         }
@@ -840,7 +841,7 @@ export default function App() {
           time: "刚刚",
           area: newPostLocation || "首尔",
           category: newPostCategory,
-          text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText} ${selectedTopic}`,
+          text: `${newPostTitle ? `【${newPostTitle}】` : ""}${newPostText}${selectedTopic ? ` ${selectedTopic}` : ""}`,
           image: newPostAttachedPhotos.length > 0 ? newPostAttachedPhotos[0] : undefined,
           likes: 0,
           commentsCount: 0,
@@ -856,6 +857,7 @@ export default function App() {
           setNavTab(NavigationTab.COMMUNITY);
           setNewPostTitle("");
           setNewPostText("");
+          setSelectedTopic("");
           setNewPostAnonymous(false);
         }, 2000);
       });
@@ -1839,13 +1841,25 @@ export default function App() {
                     </div>
                   )}
                   <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedTopic("")}
+                      className={`px-3 py-1 rounded-full text-[11px] font-medium transition-all ${
+                        selectedTopic === ""
+                          ? "bg-amber-100 text-amber-800 border border-amber-200"
+                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      }`}
+                    >
+                      {language === 'en' ? 'No Topic' : language === 'ko' ? '주제 없음' : '不加话题'}
+                    </button>
                     {[
                       ...(language === 'en' ? ["#Seoul Eats", "#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#서울맛집", "#비자꿀팁", "#한국어공부", "#방구하기"] : ["#首尔探店", "#签证攻略", "#韩语备考", "#租房经验"]),
                       ...customTopics
                     ].map((topic) => (
                       <button
                         key={topic}
-                        onClick={() => setSelectedTopic(topic)}
+                        type="button"
+                        onClick={() => setSelectedTopic(prev => prev === topic ? "" : topic)}
                         className={`px-3 py-1 rounded-full text-[11px] font-medium transition-all ${
                           selectedTopic === topic
                             ? "bg-amber-100 text-amber-800 border border-amber-200"
