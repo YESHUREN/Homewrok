@@ -195,9 +195,12 @@ export default function App() {
   const [registerError, setRegisterError] = useState("");
 
   // Calendar Screen States
-  const [calendarYear, setCalendarYear] = useState<number>(2026); // Default to year 2026 for high-fidelity mock alignment
-  const [calendarMonth, setCalendarMonth] = useState<number>(5);  // Default to May 2026 for schema alignment
-  const [activeCalendarSelectedDate, setActiveCalendarSelectedDate] = useState<string>("2026-05-13");
+  const todayForCalendar = new Date();
+  const [calendarYear, setCalendarYear] = useState<number>(todayForCalendar.getFullYear());
+  const [calendarMonth, setCalendarMonth] = useState<number>(todayForCalendar.getMonth() + 1);
+  const [activeCalendarSelectedDate, setActiveCalendarSelectedDate] = useState<string>(
+    `${todayForCalendar.getFullYear()}-${String(todayForCalendar.getMonth() + 1).padStart(2, '0')}-${String(todayForCalendar.getDate()).padStart(2, '0')}`
+  );
 
   const handlePrevMonth = () => {
     setCalendarMonth(prev => {
