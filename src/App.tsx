@@ -1012,10 +1012,6 @@ export default function App() {
       setLoginError("请输入密码");
       return;
     }
-    if (!loginAgreed) {
-      setLoginError("请阅读并同意各用户服务条款与隐私契约");
-      return;
-    }
 
     fetch("/api/auth/login", {
       method: "POST",
@@ -1153,10 +1149,6 @@ export default function App() {
     }
     if (!registerBirthday) {
       setRegisterError("请选择出生年月");
-      return;
-    }
-    if (!loginAgreed) {
-      setRegisterError("请阅读并同意各用户服务条款与隐私契约");
       return;
     }
 
@@ -2645,25 +2637,6 @@ export default function App() {
                       <p className="text-[11px] text-red-500 leading-none pl-1">⚠️ {loginError}</p>
                     )}
 
-                    {/* Consents checkbox */}
-                    <div className="flex items-start gap-2 pt-1 pb-2">
-                      <input 
-                        type="checkbox"
-                        id="agreeTerm"
-                        checked={loginAgreed}
-                        onChange={(e) => setLoginAgreed(e.target.checked)}
-                        className="mt-0.5 rounded border-slate-300 text-[#00685f] focus:ring-[#00685f]" 
-                      />
-                      <label htmlFor="agreeTerm" className="text-[10px] text-slate-500 leading-tight">
-                        {language === 'en' ? (
-                          <>I have carefully read and agree to the <a className="text-[#00685f] font-semibold hover:underline" href="#">Terms of Service</a>, <a className="text-[#00685f] font-semibold hover:underline" href="#">Privacy Policy</a> and <a className="text-[#00685f] font-semibold hover:underline" href="#">Student Aid Disclaimer</a>.</>
-                        ) : language === 'ko' ? (
-                          <>저는 <a className="text-[#00685f] font-semibold hover:underline" href="#">이용 약관</a>, <a className="text-[#00685f] font-semibold hover:underline" href="#">개인정보 체챘</a> 및 <a className="text-[#00685f] font-semibold hover:underline" href="#">유학생 지원 면제 조항</a>을 좋송합니다.</>
-                        ) : (
-                          <>수인하고 완전히 동의하는 <a className="text-[#00685f] font-semibold hover:underline" href="#">《用户服务协议》</a>、<a className="text-[#00685f] font-semibold hover:underline" href="#">《个人隐私申明政策》</a> 以及在韩应急 <a className="text-[#00685f] font-semibold hover:underline" href="#">《在韩学生援助免责权条款》</a></>
-                        )}
-                      </label>
-                    </div>
 
                     {/* Submit Login */}
                     <button 
@@ -2694,7 +2667,6 @@ export default function App() {
               {/* Backing branding logo */}
               <footer className="py-6 text-center select-none opacity-50 text-[11px]">
                 <p className="font-bold text-[#00685f] flex items-center justify-center gap-1">{t('student_project')}</p>
-                <p className="text-slate-400">Reliability & Connection in Korea</p>
               </footer>
             </div>
           ) : screen === ActiveScreen.REGISTER ? (
@@ -2796,19 +2768,6 @@ export default function App() {
                       <p className="text-[11px] text-red-500 leading-none pl-1">⚠️ {registerError}</p>
                     )}
 
-                    {/* Consents checkbox */}
-                    <div className="flex items-start gap-2 pt-1 pb-2">
-                      <input 
-                        type="checkbox"
-                        id="agreeTermReg"
-                        checked={loginAgreed}
-                        onChange={(e) => setLoginAgreed(e.target.checked)}
-                        className="mt-0.5 rounded border-slate-300 text-[#00685f] focus:ring-[#00685f]" 
-                      />
-                      <label htmlFor="agreeTermReg" className="text-[10px] text-slate-500 leading-tight">
-                        我已认真阅读并完全同意中国学联联手制定的 <a className="text-[#00685f] font-semibold hover:underline" href="#">《用户服务协议》</a> 并在注册完成后自动赠予新会员初始1000.00元电子钱包迎新额度。
-                      </label>
-                    </div>
 
                     {/* Submit Register */}
                     <button 
@@ -2838,7 +2797,6 @@ export default function App() {
               {/* Backing branding logo */}
               <footer className="py-6 text-center select-none opacity-50 text-[11px] mt-6">
                 <p className="font-bold text-[#00685f] flex items-center justify-center gap-1">{t('student_project')}</p>
-                <p className="text-slate-400">Reliability & Connection in Korea</p>
               </footer>
             </div>
           ) : (
