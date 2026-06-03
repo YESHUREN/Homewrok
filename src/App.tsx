@@ -2190,7 +2190,7 @@ export default function App() {
                     <div className="flex justify-between items-center py-1.5 border-t border-slate-50 mt-2">
                       <div className="text-[11px] leading-tight">
                         <p className="font-semibold text-slate-700">开启通知提醒</p>
-                        <p className="text-slate-450 mt-0.5">在事件开始前1小时通知我</p>
+                        <p className="text-slate-450 mt-0.5">在事件开始前24小时通知我</p>
                       </div>
                       <button 
                         onClick={() => setNewReminderNotice(!newReminderNotice)}
