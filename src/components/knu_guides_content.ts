@@ -563,27 +563,27 @@ export const KNU_GUIDE_CONTENT: Record<string, (t: (zh: string, ko: string, en: 
       
       { key: "sub_sub_header_3", name: t("1. 访问并登录 K-Cloud 系统", "1. K-Cloud 접속 및 로그인", "1. Access and Log in K-Cloud"), desc: t("sub_sub_header", "step1", "step1") },
       { key: "text_4", name: t("进入官网登录页面： https://kcloud.kangwon.ac.kr/login", "로그인 페이지 이동: https://kcloud.kangwon.ac.kr/login", "Go to login page: https://kcloud.kangwon.ac.kr/login"), desc: t("text", "step1_desc", "step1_desc") },
-      { key: "image_5", name: "/kcloud_update1.png", desc: t("image", "K-Cloud 登录页面", "K-Cloud Login Page") },
+      { key: "image_5", name: "/kcloud_update1.jpg", desc: t("image", "K-Cloud 登录页面", "K-Cloud Login Page") },
       
       { key: "sub_sub_header_6", name: t("2. 进入 One-Stop 服务", "2. One-Stop 서비스 메뉴 선택", "2. Enter One-Stop Service"), desc: t("sub_sub_header", "step2", "step2") },
       { key: "text_7", name: t("登录个人系统主页后，点击左侧菜单中的 [One-Stop Service] (원스톱 서비스)。", "로그인 후 좌측 메뉴에서 'One-Stop 서비스'를 클릭합니다.", "After logging in, click 'One-Stop Service' on the left menu."), desc: t("text", "step2_desc", "step2_desc") },
-      { key: "image_8", name: "/kcloud_update2.png", desc: t("image", "进入 One-Stop 服务", "Enter One-Stop Service") },
+      { key: "image_8", name: "/kcloud_update2.jpg", desc: t("image", "进入 One-Stop 服务", "Enter One-Stop Service") },
       
       { key: "sub_sub_header_9", name: t("3. 找到个人新修改入口", "3. 신상정보 수정 메뉴 이동", "3. Open Personal Info Modification"), desc: t("sub_sub_header", "step3", "step3") },
       { key: "text_10", name: t("依次展开菜单：[大学生活] (대학생활) ➔ [学籍] (학적) ➔ [修改个人信息] (신상정보 수정)。", "메뉴 경로: '대학생활' ➔ '학적' ➔ '신상정보 수정'을 차례대로 클릭합니다.", "Menu path: Click 'Campus Life' ➔ 'Academic Status' ➔ 'Edit Personal Info'."), desc: t("text", "step3_desc", "step3_desc") },
-      { key: "image_11", name: "/kcloud_update3.png", desc: t("image", "找到信息修改菜单", "Find modification menu") },
+      { key: "image_11", name: "/kcloud_update3.jpg", desc: t("image", "找到信息修改菜单", "Find modification menu") },
       
       { key: "sub_sub_header_12", name: t("4. 更新联系电话与外国人登录证号", "4. 연락처 및 주민등록번호 업데이트", "4. Update Phone and Registration Number"), desc: t("sub_sub_header", "step4", "step4") },
       { key: "text_13", name: t("录入您最新的韩国手机号码，并确认外国人登录证号（주민등록번호）是否录入正确。", "한국 내 신규 휴대폰 번호를 입력하고 외국인등록번호가 맞는지 조회합니다.", "Enter your new Korean mobile number and check if your ARC number is correct."), desc: t("text", "step4_desc", "step4_desc") },
-      { key: "image_14", name: "/kcloud_update4.png", desc: t("image", "更新电话和登录证号", "Update phone and ARC") },
+      { key: "image_14", name: "/kcloud_update4.jpg", desc: t("image", "更新电话和登录证号", "Update phone and ARC") },
       
       { key: "sub_sub_header_15", name: t("5. 修改居住地住址", "5. 한국 거주 주소지 변경", "5. Change Residence Address"), desc: t("sub_sub_header", "step5", "step5") },
       { key: "text_16", name: t("点击地址查询并录入新租房地址，必须与外国人登录证背面打印的地址绝对一致！", "주소 검색 단추를 눌러 새 원룸 주소를 입력합니다. 외국인등록증 주소와 동일해야 합니다.", "Click search and type your new address. It must be identical to the address on your ARC."), desc: t("text", "step5_desc", "step5_desc") },
-      { key: "image_17", name: "/kcloud_update5.png", desc: t("image", "修改居住地住址", "Edit residence address") },
+      { key: "image_17", name: "/kcloud_update5.jpg", desc: t("image", "修改居住地住址", "Edit residence address") },
       
       { key: "sub_sub_header_18", name: t("6. 保存修改以完成提交", "6. 저장 및 변경 최종 제출", "6. Save Modifications"), desc: t("sub_sub_header", "step6", "step6") },
       { key: "text_19", name: t("核对所有填写的修改项目无误后，点击页面右上角的 [保存] (저장) 确认提交。", "모든 변경 사항을 확인한 후 우측 상단의 '저장' 버튼을 눌러 제출을 마칩니다.", "Check all modified fields, then click the 'Save' button at the top-right to submit."), desc: t("text", "step6_desc", "step6_desc") },
-      { key: "image_20", name: "/kcloud_update6.png", desc: t("image", "保存个人信息修改", "Save information update") },
+      { key: "image_20", name: "/kcloud_update6.jpg", desc: t("image", "保存个人信息修改", "Save information update") },
     ],
     stepsTitle: t("业务办理步骤与流程说明", "진행 절차 및 단계 안내", "Processing Steps & Procedures"),
     steps: [
