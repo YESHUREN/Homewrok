@@ -177,7 +177,7 @@ export const KNU_GUIDE_ITEMS: KnuGuideItem[] = [
   },
   {
     id: "22439f9906f581bc9538ff49f8a8115a",
-    titleZh: "海韩国访问预约方法",
+    titleZh: "Hi Korea 访问预约方法",
     titleKo: "하이코리아 방문 예약 방법",
     titleEn: "Hi Korea Appointment Booking Guide",
     category: "info"

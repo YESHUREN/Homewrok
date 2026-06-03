@@ -1049,7 +1049,7 @@ export const KNU_GUIDE_CONTENT: Record<string, (t: (zh: string, ko: string, en: 
     contactName: t("三陟校区国际交流处 (OIA)", "삼척 국제교류과 (OIA)", "Samcheok Office of International Affairs (OIA)"),
   }),
   "22439f9906f581bc9538ff49f8a8115a": (t) => ({
-    heroDesc: t("获取江原大学三陟校区 海韩国访问预约方法 的官方指南与核心信息。", "강원대학교 삼척캠퍼스 하이코리아 방문 예약 방법에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok Hi Korea Appointment Booking Guide."),
+    heroDesc: t("获取江原大学三陟校区 Hi Korea 访问预约方法 的官方指南与核心信息。", "강원대학교 삼척캠퍼스 하이코리아 방문 예약 방법에 대한 공식 가이드 및 핵심 정보를 확인하세요.", "Check the official guide and core details for KNU Samcheok Hi Korea Appointment Booking Guide."),
     checklistTitle: t("所需材料与准备工作清单", "필요 서류 및 준비 체크리스트", "Required Checklist & Info"),
     checklistItems: [
       { key: "sub_sub_header_1", name: t("📌 为什么需要预约？", "📌 为什么需要预约？", "📌 为什么需要预约？"), desc: t("sub_sub_header", "강원대 삼척 하이코리아 방문 예약 방법 관련: 📌 为什么需要预约？", "Required item for KNU Samcheok Hi Korea Appointment Booking Guide: 📌 为什么需要预约？") },
