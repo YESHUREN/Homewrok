@@ -1841,17 +1841,6 @@ export default function App() {
                     </div>
                   )}
                   <div className="flex flex-wrap gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedTopic("")}
-                      className={`px-3 py-1 rounded-full text-[11px] font-medium transition-all ${
-                        selectedTopic === ""
-                          ? "bg-amber-100 text-amber-800 border border-amber-200"
-                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                      }`}
-                    >
-                      {language === 'en' ? 'No Topic' : language === 'ko' ? '주제 없음' : '不加话题'}
-                    </button>
                     {[
                       ...(language === 'en' ? ["#Seoul Eats", "#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#서울맛집", "#비자꿀팁", "#한국어공부", "#방구하기"] : ["#首尔探店", "#签证攻略", "#韩语备考", "#租房经验"]),
                       ...customTopics
