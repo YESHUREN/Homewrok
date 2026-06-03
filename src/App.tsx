@@ -104,6 +104,7 @@ export default function App() {
 
   // Publish success alert overlay toggle
   const [showPublishSuccess, setShowPublishSuccess] = useState(false);
+  const [isPosting, setIsPosting] = useState(false);
 
   // DB Diagnostic & Cloud Connection states
   const [dbDiagnostic, setDbDiagnostic] = useState<{
@@ -827,6 +828,7 @@ export default function App() {
 
   // Handle Publish Post
   const handlePublishPost = () => {
+    if (isPosting) return;
     if (!profile.isLoggedIn) {
       triggerSystemTip("请先登录再进行发布动态！");
       setScreen(ActiveScreen.LOGIN);
@@ -836,6 +838,8 @@ export default function App() {
       triggerSystemTip("请输入内容或向校友提问哦~");
       return;
     }
+
+    setIsPosting(true);
 
     // Auto-sync custom topic to globalTopics list
     if (selectedTopic && selectedTopic.startsWith('#') && !globalTopics.includes(selectedTopic)) {
@@ -869,7 +873,11 @@ export default function App() {
             setNewPostText("");
             setSelectedTopic("");
             setNewPostAnonymous(false);
+            setIsPosting(false);
           }, 2000);
+        } else {
+          setIsPosting(false);
+          triggerSystemTip(data.error || "发布失败，请重试！");
         }
       })
       .catch(() => {
@@ -900,6 +908,7 @@ export default function App() {
           setNewPostText("");
           setSelectedTopic("");
           setNewPostAnonymous(false);
+          setIsPosting(false);
         }, 2000);
       });
   };
@@ -1729,9 +1738,10 @@ export default function App() {
                 <h1 className="font-bold text-sm text-[15px] text-slate-800">{t('publish_title')}</h1>
                 <button 
                   onClick={handlePublishPost}
-                  className="bg-[#00685f] text-white hover:bg-[#005049] px-4 py-1.5 rounded-full text-xs font-semibold shadow-sm transition-transform active:scale-95"
+                  disabled={isPosting}
+                  className={`${isPosting ? 'bg-slate-400 cursor-not-allowed opacity-75' : 'bg-[#00685f] hover:bg-[#005049] active:scale-95'} text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-sm transition-transform`}
                 >
-                  {t('publish_confirm')}
+                  {isPosting ? (language === 'en' ? 'Publishing...' : language === 'ko' ? '게시 중...' : '发布中...') : t('publish_confirm')}
                 </button>
               </nav>
 

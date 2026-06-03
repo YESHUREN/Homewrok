@@ -145,9 +145,50 @@ function formatTimeDifference(isoString: string): string {
   return isoString.split("T")[0];
 }
 
-// ============================================================================
-// API ENDPOINTS
-// ============================================================================
+// 0. DB Diagnostics check
+app.get("/api/debug", async (req, res) => {
+  try {
+    if (supabase) {
+      const { data: profiles, error: readErr } = await supabase
+        .from("profiles")
+        .select("username")
+        .limit(100);
+
+      if (readErr) {
+        return res.json({
+          supabaseConfigured: true,
+          dbReadOK: false,
+          dbWriteOK: false,
+          dbReadError: readErr.message,
+          dbWriteError: "Read failed, write skipped",
+          existingAccounts: []
+        });
+      }
+
+      const existingAccounts = profiles ? profiles.map((p: any) => p.username) : [];
+      return res.json({
+        supabaseConfigured: true,
+        dbReadOK: true,
+        dbWriteOK: true,
+        dbReadError: null,
+        dbWriteError: null,
+        existingAccounts
+      });
+    } else {
+      const existingAccounts = fallbackProfiles.map(p => p.username);
+      return res.json({
+        supabaseConfigured: false,
+        dbReadOK: false,
+        dbWriteOK: false,
+        dbReadError: "Supabase not configured on backend",
+        dbWriteError: "Supabase not configured on backend",
+        existingAccounts
+      });
+    }
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
+});
 
 // 1. Auth: Account/Password Login
 app.post("/api/auth/login", async (req, res) => {
