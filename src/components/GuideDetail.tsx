@@ -1923,6 +1923,13 @@ export default function GuideDetail({
                           rawCells.forEach((c, idx) => {
                             alignedCells[idx] = c;
                           });
+                        } else if (!isCalendarTable) {
+                          // For normal tables, just fill in whatever columns exist in order
+                          rawCells.forEach((c, idx) => {
+                            if (idx < alignedCells.length) {
+                              alignedCells[idx] = c;
+                            }
+                          });
                         } else {
                           // Self-healing cell alignment heuristics
                           rawCells.forEach((cell) => {
