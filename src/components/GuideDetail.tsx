@@ -358,32 +358,6 @@ export default function GuideDetail({
             </div>
           </section>
 
-          {/* Bus card details */}
-          <section className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 mb-4">
-            <div className="flex items-center gap-2 mb-2 text-[#00685f]">
-              <Bus className="w-5 h-5" />
-              <h3 className="font-bold text-sm">{t("巴士分类 (Bus Color Types)", "시내버스 유형 (Bus Color Types)", "Bus Classification")}</h3>
-            </div>
-            <p className="text-xs text-slate-500 leading-normal mb-3">{t("首尔内公交非常便利，通过不同颜色可以辨别行车类型：", "서울 시내버스는 색상별로 운행 범위를 쉽게 구분할 수 있습니다:", "Seoul buses are highly convenient and color-coded by service type:")}</p>
-            <div className="grid grid-cols-2 gap-2 mb-3">
-              <div className="bg-blue-50/70 p-2 rounded-lg border border-blue-100/60 text-xs">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block mr-1"></span>
-                <strong>{t("蓝色大巴：", "간선버스 (파란색):", "Blue Bus (Trunk):")}</strong>{t("干线公交，跑长途主干道。", "서울 시내 먼 거리를 운행하는 간선 버스입니다.", "Mainline transit, running longer distances along arterial roads.")}
-              </div>
-              <div className="bg-emerald-50/70 p-2 rounded-lg border border-emerald-100/60 text-xs">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block mr-1"></span>
-                <strong>{t("绿色小巴：", "지선버스 (초록색):", "Green Bus (Branch/Local):")}</strong>{t("支线或小区巴士，穿行地铁站间。", "지하철역과 인근 주거 지역을 연결하는 지선 또는 마을 버스입니다.", "Feeder or neighborhood loops connecting to subway hubs.")}
-              </div>
-            </div>
-            <div className="w-full h-32 rounded-lg overflow-hidden">
-              <img 
-                className="w-full h-full object-cover"
-                alt="Bus"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARs3GrdvQVV2ex3_gt6QZetjg0WS_heUrZ8B6d6t0ij0ZYezIgZjZ28RyEqZzYswy597A-InYyrwchcVxcFsXjPvUhPBMasi0djderstJfmvS6KB-3K7knat7RA0WclNskXWCHaWH_JlUbY6R-v6Yc6lE99T36kglP210zz6rmrwaKPx3jo-ZzAk2Lxp1tX3NiNskN3lyQD67dhtz-1YsPIQCYnPl54bHSuGGWAedOpqy-xXL3oijVhOGrV-N2hCeH3nRUfIJKMUhY"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </section>
 
           {/* Essential Apps */}
           <section className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 mb-4">
@@ -612,14 +586,14 @@ export default function GuideDetail({
           <section className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 mb-5">
             <h3 className="font-bold text-sm text-slate-800 mb-4 flex items-center gap-1.5">
               <Layers className="w-5 h-5 text-[#00685f]" />
-              {t("保费账单申报及自动划扣步骤", "보험료 고지서 수령 및 자동이체 절차", "Premium Billing and Automatic Debit Steps")}
+              {t("支付方面", "보험료 납부 방법", "Payment Methods")}
             </h3>
 
             <div className="relative pl-4 border-l border-slate-200 space-y-5 ml-2">
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">1</div>
-                <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("纸质单邮寄到家", "지로 고지서 우편 수령", "Paper Bill Sent to Your Home")}</h4>
-                <p className="text-[11px] text-slate-500 leading-normal">{t("账单包含详细银行账户信息，每个月会邮寄给你注册在登录证上的那张登记居住地住址。请千万及时去信箱拿信。", "상세 은행 계좌 정보가 포함된 고지서가 매월 외국인등록증에 등록된 체류지로 발송됩니다. 우편함을 꼭 주기적으로 확인하세요.", "Detailed bank account information will be mailed every month to your registered address. Please check your mailbox in time.")}</p>
+                <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("邮寄到家去银行支付", "지로 고지서 수령 후 은행 납부", "Mail to Home and Pay at Bank")}</h4>
+                <p className="text-[11px] text-slate-500 leading-normal">{t("纸质账单每个月会邮寄到您外国人登录证上的居住地址，账单上附带专属虚拟账户。您可以带着账单直接去银行柜台/ATM缴费，或者通过手机银行向账单上的虚拟账户转账。", "매월 외국인등록증상 거주지로 지로 고지서가 발송되며, 고지서에는 전용 가상계좌번호가 적혀 있습니다. 고지서를 지참하여 은행 창구 또는 ATM에서 납부하거나, 폰뱅킹을 통해 고지서의 가상계좌로 이체하여 납부할 수 있습니다.", "A paper bill with a dedicated virtual account will be mailed to your registered address each month. You can bring the bill to pay at a bank counter/ATM, or transfer money to the virtual account via mobile banking.")}</p>
               </div>
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">2</div>
@@ -628,8 +602,8 @@ export default function GuideDetail({
               </div>
               <div className="relative">
                 <div className="absolute -left-[25px] top-0 w-[18px] h-[18px] rounded-full bg-[#00685f] text-white text-[9px] font-bold flex items-center justify-center">3</div>
-                <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("下载 The Health APP 检验", "'The건강보험' 모바일 앱 활용", "Check via 'The Health' Mobile App")}</h4>
-                <p className="text-[11px] text-slate-500 leading-normal">{t("可以查寻保费清算是否确实缴清。也可以查验自己的扣减明细以及在就医医疗报销进度。", "보험료 납부 여부 및 상세 청구 내역을 모바일로 실시간 조회할 수 있으며, 병원 진료 시 건강보험 적용 혜택 현황도 확인할 수 있습니다.", "You can query if premium payments are fully settled, view detailed billing, and track insurance coverage when visiting clinics.")}</p>
+                <h4 className="text-xs font-bold text-slate-800 leading-none mb-1">{t("下载健康保险app在app内缴费", "'The건강보험' 앱 다운로드 후 앱 내 납부", "Download Health Insurance App and Pay in App")}</h4>
+                <p className="text-[11px] text-slate-500 leading-normal">{t("下载国民健康保险公团官方手机APP“The 건강보험”（The Health Insurance）。登录后，您可以在APP内直接使用银行卡、转账等方式在线缴纳每月的健康保险费，并实时查询缴费明细与清算状态。", "국민건강보험공단 공식 모바일 앱인 'The 건강보험'을 다운로드하세요. 앱에 로그인한 후 신용카드나 계좌이체 등을 통해 편리하게 보험료를 즉시 납부할 수 있으며, 실시간으로 납부 내역 및 청구 금액을 조회할 수 있습니다.", "Download the official National Health Insurance Service app 'The 건강보험' (The Health Insurance). After logging in, you can easily pay your monthly insurance premiums via card or bank transfer directly in the app, and view your payment history in real time.")}</p>
               </div>
             </div>
           </section>
