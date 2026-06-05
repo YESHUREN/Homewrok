@@ -111,6 +111,12 @@ export default function App() {
   const [tempEntryDate, setTempEntryDate] = useState<string>("");
   const [showEntryDateModal, setShowEntryDateModal] = useState(false);
 
+  // Notification Permission state
+  const [notificationPermission, setNotificationPermission] = useState<string>(
+    () => (typeof window !== "undefined" && "Notification" in window) ? (window as any).Notification.permission : "default"
+  );
+
+
 
   // DB Diagnostic & Cloud Connection states
   const [dbDiagnostic, setDbDiagnostic] = useState<{
@@ -463,6 +469,85 @@ export default function App() {
       };
     });
   };
+
+  const requestNotificationPermission = () => {
+    if (!("Notification" in window)) {
+      triggerSystemTip(language === 'en' ? 'System notifications are not supported on this device/browser.' : language === 'ko' ? '이 기기/브라우저에서는 시스템 알림이 지원되지 않습니다.' : '当前设备或浏览器不支持系统通知。');
+      return;
+    }
+    const BrowserNotification = (window as any).Notification;
+    BrowserNotification.requestPermission().then((permission: string) => {
+      setNotificationPermission(permission);
+      if (permission === "granted") {
+        triggerSystemTip(language === 'en' ? 'Notification permission granted! Reminders will show in notification bar.' : language === 'ko' ? '알림 권한이 허용되었습니다! 디데이 당일 알림이 전송됩니다.' : '🎉 通知权限授权成功！当倒数日提醒到期时，您将在手机通知栏收到提醒。');
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.ready.then((reg) => {
+            reg.showNotification(
+              language === 'zh' ? '在韩留学生服务社区' : language === 'ko' ? '입국 도우미' : 'Entry Assistant',
+              {
+                body: language === 'zh' ? '系统推送通知已成功开启！' : language === 'ko' ? '시스템 알림 기능이 활성화되었습니다!' : 'Push notifications successfully enabled!',
+                icon: '/logo.svg',
+                vibrate: [100, 50, 100]
+              }
+            );
+          });
+        }
+      } else {
+        triggerSystemTip(language === 'en' ? 'Notification permission denied. Enable it in browser settings if needed.' : language === 'ko' ? '알림 권한이 거부되었습니다. 설정에서 허용해 주세요.' : '通知权限未被授予。若需提醒，请在手机系统或浏览器设置中允许通知权限。');
+      }
+    });
+  };
+
+  // Background check reminders and trigger system notification
+  useEffect(() => {
+    if (notificationPermission !== "granted") return;
+
+    const checkRemindersAndNotify = () => {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const notifiedList = JSON.parse(localStorage.getItem("notified_reminders") || "[]");
+      let updated = false;
+
+      reminders.forEach((rem) => {
+        if (rem.date === todayStr && rem.enabled && !notifiedList.includes(rem.id)) {
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.ready.then((reg) => {
+              reg.showNotification(
+                language === 'zh' ? '🕒 今日重要日程提醒' : language === 'ko' ? '🕒 오늘 주요 일정 알림' : '🕒 Today\'s Event Reminder',
+                {
+                  body: rem.title,
+                  icon: '/logo.svg',
+                  tag: rem.id,
+                  renotify: true,
+                  requireInteraction: true,
+                  vibrate: [200, 100, 200]
+                }
+              );
+            });
+          } else {
+            const BrowserNotification = (window as any).Notification;
+            new BrowserNotification(
+              language === 'zh' ? '🕒 今日重要日程提醒' : language === 'ko' ? '🕒 오늘 주요 일정 알림' : '🕒 Today\'s Event Reminder',
+              {
+                body: rem.title,
+                icon: '/logo.svg',
+              }
+            );
+          }
+          notifiedList.push(rem.id);
+          updated = true;
+        }
+      });
+
+      if (updated) {
+        localStorage.setItem("notified_reminders", JSON.stringify(notifiedList));
+      }
+    };
+
+    checkRemindersAndNotify();
+    const interval = setInterval(checkRemindersAndNotify, 15000);
+    return () => clearInterval(interval);
+  }, [reminders, notificationPermission, language]);
+
 
 
 
@@ -3913,6 +3998,62 @@ export default function App() {
                     </section>
 
 
+
+                    {/* PWA Notifications Settings */}
+                    <section className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm space-y-3.5">
+                      <div className="flex justify-between items-center">
+                        <div className="space-y-0.5">
+                          <span className="font-bold text-xs text-slate-800 block">
+                            {language === 'zh' ? '📱 手机后台推送通知' : language === 'ko' ? '📱 모바일 배경 푸시 알림' : '📱 Background Push Notifications'}
+                          </span>
+                          <span className="text-[10px] text-slate-400 block leading-normal max-w-[220px]">
+                            {language === 'zh' 
+                              ? '开启后，当倒数日提醒到期时，即使在关闭网页的情况下手机系统通知栏也会收到提示。' 
+                              : language === 'ko' 
+                              ? '활성화하면 웹페이지가 닫혀 있어도 디데이 알림 당일 모바일 알림창에 푸시 메시지가 전송됩니다.' 
+                              : 'When enabled, you will receive reminders in your system notification bar even when the app is completely closed.'}
+                          </span>
+                        </div>
+                        
+                        <button
+                          onClick={requestNotificationPermission}
+                          className={`px-3 py-1.5 rounded-full font-bold text-[10px] shadow-sm transition-all active:scale-95 cursor-pointer ${
+                            notificationPermission === 'granted'
+                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                              : notificationPermission === 'denied'
+                              ? 'bg-rose-50 text-rose-700 border border-rose-200'
+                              : 'bg-violet-600 hover:bg-violet-700 text-white'
+                          }`}
+                        >
+                          {notificationPermission === 'granted' ? (
+                            language === 'zh' ? '已开启' : language === 'ko' ? '활성화됨' : 'Enabled'
+                          ) : notificationPermission === 'denied' ? (
+                            language === 'zh' ? '已禁用' : language === 'ko' ? '비활성화됨' : 'Blocked'
+                          ) : (
+                            language === 'zh' ? '点击授权' : language === 'ko' ? '권한 허용' : 'Authorize'
+                          )}
+                        </button>
+                      </div>
+
+                      {/* PWA Install Guide Info */}
+                      <div className="p-2.5 bg-violet-50/50 rounded-xl border border-violet-100/50 text-[9px] text-violet-850 leading-relaxed space-y-1">
+                        <span className="font-bold block">💡 {language === 'zh' ? '如何安装到手机桌面接收完整推送？' : language === 'ko' ? '전체 푸시 알림 수령을 위한 홈 화면 추가 방법:' : 'How to install on home screen for complete push:'}</span>
+                        <div className="pl-1">
+                          {language === 'zh' 
+                            ? '• iPhone (iOS): 在 Safari 浏览器中打开，点击底部【分享】按钮，选择【添加到主屏幕】。' 
+                            : language === 'ko' 
+                            ? '• 아이폰 (iOS): Safari 브라우저에서 열고 하단 [공유] 버튼 누른 뒤 [홈 화면에 추가] 선택.' 
+                            : '• iPhone (iOS): Open in Safari, tap the [Share] button, then select [Add to Home Screen].'}
+                        </div>
+                        <div className="pl-1">
+                          {language === 'zh' 
+                            ? '• Android: 使用 Chrome 浏览器打开，点击右上角【┇】，选择【安装应用】或【添加到主屏幕】。' 
+                            : language === 'ko' 
+                            ? '• 안드로이드: Chrome 브라우저에서 열고 우측 상단 [┇] 누른 뒤 [앱 설치] 또는 [홈 화면에 추가] 선택.' 
+                            : '• Android: Open in Chrome, tap [┇], then select [Install App] or [Add to Home Screen].'}
+                        </div>
+                      </div>
+                    </section>
 
                     {/* Log out option */}
                     {profile.isLoggedIn && (

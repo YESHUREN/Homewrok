@@ -1,0 +1,18 @@
+{
+  "name": "在韩留学生服务与社区",
+  "short_name": "在韩留学生",
+  "description": "江原大学三陟校区在韩留学生一站式指南、日历提醒与交流社区",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#00685f",
+  "theme_color": "#00685f",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
