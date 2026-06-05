@@ -106,6 +106,12 @@ export default function App() {
   const [showPublishSuccess, setShowPublishSuccess] = useState(false);
   const [isPosting, setIsPosting] = useState(false);
 
+  // Entry Helper state hooks
+  const [entryDate, setEntryDate] = useState<string>(() => localStorage.getItem("entry_date") || "");
+  const [tempEntryDate, setTempEntryDate] = useState<string>("");
+  const [showEntryDateModal, setShowEntryDateModal] = useState(false);
+
+
   // DB Diagnostic & Cloud Connection states
   const [dbDiagnostic, setDbDiagnostic] = useState<{
     tested: boolean;
@@ -270,6 +276,194 @@ export default function App() {
       })
       .catch(err => console.error("Error loading reminders:", err));
   };
+
+  const getDaysDiff = (dateStr: string) => {
+    if (!dateStr) return 0;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const target = new Date(dateStr);
+    target.setHours(0, 0, 0, 0);
+    const diffTime = target.getTime() - today.getTime();
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  };
+
+  const importEntryScheduleToCalendar = async (selectedDate: string) => {
+    const baseDate = new Date(selectedDate);
+    const offsetDays = [0, 2, 4, 6, 9, 14];
+    
+    const titles = {
+      zh: [
+        "【入境第1天】入住校外房源/宿舍 & 向家里报平安",
+        "【入境第3天】购买生活分类垃圾袋 & 熟悉校区环境",
+        "【入境第5天】办理韩国手机卡 (SIM卡)",
+        "【入境第7天】前往银行开户办理存折与借记卡",
+        "【入境第10天】HiKorea 线上预约外国人登录证申办",
+        "【入境第15天】前往出入境管理事务所录入指纹申办ARC"
+      ],
+      ko: [
+        "[입국 1일차] 기숙사/외부 주거지 입주 및 안전 보고",
+        "[입국 3일차] 규격 쓰레기봉투 구매 및 캠퍼스 파악",
+        "[입국 5일차] 한국 휴대폰 유심(SIM) 카드 개통",
+        "[입국 7일차] 은행 통장 및 체크카드 개설",
+        "[입국 10일차] 하이코리아 외국인등록증 신청 온라인 예약",
+        "[입국 15일차] 출입국관리사무소 방문 ARC 지문 등록"
+      ],
+      en: [
+        "[Day 1 of Entry] Move into dorm/housing & report safety",
+        "[Day 3 of Entry] Purchase garbage bags & explore campus",
+        "[Day 5 of Entry] Apply for a Korean SIM card",
+        "[Day 7 of Entry] Open bank account & get debit card",
+        "[Day 10 of Entry] Book ARC appointment on HiKorea",
+        "[Day 15 of Entry] Visit Immigration Office for ARC fingerprinting"
+      ]
+    };
+
+    const scheduleReminders = offsetDays.map((days, idx) => {
+      const d = new Date(baseDate);
+      d.setDate(d.getDate() + days);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return {
+        title: titles[language][idx] || titles['zh'][idx],
+        date: `${yyyy}-${mm}-${dd}`,
+        time: "10:00",
+        enabled: true
+      };
+    });
+
+    if (profile.isLoggedIn) {
+      try {
+        for (const rem of scheduleReminders) {
+          await fetch("/api/reminders", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              userId: profile.studentId,
+              title: rem.title,
+              date: rem.date,
+              time: rem.time,
+              enabled: rem.enabled
+            })
+          });
+        }
+        fetchReminders(profile.studentId);
+      } catch (err) {
+        console.error("Error importing entry schedule to server:", err);
+      }
+    } else {
+      const localReminders = scheduleReminders.map((rem, idx) => ({
+        id: `rem_entry_${Date.now()}_${idx}`,
+        title: rem.title,
+        date: rem.date,
+        time: rem.time,
+        enabled: rem.enabled
+      }));
+      setReminders(prev => {
+        const cleanPrev = prev.filter(r => !r.id.startsWith("rem_entry_") && !r.title.includes("入境") && !r.title.includes("입국") && !r.title.includes("Entry"));
+        return [...cleanPrev, ...localReminders];
+      });
+    }
+  };
+
+  const getTimelineItems = (baseDateStr: string) => {
+    const baseDate = new Date(baseDateStr);
+    const offsets = [0, 2, 4, 6, 9, 14];
+    
+    const data = [
+      {
+        day: 1,
+        title: {
+          zh: "入住校外房源/宿舍 & 向家里报平安",
+          ko: "기숙사/외부 주거지 입주 및 안전 보고",
+          en: "Move into dorm/housing & report safety"
+        },
+        desc: {
+          zh: "请联系国际交流处（三陟校区国际交流团队）或宿管老师办理入住手续，给父母家人发送信息报平安。别忘了购买当地生活垃圾分类袋，熟悉生活垃圾投放时间与规程。",
+          ko: "삼척 캠퍼스 국제교류과나 기숙사 사감실을 통해 입주 절차를 밟으시고, 부모님께 안부 연락을 드리세요. 또한 규격 쓰레기봉투를 구입하여 쓰레기 배출 시간 및 요령을 파악해 두세요.",
+          en: "Complete check-in procedures with OIA or the dorm office, and message your family. Don't forget to purchase local authorized sorting trash bags and learn the local waste disposal schedules."
+        }
+      },
+      {
+        day: 3,
+        title: {
+          zh: "购买生活分类垃圾袋 & 熟悉校区环境",
+          ko: "규격 쓰레기봉투 구매 및 캠퍼스 파악",
+          en: "Purchase garbage bags & explore campus"
+        },
+        desc: {
+          zh: "熟悉学校周边的超市（如三陟E-Mart、各大便利店）和公交车站等便利生活设施，参加学校的迎新说明会，领取临时校园卡及选课指导手册。",
+          ko: "학교 주변 대형마트(삼척 이마트, 마트 등) 및 버스 정류장 등 편의시설을 파악하고, 국제교류과에서 주관하는 오리엔테이션에 참석하여 임시 학생증 및 수강신청 가이드를 수령하세요.",
+          en: "Visit nearby supermarkets (like Samcheok E-Mart) and bus stations. Attend the freshman orientation organized by the Office of International Affairs to get your temporary campus ID and course manual."
+        }
+      },
+      {
+        day: 5,
+        title: {
+          zh: "办理韩国手机卡 (SIM卡)",
+          ko: "한국 휴대폰 유심(SIM) 카드 개통",
+          en: "Apply for a Korean SIM card"
+        },
+        desc: {
+          zh: "携带护照前往学校附近或校内的电信代理店办理预付卡（Prepaid SIM），获取韩国本土手机号码。这是后续在韩国办理银行开户、网络认证及网购的实名基础。",
+          ko: "여권을 소지하고 학교 주변의 통신사 대리점을 방문하여 선불 유심을 개통해 한국 휴대폰 번호를 생성하세요. 이는 향후 은행 업무, 인터넷 본인인증, 쇼핑몰 가입을 위한 필수 조건입니다.",
+          en: "Take your passport to a telecom shop nearby to get a prepaid SIM card. Having a local Korean phone number is essential for real-name authentication in bank openings and online platforms."
+        }
+      },
+      {
+        day: 7,
+        title: {
+          zh: "前往银行开户办理存折与借记卡",
+          ko: "은행 통장 및 체크카드 개설",
+          en: "Open bank account & get debit card"
+        },
+        desc: {
+          zh: "携带护照、在学证明等材料，前往校区内指定的合作银行（如新韩银行等）开通存折（통장）并领取借记卡（체크카드），便于安全地存储生活费与转账缴纳学杂费。",
+          ko: "여권, 재학증명서 등을 지참하고 삼척/도계 캠퍼스 내 지정 협력은행을 방문해 계좌(통장)와 체크카드를 발급받으세요. 생활비 수령 및 향후 등록금 납부 등에 필요합니다.",
+          en: "Take your passport and enrollment certificate to the partner bank on campus to open an account (Tongjang) and get a debit card. This will make receiving living expenses and paying tuition easier."
+        }
+      },
+      {
+        day: 10,
+        title: {
+          zh: "HiKorea 线上预约外国人登录证申办",
+          ko: "하이코리아 외국인등록증 신청 온라인 예약",
+          en: "Book ARC appointment on HiKorea"
+        },
+        desc: {
+          zh: "由于申办外国人登录证需要录入指纹，请在 HiKorea 官网（hikorea.go.kr）预约东海出入境管理事务所的线下办理时间，并根据学校要求准备在学证明、在留资格等申请表单。",
+          ko: "외국인등록증(ARC) 발급에는 지문 등록이 필요하므로 하이코리아 웹사이트에서 동해출입국사무소 방문예약을 선진행하세요. 학교 공지에 따라 재학증명서, 체류지 입증서류 등을 준비해 두세요.",
+          en: "ARC application requires fingerprint collection. Register on the HiKorea website (hikorea.go.kr) to book a visit to the Donghae Immigration Office, and prepare enrollment certificates and housing proof."
+        }
+      },
+      {
+        day: 15,
+        title: {
+          zh: "前往出入境管理事务所录入指纹申办ARC",
+          ko: "출입국관리사무소 방문 ARC 지문 등록",
+          en: "Visit Immigration Office for ARC fingerprinting"
+        },
+        desc: {
+          zh: "携带护照、两寸白底照片、在留资格证明、在学证明、申请表以及3万韩元的手续费，在预约好的时间段前往东海出入境管理事务所录入指纹并递交申请材料。",
+          ko: "예약한 일시에 여권, 사진(흰색 배경), 체류지 입증서류, 재학증명서, 신청서와 수수료 3만 원을 지참하여 동해출입국관리사무소에 방문해 지문 등록을 완료하고 서류를 접수하세요.",
+          en: "On your appointment date, bring your passport, white-background photo, housing contract, certificate of enrollment, application form, and 30,000 KRW fee to the Donghae Immigration Office."
+        }
+      }
+    ];
+
+    return data.map((item, idx) => {
+      const d = new Date(baseDate);
+      d.setDate(d.getDate() + offsets[idx]);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return {
+        ...item,
+        dateStr: `${yyyy}-${mm}-${dd}`
+      };
+    });
+  };
+
 
 
 
@@ -2271,6 +2465,144 @@ export default function App() {
                 </section>
               </main>
             </div>
+          ) : screen === ActiveScreen.ENTRY_HELPER ? (
+            // Entry Helper Screen
+            <div className="flex flex-col bg-slate-50 min-h-full">
+              {/* Header */}
+              <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md w-full border-b border-slate-100 flex justify-between items-center px-4 h-16 shrink-0">
+                <div className="flex items-center gap-3">
+                  <button 
+                    onClick={() => setScreen(ActiveScreen.MAIN)} 
+                    className="p-2 hover:bg-slate-100 rounded-full transition-colors flex items-center justify-center"
+                  >
+                    <ArrowLeft className="w-5 h-5 text-[#00685f]" />
+                  </button>
+                  <h1 className="font-bold text-sm text-[15px] text-[#00685f]">
+                    {language === 'zh' ? '入境助手' : language === 'ko' ? '입국 도우미' : 'Entry Assistant'}
+                  </h1>
+                </div>
+                <button 
+                  onClick={() => {
+                    setTempEntryDate(entryDate);
+                    setShowEntryDateModal(true);
+                  }} 
+                  className="text-xs font-bold text-violet-600 hover:text-violet-750 transition-colors bg-violet-50 px-3 py-1.5 rounded-full"
+                >
+                  {language === 'zh' ? '修改日期' : language === 'ko' ? '날짜 변경' : 'Edit Date'}
+                </button>
+              </nav>
+
+              {/* Main Content container */}
+              <div className="p-4 space-y-4 max-w-md mx-auto w-full flex-1">
+                {/* Entry Date Info card */}
+                <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm flex flex-col gap-3 relative overflow-hidden">
+                  <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-violet-500/5 pointer-events-none" />
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center shrink-0">
+                      <Calendar className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                        {language === 'zh' ? '入境日程规划' : language === 'ko' ? '입국 일정 플래너' : 'Entry Schedule Planner'}
+                      </h2>
+                      <p className="text-xs font-black text-slate-800">
+                        {language === 'zh' ? '预计入境日期：' : language === 'ko' ? '예정 입국일: ' : 'Expected Entry Date: '}
+                        <span className="text-violet-600 font-bold ml-1">{entryDate}</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Countdown display */}
+                  <div className="pt-2 border-t border-slate-50 mt-1 flex items-center justify-between">
+                    <span className="text-[11px] text-slate-450 font-bold">
+                      {language === 'zh' ? '距离或已入境天数' : language === 'ko' ? '입국 디데이 상태' : 'Entry D-Day Status'}
+                    </span>
+                    <span className="px-3 py-1 rounded-full font-black text-xs bg-violet-50 text-violet-700">
+                      {(() => {
+                        const diff = getDaysDiff(entryDate);
+                        if (diff > 0) {
+                          return `D - ${diff}`;
+                        } else if (diff === 0) {
+                          return language === 'zh' ? '今天入境！' : language === 'ko' ? '오늘 입국!' : 'Entry Day!';
+                        } else {
+                          return language === 'zh' ? `已入境 ${Math.abs(diff)} 天` : language === 'ko' ? `입국 ${Math.abs(diff)}일차` : `Day ${Math.abs(diff)} in Korea`;
+                        }
+                      })()}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Subtitle description */}
+                <p className="text-[11px] text-slate-400 px-1 leading-relaxed">
+                  {language === 'zh' 
+                    ? '根据您的设定，系统已在主页日历的“倒数日”中添加了以下 6 个关键日程。请按照对应节点依次办理相关手续。' 
+                    : language === 'ko' 
+                    ? '설정된 날짜를 바탕으로 홈 화면 달력의 "디데이"에 6가지 주요 일정이 자동 등록되었습니다. 각 시기별 할 일을 확인해 보세요.' 
+                    : 'The system has synced the following 6 milestones to the "D-Day" section of your homepage calendar. Complete each task as scheduled.'}
+                </p>
+
+                {/* Timeline Items List */}
+                <div className="relative pl-4 border-l-2 border-slate-200 ml-3.5 space-y-5 py-2">
+                  {getTimelineItems(entryDate).map((item, index) => {
+                    const daysDiff = getDaysDiff(item.dateStr);
+                    const isFuture = daysDiff > 0;
+                    
+                    return (
+                      <div key={index} className="relative">
+                        {/* Bullet indicator */}
+                        <div className={`absolute -left-[23px] top-1.5 w-4 h-4 rounded-full border-2 bg-white flex items-center justify-center transition-all z-10 ${
+                          daysDiff < 0 
+                            ? 'border-emerald-500 text-emerald-500 bg-emerald-50' 
+                            : daysDiff === 0 
+                            ? 'border-violet-600 text-violet-600 bg-violet-50 scale-110' 
+                            : 'border-slate-300 text-slate-350'
+                        }`}>
+                          {daysDiff < 0 ? (
+                            <Check className="w-2.5 h-2.5 stroke-[3]" />
+                          ) : (
+                            <div className="w-1.5 h-1.5 rounded-full bg-current" />
+                          )}
+                        </div>
+
+                        {/* Card item */}
+                        <div className="bg-white rounded-2xl p-4 border border-slate-100/90 shadow-sm flex flex-col gap-2 hover:shadow-md transition-shadow">
+                          <div className="flex justify-between items-start gap-2">
+                            <span className="text-[9px] font-bold text-violet-600 uppercase tracking-widest px-2 py-0.5 rounded bg-violet-50">
+                              {language === 'zh' ? `第 ${item.day} 天` : language === 'ko' ? `${item.day}일차` : `Day ${item.day}`}
+                            </span>
+                            <span className="text-[10px] font-bold text-slate-400">
+                              {item.dateStr}
+                            </span>
+                          </div>
+                          <h3 className="font-bold text-xs text-slate-800 mt-0.5 leading-snug">
+                            {item.title[language] || item.title['zh']}
+                          </h3>
+                          <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                            {item.desc[language] || item.desc['zh']}
+                          </p>
+
+                          {/* Synced badge */}
+                          <div className="pt-2 border-t border-slate-50 mt-1 flex justify-between items-center text-[10px] font-bold">
+                            <span className="text-slate-400 flex items-center gap-1 font-medium">
+                              <Check className="w-3.5 h-3.5 text-emerald-500" />
+                              <span>{language === 'zh' ? '已同步至日历倒数日' : language === 'ko' ? '디데이 달력 동기화됨' : 'Synced to D-Day Calendar'}</span>
+                            </span>
+                            <span className={isFuture ? 'text-slate-400' : daysDiff === 0 ? 'text-violet-600' : 'text-emerald-600'}>
+                              {isFuture 
+                                ? (language === 'zh' ? `还有 ${daysDiff} 天` : language === 'ko' ? `${daysDiff}일 남음` : `${daysDiff} days left`) 
+                                : daysDiff === 0 
+                                ? (language === 'zh' ? '今天进行' : language === 'ko' ? '오늘 진행' : 'Today') 
+                                : (language === 'zh' ? '已过' : language === 'ko' ? '완료됨' : 'Past')}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
           ) : screen === ActiveScreen.EDIT_PROFILE ? (
             // Edit Profile Details screen (Mockup 8)
             <div className="flex flex-col bg-[#f8f9ff] min-h-full">
@@ -3023,13 +3355,29 @@ export default function App() {
                             desc: language === 'zh' ? 'EMS到包税货代' : language === 'ko' ? '국제 EMS 및 택배' : 'EMS & Shipping Agents', 
                             color: "bg-cyan-50 text-cyan-800 border-cyan-100", 
                             label: language === 'zh' ? '寄送加固' : language === 'ko' ? '포장 배송' : 'Shipping'
+                          },
+                          {
+                            category: "ENTRY_HELPER",
+                            name: language === 'zh' ? '入境助手' : language === 'ko' ? '입국 도우미' : 'Entry Assistant',
+                            desc: language === 'zh' ? '日程规划与倒数日' : language === 'ko' ? '입국 일정 및 디데이' : 'Entry Schedule & D-Day',
+                            color: "bg-violet-50 text-violet-800 border-violet-100",
+                            label: language === 'zh' ? '出境准备' : language === 'ko' ? '출국 준비' : 'Pre-departure'
                           }
                         ].map((serv) => (
                           <div 
                             key={serv.category}
                             onClick={() => {
-                              setActiveGuideCategory(serv.category);
-                              setScreen(ActiveScreen.GUIDE_DETAIL);
+                              if (serv.category === "ENTRY_HELPER") {
+                                if (entryDate) {
+                                  setScreen(ActiveScreen.ENTRY_HELPER);
+                                } else {
+                                  setTempEntryDate(entryDate || new Date().toISOString().split('T')[0]);
+                                  setShowEntryDateModal(true);
+                                }
+                              } else {
+                                setActiveGuideCategory(serv.category as GuideCategory);
+                                setScreen(ActiveScreen.GUIDE_DETAIL);
+                              }
                             }}
                             className={`p-4 rounded-2xl border transition-all cursor-pointer hover:shadow-md flex flex-col justify-between min-h-[104px] relative overflow-hidden group ${serv.color}`}
                           >
@@ -3807,6 +4155,107 @@ export default function App() {
                     className="flex-1 bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs py-2.5 rounded-xl transition-colors shadow-sm cursor-pointer"
                   >
                     前往 Supabase 官网
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+
+        {/* ---------------------------------------------------- */}
+        {/* ENTRY DATE SELECTOR WIZARD MODAL */}
+        {/* ---------------------------------------------------- */}
+        <AnimatePresence>
+          {showEntryDateModal && (
+            <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="bg-white rounded-2xl w-full max-w-sm flex flex-col shadow-2xl overflow-hidden border border-slate-100"
+              >
+                {/* Header */}
+                <div className="p-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span className="text-xs font-black tracking-wide">
+                      {language === 'zh' ? '设定入境时间' : language === 'ko' ? '입국 날짜 설정' : 'Set Entry Date'}
+                    </span>
+                  </div>
+                  <button 
+                    onClick={() => setShowEntryDateModal(false)}
+                    className="p-1 hover:bg-white/10 rounded-full text-white"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="p-5 space-y-4">
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {language === 'zh' 
+                      ? '请选择您前往韩国的预计入境日期。系统将自动生成入境关键日程，并将每日任务同步录入您的日历与倒数日中。' 
+                      : language === 'ko' 
+                      ? '한국 입국 예정일을 선택하세요. 입국 주요 일정이 자동 생성되며 캘린더와 디데이에 매일의 할 일이 등록됩니다.' 
+                      : 'Please select your estimated entry date to Korea. The system will automatically generate key pre-departure/entry milestones and sync them to your calendar.'}
+                  </p>
+                  
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold text-slate-400 block uppercase">
+                      {language === 'zh' ? '入境日期' : language === 'ko' ? '입국 날짜' : 'Entry Date'}
+                    </label>
+                    <input 
+                      type="date"
+                      value={tempEntryDate || new Date().toISOString().split('T')[0]}
+                      onChange={(e) => setTempEntryDate(e.target.value)}
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-violet-500 font-bold text-sm text-slate-700 bg-slate-50"
+                    />
+                  </div>
+                </div>
+
+                {/* Footer Buttons */}
+                <div className="px-5 py-4 bg-slate-50/50 border-t border-slate-150 flex gap-2">
+                  <button
+                    onClick={() => setShowEntryDateModal(false)}
+                    className="flex-1 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-bold text-xs text-slate-600 transition-colors cursor-pointer"
+                  >
+                    {language === 'zh' ? '取消' : language === 'ko' ? '취소' : 'Cancel'}
+                  </button>
+                  <button
+                    onClick={async () => {
+                      const dateToSave = tempEntryDate || new Date().toISOString().split('T')[0];
+                      setEntryDate(dateToSave);
+                      localStorage.setItem("entry_date", dateToSave);
+                      setShowEntryDateModal(false);
+                      triggerSystemTip(language === 'zh' ? "正在生成入境日程并同步至您的日历..." : language === 'ko' ? "입국 일정을 생성하고 캘린더에 동기화하는 중..." : "Generating schedule and syncing to calendar...");
+                      
+                      // Clear previous entry schedule reminders first to avoid duplicates
+                      if (profile.isLoggedIn) {
+                        try {
+                          const res = await fetch(`/api/reminders?userId=${profile.studentId}`);
+                          const data = await res.json();
+                          if (Array.isArray(data)) {
+                            // Delete existing entry schedule items on server
+                            for (const r of data) {
+                              if (r.title.includes("入境") || r.title.includes("입국") || r.title.includes("Entry")) {
+                                await fetch(`/api/reminders/${r.id}`, { method: "DELETE" });
+                              }
+                            }
+                          }
+                        } catch (err) {
+                          console.error("Error clearing old reminders from server:", err);
+                        }
+                      }
+                      
+                      // Import schedule reminders
+                      await importEntryScheduleToCalendar(dateToSave);
+                      
+                      triggerSystemTip(language === 'zh' ? "🎉 入境重要日程已成功同步至您的日历！" : language === 'ko' ? "🎉 입국 일정이 성공적으로 캘린더에 동기화되었습니다!" : "🎉 Entry schedule successfully synced to your calendar!");
+                      setScreen(ActiveScreen.ENTRY_HELPER);
+                    }}
+                    className="flex-1 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-755 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
+                  >
+                    {language === 'zh' ? '生成并导入' : language === 'ko' ? '생성 및 등록' : 'Import Schedule'}
                   </button>
                 </div>
               </motion.div>

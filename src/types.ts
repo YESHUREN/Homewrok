@@ -16,8 +16,10 @@ export enum ActiveScreen {
   EDIT_PROFILE = "EDIT_PROFILE",
   LOGIN = "LOGIN",
   REGISTER = "REGISTER",
-  CALENDAR = "CALENDAR"
+  CALENDAR = "CALENDAR",
+  ENTRY_HELPER = "ENTRY_HELPER"
 }
+
 
 export enum GuideCategory {
   INSURANCE = "INSURANCE",
