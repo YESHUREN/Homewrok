@@ -16,7 +16,8 @@ import {
   Home, MessageSquare, User, Menu, Bell, Search, MapPin, ChevronDown, 
   Heart, MessageCircle, Share2, Plus, Calendar, Shield, BookOpen, 
   Trash2, CreditCard, ChevronRight, HelpCircle, Globe, LogOut, Check,
-  X, Camera, PlusCircle, ArrowLeft, Send, ArrowRight, Bookmark, RefreshCw, Hash, Database
+  X, Camera, PlusCircle, ArrowLeft, Send, ArrowRight, Bookmark, RefreshCw, Hash, Database,
+  Compass, Smartphone, Plane, Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -379,6 +380,7 @@ export default function App() {
     const data = [
       {
         day: 1,
+        icon: Home,
         title: {
           zh: "入住校外房源/宿舍 & 向家里报平安",
           ko: "기숙사/외부 주거지 입주 및 안전 보고",
@@ -388,23 +390,35 @@ export default function App() {
           zh: "请联系国际交流处（三陟校区国际交流团队）或宿管老师办理入住手续，给父母家人发送信息报平安。别忘了购买当地生活垃圾分类袋，熟悉生活垃圾投放时间与规程。",
           ko: "삼척 캠퍼스 국제교류과나 기숙사 사감실을 통해 입주 절차를 밟으시고, 부모님께 안부 연락을 드리세요. 또한 규격 쓰레기봉투를 구입하여 쓰레기 배출 시간 및 요령을 파악해 두세요.",
           en: "Complete check-in procedures with OIA or the dorm office, and message your family. Don't forget to purchase local authorized sorting trash bags and learn the local waste disposal schedules."
+        },
+        tips: {
+          zh: ["确认宿管老师处登记的个人联系电话", "购买黄色生活垃圾袋与白色厨余垃圾袋", "向父母发送定位及韩国临时联系方式"],
+          ko: ["기숙사 등록 연락처 확인", "쓰레기 규격봉투(노란색/하얀색) 구매", "가족에게 위치 및 연락처 전송"],
+          en: ["Confirm contact registered with dorm office", "Buy garbage bags (yellow/white)", "Send location & contact to family"]
         }
       },
       {
         day: 3,
+        icon: Compass,
         title: {
-          zh: "购买生活分类垃圾袋 & 熟悉校区环境",
-          ko: "규격 쓰레기봉투 구매 및 캠퍼스 파악",
-          en: "Purchase garbage bags & explore campus"
+          zh: "采购生活必需品 & 熟悉校区周边设施",
+          ko: "캠퍼스 파악 및 필수 생활용품 구매",
+          en: "Explore campus & shop for essentials"
         },
         desc: {
           zh: "熟悉学校周边的超市（如三陟E-Mart、各大便利店）和公交车站等便利生活设施，参加学校的迎新说明会，领取临时校园卡及选课指导手册。",
           ko: "학교 주변 대형마트(삼척 이마트, 마트 등) 및 버스 정류장 등 편의시설을 파악하고, 국제교류과에서 주관하는 오리엔테이션에 참석하여 임시 학생증 및 수강신청 가이드를 수령하세요.",
           en: "Visit nearby supermarkets (like Samcheok E-Mart) and bus stations. Attend the freshman orientation organized by the Office of International Affairs to get your temporary campus ID and course manual."
+        },
+        tips: {
+          zh: ["三陟市中心E-Mart大超市路线规划与采购", "领取临时学生证与选课指南", "关注国际交流处迎新发布会时间并准时参加"],
+          ko: ["삼척 시내 이마트 마트 경로 파악", "임시 학생증 및 수강 가이드 수령", "국제교류팀 오리엔테이션 일정 확인"],
+          en: ["Route map to local E-Mart", "Get temporary ID & course guide", "Check orientation session schedule"]
         }
       },
       {
         day: 5,
+        icon: Smartphone,
         title: {
           zh: "办理韩国手机卡 (SIM卡)",
           ko: "한국 휴대폰 유심(SIM) 카드 개통",
@@ -412,12 +426,18 @@ export default function App() {
         },
         desc: {
           zh: "携带护照前往学校附近或校内的电信代理店办理预付卡（Prepaid SIM），获取韩国本土手机号码。这是后续在韩国办理银行开户、网络认证及网购的实名基础。",
-          ko: "여권을 소지하고 학교 주변의 통신사 대리점을 방문하여 선불 유심을 개통해 한국 휴대폰 번호를 생성하세요. 이는 향후 은행 업무, 인터넷 본인인증, 쇼핑몰 가입을 위한 필수 조건입니다.",
+          ko: "여권을 소지하고 학교 주변 of 통신사 대리점을 방문하여 선불 유심을 개통해 한국 휴대폰 번호를 생성하세요. 이는 향후 은행 업무, 인터넷 본인인증, 쇼핑몰 가입을 위한 필수 조건입니다.",
           en: "Take your passport to a telecom shop nearby to get a prepaid SIM card. Having a local Korean phone number is essential for real-name authentication in bank openings and online platforms."
+        },
+        tips: {
+          zh: ["携带护照原件前往代理店", "推荐使用 Chingu Mobile 或校外 KT/LGU+ 预付套餐", "核对护照拼写与SIM卡实名信息一致，方便后期做实名变更为登陆证实名"],
+          ko: ["여권 원본 지참 대리점 방문", "외국인용 선불 요금제(KT/LGU+ 등) 선택", "여권 영문명과 유심 명의 일치 확인"],
+          en: ["Bring original passport to telecom store", "Recommended: KT/LGU+ or Chingu Mobile prepaid plan", "Ensure passport name spelling matches exactly"]
         }
       },
       {
         day: 7,
+        icon: CreditCard,
         title: {
           zh: "前往银行开户办理存折与借记卡",
           ko: "은행 통장 및 체크카드 개설",
@@ -427,10 +447,16 @@ export default function App() {
           zh: "携带护照、在学证明等材料，前往校区内指定的合作银行（如新韩银行等）开通存折（통장）并领取借记卡（체크카드），便于安全地存储生活费与转账缴纳学杂费。",
           ko: "여권, 재학증명서 등을 지참하고 삼척/도계 캠퍼스 내 지정 협력은행을 방문해 계좌(통장)와 체크카드를 발급받으세요. 생활비 수령 및 향후 등록금 납부 등에 필요합니다.",
           en: "Take your passport and enrollment certificate to the partner bank on campus to open an account (Tongjang) and get a debit card. This will make receiving living expenses and paying tuition easier."
+        },
+        tips: {
+          zh: ["携带护照、在学证明 (Certificate of Enrollment) 和韩国手机号", "在校区合作银行营业厅（如新韩银行）办理", "申请开通手机银行 App 并开启网银转账功能"],
+          ko: ["여권, 재학증명서 서류 구비", "교내 지정 신한은행 영업점 방문", "스마트 뱅킹 앱 설치 및 이체 한도 설정"],
+          en: ["Prepare passport and Enrollment Certificate", "Visit the designated campus Shinhan Bank branch", "Install mobile banking app & enable online transfers"]
         }
       },
       {
         day: 10,
+        icon: Globe,
         title: {
           zh: "HiKorea 线上预约外国人登录证申办",
           ko: "하이코리아 외국인등록증 신청 온라인 예약",
@@ -440,12 +466,18 @@ export default function App() {
           zh: "由于申办外国人登录证需要录入指纹，请在 HiKorea 官网（hikorea.go.kr）预约东海出入境管理事务所的线下办理时间，并根据学校要求准备在学证明、在留资格等申请表单。",
           ko: "외국인등록증(ARC) 발급에는 지문 등록이 필요하므로 하이코리아 웹사이트에서 동해출입국사무소 방문예약을 선진행하세요. 학교 공지에 따라 재학증명서, 체류지 입증서류 등을 준비해 두세요.",
           en: "ARC application requires fingerprint collection. Register on the HiKorea website (hikorea.go.kr) to book a visit to the Donghae Immigration Office, and prepare enrollment certificates and housing proof."
+        },
+        tips: {
+          zh: ["登录 hikorea.go.kr 进行'방문예약' (预约访问) 登记", "预约辖区应选择'동해출입국' (东海出入境管理事务所)", "截图保存预约确认书并打印，注意开学季预约名额紧张，建议尽早预订"],
+          ko: ["hikorea.go.kr 접속 후 '방문예약' 신청", "관할 사무소를 '동해출입국'으로 지정", "방문예약 접수증 캡처 및 출력"],
+          en: ["Go to hikorea.go.kr and choose 'Visit Reservation'", "Select 'Donghae Immigration Office' as jurisdiction", "Screenshot & print your appointment receipt"]
         }
       },
       {
         day: 15,
+        icon: Calendar,
         title: {
-          zh: "前往出入境管理事务所录入指纹申办ARC",
+          zh: "前往出入境事务所录入指纹申办ARC",
           ko: "출입국관리사무소 방문 ARC 지문 등록",
           en: "Visit Immigration Office for ARC fingerprinting"
         },
@@ -453,6 +485,11 @@ export default function App() {
           zh: "携带护照、两寸白底照片、在留资格证明、在学证明、申请表以及3万韩元的手续费，在预约好的时间段前往东海出入境管理事务所录入指纹并递交申请材料。",
           ko: "예약한 일시에 여권, 사진(흰색 배경), 체류지 입증서류, 재학증명서, 신청서와 수수료 3만 원을 지참하여 동해출입국관리사무소에 방문해 지문 등록을 완료하고 서류를 접수하세요.",
           en: "On your appointment date, bring your passport, white-background photo, housing contract, certificate of enrollment, application form, and 30,000 KRW fee to the Donghae Immigration Office."
+        },
+        tips: {
+          zh: ["带好护照原件 and 3万韩元现金（或卡）缴纳手续费", "准备近6个月内的2寸白底证件照片1张", "向出入境窗口递交完整的学校材料包和房屋合同复印件"],
+          ko: ["여권 원본 및 수수료 3만 원 지참", "여권용 사진 1장 (흰색 배경) 지참", "학교에서 일괄 배포한 서류 봉투 확인"],
+          en: ["Bring original passport & 30,000 KRW cash/card", "Prepare 1 passport-size white-background photo", "Double-check school document pack before going"]
         }
       }
     ];
@@ -3263,6 +3300,164 @@ export default function App() {
                   </header>
 
                   <div className="px-4 space-y-5">
+                    {/* Premium Entry Assistant Card/Banner */}
+                    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4f46e5] via-[#5b21b6] to-[#7c3aed] text-white shadow-md border border-violet-500/20 p-5 flex flex-col justify-between active:scale-[0.995] transition-all duration-300">
+                      {/* Decorative backdrop glow */}
+                      <div className="absolute right-0 top-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+                      <div className="absolute left-1/3 bottom-0 w-24 h-24 bg-purple-500/20 rounded-full blur-xl pointer-events-none" />
+                      
+                      {!entryDate ? (
+                        /* State A: Date not set */
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-start">
+                            <div className="space-y-1 font-sans">
+                              <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-0.75 rounded-full text-[9px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
+                                <Plane className="w-3 h-3 text-yellow-300 animate-pulse" />
+                                <span>{language === 'zh' ? '入境规划' : language === 'ko' ? '입국 플래너' : 'Entry Helper'}</span>
+                              </div>
+                              <h3 className="text-base font-extrabold tracking-tight mt-1">
+                                {language === 'zh' ? '🛫 留韩准备 · 入境助手' : language === 'ko' ? '🛫 한국 유학 · 입국 도우미' : '🛫 Study in Korea · Entry Assistant'}
+                              </h3>
+                              <p className="text-[11px] text-violet-100/80 leading-relaxed font-medium max-w-[280px]">
+                                {language === 'zh' 
+                                  ? '定制您从出发前到落地韩国15天的关键倒数日程，一键将待办事项及系统提醒同步至主页日历。' 
+                                  : language === 'ko' 
+                                  ? '출국 전 준비부터 한국 입국 후 15일까지의 필수 일정을 한눈에 확인하고, 기기 알림 및 캘린더에 동기화하세요.' 
+                                  : 'Plan departure and arrival milestones. Automatically sync D-Day tasks and mobile push notifications to your homepage calendar.'}
+                              </p>
+                            </div>
+                            <Sparkles className="w-8 h-8 text-yellow-300/85 animate-bounce shrink-0 mt-1" />
+                          </div>
+                          
+                          <button
+                            onClick={() => {
+                              setTempEntryDate(new Date().toISOString().split('T')[0]);
+                              setShowEntryDateModal(true);
+                            }}
+                            className="w-full bg-white hover:bg-slate-50 text-violet-750 py-3 text-xs font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                          >
+                            <span>{language === 'zh' ? '开启您的专属日程 ⚡' : language === 'ko' ? '나만의 입국 일정 시작하기 ⚡' : 'Start Your Schedule ⚡'}</span>
+                          </button>
+                        </div>
+                      ) : (
+                        /* State B: Date is set */
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-start">
+                            <div className="space-y-1">
+                              <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-0.75 rounded-full text-[9px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
+                                <Plane className="w-3 h-3 text-yellow-300" />
+                                <span>{language === 'zh' ? '入境规划' : language === 'ko' ? '입국 플래너' : 'Entry Helper'}</span>
+                              </div>
+                              <h3 className="text-sm font-extrabold tracking-tight mt-1 flex items-center gap-1.5 font-sans">
+                                {language === 'zh' ? '预计入境日期：' : language === 'ko' ? '예정 입국일: ' : 'Expected Entry Date: '}
+                                <span className="text-yellow-300 font-black">{entryDate}</span>
+                              </h3>
+                            </div>
+                            
+                            {/* D-Day badge */}
+                            <div className="bg-white/25 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black tracking-tight text-white border border-white/20 font-sans">
+                              {(() => {
+                                const diff = getDaysDiff(entryDate);
+                                if (diff > 0) {
+                                  return `D - ${diff}`;
+                                } else if (diff === 0) {
+                                  return language === 'zh' ? '今天入境！' : language === 'ko' ? '오늘 입국!' : 'Entry Day!';
+                                } else {
+                                  return language === 'zh' ? `已入境 ${Math.abs(diff)} 天` : language === 'ko' ? `입국 ${Math.abs(diff)}일차` : `Day ${Math.abs(diff)} in Korea`;
+                                }
+                              })()}
+                            </div>
+                          </div>
+
+                          {/* Next/Active milestone preview */}
+                          {(() => {
+                            const timeline = getTimelineItems(entryDate);
+                            // Find the first milestone that is NOT past, or show the last one if all are past
+                            let activeMilestone = timeline.find(item => getDaysDiff(item.dateStr) >= 0);
+                            if (!activeMilestone) {
+                              activeMilestone = timeline[timeline.length - 1];
+                            }
+                            
+                            const completedCount = timeline.filter(item => getDaysDiff(item.dateStr) < 0).length;
+                            const progressPercent = Math.round((completedCount / timeline.length) * 100);
+
+                            return (
+                              <div className="space-y-3 pt-1">
+                                {/* Progress bar */}
+                                <div className="space-y-1">
+                                  <div className="flex justify-between items-center text-[10px] text-violet-100 font-bold">
+                                    <span>
+                                      {language === 'zh' 
+                                        ? `任务完成度 ${completedCount}/6` 
+                                        : language === 'ko' 
+                                        ? `진행도 ${completedCount}/6` 
+                                        : `Progress ${completedCount}/6 tasks`}
+                                    </span>
+                                    <span>{progressPercent}%</span>
+                                  </div>
+                                  <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+                                    <div 
+                                      className="bg-gradient-to-r from-emerald-400 to-teal-300 h-full rounded-full transition-all duration-500" 
+                                      style={{ width: `${progressPercent}%` }}
+                                    />
+                                  </div>
+                                </div>
+
+                                {/* Active milestone card preview */}
+                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10 flex items-start gap-2.5 text-left">
+                                  {activeMilestone && (() => {
+                                    const MilestoneIcon = activeMilestone.icon || Calendar;
+                                    return (
+                                      <>
+                                        <div className="w-8 h-8 rounded-lg bg-white/15 text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
+                                          <MilestoneIcon className="w-4.5 h-4.5 text-yellow-300" />
+                                        </div>
+                                        <div className="flex-1 space-y-0.5 min-w-0">
+                                          <div className="flex justify-between items-baseline gap-1">
+                                            <span className="text-[9px] font-bold text-violet-200">
+                                              {language === 'zh' ? `第 ${activeMilestone.day} 天任务` : language === 'ko' ? `${activeMilestone.day}일차 과제` : `Day ${activeMilestone.day} Task`}
+                                            </span>
+                                            <span className="text-[9px] font-bold text-violet-200 shrink-0 font-sans">
+                                              {activeMilestone.dateStr}
+                                            </span>
+                                          </div>
+                                          <h4 className="text-[11px] font-extrabold text-white leading-normal truncate">
+                                            {activeMilestone.title[language] || activeMilestone.title['zh']}
+                                          </h4>
+                                          <p className="text-[9.5px] text-violet-100/90 leading-relaxed font-medium line-clamp-1">
+                                            {activeMilestone.desc[language] || activeMilestone.desc['zh']}
+                                          </p>
+                                        </div>
+                                      </>
+                                    );
+                                  })()}
+                                </div>
+
+                                {/* Actions */}
+                                <div className="flex items-center gap-2 mt-2">
+                                  <button
+                                    onClick={() => setScreen(ActiveScreen.ENTRY_HELPER)}
+                                    className="flex-1 bg-white hover:bg-slate-50 text-violet-750 py-2.5 text-xs font-black rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
+                                  >
+                                    <span>{language === 'zh' ? '进入路线图 🗺️' : language === 'ko' ? '전체 로드맵 보기 🗺️' : 'View Roadmap 🗺️'}</span>
+                                  </button>
+                                  <button
+                                    onClick={() => {
+                                      setTempEntryDate(entryDate);
+                                      setShowEntryDateModal(true);
+                                    }}
+                                    className="px-3.5 py-2.5 bg-white/15 hover:bg-white/25 border border-white/10 text-white rounded-xl text-xs font-black transition-all cursor-pointer active:scale-98"
+                                  >
+                                    {language === 'zh' ? '修改' : language === 'ko' ? '변경' : 'Edit'}
+                                  </button>
+                                </div>
+                              </div>
+                            );
+                          })()}
+                        </div>
+                      )}
+                    </section>
+
                     {/* Visa Warning Alert Banner Card (Mockup 5) */}
                     <section className="relative overflow-hidden rounded-2xl bg-gradient-to-tr from-[#00685f] to-[#008378] p-5 text-white shadow-sm flex flex-col justify-between">
                       <div className="flex justify-between items-start mb-4">
