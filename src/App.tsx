@@ -2608,7 +2608,7 @@ export default function App() {
                     setTempEntryDate(entryDate);
                     setShowEntryDateModal(true);
                   }} 
-                  className="text-xs font-bold text-violet-600 hover:text-violet-750 transition-colors bg-violet-50 px-3 py-1.5 rounded-full"
+                  className="text-xs font-bold text-violet-600 hover:text-violet-805 transition-colors bg-violet-50 px-3 py-1.5 rounded-full"
                 >
                   {language === 'zh' ? '修改日期' : language === 'ko' ? '날짜 변경' : 'Edit Date'}
                 </button>
@@ -3334,7 +3334,7 @@ export default function App() {
                               setTempEntryDate(new Date().toISOString().split('T')[0]);
                               setShowEntryDateModal(true);
                             }}
-                            className="w-full bg-white hover:bg-slate-50 text-violet-750 py-3 text-xs font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                            className="w-full bg-white hover:bg-slate-50 text-violet-700 py-3 text-xs font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                           >
                             <span>{language === 'zh' ? '开启您的专属日程 ⚡' : language === 'ko' ? '나만의 입국 일정 시작하기 ⚡' : 'Start Your Schedule ⚡'}</span>
                           </button>
@@ -3437,7 +3437,7 @@ export default function App() {
                                 <div className="flex items-center gap-2 mt-2">
                                   <button
                                     onClick={() => setScreen(ActiveScreen.ENTRY_HELPER)}
-                                    className="flex-1 bg-white hover:bg-slate-50 text-violet-750 py-2.5 text-xs font-black rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
+                                    className="flex-1 bg-white hover:bg-violet-50 text-violet-700 py-2.5 text-xs font-black rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
                                   >
                                     <span>{language === 'zh' ? '进入路线图 🗺️' : language === 'ko' ? '전체 로드맵 보기 🗺️' : 'View Roadmap 🗺️'}</span>
                                   </button>
@@ -3446,9 +3446,9 @@ export default function App() {
                                       setTempEntryDate(entryDate);
                                       setShowEntryDateModal(true);
                                     }}
-                                    className="px-3.5 py-2.5 bg-white/15 hover:bg-white/25 border border-white/10 text-white rounded-xl text-xs font-black transition-all cursor-pointer active:scale-98"
+                                    className="flex-1 bg-white/10 hover:bg-white/20 border border-white/20 text-white py-2.5 text-xs font-black rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
                                   >
-                                    {language === 'zh' ? '修改' : language === 'ko' ? '변경' : 'Edit'}
+                                    <span>{language === 'zh' ? '修改日期 ⚙️' : language === 'ko' ? '날짜 변경 ⚙️' : 'Modify Date ⚙️'}</span>
                                   </button>
                                 </div>
                               </div>
@@ -4589,7 +4589,7 @@ export default function App() {
                       triggerSystemTip(language === 'zh' ? "🎉 入境重要日程已成功同步至您的日历！" : language === 'ko' ? "🎉 입국 일정이 성공적으로 캘린더에 동기화되었습니다!" : "🎉 Entry schedule successfully synced to your calendar!");
                       setScreen(ActiveScreen.ENTRY_HELPER);
                     }}
-                    className="flex-1 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-755 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
+                    className="flex-1 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs transition-colors shadow-sm cursor-pointer"
                   >
                     {language === 'zh' ? '生成并导入' : language === 'ko' ? '생성 및 등록' : 'Import Schedule'}
                   </button>
