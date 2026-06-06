@@ -2712,13 +2712,13 @@ export default function App() {
                   <h3 className="text-[11px] font-bold text-slate-400 px-1">{language === 'en' ? 'Current Reminders' : language === 'ko' ? '현재 일정 목록' : '当前倒计时提醒日程'}</h3>
                   <div className="space-y-2.5">
                     {reminders.map((rem) => (
-                      <div key={rem.id} className="bg-white p-3.5 rounded-xl border border-slate-100 shadow-sm flex justify-between items-center">
-                        <div className="space-y-1">
-                          <h4 className="text-xs font-bold text-slate-800 leading-tight">{rem.title}</h4>
+                      <div key={rem.id} className="bg-white p-3.5 rounded-xl border border-slate-100 shadow-sm flex justify-between items-center gap-2">
+                        <div className="space-y-1 min-w-0 flex-1">
+                          <h4 className="text-xs font-bold text-slate-800 leading-tight break-words">{rem.title}</h4>
                           <p className="text-[10px] text-slate-400 font-medium">{language === 'en' ? 'Date: ' : language === 'ko' ? '날짜: ' : '指定日期：'}{rem.date} {rem.time}</p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800">{language === 'en' ? 'Active' : language === 'ko' ? '활성' : '未到期'}</span>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 whitespace-nowrap shrink-0">{language === 'en' ? 'Active' : language === 'ko' ? '활성' : '未到期'}</span>
                           
                           <button
                             onClick={() => handleEditClick(rem)}
