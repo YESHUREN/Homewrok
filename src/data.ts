@@ -11,7 +11,7 @@ export const INITIAL_PROFILE: UserProfile = {
   nickname: "张伟 (Zhang Wei)",
   avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LMd9XwZ6qzUAikT0dPgWRO5KzNVD3jnudXacqdhE6_wwT37Oc41sFONztxoHJ6pZ0XbRGFrXj9rK9kKlRwEnRueqVvfglpM1X62opXAugUXar8w27wtO8Tsmn8TUJmcyG4v_QhXIPTuy0TqToXMUfbY8XcbJMGnE4VYXBpgtlmRn6_eHkov9YiAIYS7XurXSvTEs-FNQLC9-OJPgoypMMg2x64X1C-hqd8jRuKc8AHB0qcYRK6mjefiBbdusLnR8qBUyb6n2Tkea",
   tag: "认证学生",
-  university: "首尔大学",
+  university: "202408151229",
   major: "计算机科学与工程",
   studentId: "202408151229",
   gender: "男 (Male)",

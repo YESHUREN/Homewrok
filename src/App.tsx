@@ -1440,7 +1440,7 @@ export default function App() {
             nickname: "张伟 (Zhang Wei)",
             avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9LMd9XwZ6qzUAikT0dPgWRO5KzNVD3jnudXacqdhE6_wwT37Oc41sFONztxoHJ6pZ0XbRGFrXj9rK9kKlRwEnRueqVvfglpM1X62opXAugUXar8w27wtO8Tsmn8TUJmcyG4v_QhXIPTuy0TqToXMUfbY8XcbJMGnE4VYXBpgtlmRn6_eHkov9YiAIYS7XurXSvTEs-FNQLC9-OJPgoypMMg2x64X1C-hqd8jRuKc8AHB0qcYRK6mjefiBbdusLnR8qBUyb6n2Tkea",
             tag: "认证学生",
-            university: "首尔大学",
+            university: "202408151229",
             major: "计算机科学与工程",
             studentId: "202408151229",
             gender: "男 (Male)",
@@ -1475,7 +1475,7 @@ export default function App() {
       return;
     }
     if (!registerUniversity) {
-      setRegisterError("请选择就读高校");
+      setRegisterError("请输入学号");
       return;
     }
     if (!registerGender) {
@@ -2807,7 +2807,7 @@ export default function App() {
                   <div className="space-y-1 opacity-85">
                     <label className="text-xs font-bold text-slate-400 pl-1">{t('university')}</label>
                     <div className="w-full bg-slate-100 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-500 flex items-center gap-2 cursor-not-allowed">
-                      <BookOpen className="w-4 h-4 text-slate-400 shrink-0" />
+                      <Hash className="w-4 h-4 text-slate-400 shrink-0" />
                       <span className="font-semibold">{profile.university}</span>
                     </div>
                   </div>
@@ -3207,7 +3207,7 @@ export default function App() {
                       <label className="text-xs font-bold text-slate-500 pl-1">4. {t('university')}</label>
                       <input 
                         type="text" 
-                        placeholder={language === 'en' ? 'Enter your university, e.g. Yonsei University' : language === 'ko' ? '대학교를 입력하세요, 예: 연세대학교' : '请输入您的大学名称，如 延世大学'}
+                        placeholder={language === 'en' ? 'Enter your Student ID, e.g. 202612345' : language === 'ko' ? '학번을 입력하세요, 예: 202612345' : '请输入您的学号，如 202612345'}
                         value={registerUniversity}
                         onChange={(e) => setRegisterUniversity(e.target.value)}
                         className="w-full px-3 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 placeholder:text-slate-350 focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all outline-none"
