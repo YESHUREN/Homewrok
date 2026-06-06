@@ -343,6 +343,18 @@ export default async function handler(req, res) {
       return res.json({ success: true });
     }
 
+    // ── PUT /reminders/:id ────────────────────────────────────────────────
+    const putRemM = path.match(/^\/reminders\/([^/]+)$/);
+    if (putRemM && method === "PUT") {
+      const { title, date, time, enabled } = req.body || {};
+      const { data, error } = await sb.from("reminders")
+        .update({ title, date, time, enabled })
+        .eq("id", putRemM[1])
+        .select().single();
+      if (error) return res.status(500).json({ error: error.message });
+      return res.json({ success: true, reminder: data });
+    }
+
     // ── GET /notifications ────────────────────────────────────────────────
     if (path === "/notifications" && method === "GET") {
       const userId = (req.query || {}).userId;

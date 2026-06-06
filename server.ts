@@ -1007,6 +1007,39 @@ app.delete("/api/reminders/:id", async (req, res) => {
   }
 });
 
+// 14.1 Calendar: Update Reminder
+app.put("/api/reminders/:id", async (req, res) => {
+  const remId = req.params.id;
+  const { title, date, time, enabled } = req.body;
+
+  try {
+    if (supabase) {
+      const { data, error } = await supabase
+        .from("reminders")
+        .update({ title, date, time, enabled })
+        .eq("id", remId)
+        .select()
+        .single();
+      
+      if (error) return res.status(500).json({ error: error.message });
+      return res.json({ success: true, reminder: data });
+    } else {
+      const idx = fallbackReminders.findIndex(r => r.id === remId);
+      if (idx !== -1) {
+        if (title !== undefined) fallbackReminders[idx].title = title;
+        if (date !== undefined) fallbackReminders[idx].date = date;
+        if (time !== undefined) fallbackReminders[idx].time = time;
+        if (enabled !== undefined) fallbackReminders[idx].enabled = enabled;
+        saveFallbackDb();
+        return res.json({ success: true, reminder: fallbackReminders[idx] });
+      }
+      return res.status(404).json({ error: "日历日程未找到！" });
+    }
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
 // ============================================================================
 // NOTIFICATIONS API ENDPOINTS & LIVE INTERACTION SIMULATION
 // ============================================================================

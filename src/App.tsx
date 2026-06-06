@@ -15,7 +15,7 @@ import { translations } from "./i18n";
 import { 
   Home, MessageSquare, User, Menu, Bell, Search, MapPin, ChevronDown, 
   Heart, MessageCircle, Share2, Plus, Calendar, Shield, BookOpen, 
-  Trash2, CreditCard, ChevronRight, HelpCircle, Globe, LogOut, Check,
+  Trash2, CreditCard, ChevronRight, HelpCircle, Globe, LogOut, Check, Edit2,
   X, Camera, PlusCircle, ArrowLeft, Send, ArrowRight, Bookmark, RefreshCw, Hash, Database,
   Compass, Smartphone, Plane, Sparkles
 } from "lucide-react";
@@ -244,6 +244,7 @@ export default function App() {
   const [newReminderTitle, setNewReminderTitle] = useState("");
   const [newReminderTime, setNewReminderTime] = useState("");
   const [newReminderNotice, setNewReminderNotice] = useState(true);
+  const [editingReminderId, setEditingReminderId] = useState<string | null>(null);
 
   // Active Countdown ID displayed on the home page banner
   const [activeCountdownId, setActiveCountdownId] = useState<string>("rem_visa");
@@ -1679,57 +1680,117 @@ export default function App() {
       });
   };
 
-  // Handle Adding Reminder
+  // Handle Editing/Updating Reminder
+  const handleEditClick = (rem: CalendarReminder) => {
+    setEditingReminderId(rem.id);
+    setNewReminderTitle(rem.title);
+    setNewReminderTime(rem.time || "12:00");
+    setNewReminderNotice(rem.enabled ?? true);
+    setActiveCalendarSelectedDate(rem.date);
+    triggerSystemTip(language === 'zh' ? "已加载日程，您可以在上方表单中进行修改！" : language === 'ko' ? "일정이 로드되었습니다. 위 양식에서 수정할 수 있습니다!" : "Reminder loaded! You can modify it in the form above.");
+  };
+
+  const handleCancelEdit = () => {
+    setNewReminderTitle("");
+    setNewReminderTime("");
+    setEditingReminderId(null);
+    triggerSystemTip(language === 'zh' ? "已取消修改" : language === 'ko' ? "수정이 취소되었습니다" : "Edit cancelled");
+  };
+
   const handleSaveReminder = () => {
     if (!newReminderTitle.trim()) {
       triggerSystemTip("请先填写倒计时标题，如: TOPIK考试");
       return;
     }
 
-    const newId = `rem_${Date.now()}`;
-    
-    fetch("/api/reminders", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userId: profile.studentId,
-        id: newId,
-        title: newReminderTitle,
-        date: activeCalendarSelectedDate,
-        time: newReminderTime || "12:00",
-        enabled: newReminderNotice
+    if (editingReminderId) {
+      // Update/Edit Mode
+      fetch(`/api/reminders/${editingReminderId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: newReminderTitle,
+          date: activeCalendarSelectedDate,
+          time: newReminderTime || "12:00",
+          enabled: newReminderNotice
+        })
       })
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("保存失败！");
-        }
-        return res.json();
-      })
-      .then(data => {
-        if (data.success) {
-          fetchReminders(profile.studentId);
-          setActiveCountdownId(newId);
-          triggerSystemTip(`提醒【${newReminderTitle}】保存成功并已标入日历与云端数据库！`);
+        .then(res => {
+          if (!res.ok) {
+            throw new Error("更新失败！");
+          }
+          return res.json();
+        })
+        .then(data => {
+          if (data.success) {
+            fetchReminders(profile.studentId);
+            triggerSystemTip(`提醒【${newReminderTitle}】更新成功！`);
+            setNewReminderTitle("");
+            setNewReminderTime("");
+            setEditingReminderId(null);
+          }
+        })
+        .catch(() => {
+          // Offline Fallback
+          setReminders(prev => prev.map(r => r.id === editingReminderId ? {
+            ...r,
+            title: newReminderTitle,
+            date: activeCalendarSelectedDate,
+            time: newReminderTime || "12:00",
+            enabled: newReminderNotice
+          } : r));
+          triggerSystemTip(`提醒【${newReminderTitle}】更新成功（本地缓存）！`);
           setNewReminderTitle("");
           setNewReminderTime("");
-        }
-      })
-      .catch(() => {
-        // Offline Fallback
-        const newRem: CalendarReminder = {
+          setEditingReminderId(null);
+        });
+    } else {
+      // Create Mode
+      const newId = `rem_${Date.now()}`;
+      
+      fetch("/api/reminders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: profile.studentId,
           id: newId,
           title: newReminderTitle,
           date: activeCalendarSelectedDate,
           time: newReminderTime || "12:00",
           enabled: newReminderNotice
-        };
-        setReminders(prev => [...prev, newRem]);
-        setActiveCountdownId(newId);
-        triggerSystemTip(`提醒【${newReminderTitle}】保存成功（本地缓存）！`);
-        setNewReminderTitle("");
-        setNewReminderTime("");
-      });
+        })
+      })
+        .then(res => {
+          if (!res.ok) {
+            throw new Error("保存失败！");
+          }
+          return res.json();
+        })
+        .then(data => {
+          if (data.success) {
+            fetchReminders(profile.studentId);
+            setActiveCountdownId(newId);
+            triggerSystemTip(`提醒【${newReminderTitle}】保存成功并已标入日历与云端数据库！`);
+            setNewReminderTitle("");
+            setNewReminderTime("");
+          }
+        })
+        .catch(() => {
+          // Offline Fallback
+          const newRem: CalendarReminder = {
+            id: newId,
+            title: newReminderTitle,
+            date: activeCalendarSelectedDate,
+            time: newReminderTime || "12:00",
+            enabled: newReminderNotice
+          };
+          setReminders(prev => [...prev, newRem]);
+          setActiveCountdownId(newId);
+          triggerSystemTip(`提醒【${newReminderTitle}】保存成功（本地缓存）！`);
+          setNewReminderTitle("");
+          setNewReminderTime("");
+        });
+    }
   };
 
   // Filter posts based on search query, tab filter, and hot topic
@@ -2615,13 +2676,26 @@ export default function App() {
                   </div>
 
                   {/* Save Button */}
-                  <button 
-                    onClick={handleSaveReminder}
-                    className="w-full bg-[#00685f] hover:bg-[#005049] text-white font-semibold text-xs py-3 rounded-xl shadow-sm transition-transform active:scale-97 flex items-center justify-center gap-1.5"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    {language === 'en' ? 'Save Reminder' : language === 'ko' ? '일정 저장' : '保存倒计时'}
-                  </button>
+                  <div className="flex gap-2">
+                    {editingReminderId && (
+                      <button 
+                        onClick={handleCancelEdit}
+                        className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-3 rounded-xl transition-transform active:scale-97 flex items-center justify-center gap-1.5"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                        {language === 'en' ? 'Cancel' : language === 'ko' ? '취소' : '取消'}
+                      </button>
+                    )}
+                    <button 
+                      onClick={handleSaveReminder}
+                      className={`${editingReminderId ? 'flex-[2]' : 'w-full'} bg-[#00685f] hover:bg-[#005049] text-white font-semibold text-xs py-3 rounded-xl shadow-sm transition-transform active:scale-97 flex items-center justify-center gap-1.5`}
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      {editingReminderId 
+                        ? (language === 'en' ? 'Update' : language === 'ko' ? '수정' : '更新倒计时')
+                        : (language === 'en' ? 'Save Reminder' : language === 'ko' ? '일정 저장' : '保存倒计时')}
+                    </button>
+                  </div>
                 </section>
 
                 {/* Display Reminders List */}
@@ -2636,6 +2710,15 @@ export default function App() {
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800">{language === 'en' ? 'Active' : language === 'ko' ? '활성' : '未到期'}</span>
+                          
+                          <button
+                            onClick={() => handleEditClick(rem)}
+                            className="p-1 hover:bg-slate-100 text-slate-400 hover:text-[#00685f] rounded transition-colors"
+                            title={language === 'en' ? 'Edit' : language === 'ko' ? '수정' : '修改'}
+                          >
+                            <Edit2 className="w-4 h-4" />
+                          </button>
+
                           <button 
                             onClick={() => {
                               fetch(`/api/reminders/${rem.id}`, { method: "DELETE" })
@@ -2649,11 +2732,21 @@ export default function App() {
                                   if (data.success) {
                                     setReminders(prev => prev.filter(r => r.id !== rem.id));
                                     triggerSystemTip("日历条目已从云端数据库成功删除！");
+                                    if (editingReminderId === rem.id) {
+                                      setNewReminderTitle("");
+                                      setNewReminderTime("");
+                                      setEditingReminderId(null);
+                                    }
                                   }
                                 })
                                 .catch(() => {
                                   setReminders(prev => prev.filter(r => r.id !== rem.id));
                                   triggerSystemTip("日历条目已成功删除（本地缓存）");
+                                  if (editingReminderId === rem.id) {
+                                    setNewReminderTitle("");
+                                    setNewReminderTime("");
+                                    setEditingReminderId(null);
+                                  }
                                 });
                             }}
                             className="p-1 hover:bg-slate-100 text-slate-350 hover:text-red-500 rounded"
