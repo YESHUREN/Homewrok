@@ -4288,7 +4288,9 @@ export default function App() {
                         >
                           {language === 'en' ? 'Sign Out' : language === 'ko' ? '로그아웃' : '退出登录'}
                         </button>
-                        <p className="text-center text-[10px] text-slate-400 mt-2">版本号：v2.4.0 (Stable)</p>
+                        <p className="text-center text-[10px] text-slate-400 mt-2">
+                          {language === 'en' ? 'Version: v0.0.1 (Beta)' : language === 'ko' ? '버전: v0.0.1 (Beta)' : '版本号：v0.0.1 (Beta)'}
+                        </p>
                       </section>
                     )}
                   </div>
