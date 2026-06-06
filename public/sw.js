@@ -1,4 +1,4 @@
-const CACHE_NAME = 'student-guide-cache-v3';
+const CACHE_NAME = 'student-guide-cache-v4';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -25,9 +25,17 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
+    }).then(() => {
+      // Force all open tabs to reload with the new version
+      return self.clients.claim().then(() => {
+        return self.clients.matchAll({ type: 'window' }).then((clients) => {
+          clients.forEach((client) => {
+            client.postMessage({ type: 'SW_UPDATED', version: 'v4' });
+          });
+        });
+      });
     })
   );
-  self.clients.claim();
 });
 
 // Network-first caching strategy
