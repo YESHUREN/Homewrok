@@ -307,32 +307,41 @@ export default function App() {
 
   const importEntryScheduleToCalendar = async (selectedDate: string) => {
     const baseDate = new Date(selectedDate);
-    const offsetDays = [0, 2, 4, 6, 9, 14];
+    const offsetDays = [0, 1, 2, 4, 6, 9, 14, 19, 29];
     
     const titles = {
       zh: [
         "【入境第1天】入住校外房源/宿舍 & 向家里报平安",
-        "【入境第3天】购买生活分类垃圾袋 & 熟悉校区环境",
+        "【入境第2天】采购生活必需品 & 熟悉校区周边设施",
+        "【入境第3天】激活江原大学 K-Cloud 账号与移动学生证",
         "【入境第5天】办理韩国手机卡 (SIM卡)",
         "【入境第7天】前往银行开户办理存折与借记卡",
         "【入境第10天】HiKorea 线上预约外国人登录证申办",
-        "【入境第15天】前往出入境管理事务所录入指纹申办ARC"
+        "【入境第15天】前往出入境管理事务所录入指纹申办ARC",
+        "【入境第20天】申请国民健康保险 (NHIS) 每月自动扣款",
+        "【入境第30天】领取外国人登录证 (ARC) & 变更手机号实名信息"
       ],
       ko: [
         "[입국 1일차] 기숙사/외부 주거지 입주 및 안전 보고",
-        "[입국 3일차] 규격 쓰레기봉투 구매 및 캠퍼스 파악",
+        "[입국 2일차] 캠퍼스 파악 및 필수 생활용품 구매",
+        "[입국 3일차] 강원대학교 K-Cloud 활성화 및 모바일 학생증 발급",
         "[입국 5일차] 한국 휴대폰 유심(SIM) 카드 개통",
         "[입국 7일차] 은행 통장 및 체크카드 개설",
         "[입국 10일차] 하이코리아 외국인등록증 신청 온라인 예약",
-        "[입국 15일차] 출입국관리사무소 방문 ARC 지문 등록"
+        "[입국 15일차] 출입국관리사무소 방문 ARC 지문 등록",
+        "[입국 20일차] 국민건강보험(NHIS) 계좌 자동이체 신청",
+        "[입국 30일차] 외국인등록증 수령 및 휴대폰 명의 변경"
       ],
       en: [
         "[Day 1 of Entry] Move into dorm/housing & report safety",
-        "[Day 3 of Entry] Purchase garbage bags & explore campus",
+        "[Day 2 of Entry] Explore campus & shop for essentials",
+        "[Day 3 of Entry] Activate KNU K-Cloud & Get Mobile Student ID",
         "[Day 5 of Entry] Apply for a Korean SIM card",
         "[Day 7 of Entry] Open bank account & get debit card",
         "[Day 10 of Entry] Book ARC appointment on HiKorea",
-        "[Day 15 of Entry] Visit Immigration Office for ARC fingerprinting"
+        "[Day 15 of Entry] Visit Immigration Office for ARC fingerprinting",
+        "[Day 20 of Entry] Apply for National Health Insurance Auto-Debit",
+        "[Day 30 of Entry] Retrieve ARC & Update SIM Card Registration"
       ]
     };
 
@@ -386,7 +395,7 @@ export default function App() {
 
   const getTimelineItems = (baseDateStr: string) => {
     const baseDate = new Date(baseDateStr);
-    const offsets = [0, 2, 4, 6, 9, 14, 19, 24, 29];
+    const offsets = [0, 1, 2, 4, 6, 9, 14, 19, 29];
     
     const data = [
       {
@@ -409,7 +418,7 @@ export default function App() {
         }
       },
       {
-        day: 3,
+        day: 2,
         icon: Compass,
         title: {
           zh: "采购生活必需品 & 熟悉校区周边设施",
@@ -418,13 +427,32 @@ export default function App() {
         },
         desc: {
           zh: "熟悉学校周边的超市（如三陟E-Mart、各大便利店）和公交车站等便利生活设施，参加学校的迎新说明会，领取临时校园卡及选课指导手册。",
-          ko: "학교 주변 대형마트(삼척 이마트, 마트 등) 및 버스 정류장 등 편의시설을 파악하고, 국제교류과에서 주관하는 오리엔테이션에 참석하여 임시 학생증 및 수강신청 가이드를 수령하세요.",
+          ko: "학교 주변 대형마트(삼척 이마트, 마트 등) 및 버스 정류장 등 편의시설을 파악하고, 국제교류과에서 주관하는 오리엔테이션에 참석하여 임시 학생证 및 수강신청 가이드를 수령하세요。",
           en: "Visit nearby supermarkets (like Samcheok E-Mart) and bus stations. Attend the freshman orientation organized by the Office of International Affairs to get your temporary campus ID and course manual."
         },
         tips: {
           zh: ["三陟市中心E-Mart大超市路线规划与采购", "领取临时学生证与选课指南", "关注国际交流处迎新发布会时间并准时参加"],
           ko: ["삼척 시내 이마트 마트 경로 파악", "임시 학생증 및 수강 가이드 수령", "국제교류팀 오리엔테이션 일정 확인"],
           en: ["Route map to local E-Mart", "Get temporary ID & course guide", "Check orientation session schedule"]
+        }
+      },
+      {
+        day: 3,
+        icon: BookOpen,
+        title: {
+          zh: "激活江原大学 K-Cloud 账号与移动学生证",
+          ko: "강원대학교 K-Cloud 활성화 및 모바일 학생증 발급",
+          en: "Activate KNU K-Cloud & Get Mobile Student ID"
+        },
+        desc: {
+          zh: "登录江原大学官方门户网站 K-Cloud，激活您的学生账号。下载‘강원대학교 스마트캠퍼스’（江原大学智能校园）App，申请并生成电子移动学生证。这是您进出学校图书馆、自习室、宿舍闸机以及借书的必备电子凭证。",
+          ko: "강원대학교 포털 사이트 K-Cloud에 로그인하여 학생 계정을 활성화하세요. '강원대학교 스마트캠퍼스' 앱을 다운로드하여 모바일 학생증을 발급받으면 도서관 출입 및 도서 대출, 기숙사 게이트 통과 시 편리하게 사용할 수 있습니다.",
+          en: "Log into KNU's portal (K-Cloud) to activate your student account. Download the 'Kangwon National University Smart Campus' app to generate your mobile student ID for library access and borrowing books."
+        },
+        tips: {
+          zh: ["登录江原大学 K-Cloud 门户网站激活账号并修改初始密码", "在手机应用商店下载 '강원대학교 스마트캠퍼스' App", "生成电子学生证二维码，并核对个人姓名与学号是否正确"],
+          ko: ["강원대 K-Cloud 포털 접속 및 계정 초기화/활성화", "'강원대학교 스마트캠퍼스' 앱 다운로드", "모바일 학생증 QR코드 발급 및 정보 확인"],
+          en: ["Log in to KNU K-Cloud portal to activate account", "Download 'Kangwon National University Smart Campus' app", "Generate mobile ID QR code & verify student details"]
         }
       },
       {
@@ -517,28 +545,9 @@ export default function App() {
           en: "After receiving your ARC and bank card, configure NHIS automatic monthly debit. This avoids overdue fees and offers a small premium discount."
         },
         tips: {
-          zh: ["拨打 1345 或健康保险客服 1577-1000 电话申请", "携带银行通账和登录证前往最近的国民健康保险公团分部办理", "确保每月扣款日前账户内有足额生活费防止划扣失败"],
+          zh: ["拨打 1345 或健康保险客服 1577-1000 电话申请", "携带银行通账 and 登录证前往最近的国民健康保险公团分部办理", "确保每月扣款日前账户内有足额生活费防止划扣失败"],
           ko: ["고객센터 1577-1000 또는 1345로 전화 신청", "통장 및 외국인등록증 지참 후 건강보험공단 지사 방문 신청", "매월 이체일 전 통장 잔액 확인"],
           en: ["Call NHIS customer service at 1577-1000 or 1345", "Visit a nearby NHIS branch with ARC & bankbook", "Ensure sufficient balance in account before debit date"]
-        }
-      },
-      {
-        day: 25,
-        icon: BookOpen,
-        title: {
-          zh: "激活江原大学 K-Cloud 账号与移动学生证",
-          ko: "강원대학교 K-Cloud 활성화 및 모바일 학생증 발급",
-          en: "Activate KNU K-Cloud & Get Mobile Student ID"
-        },
-        desc: {
-          zh: "登录江原大学官方门户网站 K-Cloud，激活您的学生账号。下载‘강원대학교 스마트캠퍼스’（江原大学智能校园）App，申请并生成电子移动学生证。这是您进出学校图书馆、自习室、宿舍闸机以及借书的必备电子凭证。",
-          ko: "강원대학교 포털 사이트 K-Cloud에 로그인하여 학생 계정을 활성화하세요. '강원대학교 스마트캠퍼스' 앱을 다운로드하여 모바일 학생증을 발급받으면 도서관 출입 및 도서 대출, 기숙사 게이트 통과 시 편리하게 사용할 수 있습니다.",
-          en: "Log into KNU's portal (K-Cloud) to activate your student account. Download the 'Kangwon National University Smart Campus' app to generate your mobile student ID for library access and borrowing books."
-        },
-        tips: {
-          zh: ["登录江原大学 K-Cloud 门户网站激活账号并修改初始密码", "在手机应用商店下载 '강원대학교 스마트캠퍼스' App", "生成电子学生证二维码，并核对个人姓名与学号是否正确"],
-          ko: ["강원대 K-Cloud 포털 접속 및 계정 초기화/활성화", "'강원대학교 스마트캠퍼스' 앱 다운로드", "모바일 학생증 QR코드 발급 및 정보 확인"],
-          en: ["Log in to KNU K-Cloud portal to activate account", "Download 'Kangwon National University Smart Campus' app", "Generate mobile ID QR code & verify student details"]
         }
       },
       {
@@ -556,7 +565,7 @@ export default function App() {
         },
         tips: {
           zh: ["确认收到出入境自取短信（或确认快递邮寄状态）后获得实体卡", "带上登录证原件与手机前往电信运营商官方营业厅办理实名变更", "完成变更后，尝试绑定 KakaoPay / Toss 等金融和支付软件测试实名认证"],
-          ko: ["출입국사무소에서 외국인등록증 실물 카드 수령 (또는 우편 배송 완료 확인)", "등록증 지참 후 통신사 대리점 방문하여 여권 명의를 등록증 명의로 전환", "명의 변경 후 카카오페이/토스 등 본인인증 및 간편결제 연동 테스트"],
+          ko: ["출입국사무소에서 외국인등록증 실물 카드 수령 (또는 우편 배송 완료 확인)", "등록증 지참 후 통신사 대리점 방문하여 여권 명의를 등록증 명의로 전환", "명의 변경 후 카카오페이/토스 등 본인인증 및 간편결제 연동测试"],
           en: ["Retrieve physical ARC card (if self-pickup)", "Visit telecom store with ARC to update your registry from passport to ARC", "Link to KakaoPay or Toss to test identity verification"]
         }
       }
