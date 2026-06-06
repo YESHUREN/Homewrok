@@ -117,6 +117,10 @@ export default function App() {
     () => (typeof window !== "undefined" && "Notification" in window) ? (window as any).Notification.permission : "default"
   );
 
+  // Advance notification days setting (how many days before deadline to send push)
+  const [notifyAdvanceDays, setNotifyAdvanceDays] = useState<number>(
+    () => parseInt(localStorage.getItem("notify_advance_days") || "3", 10)
+  );
 
 
   // DB Diagnostic & Cloud Connection states
@@ -588,7 +592,7 @@ export default function App() {
                 body: language === 'zh' ? '系统推送通知已成功开启！' : language === 'ko' ? '시스템 알림 기능이 활성화되었습니다!' : 'Push notifications successfully enabled!',
                 icon: '/logo.svg',
                 vibrate: [100, 50, 100]
-              }
+              } as any
             );
           });
         }
@@ -603,37 +607,47 @@ export default function App() {
     if (notificationPermission !== "granted") return;
 
     const checkRemindersAndNotify = () => {
-      const todayStr = new Date().toISOString().split('T')[0];
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const todayStr = today.toISOString().split('T')[0];
       const notifiedList = JSON.parse(localStorage.getItem("notified_reminders") || "[]");
       let updated = false;
 
       reminders.forEach((rem) => {
-        if (rem.date === todayStr && rem.enabled && !notifiedList.includes(rem.id)) {
+        if (!rem.enabled) return;
+        const remDate = new Date(rem.date);
+        remDate.setHours(0, 0, 0, 0);
+        const diffDays = Math.round((remDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+
+        // Fire notification on the exact day OR notifyAdvanceDays before
+        const shouldNotifyToday = rem.date === todayStr;
+        const shouldNotifyAdvance = diffDays === notifyAdvanceDays && notifyAdvanceDays > 0;
+        const notifId = shouldNotifyToday ? rem.id : `${rem.id}_adv${notifyAdvanceDays}`;
+
+        if ((shouldNotifyToday || shouldNotifyAdvance) && !notifiedList.includes(notifId)) {
+          const title = shouldNotifyToday
+            ? (language === 'zh' ? '🕒 今日重要日程提醒' : language === 'ko' ? '🕒 오늘 주요 일정 알림' : '🕒 Today\'s Event Reminder')
+            : (language === 'zh' ? `⏰ 倒数日提醒：还有 ${notifyAdvanceDays} 天` : language === 'ko' ? `⏰ 디데이 알림: ${notifyAdvanceDays}일 남음` : `⏰ Countdown: ${notifyAdvanceDays} days left`);
+          const body = shouldNotifyToday
+            ? rem.title
+            : (language === 'zh' ? `【${rem.title}】还有 ${notifyAdvanceDays} 天到期，请提前做好准备！` : language === 'ko' ? `【${rem.title}】${notifyAdvanceDays}일 후 마감입니다. 미리 준비하세요!` : `【${rem.title}】is due in ${notifyAdvanceDays} days. Be prepared!`);
+
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.ready.then((reg) => {
-              reg.showNotification(
-                language === 'zh' ? '🕒 今日重要日程提醒' : language === 'ko' ? '🕒 오늘 주요 일정 알림' : '🕒 Today\'s Event Reminder',
-                {
-                  body: rem.title,
-                  icon: '/logo.svg',
-                  tag: rem.id,
-                  renotify: true,
-                  requireInteraction: true,
-                  vibrate: [200, 100, 200]
-                }
-              );
+              reg.showNotification(title, {
+                body,
+                icon: '/logo.svg',
+                tag: notifId,
+                renotify: true,
+                requireInteraction: true,
+                vibrate: [200, 100, 200]
+              } as any);
             });
           } else {
             const BrowserNotification = (window as any).Notification;
-            new BrowserNotification(
-              language === 'zh' ? '🕒 今日重要日程提醒' : language === 'ko' ? '🕒 오늘 주요 일정 알림' : '🕒 Today\'s Event Reminder',
-              {
-                body: rem.title,
-                icon: '/logo.svg',
-              }
-            );
+            new BrowserNotification(title, { body, icon: '/logo.svg' });
           }
-          notifiedList.push(rem.id);
+          notifiedList.push(notifId);
           updated = true;
         }
       });
@@ -646,7 +660,7 @@ export default function App() {
     checkRemindersAndNotify();
     const interval = setInterval(checkRemindersAndNotify, 15000);
     return () => clearInterval(interval);
-  }, [reminders, notificationPermission, language]);
+  }, [reminders, notificationPermission, language, notifyAdvanceDays]);
 
 
 
@@ -1804,7 +1818,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-100 flex flex-col md:flex-row justify-center items-stretch font-sans overflow-x-hidden p-0 md:p-6 text-slate-800">
       
       {/* Main viewport emulation wrapper */}
-      <div className="relative w-full max-w-md bg-white border-0 md:border md:border-slate-200/80 rounded-none md:rounded-3xl shadow-none md:shadow-xl flex flex-col min-h-screen md:min-h-[850px] overflow-hidden">
+      <div className="relative w-full max-w-md bg-white border-0 md:border md:border-slate-200/80 rounded-none md:rounded-3xl shadow-none md:shadow-xl flex flex-col min-h-screen md:min-h-[850px] overflow-hidden" style={{isolation:'isolate'}}>
 
         {/* ===== INFO DRAWER (Hamburger Menu) ===== */}
         <AnimatePresence>
@@ -3332,7 +3346,7 @@ export default function App() {
             </div>
           ) : (
             // MAIN SPA TABS (HOME, COMMUNITY, PROFILE)
-            <div>
+            <div className="pb-24">
               
               {/* ----------------- TAB 1: HOME (留学指南) ----------------- */}
               {navTab === NavigationTab.HOME && (
@@ -4274,6 +4288,45 @@ export default function App() {
                       </div>
                     </section>
 
+                    {/* Advance notification days setting */}
+                    {notificationPermission === 'granted' && (
+                      <section className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm">
+                        <div className="flex justify-between items-center">
+                          <div className="space-y-0.5 flex-1 mr-3">
+                            <span className="font-bold text-xs text-slate-800 block">
+                              {language === 'zh' ? '⏰ 提前推送天数' : language === 'ko' ? '⏰ 사전 알림 일수' : '⏰ Advance Notice Days'}
+                            </span>
+                            <span className="text-[10px] text-slate-400 block leading-normal">
+                              {language === 'zh' 
+                                ? `在到期前第 ${notifyAdvanceDays} 天推送提醒通知（可调 1-14 天）` 
+                                : language === 'ko' 
+                                ? `마감 ${notifyAdvanceDays}일 전 알림 발송 (1-14일 조정 가능)` 
+                                : `Notify ${notifyAdvanceDays} day(s) before deadline (1-14 days)`}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 shrink-0">
+                            <button
+                              onClick={() => {
+                                const v = Math.max(1, notifyAdvanceDays - 1);
+                                setNotifyAdvanceDays(v);
+                                localStorage.setItem('notify_advance_days', String(v));
+                              }}
+                              className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-base flex items-center justify-center active:scale-90 transition-all cursor-pointer"
+                            >−</button>
+                            <span className="text-base font-bold text-[#00685f] w-5 text-center">{notifyAdvanceDays}</span>
+                            <button
+                              onClick={() => {
+                                const v = Math.min(14, notifyAdvanceDays + 1);
+                                setNotifyAdvanceDays(v);
+                                localStorage.setItem('notify_advance_days', String(v));
+                              }}
+                              className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-base flex items-center justify-center active:scale-90 transition-all cursor-pointer"
+                            >+</button>
+                          </div>
+                        </div>
+                      </section>
+                    )}
+
                     {/* Log out option */}
                     {profile.isLoggedIn && (
                       <section className="pt-3">
@@ -4288,9 +4341,7 @@ export default function App() {
                         >
                           {language === 'en' ? 'Sign Out' : language === 'ko' ? '로그아웃' : '退出登录'}
                         </button>
-                        <p className="text-center text-[10px] text-slate-400 mt-2">
-                          {language === 'en' ? 'Version: v0.0.1 (Beta)' : language === 'ko' ? '버전: v0.0.1 (Beta)' : '版本号：v0.0.1 (Beta)'}
-                        </p>
+                        <p className="text-center text-[10px] text-slate-400 mt-2">版本号：v0.01 (测试版)</p>
                       </section>
                     )}
                   </div>
@@ -4731,7 +4782,7 @@ export default function App() {
         {/* GLOBAL BOTTOM NAVIGATION BAR (Mockup 1) */}
         {/* ---------------------------------------------------- */}
         {screen === ActiveScreen.MAIN && (
-          <nav className="absolute bottom-0 left-0 right-0 h-20 bg-white border-t border-slate-100 flex justify-around items-center px-4 py-2 z-40 shadow-lg shadow-black/5 select-none rounded-t-2xl">
+          <nav className="fixed bottom-0 left-0 right-0 md:absolute md:left-auto md:right-auto h-20 bg-white border-t border-slate-100 flex justify-around items-center px-4 py-2 z-50 shadow-lg shadow-black/5 select-none rounded-t-2xl w-full max-w-md mx-auto" style={{transform:'translateZ(0)'}}>
             {/* Tab 1: Home */}
             <button 
               onClick={() => {

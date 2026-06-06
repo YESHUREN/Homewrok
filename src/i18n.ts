@@ -24,7 +24,7 @@ export const translations = {
     feature_security_title: "✓ 账户与数据安全",
     feature_security_desc1: "自定义账号注册，信息多重持久化",
     feature_security_desc2: "注册数据离线可恢复，断网不丢失",
-    current_version: "当前版本：v2.4.0 (Stable)",
+    current_version: "当前版本：v0.01 (测试版)",
     student_project: "由Kaoye与TTTu开发项目，致力帮助每一位留学生",
 
     // Home Tab
@@ -176,7 +176,7 @@ export const translations = {
     feature_security_title: "✓ Account & Data Security",
     feature_security_desc1: "Custom registration with multiple persistence layers",
     feature_security_desc2: "Registration data is recoverable offline",
-    current_version: "Current Version: v2.4.0 (Stable)",
+    current_version: "Current Version: v0.01 (Test)",
     student_project: "Developed by Kaoye & TTTu, dedicated to helping every international student",
 
     // Home Tab
@@ -328,7 +328,7 @@ export const translations = {
     feature_security_title: "✓ 계정 및 데이터 보안",
     feature_security_desc1: "회원 가입 및 다중 데이터 유지",
     feature_security_desc2: "오프라인 상태에서도 데이터 복구 가능",
-    current_version: "현재 버전: v2.4.0 (Stable)",
+    current_version: "현재 버전: v0.01 (테스트)",
     student_project: "Kaoye 및 TTTu가 개발한 프로젝트로, 모든 유학생을 돕기 위해 최선을 다합니다",
 
     // Home Tab
