@@ -381,7 +381,7 @@ export default function App() {
 
   const getTimelineItems = (baseDateStr: string) => {
     const baseDate = new Date(baseDateStr);
-    const offsets = [0, 2, 4, 6, 9, 14];
+    const offsets = [0, 2, 4, 6, 9, 14, 19, 24, 29];
     
     const data = [
       {
@@ -493,9 +493,66 @@ export default function App() {
           en: "On your appointment date, bring your passport, white-background photo, housing contract, certificate of enrollment, application form, and 30,000 KRW fee to the Donghae Immigration Office."
         },
         tips: {
-          zh: ["带好护照原件 and 3万韩元现金（或卡）缴纳手续费", "准备近6个月内的2寸白底证件照片1张", "向出入境窗口递交完整的学校材料包和房屋合同复印件"],
+          zh: ["带好护照原件 and 3万韩元现金（或卡）缴纳手续费", "准备近6个月内的2寸白底证件照片1张", "向出入境窗口递交完整的学校材料包 and 房屋合同复印件"],
           ko: ["여권 원본 및 수수료 3만 원 지참", "여권용 사진 1장 (흰색 배경) 지참", "학교에서 일괄 배포한 서류 봉투 확인"],
           en: ["Bring original passport & 30,000 KRW cash/card", "Prepare 1 passport-size white-background photo", "Double-check school document pack before going"]
+        }
+      },
+      {
+        day: 20,
+        icon: Shield,
+        title: {
+          zh: "申请国民健康保险 (NHIS) 每月自动扣款",
+          ko: "국민건강보험(NHIS) 계좌 자동이체 신청",
+          en: "Apply for National Health Insurance Auto-Debit"
+        },
+        desc: {
+          zh: "拥有韩国银行卡和外国人登录证后，建议尽快办理健康保险每月自动转账划扣（자동이체）。不仅能免去每月手动缴费的繁琐、防止逾期罚款，还能享受少量的保费减免优惠！",
+          ko: "체크카드와 외국인등록증을 발급받은 후, 건강보험료 자동이체를 신청하는 것을 추천합니다. 매달 납부해야 하는 번거로움을 줄이고 연체를 방지할 수 있으며, 소액의 감면 혜택도 받을 수 있습니다.",
+          en: "After receiving your ARC and bank card, configure NHIS automatic monthly debit. This avoids overdue fees and offers a small premium discount."
+        },
+        tips: {
+          zh: ["拨打 1345 或健康保险客服 1577-1000 电话申请", "携带银行通账和登录证前往最近的国民健康保险公团分部办理", "确保每月扣款日前账户内有足额生活费防止划扣失败"],
+          ko: ["고객센터 1577-1000 또는 1345로 전화 신청", "통장 및 외국인등록증 지참 후 건강보험공단 지사 방문 신청", "매월 이체일 전 통장 잔액 확인"],
+          en: ["Call NHIS customer service at 1577-1000 or 1345", "Visit a nearby NHIS branch with ARC & bankbook", "Ensure sufficient balance in account before debit date"]
+        }
+      },
+      {
+        day: 25,
+        icon: BookOpen,
+        title: {
+          zh: "激活江原大学 K-Cloud 账号与移动学生证",
+          ko: "강원대학교 K-Cloud 활성화 및 모바일 학생증 발급",
+          en: "Activate KNU K-Cloud & Get Mobile Student ID"
+        },
+        desc: {
+          zh: "登录江原大学官方门户网站 K-Cloud，激活您的学生账号。下载‘강원대학교 스마트캠퍼스’（江原大学智能校园）App，申请并生成电子移动学生证。这是您进出学校图书馆、自习室、宿舍闸机以及借书的必备电子凭证。",
+          ko: "강원대학교 포털 사이트 K-Cloud에 로그인하여 학생 계정을 활성화하세요. '강원대학교 스마트캠퍼스' 앱을 다운로드하여 모바일 학생증을 발급받으면 도서관 출입 및 도서 대출, 기숙사 게이트 통과 시 편리하게 사용할 수 있습니다.",
+          en: "Log into KNU's portal (K-Cloud) to activate your student account. Download the 'Kangwon National University Smart Campus' app to generate your mobile student ID for library access and borrowing books."
+        },
+        tips: {
+          zh: ["登录江原大学 K-Cloud 门户网站激活账号并修改初始密码", "在手机应用商店下载 '강원대학교 스마트캠퍼스' App", "生成电子学生证二维码，并核对个人姓名与学号是否正确"],
+          ko: ["강원대 K-Cloud 포털 접속 및 계정 초기화/활성화", "'강원대학교 스마트캠퍼스' 앱 다운로드", "모바일 학생증 QR코드 발급 및 정보 확인"],
+          en: ["Log in to KNU K-Cloud portal to activate account", "Download 'Kangwon National University Smart Campus' app", "Generate mobile ID QR code & verify student details"]
+        }
+      },
+      {
+        day: 30,
+        icon: CreditCard,
+        title: {
+          zh: "领取外国人登录证 (ARC) & 变更手机号实名信息",
+          ko: "외국인등록증 수령 및 휴대폰 명의 변경",
+          en: "Retrieve ARC & Update SIM Card Registration"
+        },
+        desc: {
+          zh: "前往出入境管理事务所领取您的外国人登录证（或等待邮寄到家）。拿到实体卡后，务必带上卡前往您的手机卡办理代理店，将原先用护照开户的手机号实名认证变更为登录证实名认证。这样您才能完美解锁韩国所有的 App 线上实名认证功能！",
+          ko: "출입국관리사무소에서 외국인등록증을 수령하거나 등기 우편으로 받으세요. 실물 카드를 받은 후, 통신사 대리점을 방문하여 여권으로 개통했던 휴대폰 명의를 외국인등록번호로 변경하세요. 그래야 한국 내 모든 온라인 본인인증을 원활하게 사용할 수 있습니다.",
+          en: "Collect your physical ARC from the Immigration Office (or receive via mail). Bring it to your telecom agent to change your phone registration from passport to ARC. This is required to unlock online identity verifications."
+        },
+        tips: {
+          zh: ["确认收到出入境自取短信（或确认快递邮寄状态）后获得实体卡", "带上登录证原件与手机前往电信运营商官方营业厅办理实名变更", "完成变更后，尝试绑定 KakaoPay / Toss 等金融和支付软件测试实名认证"],
+          ko: ["출입국사무소에서 외국인등록증 실물 카드 수령 (또는 우편 배송 완료 확인)", "등록증 지참 후 통신사 대리점 방문하여 여권 명의를 등록증 명의로 전환", "명의 변경 후 카카오페이/토스 등 본인인증 및 간편결제 연동 테스트"],
+          en: ["Retrieve physical ARC card (if self-pickup)", "Visit telecom store with ARC to update your registry from passport to ARC", "Link to KakaoPay or Toss to test identity verification"]
         }
       }
     ];
@@ -2665,10 +2722,10 @@ export default function App() {
                 {/* Subtitle description */}
                 <p className="text-[11px] text-slate-400 px-1 leading-relaxed">
                   {language === 'zh' 
-                    ? '根据您的设定，系统已在主页日历的“倒数日”中添加了以下 6 个关键日程。请按照对应节点依次办理相关手续。' 
+                    ? '根据您的设定，系统已在主页日历的“倒数日”中添加了以下 9 个关键日程。请按照对应节点依次办理相关手续。' 
                     : language === 'ko' 
-                    ? '설정된 날짜를 바탕으로 홈 화면 달력의 "디데이"에 6가지 주요 일정이 자동 등록되었습니다. 각 시기별 할 일을 확인해 보세요.' 
-                    : 'The system has synced the following 6 milestones to the "D-Day" section of your homepage calendar. Complete each task as scheduled.'}
+                    ? '설정된 날짜를 바탕으로 홈 화면 달력의 "디데이"에 9가지 주요 일정이 자동 등록되었습니다. 각 시기별 할 일을 확인해 보세요.' 
+                    : 'The system has synced the following 9 milestones to the "D-Day" section of your homepage calendar. Complete each task as scheduled.'}
                 </p>
 
                 {/* Timeline Items List */}
@@ -3327,9 +3384,9 @@ export default function App() {
                               </h3>
                               <p className="text-[9.5px] text-violet-100/80 leading-normal font-medium line-clamp-3">
                                 {language === 'zh' 
-                                  ? '定制您出发前到落地韩国15天的倒数日程，一键同步。' 
+                                  ? '定制您出发前到落地韩国30天的倒数日程，一键同步。' 
                                   : language === 'ko' 
-                                  ? '출국 전부터 입국 후 15일까지의 필수 일정을 관리하세요.' 
+                                  ? '출국 전부터 입국 후 30일까지의 필수 일정을 관리하세요.' 
                                   : 'Plan departure and arrival milestones relative to your entry date.'}
                               </p>
                             </div>
@@ -3379,7 +3436,7 @@ export default function App() {
                                   <div className="space-y-1">
                                     <div className="flex justify-between items-center text-[8.5px] text-violet-100 font-bold">
                                       <span>
-                                        {language === 'zh' ? `进度 ${completedCount}/6` : language === 'ko' ? `진행도 ${completedCount}/6` : `Progress ${completedCount}/6`}
+                                        {language === 'zh' ? `进度 ${completedCount}/9` : language === 'ko' ? `진행도 ${completedCount}/9` : `Progress ${completedCount}/9`}
                                       </span>
                                       <span>{progressPercent}%</span>
                                     </div>
