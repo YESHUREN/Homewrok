@@ -3348,7 +3348,7 @@ export default function App() {
             </div>
           ) : (
             // MAIN SPA TABS (HOME, COMMUNITY, PROFILE)
-            <div className="pb-24">
+            <div className="flex-1 overflow-y-auto overscroll-contain pb-24">
               
               {/* ----------------- TAB 1: HOME (留学指南) ----------------- */}
               {navTab === NavigationTab.HOME && (
