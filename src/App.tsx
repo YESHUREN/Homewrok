@@ -1818,7 +1818,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-100 flex flex-col md:flex-row justify-center items-stretch font-sans overflow-x-hidden p-0 md:p-6 text-slate-800">
       
       {/* Main viewport emulation wrapper */}
-      <div className="relative w-full max-w-md bg-white border-0 md:border md:border-slate-200/80 rounded-none md:rounded-3xl shadow-none md:shadow-xl flex flex-col min-h-screen md:min-h-[850px] overflow-hidden" style={{isolation:'isolate'}}>
+        <div className="relative w-full max-w-md bg-white border-0 md:border md:border-slate-200/80 rounded-none md:rounded-3xl shadow-none md:shadow-xl flex flex-col h-screen md:h-[900px] overflow-hidden" style={{isolation:'isolate'}}>
 
         {/* ===== INFO DRAWER (Hamburger Menu) ===== */}
         <AnimatePresence>
@@ -1831,7 +1831,7 @@ export default function App() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="absolute inset-0 bg-black/40 z-50 backdrop-blur-[2px]"
+                className="fixed inset-0 bg-black/40 z-[200] backdrop-blur-[2px]"
                 onClick={() => setShowInfoDrawer(false)}
               />
               {/* Drawer panel */}
@@ -1841,7 +1841,7 @@ export default function App() {
                 animate={{ x: 0 }}
                 exit={{ x: "-100%" }}
                 transition={{ type: "spring", stiffness: 320, damping: 32 }}
-                className="absolute top-0 left-0 bottom-0 w-[82%] max-w-xs bg-[#00685f] z-50 flex flex-col overflow-y-auto"
+                className="fixed top-0 left-0 bottom-0 w-[82%] max-w-xs bg-[#00685f] z-[200] flex flex-col overflow-y-auto"
                 style={{ borderRadius: "0 24px 24px 0" }}
               >
                 {/* Close button */}
@@ -1951,7 +1951,7 @@ export default function App() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="absolute inset-0 bg-black/40 z-50 backdrop-blur-[2px]"
+                className="fixed inset-0 bg-black/40 z-[200] backdrop-blur-[2px]"
                 onClick={() => setShowNotificationDrawer(false)}
               />
               {/* Drawer panel */}
@@ -1961,7 +1961,7 @@ export default function App() {
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-slate-50 z-50 flex flex-col overflow-hidden shadow-2xl"
+                className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-slate-50 z-[200] flex flex-col overflow-hidden shadow-2xl"
                 style={{ borderRadius: "24px 0 0 24px" }}
               >
                 {/* Header Section */}
@@ -2104,27 +2104,29 @@ export default function App() {
         {/* ---------------------------------------------------- */}
         {/* SCREENS CONTROLLER */}
         {/* ---------------------------------------------------- */}
-        <div className="flex-1 flex flex-col pb-20 overflow-y-auto">
+        <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
           
           {screen === ActiveScreen.GUIDE_DETAIL ? (
             // Category Guides Details screen
-            <GuideDetail 
-              category={activeGuideCategory}
-              onBack={() => setScreen(ActiveScreen.MAIN)}
-              onNavigateToForum={() => {
-                setScreen(ActiveScreen.MAIN);
-                setNavTab(NavigationTab.COMMUNITY);
-              }}
-              onNavigateToSchedule={() => {
-                setScreen(ActiveScreen.CALENDAR);
-              }}
-              language={language}
-            />
+            <div className="flex-1 overflow-y-auto overscroll-contain pb-20">
+              <GuideDetail 
+                category={activeGuideCategory}
+                onBack={() => setScreen(ActiveScreen.MAIN)}
+                onNavigateToForum={() => {
+                  setScreen(ActiveScreen.MAIN);
+                  setNavTab(NavigationTab.COMMUNITY);
+                }}
+                onNavigateToSchedule={() => {
+                  setScreen(ActiveScreen.CALENDAR);
+                }}
+                language={language}
+              />
+            </div>
           ) : screen === ActiveScreen.PUBLISH ? (
             // Create/Publish Post Screen (Mockup 3)
-            <div className="flex flex-col bg-[#f8f9ff] min-h-full">
+            <div className="flex-1 flex flex-col bg-[#f8f9ff] overflow-hidden">
               {/* Header */}
-              <nav className="sticky top-0 z-50 bg-[#f8f9ff]/90 backdrop-blur-md w-full border-b border-outline-variant/30 flex justify-between items-center px-4 h-16">
+              <nav className="bg-[#f8f9ff]/90 backdrop-blur-md w-full border-b border-outline-variant/30 flex justify-between items-center px-4 h-16 shrink-0">
                 <button onClick={() => setScreen(ActiveScreen.MAIN)} className="flex items-center text-slate-500 hover:text-[#00685f] transition-colors gap-1">
                   <X className="w-5 h-5" />
                   <span className="text-xs font-semibold">{t('cancel')}</span>
@@ -2140,7 +2142,7 @@ export default function App() {
               </nav>
 
               {/* Form Content */}
-              <main className="flex-1 p-4 space-y-4">
+              <main className="flex-1 p-4 space-y-4 overflow-y-auto overscroll-contain pb-24">
                 {/* Board Picker */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between items-center px-1">
@@ -2479,9 +2481,9 @@ export default function App() {
             </div>
           ) : screen === ActiveScreen.CALENDAR ? (
             // Calendar Screen ("日程安排" - Mockup 6)
-            <div className="flex flex-col bg-[#f8f9ff] min-h-full">
+            <div className="flex-1 flex flex-col bg-[#f8f9ff] overflow-hidden">
               {/* Header */}
-              <header className="bg-white sticky top-0 z-50 flex justify-between items-center px-4 h-16 border-b border-slate-200/50">
+              <header className="bg-white flex justify-between items-center px-4 h-16 border-b border-slate-200/50 shrink-0">
                 <div className="flex items-center gap-3">
                   <button onClick={() => setScreen(ActiveScreen.MAIN)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                     <ArrowLeft className="w-5 h-5 text-[#00685f]" />
@@ -2509,7 +2511,7 @@ export default function App() {
               </header>
 
               {/* Calendar Grid & Logic */}
-              <main className="p-4 space-y-4 flex-1">
+              <main className="p-4 space-y-4 flex-1 overflow-y-auto overscroll-contain pb-24">
                 <section className="bg-white rounded-2xl p-4 shadow-sm border border-slate-150/70">
                   <div className="flex justify-between items-center mb-3">
                     <h2 className="font-bold text-sm text-slate-800">{language === 'en' ? `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][calendarMonth-1]} ${calendarYear}` : language === 'ko' ? `${calendarYear}년 ${calendarMonth}월` : `${calendarYear}年 ${calendarMonth}月`}</h2>
@@ -2667,9 +2669,9 @@ export default function App() {
             </div>
           ) : screen === ActiveScreen.ENTRY_HELPER ? (
             // Entry Helper Screen
-            <div className="flex flex-col bg-slate-50 min-h-full">
+            <div className="flex-1 flex flex-col bg-slate-50 overflow-hidden">
               {/* Header */}
-              <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md w-full border-b border-slate-100 flex justify-between items-center px-4 h-16 shrink-0">
+              <nav className="bg-white/90 backdrop-blur-md w-full border-b border-slate-100 flex justify-between items-center px-4 h-16 shrink-0">
                 <div className="flex items-center gap-3">
                   <button 
                     onClick={() => setScreen(ActiveScreen.MAIN)} 
@@ -2693,7 +2695,7 @@ export default function App() {
               </nav>
 
               {/* Main Content container */}
-              <div className="p-4 space-y-4 max-w-md mx-auto w-full flex-1">
+              <div className="p-4 space-y-4 max-w-md mx-auto w-full flex-1 overflow-y-auto overscroll-contain pb-24">
                 {/* Entry Date Info card */}
                 <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm flex flex-col gap-3 relative overflow-hidden">
                   <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-violet-500/5 pointer-events-none" />
@@ -2805,8 +2807,8 @@ export default function App() {
             </div>
           ) : screen === ActiveScreen.EDIT_PROFILE ? (
             // Edit Profile Details screen (Mockup 8)
-            <div className="flex flex-col bg-[#f8f9ff] min-h-full">
-              <header className="bg-white sticky top-0 z-50 flex justify-between items-center px-4 h-16 border-b border-slate-200/50">
+            <div className="flex-1 flex flex-col bg-[#f8f9ff] overflow-hidden">
+              <header className="bg-white flex justify-between items-center px-4 h-16 border-b border-slate-200/50 shrink-0">
                 <div className="flex items-center gap-2">
                   <button onClick={() => setScreen(ActiveScreen.MAIN)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
                     <ArrowLeft className="w-5 h-5 text-[#00685f]" />
@@ -2833,7 +2835,7 @@ export default function App() {
                 </button>
               </header>
 
-              <main className="p-4 space-y-5 flex-1 max-w-md mx-auto w-full">
+              <main className="p-4 space-y-5 flex-1 max-w-md mx-auto w-full overflow-y-auto overscroll-contain pb-24">
                 {/* Visual Avatar upload box */}
                 <section className="flex flex-col items-center py-2">
                   <div className="relative group">
@@ -3110,9 +3112,9 @@ export default function App() {
             </div>
           ) : screen === ActiveScreen.LOGIN ? (
             // Full Login Flow block (Mockup 7)
-            <div className="flex flex-col bg-[#f8f9ff] min-h-full">
+            <div className="flex-1 flex flex-col bg-[#f8f9ff] overflow-hidden">
               {/* Goback header */}
-              <header className="w-full h-16 flex items-center px-4 bg-white sticky top-0 z-50 border-b border-slate-100">
+              <header className="w-full h-16 flex items-center px-4 bg-white border-b border-slate-100 shrink-0">
                 <button 
                   onClick={() => setScreen(ActiveScreen.MAIN)}
                   className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors"
@@ -3121,7 +3123,7 @@ export default function App() {
                 </button>
               </header>
 
-              <main className="w-full p-6 flex-1 flex flex-col justify-between max-w-sm mx-auto">
+              <main className="w-full p-6 flex-1 flex flex-col justify-between max-w-sm mx-auto overflow-y-auto overscroll-contain pb-24">
                 <div className="space-y-6">
                   {/* Headline welcomes */}
                   <div>
@@ -3216,9 +3218,9 @@ export default function App() {
             </div>
           ) : screen === ActiveScreen.REGISTER ? (
             // Full Registration Flow block
-            <div className="flex flex-col bg-[#f8f9ff] min-h-full">
+            <div className="flex-1 flex flex-col bg-[#f8f9ff] overflow-hidden">
               {/* Goback header */}
-              <header className="w-full h-16 flex items-center px-4 bg-white sticky top-0 z-50 border-b border-slate-100">
+              <header className="w-full h-16 flex items-center px-4 bg-white border-b border-slate-100 shrink-0">
                 <button 
                   onClick={() => setScreen(ActiveScreen.LOGIN)}
                   className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors"
@@ -3227,7 +3229,7 @@ export default function App() {
                 </button>
               </header>
 
-              <main className="w-full p-6 flex-1 flex flex-col justify-between max-w-sm mx-auto">
+              <main className="w-full p-6 flex-1 flex flex-col justify-between max-w-sm mx-auto overflow-y-auto overscroll-contain pb-24">
                 <div className="space-y-6">
                   {/* Headline welcomes */}
                   <div>
