@@ -1,0 +1,929 @@
+{
+  "31039f99-06f5-8024-b826-d31ca6a9c599": {
+    "spaceId": "db713885-d348-4029-9b04-7f3d52d07387",
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "version": 17,
+        "type": "page",
+        "properties": {
+          "title": [
+            [
+              "K-Cloud 个人信息更新通知"
+            ]
+          ]
+        },
+        "content": [
+          "31039f99-06f5-8065-9057-dd5d960b0300",
+          "31039f99-06f5-8099-838b-c1ab447bb892",
+          "31039f99-06f5-803c-8067-f6a67d239d21",
+          "31039f99-06f5-8056-906d-c52ab7fc561a",
+          "31039f99-06f5-8053-aa18-fa14918540d6",
+          "31039f99-06f5-8090-a75d-fd6283ddb551",
+          "31039f99-06f5-8042-b2f0-e83d4902994e"
+        ],
+        "format": {
+          "page_icon": "❗",
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-8069-99f6-f27e2e04f5ec",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "social_media_image_preview_url": "attachment:b5e6a954-ef09-40c9-9bd6-ea1eee7b6af6:SocialMediaPreviewImage.png"
+        },
+        "created_time": 1771832036007,
+        "last_edited_time": 1771832117753,
+        "parent_id": "22439f99-06f5-814a-860d-d2c8253be91b",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-8069-99f6-f27e2e04f5ec",
+        "file_ids": [
+          "b5e6a954-ef09-40c9-9bd6-ea1eee7b6af6"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "xV4fNC6DHr4-fH6fvKabyg,\"start\",\"end\"",
+            "n": {
+              "xV4fNC6DHr4-fH6fvKabyg,\"start\",\"end\"": {
+                "s": {
+                  "x": "xV4fNC6DHr4-fH6fvKabyg",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "CSmodwxJCrU9",
+                        47
+                      ],
+                      "o": "start",
+                      "l": 16,
+                      "c": "K-Cloud 个人信息更新通知"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "CSmodwxJCrU9",
+                        22
+                      ],
+                      "o": "start",
+                      "l": -25
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "2IdrFNGyw1cb",
+                        1
+                      ],
+                      "o": "start",
+                      "l": -21
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "22439f99-06f5-814a-860d-d2c8253be91b": {
+    "spaceId": "db713885-d348-4029-9b04-7f3d52d07387",
+    "value": {
+      "value": {
+        "id": "22439f99-06f5-814a-860d-d2c8253be91b",
+        "version": 155,
+        "type": "column",
+        "content": [
+          "22439f99-06f5-8167-bde9-ce0483f6926c",
+          "22439f99-06f5-8124-83d0-cfc00ea6e332",
+          "22439f99-06f5-81d0-b8be-d755a0ac04f5",
+          "23039f99-06f5-80f5-9fa0-f5a39915fddb",
+          "22439f99-06f5-813a-a3de-dbda97cbd28b",
+          "22439f99-06f5-81ab-b1bf-d2dc4e0f043f",
+          "22439f99-06f5-81a2-8240-c37e730a1f04",
+          "22439f99-06f5-8105-99d9-f1198063f5ac",
+          "22439f99-06f5-81c6-b814-cd8900fdd879",
+          "22439f99-06f5-81ef-8c9b-f1ade836852c",
+          "22439f99-06f5-8152-be6c-f9dfd930ded8",
+          "22439f99-06f5-8136-8738-c8aac70c7321",
+          "26a39f99-06f5-8077-a461-ebdd348de93e",
+          "31039f99-06f5-8024-b826-d31ca6a9c599",
+          "31939f99-06f5-8005-99f0-ed9605268593",
+          "22439f99-06f5-8187-81f9-de2a50c52ff3",
+          "22439f99-06f5-8155-8d15-ffb873582109",
+          "22439f99-06f5-81cb-b847-d811cb0a2ac8",
+          "31939f99-06f5-8073-ba00-cc4219154702",
+          "22439f99-06f5-81a5-94f4-e3f495abd4c5",
+          "22439f99-06f5-8138-9897-fc510572de62",
+          "22439f99-06f5-813b-9623-de1a8f6e83fd",
+          "22439f99-06f5-8160-a388-f12fab960737",
+          "22439f99-06f5-81bc-aa79-dc2ee00e6454",
+          "22439f99-06f5-817d-b33b-e7255c840921",
+          "22439f99-06f5-81a2-b16e-c868a83f7b3d",
+          "22439f99-06f5-81c3-8390-dc0d87bfbeab",
+          "22439f99-06f5-8181-b290-e24bb9c97513",
+          "22439f99-06f5-81d9-8e1a-c25313d3a4ca",
+          "22439f99-06f5-810d-8cd3-fd9eb82d244a",
+          "22439f99-06f5-81de-b495-ea6abbb907af",
+          "22439f99-06f5-81bc-9538-ff49f8a8115a",
+          "22439f99-06f5-8121-9af0-cf9b54161181",
+          "22439f99-06f5-8161-b892-f63329f9e2e3",
+          "22439f99-06f5-8107-af1d-fa876b27167c",
+          "22439f99-06f5-81bb-80ce-c409c760dad6",
+          "22439f99-06f5-813e-9133-d146a4934953",
+          "22439f99-06f5-8143-8807-d91fc0959bfb",
+          "22439f99-06f5-8109-9c2c-fa62fefa034e",
+          "23b39f99-06f5-80ff-8c41-f20f153701c6",
+          "22439f99-06f5-81a5-9915-e873eac53279",
+          "22439f99-06f5-81fa-8f57-fe0649c601e1",
+          "22439f99-06f5-815e-b7ad-cb50091f6dd7",
+          "23039f99-06f5-8066-8a0d-c28e903dfa70",
+          "22439f99-06f5-81dc-a53f-f60a08dd68ae",
+          "22439f99-06f5-81bf-8d37-d5f08185711b",
+          "23039f99-06f5-806b-8d2d-d7bce200f47e",
+          "22439f99-06f5-81fe-8245-d7b5b1f4ea24",
+          "22439f99-06f5-812e-ada5-c01789a5aa3c",
+          "22439f99-06f5-81dd-87ce-f8fdbeea52c0",
+          "22439f99-06f5-8167-8e3e-c69d141cb27b",
+          "22439f99-06f5-81ef-9d19-f31cc0d7c99c",
+          "22439f99-06f5-811d-b761-efd199c881b2",
+          "22439f99-06f5-8122-8bd4-ee06f0604a44",
+          "22439f99-06f5-810e-9387-d121d8ff26fc",
+          "22439f99-06f5-81f6-bf2b-cc2f2755bf10",
+          "2a439f99-06f5-8131-b0c2-c10627af353b",
+          "22439f99-06f5-81a5-bc04-fb4c1a565699"
+        ],
+        "format": {
+          "column_ratio": 0.1875,
+          "copied_from_pointer": {
+            "id": "22239f99-06f5-802e-a0c0-d31e0a44f7ce",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          }
+        },
+        "created_time": 1751446340525,
+        "last_edited_time": 1772587174081,
+        "parent_id": "22439f99-06f5-810a-9e22-ecca14f5e9ba",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "22239f99-06f5-802e-a0c0-d31e0a44f7ce",
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "mktJQRAjKiTyPh8-65XsCw,\"start\",\"end\"",
+            "n": {
+              "mktJQRAjKiTyPh8-65XsCw,\"start\",\"end\"": {
+                "s": {
+                  "x": "mktJQRAjKiTyPh8-65XsCw",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "22439f99-06f5-810a-9e22-ecca14f5e9ba": {
+    "spaceId": "db713885-d348-4029-9b04-7f3d52d07387",
+    "value": {
+      "value": {
+        "id": "22439f99-06f5-810a-9e22-ecca14f5e9ba",
+        "version": 3,
+        "type": "column_list",
+        "content": [
+          "22439f99-06f5-814a-860d-d2c8253be91b",
+          "22439f99-06f5-81ba-a452-c65981e7a491"
+        ],
+        "format": {
+          "copied_from_pointer": {
+            "id": "22239f99-06f5-8065-bf5f-d2e658e31432",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          }
+        },
+        "created_time": 1751446340524,
+        "last_edited_time": 1751446340525,
+        "parent_id": "22439f99-06f5-8061-82d4-ff4e48d59c70",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "22239f99-06f5-8065-bf5f-d2e658e31432",
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "hiU7ic7NqYmL5J1TQuM2mQ,\"start\",\"end\"",
+            "n": {
+              "hiU7ic7NqYmL5J1TQuM2mQ,\"start\",\"end\"": {
+                "s": {
+                  "x": "hiU7ic7NqYmL5J1TQuM2mQ",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "22439f99-06f5-8061-82d4-ff4e48d59c70": {
+    "spaceId": "db713885-d348-4029-9b04-7f3d52d07387",
+    "value": {
+      "value": {
+        "id": "22439f99-06f5-8061-82d4-ff4e48d59c70",
+        "version": 97,
+        "type": "collection_view_page",
+        "properties": {
+          "title": [
+            [
+              "Engineering Wiki"
+            ]
+          ]
+        },
+        "content": [
+          "22439f99-06f5-8147-bded-c676fca9a4bc",
+          "22439f99-06f5-817d-93f9-d79492e6fb25",
+          "22439f99-06f5-8172-bc90-c103f2b43b3b",
+          "22439f99-06f5-810a-9e22-ecca14f5e9ba",
+          "22439f99-06f5-81c9-8830-d7cf026472ca"
+        ],
+        "view_ids": [
+          "22439f99-06f5-81f5-ab9e-000cf713c1f0"
+        ],
+        "collection_id": "22439f99-06f5-81bf-ab98-000bda27f933",
+        "format": {
+          "app_id": "ae778c07-0bda-4aa6-901d-9098f8abe49c",
+          "site_id": "23039f99-06f5-804e-b77c-0079f105ba07",
+          "page_icon": "📓",
+          "page_cover": "attachment:dcced766-b86e-4238-b328-2cead1b1776b:제목을-입력해주세요__복사본-001.jpg",
+          "app_uri_map": {
+            "notion://wiki_collection": "22439f99-06f5-81bf-ab98-000bda27f933"
+          },
+          "block_locked": false,
+          "app_config_uri": "notion://wiki_block",
+          "block_locked_by": "d0a8cba1-b998-46a3-bcd1-0efb420410b1",
+          "collection_pointer": {
+            "id": "22439f99-06f5-81bf-ab98-000bda27f933",
+            "table": "collection",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "collection_pointers": [
+            {
+              "id": "22439f99-06f5-81bf-ab98-000bda27f933",
+              "table": "collection",
+              "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+            }
+          ],
+          "copied_from_pointer": {
+            "id": "211b0d29-d5e9-4386-9fe1-3906ffd25271",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "page_cover_position": 0.5,
+          "social_media_image_preview_url": "attachment:d6a8f2c6-fa12-4a1d-bc69-4551780d0c02:SocialMediaPreviewImage.png"
+        },
+        "permissions": [
+          {
+            "role": "reader",
+            "type": "public_permission",
+            "is_site": true,
+            "added_timestamp": 1752464389102
+          },
+          {
+            "role": {
+              "read_content": true,
+              "insert_content": true,
+              "update_content": true
+            },
+            "type": "bot_permission",
+            "bot_id": "8dee0372-09a1-41af-9453-b682d2fdf7b4",
+            "parent_id": "db713885-d348-4029-9b04-7f3d52d07387",
+            "parent_table": "space"
+          },
+          {
+            "role": "editor",
+            "type": "user_permission",
+            "user_id": "8e30c3e3-74fa-4895-8538-7cd279c04098",
+            "invite_id": "31039f99-06f5-8091-8825-004cfe06b1dc",
+            "can_create_pages_in_collection": false
+          }
+        ],
+        "created_time": 1751446377068,
+        "last_edited_time": 1772587172737,
+        "parent_id": "fff39f99-06f5-81ab-b520-00420656c29a",
+        "parent_table": "team",
+        "alive": true,
+        "copied_from": "211b0d29-d5e9-4386-9fe1-3906ffd25271",
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "GwPgdEX5qGhXnYxl3Eip7w,\"start\",\"end\"",
+            "n": {
+              "GwPgdEX5qGhXnYxl3Eip7w,\"start\",\"end\"": {
+                "s": {
+                  "x": "GwPgdEX5qGhXnYxl3Eip7w",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "LDN780XuaYqp",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 16,
+                      "c": "Engineering Wiki"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8065-9057-dd5d960b0300": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8065-9057-dd5d960b0300",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "343.2 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_1.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:7c8c4067-cea5-400e-8939-2d5007154a0a:Updating_Personal_Information_in_K-Cloud_1.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:7c8c4067-cea5-400e-8939-2d5007154a0a:Updating_Personal_Information_in_K-Cloud_1.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-804c-b708-d7d97c039a8d",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-804c-b708-d7d97c039a8d",
+        "file_ids": [
+          "7c8c4067-cea5-400e-8939-2d5007154a0a"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "Vq5d2hmJuGRLQvqEjdm-NA,\"start\",\"end\"",
+            "n": {
+              "Vq5d2hmJuGRLQvqEjdm-NA,\"start\",\"end\"": {
+                "s": {
+                  "x": "Vq5d2hmJuGRLQvqEjdm-NA",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "sdjWO_gCIT74",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_1.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8099-838b-c1ab447bb892": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8099-838b-c1ab447bb892",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "238.9 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_2.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:67f79a96-5bec-47fe-87bd-29a30541ff4f:Updating_Personal_Information_in_K-Cloud_2.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:67f79a96-5bec-47fe-87bd-29a30541ff4f:Updating_Personal_Information_in_K-Cloud_2.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-808d-a99e-d4e66ff1f00b",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-808d-a99e-d4e66ff1f00b",
+        "file_ids": [
+          "67f79a96-5bec-47fe-87bd-29a30541ff4f"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "ajWbwKPdm7l9HSjofmfvvQ,\"start\",\"end\"",
+            "n": {
+              "ajWbwKPdm7l9HSjofmfvvQ,\"start\",\"end\"": {
+                "s": {
+                  "x": "ajWbwKPdm7l9HSjofmfvvQ",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "CaX-Ezr4JPwA",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_2.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-803c-8067-f6a67d239d21": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-803c-8067-f6a67d239d21",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "144.1 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_3.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:95bc2766-d869-4ef8-96ea-32147a2a99d1:Updating_Personal_Information_in_K-Cloud_3.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:95bc2766-d869-4ef8-96ea-32147a2a99d1:Updating_Personal_Information_in_K-Cloud_3.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-8026-920a-ffcbc7a8eea6",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-8026-920a-ffcbc7a8eea6",
+        "file_ids": [
+          "95bc2766-d869-4ef8-96ea-32147a2a99d1"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "BitTjWJZTii7XNeW3WVs3g,\"start\",\"end\"",
+            "n": {
+              "BitTjWJZTii7XNeW3WVs3g,\"start\",\"end\"": {
+                "s": {
+                  "x": "BitTjWJZTii7XNeW3WVs3g",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "xRiyiGKlmsbf",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_3.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8056-906d-c52ab7fc561a": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8056-906d-c52ab7fc561a",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "211.7 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_4.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:c4cfc0f6-f847-4540-8649-72d45c8333f2:Updating_Personal_Information_in_K-Cloud_4.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:c4cfc0f6-f847-4540-8649-72d45c8333f2:Updating_Personal_Information_in_K-Cloud_4.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-803b-9de6-c75d3ffc7f29",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-803b-9de6-c75d3ffc7f29",
+        "file_ids": [
+          "c4cfc0f6-f847-4540-8649-72d45c8333f2"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "52iH36B-w0_DpmFpDHcX0w,\"start\",\"end\"",
+            "n": {
+              "52iH36B-w0_DpmFpDHcX0w,\"start\",\"end\"": {
+                "s": {
+                  "x": "52iH36B-w0_DpmFpDHcX0w",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "cz5KJ0CgCkDr",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_4.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8053-aa18-fa14918540d6": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8053-aa18-fa14918540d6",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "205.6 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_5.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:6478a159-7f6b-47bb-82df-7fc59b64e192:Updating_Personal_Information_in_K-Cloud_5.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:6478a159-7f6b-47bb-82df-7fc59b64e192:Updating_Personal_Information_in_K-Cloud_5.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-8075-b10b-d812142269d0",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-8075-b10b-d812142269d0",
+        "file_ids": [
+          "6478a159-7f6b-47bb-82df-7fc59b64e192"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "dhjsXu73QwdtQL2g_LT-CA,\"start\",\"end\"",
+            "n": {
+              "dhjsXu73QwdtQL2g_LT-CA,\"start\",\"end\"": {
+                "s": {
+                  "x": "dhjsXu73QwdtQL2g_LT-CA",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "yqYUANTIv3g-",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_5.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8090-a75d-fd6283ddb551": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8090-a75d-fd6283ddb551",
+        "version": 3,
+        "type": "image",
+        "properties": {
+          "size": [
+            [
+              "241.5 KiB"
+            ]
+          ],
+          "title": [
+            [
+              "Updating Personal Information in K-Cloud_6.jpg"
+            ]
+          ],
+          "source": [
+            [
+              "attachment:bdc7f4d3-0fbf-48b5-8c70-a477e4277356:Updating_Personal_Information_in_K-Cloud_6.jpg"
+            ]
+          ]
+        },
+        "format": {
+          "block_width": 710,
+          "display_source": "attachment:bdc7f4d3-0fbf-48b5-8c70-a477e4277356:Updating_Personal_Information_in_K-Cloud_6.jpg",
+          "block_full_width": false,
+          "block_page_width": true,
+          "block_aspect_ratio": 0.5625,
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-80b7-99c2-d843d36cd431",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          },
+          "block_preserve_scale": true
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-80b7-99c2-d843d36cd431",
+        "file_ids": [
+          "bdc7f4d3-0fbf-48b5-8c70-a477e4277356"
+        ],
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "rmEA8PmqoMqG4N3kfA5vQg,\"start\",\"end\"",
+            "n": {
+              "rmEA8PmqoMqG4N3kfA5vQg,\"start\",\"end\"": {
+                "s": {
+                  "x": "rmEA8PmqoMqG4N3kfA5vQg",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "t",
+                      "i": [
+                        "J_qmA7pwEyBo",
+                        1
+                      ],
+                      "o": "start",
+                      "l": 46,
+                      "c": "Updating Personal Information in K-Cloud_6.jpg"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  },
+  "31039f99-06f5-8042-b2f0-e83d4902994e": {
+    "value": {
+      "value": {
+        "id": "31039f99-06f5-8042-b2f0-e83d4902994e",
+        "version": 2,
+        "type": "text",
+        "format": {
+          "copied_from_pointer": {
+            "id": "31039f99-06f5-8027-95b4-e62f8456c322",
+            "table": "block",
+            "spaceId": "db713885-d348-4029-9b04-7f3d52d07387"
+          }
+        },
+        "created_time": 1771832036008,
+        "last_edited_time": 1771832036015,
+        "parent_id": "31039f99-06f5-8024-b826-d31ca6a9c599",
+        "parent_table": "block",
+        "alive": true,
+        "copied_from": "31039f99-06f5-8027-95b4-e62f8456c322",
+        "space_id": "db713885-d348-4029-9b04-7f3d52d07387",
+        "crdt_format_version": 1,
+        "crdt_data": {
+          "title": {
+            "r": "LVAef2BruQNq-pYGFnsm0g,\"start\",\"end\"",
+            "n": {
+              "LVAef2BruQNq-pYGFnsm0g,\"start\",\"end\"": {
+                "s": {
+                  "x": "LVAef2BruQNq-pYGFnsm0g",
+                  "i": [
+                    {
+                      "t": "s"
+                    },
+                    {
+                      "t": "e"
+                    }
+                  ],
+                  "l": ""
+                },
+                "c": []
+              }
+            }
+          }
+        }
+      },
+      "role": "reader"
+    }
+  }
+}

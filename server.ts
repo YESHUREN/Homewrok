@@ -238,7 +238,7 @@ app.post("/api/auth/register", async (req, res) => {
 
   try {
     const studentId = `stud_${Date.now()}`;
-    const newNickname = `${name} (Student)`;
+    const newNickname = `${username} (Student)`;
     const newProfile = {
       id: studentId,
       username,

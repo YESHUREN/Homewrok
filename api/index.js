@@ -115,7 +115,7 @@ export default async function handler(req, res) {
       const newProfile = {
         id: `stud_${Date.now()}`, username, password,
         phone: `no_phone_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
-        name, nickname: `${name} (Student)`, avatar: "", tag: "认证学生",
+        name, nickname: `${username} (Student)`, avatar: "", tag: "认证学生",
         university, major: "未指定", gender, birthday
       };
       const { data: inserted, error: ie } = await sb

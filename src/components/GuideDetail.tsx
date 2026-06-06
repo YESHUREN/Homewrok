@@ -937,7 +937,6 @@ export default function GuideDetail({
 
             <div className="space-y-2">
               {[
-                { name: t("友利银行 (Woori Bank)", "우리은행 (Woori Bank)", "Woori Bank"), desc: t("绝大多数大学内的合作指定开户行，在校区内多备有超多大网点和中文柜台服务，免ATM排队，留学生几乎人手标配。", "대부분 대학의 주거래 은행으로 캠퍼스 내에 지점과 ATM이 많고 중국어 지원 서비스도 제공하여 유학생 필수 카드입니다.", "The designated partner bank for most universities. It has many branches on campus with Chinese/English services, no ATM queues, a student staple."), color: "bg-blue-100 text-blue-600", label: t("友利", "우리", "Woori") },
                 { name: t("韩亚银行 (Hana Bank)", "하나은행 (Hana Bank)", "Hana Bank"), desc: t("其面向外国人的“Hana EZ”手机银行软件体验全韩数一数二顺。支持完全高速度跨境低手续费汇款中韩，汇率服务好。", "외국인 전용 'Hana EZ' 모바일 뱅킹 앱은 한국 최고의 유학 송금 편의성을 자랑하며, 빠른 해외 송금과 우수한 환율 우대 혜택을 제공합니다.", "Its foreign-oriented 'Hana EZ' app offers the best mobile banking experience. Supports fast cross-border remittance with low fees and excellent rates."), color: "bg-emerald-100 text-[#00685f]", label: t("韩亚", "하나", "Hana") },
                 { name: t("国民银行 (KB Kookmin Bank)", "KB국민은행 (KB Kookmin Bank)", "KB Kookmin Bank"), desc: t("拥有全韩超级稠密的ATM和营业网点分布，安全性有绝对保障，办卡也十分严格。", "한국 전역에 매우 조밀한 ATM망과 지점을 보유하여 편리하며, 높은 자산 안전성을 보장하나 신규 통장 개설 절차가 꼼꼼합니다.", "Boasts an extremely dense ATM and branch network across Korea with top security, though card issuance is very strict."), color: "bg-yellow-100 text-yellow-700", label: t("国民", "국민", "KB") }
               ].map((b, idx) => (

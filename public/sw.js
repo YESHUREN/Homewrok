@@ -1,4 +1,4 @@
-const CACHE_NAME = 'student-guide-cache-v1';
+const CACHE_NAME = 'student-guide-cache-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -30,27 +30,31 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Cache fallback strategy
+// Network-first caching strategy
 self.addEventListener('fetch', (event) => {
   // Only handle standard GET requests
   if (event.request.method !== 'GET' || event.request.url.includes('/api/')) {
     return;
   }
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
+    fetch(event.request).then((networkResponse) => {
+      if (networkResponse && networkResponse.status === 200) {
+        const cacheCopy = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, cacheCopy);
+        });
       }
-      return fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200) {
-          const cacheCopy = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, cacheCopy);
-          });
+      return networkResponse;
+    }).catch(() => {
+      return caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse;
         }
-        return networkResponse;
-      }).catch(() => {
-        return caches.match('/');
+        // Only return cached '/' for HTML navigation requests
+        if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
+          return caches.match('/');
+        }
+        return Promise.reject('Network error');
       });
     })
   );

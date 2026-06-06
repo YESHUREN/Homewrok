@@ -135,7 +135,7 @@ export default function App() {
 
   // Global trending topics state
   const [globalTopics, setGlobalTopics] = useState<string[]>([
-    "#首尔探店", "#签证攻略", "#韩语备考", "#租房经验", "#江原大学", "#吃喝玩乐", "#兼职求职"
+    "#签证攻略", "#韩语备考", "#租房经验", "#江原大学", "#吃喝玩乐", "#兼职求职"
   ]);
   const [selectedGlobalTopic, setSelectedGlobalTopic] = useState<string | null>(null);
   const [showManageTopics, setShowManageTopics] = useState(false);
@@ -252,17 +252,20 @@ export default function App() {
   // ============================================================================
   // FULLSTACK API DATA LOADING HELPERS
   // ============================================================================
-  const fetchPosts = (userId?: string) => {
+  const fetchPosts = useCallback((userId?: string) => {
     const url = userId ? `/api/posts?userId=${userId}` : "/api/posts";
     fetch(url)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("HTTP error " + res.status);
+        return res.json();
+      })
       .then(data => {
         if (Array.isArray(data)) {
           setPosts(data);
         }
       })
       .catch(err => console.error("Error loading posts:", err));
-  };
+  }, []);
 
   // Auto-refresh posts every 12 seconds so likes/comments from other users are visible
   React.useEffect(() => {
@@ -271,18 +274,21 @@ export default function App() {
       fetchPosts(storedUserId || undefined);
     }, 12000);
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchPosts]);
 
-  const fetchReminders = (userId: string) => {
+  const fetchReminders = useCallback((userId: string) => {
     fetch(`/api/reminders?userId=${userId}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("HTTP error " + res.status);
+        return res.json();
+      })
       .then(data => {
         if (Array.isArray(data)) {
           setReminders(data);
         }
       })
       .catch(err => console.error("Error loading reminders:", err));
-  };
+  }, []);
 
   const getDaysDiff = (dateStr: string) => {
     if (!dateStr) return 0;
@@ -807,8 +813,9 @@ export default function App() {
             if (hasNew) {
               console.log("♻️ [ANTIGRAVITY] New notifications detected, instantly refreshing posts list!");
               fetchPosts(profile.studentId || undefined);
+              return data;
             }
-            return data;
+            return prev;
           });
         }
       })
@@ -1543,7 +1550,7 @@ export default function App() {
         const newProfile = {
           isLoggedIn: true,
           name: registerName,
-          nickname: `${registerName} (Student)`,
+          nickname: `${registerUsername} (Student)`,
           avatar: "",
           tag: "认证学生",
           university: registerUniversity,
@@ -1560,7 +1567,7 @@ export default function App() {
           username: registerUsername,
           password: registerPassword,
           name: registerName,
-          nickname: `${registerName} (Student)`,
+          nickname: `${registerUsername} (Student)`,
           avatar: "",
           tag: "认证学生",
           university: registerUniversity,
@@ -2201,7 +2208,7 @@ export default function App() {
                   )}
                   <div className="flex flex-wrap gap-2">
                     {[
-                      ...(language === 'en' ? ["#Seoul Eats", "#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#서울맛집", "#비자꿀팁", "#한국어공부", "#방구하기"] : ["#首尔探店", "#签证攻略", "#韩语备考", "#租房经验"]),
+                      ...(language === 'en' ? ["#Visa Tips", "#Korean Study", "#Housing Tips"] : language === 'ko' ? ["#비자꿀팁", "#한국어공부", "#방구하기"] : ["#签证攻略", "#韩语备考", "#租房经验"]),
                       ...customTopics
                     ].map((topic) => (
                       <button
@@ -3300,234 +3307,194 @@ export default function App() {
                   </header>
 
                   <div className="px-4 space-y-5">
-                    {/* Premium Entry Assistant Card/Banner */}
-                    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4f46e5] via-[#5b21b6] to-[#7c3aed] text-white shadow-md border border-violet-500/20 p-5 flex flex-col justify-between active:scale-[0.995] transition-all duration-300">
-                      {/* Decorative backdrop glow */}
-                      <div className="absolute right-0 top-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" />
-                      <div className="absolute left-1/3 bottom-0 w-24 h-24 bg-purple-500/20 rounded-full blur-xl pointer-events-none" />
-                      
-                      {!entryDate ? (
-                        /* State A: Date not set */
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-start">
-                            <div className="space-y-1 font-sans">
-                              <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-0.75 rounded-full text-[9px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
-                                <Plane className="w-3 h-3 text-yellow-300 animate-pulse" />
+                    {/* Row container for Entry Assistant and D-Day Countdown cards */}
+                    <div className="grid grid-cols-2 gap-3.5">
+                      {/* Premium Entry Assistant Card/Banner */}
+                      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4f46e5] via-[#5b21b6] to-[#7c3aed] text-white shadow-md border border-violet-500/20 p-4 flex flex-col justify-between active:scale-[0.995] transition-all duration-300 h-[220px]">
+                        {/* Decorative backdrop glow */}
+                        <div className="absolute right-0 top-0 -mr-10 -mt-10 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none" />
+                        
+                        {!entryDate ? (
+                          /* State A: Date not set */
+                          <div className="flex flex-col justify-between h-full">
+                            <div className="space-y-1.5">
+                              <div className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
+                                <Plane className="w-2.5 h-2.5 text-yellow-300 animate-pulse" />
                                 <span>{language === 'zh' ? '入境规划' : language === 'ko' ? '입국 플래너' : 'Entry Helper'}</span>
                               </div>
-                              <h3 className="text-base font-extrabold tracking-tight mt-1">
-                                {language === 'zh' ? '🛫 留韩准备 · 入境助手' : language === 'ko' ? '🛫 한국 유학 · 입국 도우미' : '🛫 Study in Korea · Entry Assistant'}
+                              <h3 className="text-xs font-extrabold tracking-tight mt-1 leading-snug">
+                                {language === 'zh' ? '🛫 留韩入境助手' : language === 'ko' ? '🛫 한국 입국 도우미' : '🛫 Entry Assistant'}
                               </h3>
-                              <p className="text-[11px] text-violet-100/80 leading-relaxed font-medium max-w-[280px]">
+                              <p className="text-[9.5px] text-violet-100/80 leading-normal font-medium line-clamp-3">
                                 {language === 'zh' 
-                                  ? '定制您从出发前到落地韩国15天的关键倒数日程，一键将待办事项及系统提醒同步至主页日历。' 
+                                  ? '定制您出发前到落地韩国15天的倒数日程，一键同步。' 
                                   : language === 'ko' 
-                                  ? '출국 전 준비부터 한국 입국 후 15일까지의 필수 일정을 한눈에 확인하고, 기기 알림 및 캘린더에 동기화하세요.' 
-                                  : 'Plan departure and arrival milestones. Automatically sync D-Day tasks and mobile push notifications to your homepage calendar.'}
+                                  ? '출국 전부터 입국 후 15일까지의 필수 일정을 관리하세요.' 
+                                  : 'Plan departure and arrival milestones relative to your entry date.'}
                               </p>
                             </div>
-                            <Sparkles className="w-8 h-8 text-yellow-300/85 animate-bounce shrink-0 mt-1" />
+                            <button
+                              onClick={() => {
+                                setTempEntryDate(new Date().toISOString().split('T')[0]);
+                                setShowEntryDateModal(true);
+                              }}
+                              className="w-full bg-white hover:bg-slate-50 text-violet-700 py-2 text-[10px] font-black rounded-lg transition-all shadow-md flex items-center justify-center gap-1 cursor-pointer active:scale-98 mt-2"
+                            >
+                              <span>{language === 'zh' ? '开启日程 ⚡' : language === 'ko' ? '일정 시작 ⚡' : 'Start ⚡'}</span>
+                            </button>
                           </div>
-                          
-                          <button
-                            onClick={() => {
-                              setTempEntryDate(new Date().toISOString().split('T')[0]);
-                              setShowEntryDateModal(true);
-                            }}
-                            className="w-full bg-white hover:bg-slate-50 text-violet-700 py-3 text-xs font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
-                          >
-                            <span>{language === 'zh' ? '开启您的专属日程 ⚡' : language === 'ko' ? '나만의 입국 일정 시작하기 ⚡' : 'Start Your Schedule ⚡'}</span>
-                          </button>
-                        </div>
-                      ) : (
-                        /* State B: Date is set */
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-start">
-                            <div className="space-y-1">
-                              <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-0.75 rounded-full text-[9px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
-                                <Plane className="w-3 h-3 text-yellow-300" />
-                                <span>{language === 'zh' ? '入境规划' : language === 'ko' ? '입국 플래너' : 'Entry Helper'}</span>
+                        ) : (
+                          /* State B: Date is set */
+                          <div className="flex flex-col justify-between h-full">
+                            <div className="space-y-2">
+                              <div className="flex justify-between items-center">
+                                <div className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wider text-violet-100 border border-white/10">
+                                  <Plane className="w-2.5 h-2.5 text-yellow-300" />
+                                  <span>{language === 'zh' ? '入境规划' : language === 'ko' ? '입국 플래너' : 'Entry Helper'}</span>
+                                </div>
+                                <span className="bg-white/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[9px] font-black text-white border border-white/20">
+                                  {(() => {
+                                    const diff = getDaysDiff(entryDate);
+                                    if (diff > 0) return `D-${diff}`;
+                                    if (diff === 0) return language === 'zh' ? '今天' : language === 'ko' ? '오늘' : 'Today';
+                                    return language === 'zh' ? `已入韩${Math.abs(diff)}天` : language === 'ko' ? `입국${Math.abs(diff)}일` : `D+${Math.abs(diff)}`;
+                                  })()}
+                                </span>
                               </div>
-                              <h3 className="text-sm font-extrabold tracking-tight mt-1 flex items-center gap-1.5 font-sans">
-                                {language === 'zh' ? '预计入境日期：' : language === 'ko' ? '예정 입국일: ' : 'Expected Entry Date: '}
-                                <span className="text-yellow-300 font-black">{entryDate}</span>
-                              </h3>
-                            </div>
-                            
-                            {/* D-Day badge */}
-                            <div className="bg-white/25 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black tracking-tight text-white border border-white/20 font-sans">
+                              
+                              <div className="space-y-0.5">
+                                <span className="text-[9px] text-violet-200 font-bold block">
+                                  {language === 'zh' ? '预计入境日期' : language === 'ko' ? '예정 입국일' : 'Expected Entry'}
+                                </span>
+                                <h3 className="text-xs font-black text-yellow-300 tracking-tight font-sans">
+                                  {entryDate}
+                                </h3>
+                              </div>
+
                               {(() => {
-                                const diff = getDaysDiff(entryDate);
-                                if (diff > 0) {
-                                  return `D - ${diff}`;
-                                } else if (diff === 0) {
-                                  return language === 'zh' ? '今天入境！' : language === 'ko' ? '오늘 입국!' : 'Entry Day!';
-                                } else {
-                                  return language === 'zh' ? `已入境 ${Math.abs(diff)} 天` : language === 'ko' ? `입국 ${Math.abs(diff)}일차` : `Day ${Math.abs(diff)} in Korea`;
-                                }
+                                const timeline = getTimelineItems(entryDate);
+                                const completedCount = timeline.filter(item => getDaysDiff(item.dateStr) < 0).length;
+                                const progressPercent = Math.round((completedCount / timeline.length) * 100);
+                                return (
+                                  <div className="space-y-1">
+                                    <div className="flex justify-between items-center text-[8.5px] text-violet-100 font-bold">
+                                      <span>
+                                        {language === 'zh' ? `进度 ${completedCount}/6` : language === 'ko' ? `진행도 ${completedCount}/6` : `Progress ${completedCount}/6`}
+                                      </span>
+                                      <span>{progressPercent}%</span>
+                                    </div>
+                                    <div className="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+                                      <div className="bg-gradient-to-r from-emerald-400 to-teal-300 h-full rounded-full transition-all" style={{ width: `${progressPercent}%` }} />
+                                    </div>
+                                  </div>
+                                );
                               })()}
                             </div>
-                          </div>
 
-                          {/* Next/Active milestone preview */}
-                          {(() => {
-                            const timeline = getTimelineItems(entryDate);
-                            // Find the first milestone that is NOT past, or show the last one if all are past
-                            let activeMilestone = timeline.find(item => getDaysDiff(item.dateStr) >= 0);
-                            if (!activeMilestone) {
-                              activeMilestone = timeline[timeline.length - 1];
-                            }
-                            
-                            const completedCount = timeline.filter(item => getDaysDiff(item.dateStr) < 0).length;
-                            const progressPercent = Math.round((completedCount / timeline.length) * 100);
-
-                            return (
-                              <div className="space-y-3 pt-1">
-                                {/* Progress bar */}
-                                <div className="space-y-1">
-                                  <div className="flex justify-between items-center text-[10px] text-violet-100 font-bold">
-                                    <span>
-                                      {language === 'zh' 
-                                        ? `任务完成度 ${completedCount}/6` 
-                                        : language === 'ko' 
-                                        ? `진행도 ${completedCount}/6` 
-                                        : `Progress ${completedCount}/6 tasks`}
-                                    </span>
-                                    <span>{progressPercent}%</span>
-                                  </div>
-                                  <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
-                                    <div 
-                                      className="bg-gradient-to-r from-emerald-400 to-teal-300 h-full rounded-full transition-all duration-500" 
-                                      style={{ width: `${progressPercent}%` }}
-                                    />
-                                  </div>
-                                </div>
-
-                                {/* Active milestone card preview */}
-                                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10 flex items-start gap-2.5 text-left">
-                                  {activeMilestone && (() => {
-                                    const MilestoneIcon = activeMilestone.icon || Calendar;
-                                    return (
-                                      <>
-                                        <div className="w-8 h-8 rounded-lg bg-white/15 text-white flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
-                                          <MilestoneIcon className="w-4.5 h-4.5 text-yellow-300" />
-                                        </div>
-                                        <div className="flex-1 space-y-0.5 min-w-0">
-                                          <div className="flex justify-between items-baseline gap-1">
-                                            <span className="text-[9px] font-bold text-violet-200">
-                                              {language === 'zh' ? `第 ${activeMilestone.day} 天任务` : language === 'ko' ? `${activeMilestone.day}일차 과제` : `Day ${activeMilestone.day} Task`}
-                                            </span>
-                                            <span className="text-[9px] font-bold text-violet-200 shrink-0 font-sans">
-                                              {activeMilestone.dateStr}
-                                            </span>
-                                          </div>
-                                          <h4 className="text-[11px] font-extrabold text-white leading-normal truncate">
-                                            {activeMilestone.title[language] || activeMilestone.title['zh']}
-                                          </h4>
-                                          <p className="text-[9.5px] text-violet-100/90 leading-relaxed font-medium line-clamp-1">
-                                            {activeMilestone.desc[language] || activeMilestone.desc['zh']}
-                                          </p>
-                                        </div>
-                                      </>
-                                    );
-                                  })()}
-                                </div>
-
-                                {/* Actions */}
-                                <div className="flex items-center gap-2 mt-2">
-                                  <button
-                                    onClick={() => setScreen(ActiveScreen.ENTRY_HELPER)}
-                                    className="flex-1 bg-white hover:bg-violet-50 text-violet-700 py-2.5 text-xs font-black rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
-                                  >
-                                    <span>{language === 'zh' ? '进入路线图 🗺️' : language === 'ko' ? '전체 로드맵 보기 🗺️' : 'View Roadmap 🗺️'}</span>
-                                  </button>
-                                  <button
-                                    onClick={() => {
-                                      setTempEntryDate(entryDate);
-                                      setShowEntryDateModal(true);
-                                    }}
-                                    className="flex-1 bg-white/10 hover:bg-white/20 border border-white/20 text-white py-2.5 text-xs font-black rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
-                                  >
-                                    <span>{language === 'zh' ? '修改日期 ⚙️' : language === 'ko' ? '날짜 변경 ⚙️' : 'Modify Date ⚙️'}</span>
-                                  </button>
-                                </div>
-                              </div>
-                            );
-                          })()}
-                        </div>
-                      )}
-                    </section>
-
-                    {/* Visa Warning Alert Banner Card (Mockup 5) */}
-                    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-tr from-[#00685f] to-[#008378] p-5 text-white shadow-sm flex flex-col justify-between">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="space-y-1">
-                          <h4 className="text-[11px] uppercase tracking-wider font-bold text-teal-100 flex items-center gap-1">
-                            <Calendar className="w-3.5 h-3.5 inline text-yellow-300" />
-                            {reminders.length === 0 ? (language === 'zh' ? "暂无倒数日程" : language === 'ko' ? "디데이 일정 없음" : "No Countdown Schedule") : activeReminder.id === "rem_visa" || activeReminder.title.includes("签证")
-                              ? (language === 'zh' ? "在韩签证到期提醒倒计时" : language === 'ko' ? "재한 비자 만료 디데이" : "Visa Expiry D-Day Countdown")
-                              : `${activeReminder.title} ${language === 'zh' ? '提醒倒计时' : language === 'ko' ? '디데이' : 'Countdown'}`}
-                          </h4>
-                          <h2 className="text-xs text-white opacity-95">
-                            {reminders.length === 0 ? (language === 'zh' ? "在日历中添加考试、学费缴纳等重要提醒" : language === 'ko' ? "캘린더에서 시험, 학비 납부 등 중요 일정을 추가하세요" : "Add reminders for exams, tuition fees, etc.") : activeReminder.id === "rem_visa"
-                              ? `${language === 'zh' ? '到期日：2026年12月15日 (留学生签)' : language === 'ko' ? '만료일: 2026년 12월 15일 (D-2 비자)' : 'Due Date: Dec 15, 2026 (D-2 Visa)'}`
-                              : `${language === 'zh' ? '到期日：' : language === 'ko' ? '만료일: ' : 'Due Date: '}${activeReminder.date} (${activeReminder.time})`}
-                          </h2>
-                        </div>
-                        <div className="flex items-center gap-1.5 shrink-0">
-                          {reminders.length > 1 && (
-                            <div className="flex items-center gap-1 bg-black/15 hover:bg-black/25 rounded-md px-1.5 py-0.5 text-[9px] font-bold transition-all">
-                              <button 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  const idx = reminders.findIndex(r => r.id === activeReminder.id);
-                                  const prevIdx = (idx - 1 + reminders.length) % reminders.length;
-                                  setActiveCountdownId(reminders[prevIdx].id);
-                                }}
-                                className="hover:text-amber-200 px-0.5 active:scale-90"
-                                title="prev"
+                            <div className="flex items-center gap-1.5 mt-2">
+                              <button
+                                onClick={() => setScreen(ActiveScreen.ENTRY_HELPER)}
+                                className="flex-1 bg-white hover:bg-violet-50 text-violet-700 py-1.5 text-[10px] font-black rounded-lg transition-all shadow-sm flex items-center justify-center gap-1 cursor-pointer active:scale-98"
                               >
-                                ◀
+                                <span>{language === 'zh' ? '路线图 🗺️' : language === 'ko' ? '로드맵 🗺️' : 'Roadmap 🗺️'}</span>
                               </button>
-                              <span className="text-teal-200/95 tracking-tighter">{(reminders.findIndex(r => r.id === activeReminder.id) + 1)}/{reminders.length}</span>
-                              <button 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  const idx = reminders.findIndex(r => r.id === activeReminder.id);
-                                  const nextIdx = (idx + 1) % reminders.length;
-                                  setActiveCountdownId(reminders[nextIdx].id);
+                              <button
+                                onClick={() => {
+                                  setTempEntryDate(entryDate);
+                                  setShowEntryDateModal(true);
                                 }}
-                                className="hover:text-amber-200 px-0.5 active:scale-90"
-                                title="next"
+                                className="p-1.5 bg-white/10 hover:bg-white/25 border border-white/10 text-white rounded-lg text-[10px] font-black transition-all cursor-pointer active:scale-98"
+                                title="Edit Date"
                               >
-                                ▶
+                                ⚙️
                               </button>
                             </div>
-                          )}
-                          <span className="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full border border-white/10 uppercase tracking-widest">
-                            {language === 'zh' ? '倒数日' : language === 'ko' ? '디데이' : 'D-Day'}
-                          </span>
+                          </div>
+                        )}
+                      </section>
+
+                      {/* D-Day Countdown Card */}
+                      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-tr from-[#00685f] to-[#008378] p-4 text-white shadow-sm flex flex-col justify-between h-[220px]">
+                        {/* Decorative backdrop glow */}
+                        <div className="absolute right-0 top-0 -mr-10 -mt-10 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none" />
+                        
+                        <div className="flex flex-col justify-between h-full">
+                          <div className="space-y-1.5">
+                            <div className="flex justify-between items-center">
+                              <div className="inline-flex items-center gap-1 bg-white/25 backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wider text-teal-100 border border-white/10">
+                                <Calendar className="w-2.5 h-2.5 text-yellow-300" />
+                                <span>{language === 'zh' ? '倒数日' : language === 'ko' ? '디데이' : 'D-Day'}</span>
+                              </div>
+                              
+                              {reminders.length > 1 && (
+                                <div className="flex items-center gap-1 bg-black/15 hover:bg-black/25 rounded-md px-1 py-0.25 text-[8px] font-bold transition-all">
+                                  <button 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      const idx = reminders.findIndex(r => r.id === activeReminder.id);
+                                      const prevIdx = (idx - 1 + reminders.length) % reminders.length;
+                                      setActiveCountdownId(reminders[prevIdx].id);
+                                    }}
+                                    className="hover:text-amber-200 px-0.5 active:scale-90"
+                                    title="prev"
+                                  >
+                                    ◀
+                                  </button>
+                                  <span className="text-teal-200/95 tracking-tighter">{(reminders.findIndex(r => r.id === activeReminder.id) + 1)}/{reminders.length}</span>
+                                  <button 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      const idx = reminders.findIndex(r => r.id === activeReminder.id);
+                                      const nextIdx = (idx + 1) % reminders.length;
+                                      setActiveCountdownId(reminders[nextIdx].id);
+                                    }}
+                                    className="hover:text-amber-200 px-0.5 active:scale-90"
+                                    title="next"
+                                  >
+                                    ▶
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                            
+                            <h3 className="text-xs font-extrabold tracking-tight mt-1 leading-snug line-clamp-2">
+                              {reminders.length === 0 
+                                ? (language === 'zh' ? "暂无倒数日程" : language === 'ko' ? "디데이 일정 없음" : "No Schedule") 
+                                : activeReminder.id === "rem_visa" || activeReminder.title.includes("签证")
+                                  ? (language === 'zh' ? "在韩签证到期提醒" : language === 'ko' ? "재한 비자 만료 디데이" : "Visa Expiry")
+                                  : activeReminder.title}
+                            </h3>
+                            
+                            <span className="text-[8.5px] text-teal-200 block truncate">
+                              {reminders.length === 0 
+                                ? (language === 'zh' ? "在日历中添加重要日程" : language === 'ko' ? "시험, 학비 등 일정을 추가하세요" : "Add reminders for milestones") 
+                                : activeReminder.id === "rem_visa"
+                                  ? "2026-12-15 (留学生签证)"
+                                  : `${activeReminder.date} (${activeReminder.time})`}
+                            </span>
+                          </div>
+
+                          <div className="my-1.5">
+                            <div className="flex items-baseline gap-1">
+                              <span className="text-4xl font-black text-white leading-none tracking-tight">
+                                {reminders.length === 0 ? "—" : nextReminderCountdownDays}
+                              </span>
+                              <span className="text-[10px] font-semibold text-teal-200">{t('days')}</span>
+                            </div>
+                          </div>
+
+                          <button 
+                            onClick={() => setScreen(ActiveScreen.CALENDAR)}
+                            className="w-full bg-white hover:bg-slate-50 text-[#00685f] py-2 text-[10px] font-black rounded-lg transition-all shadow-sm text-center cursor-pointer mt-1"
+                          >
+                            {reminders.length === 0 
+                              ? (language === 'zh' ? "去添加 ＋" : language === 'ko' ? "추가하기 ＋" : "Add ＋") 
+                              : (language === 'zh' ? "查看日历 📅" : language === 'ko' ? "캘린더 보기 📅" : "View Calendar 📅")}
+                          </button>
                         </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-5xl font-black text-white leading-none tracking-tight">
-                            {reminders.length === 0 ? "—" : nextReminderCountdownDays}
-                          </span>
-                          <span className="text-sm font-semibold text-teal-200">{t('days')}</span>
-                        </div>
-                      </div>
-
-                      <button 
-                        onClick={() => setScreen(ActiveScreen.CALENDAR)}
-                        className="w-full bg-white hover:bg-slate-50 text-[#00685f] py-3.5 text-xs font-bold rounded-xl transition-all shadow-sm text-center cursor-pointer"
-                      >
-                        {reminders.length === 0 ? (language === 'zh' ? "去日历添加提醒" : language === 'ko' ? "캘린더로 이동하여 추가" : "Go to Calendar") : t('view_full_calendar')}
-                      </button>
-                    </section>
-
-                    {/* Grid Core Services tiles (Bento, Asymmetrical) */}
+                      </section>
+                    </div>
+                                      {/* Grid Core Services tiles (Bento, Asymmetrical) */}
                     <section className="space-y-3">
                       <div className="flex justify-between items-baseline px-1">
                         <h3 className="font-bold text-sm text-slate-800 tracking-tight">{t('core_services')}</h3>
@@ -3592,85 +3559,85 @@ export default function App() {
                             name: t('guide_insurance'), 
                             desc: language === 'zh' ? 'NHI在学机制' : language === 'ko' ? '재학 자동 가입' : 'NHI Auto-Enrollment', 
                             color: "bg-teal-50 text-teal-700 border-teal-100", 
-                            label: language === 'zh' ? '保险缴清' : language === 'ko' ? '보험 완납' : 'Paid'
+                            label: language === 'zh' ? '保险缴清' : language === 'ko' ? '보험 완납' : 'Paid',
+                            gridSpan: "col-span-2",
+                            icon: Shield
                           },
                           { 
                             category: GuideCategory.BANK, 
                             name: t('guide_bank'), 
                             desc: language === 'zh' ? '存折/借记卡' : language === 'ko' ? '통장/체크카드' : 'Debit Card', 
                             color: "bg-blue-50 text-blue-700 border-blue-100", 
-                            label: language === 'zh' ? '开卡指南' : language === 'ko' ? '카드 개설' : 'Open Card'
+                            label: language === 'zh' ? '开卡指南' : language === 'ko' ? '카드 개설' : 'Open Card',
+                            icon: CreditCard
                           },
                           { 
                             category: GuideCategory.ARC, 
                             name: t('guide_arc'), 
                             desc: language === 'zh' ? 'HiKorea预订' : language === 'ko' ? 'HiKorea 예약' : 'HiKorea Booking', 
                             color: "bg-emerald-50 text-emerald-800 border-emerald-100", 
-                            label: language === 'zh' ? '长期必备' : language === 'ko' ? '장기 필수' : 'Required'
+                            label: language === 'zh' ? '长期必备' : language === 'ko' ? '장기 필수' : 'Required',
+                            icon: Globe
                           },
                           { 
                             category: GuideCategory.RECYCLE, 
                             name: t('guide_recycle'), 
                             desc: language === 'zh' ? '食品与一般袋' : language === 'ko' ? '음식물 및 일반 쓰레기' : 'Food & General Bags', 
                             color: "bg-amber-50/50 text-amber-700 border-amber-105", 
-                            label: language === 'zh' ? '千万防罚' : language === 'ko' ? '벌금 주의' : 'Penalty Warn'
+                            label: language === 'zh' ? '千万防罚' : language === 'ko' ? '벌금 주의' : 'Penalty Warn',
+                            icon: Trash2
                           },
                           { 
                             category: GuideCategory.HOUSING, 
                             name: t('guide_housing'), 
                             desc: language === 'zh' ? '月租避坑/不动产' : language === 'ko' ? '월세 팁 및 부동산' : 'Rent Tips & Estate', 
                             color: "bg-indigo-50/60 text-indigo-700 border-indigo-100", 
-                            label: language === 'zh' ? '合法迁入' : language === 'ko' ? '전입 신고' : 'Legal Move'
+                            label: language === 'zh' ? '合法迁入' : language === 'ko' ? '전입 신고' : 'Legal Move',
+                            icon: Home
                           },
                           { 
                             category: GuideCategory.TRANSIT, 
                             name: t('guide_transit'), 
                             desc: language === 'zh' ? 'T-Money与换损' : language === 'ko' ? '티머니 및 환승 할인' : 'T-Money & Transfers', 
                             color: "bg-rose-50 text-rose-700 border-rose-100", 
-                            label: language === 'zh' ? '出行无阻' : language === 'ko' ? '교통 안내' : 'Transit'
+                            label: language === 'zh' ? '出行无阻' : language === 'ko' ? '교통 안내' : 'Transit',
+                            icon: Compass
                           },
                           { 
                             category: GuideCategory.SHIPPING, 
                             name: t('guide_shipping'), 
                             desc: language === 'zh' ? 'EMS到包税货代' : language === 'ko' ? '국제 EMS 및 택배' : 'EMS & Shipping Agents', 
                             color: "bg-cyan-50 text-cyan-800 border-cyan-100", 
-                            label: language === 'zh' ? '寄送加固' : language === 'ko' ? '포장 배송' : 'Shipping'
-                          },
-                          {
-                            category: "ENTRY_HELPER",
-                            name: language === 'zh' ? '入境助手' : language === 'ko' ? '입국 도우미' : 'Entry Assistant',
-                            desc: language === 'zh' ? '日程规划与倒数日' : language === 'ko' ? '입국 일정 및 디데이' : 'Entry Schedule & D-Day',
-                            color: "bg-violet-50 text-violet-800 border-violet-100",
-                            label: language === 'zh' ? '出境准备' : language === 'ko' ? '출국 준비' : 'Pre-departure'
+                            label: language === 'zh' ? '寄送加固' : language === 'ko' ? '포장 배송' : 'Shipping',
+                            icon: Plane
                           }
-                        ].map((serv) => (
-                          <div 
-                            key={serv.category}
-                            onClick={() => {
-                              if (serv.category === "ENTRY_HELPER") {
-                                if (entryDate) {
-                                  setScreen(ActiveScreen.ENTRY_HELPER);
-                                } else {
-                                  setTempEntryDate(entryDate || new Date().toISOString().split('T')[0]);
-                                  setShowEntryDateModal(true);
-                                }
-                              } else {
-                                setActiveGuideCategory(serv.category as GuideCategory);
+                        ].map((serv) => {
+                          const WatermarkIcon = serv.icon;
+                          return (
+                            <div 
+                              key={serv.category}
+                              onClick={() => {
+                                setActiveGuideCategory(serv.category);
                                 setScreen(ActiveScreen.GUIDE_DETAIL);
-                              }
-                            }}
-                            className={`p-4 rounded-2xl border transition-all cursor-pointer hover:shadow-md flex flex-col justify-between min-h-[104px] relative overflow-hidden group ${serv.color}`}
-                          >
-                            <div>
-                              <span className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.25 rounded-md bg-white border border-black/5 inline-block mb-1.5 bg-opacity-70">{serv.label}</span>
-                              <h4 className="text-xs font-bold leading-normal text-slate-800 group-hover:text-[#00685f]">{serv.name}</h4>
+                              }}
+                              className={`p-4 rounded-2xl border transition-all cursor-pointer hover:shadow-md flex flex-col justify-between min-h-[104px] relative overflow-hidden group ${serv.color} ${serv.gridSpan || ""}`}
+                            >
+                              {/* Background watermark icon */}
+                              {WatermarkIcon && (
+                                <WatermarkIcon className="absolute -right-2 -bottom-2 w-16 h-16 opacity-[0.06] group-hover:opacity-[0.11] group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 pointer-events-none" />
+                              )}
+                              
+                              <div className="relative z-10">
+                                <span className="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.25 rounded-md bg-white border border-black/5 inline-block mb-1.5 bg-opacity-70">{serv.label}</span>
+                                <h4 className="text-xs font-bold leading-normal text-slate-800 group-hover:text-[#00685f]">{serv.name}</h4>
+                              </div>
+                              <div className="flex justify-between items-center text-[10px] opacity-75 pt-1.5 relative z-10">
+                                <span>{serv.desc}</span>
+                                <span className="text-base font-black leading-none group-hover:translate-x-1.5 transition-transform">→</span>
+                              </div>
                             </div>
-                            <div className="flex justify-between items-center text-[10px] opacity-75 pt-1.5">
-                              <span>{serv.desc}</span>
-                              <span className="text-base font-black leading-none group-hover:translate-x-1.5 transition-transform">→</span>
-                            </div>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </section>
                   </div>

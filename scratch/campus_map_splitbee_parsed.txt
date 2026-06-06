@@ -1,0 +1,57 @@
+PAGE: 校园导览图 (ID: 22439f9906f581c38390dc0d87bfbeab)
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏢 三陟校区建筑指南
+    [table] 
+      [table_row] 编号 | 建筑名称
+      [table_row] 101 | 大学本部
+      [table_row] 102 | 计算机信息院
+      [table_row] 103 | 讲义楼
+      [table_row] 104 | 图书馆
+      [table_row] 105 | 造型馆
+      [table_row] 106 | 东门咨询室
+      [table_row] 107 | 东门
+      [table_row] 108 | 户外音乐堂
+      [table_row] 109 | 第2学生会馆
+      [table_row] 110 | 体育馆
+      [table_row] 111 | 生活体育馆
+      [table_row] 112 | 学生会馆
+      [table_row] 113 | 正门咨询室
+      [table_row] 114 | 正门
+      [table_row] 115 | 第3工科学院
+      [table_row] 116 | 安全馆
+      [table_row] 117 | 创业孵化中心
+      [table_row] 118 | 第4工科学院
+      [table_row] 119 | 人文社会科学馆
+      [table_row] 120 | 第5工科学院
+      [table_row] 121 | 第1工科学院
+      [table_row] 122 | 第2工科学院
+      [table_row] 123 | 共同实验实习馆
+      [table_row] 124 | 海松馆
+      [table_row] 125 | 斗塔馆
+      [table_row] 126 | 绿色能源研究馆
+      [table_row] 127 | 综合体育中心
+  [column] 
+    [image] attachment:5729f857-52d7-4f82-a582-841363f5d80a:samcheok_full_map2024.jpg
+    [text] 
+[divider] 
+[column_list] 
+  [column] 
+    [sub_sub_header] 🏫 道溪校区建筑指南
+    [table] 
+      [table_row] 建筑名称 | 编号
+      [table_row] 大学本馆 | 1
+      [table_row] 创造科学馆 | 2
+      [table_row] 保健科学馆 | 3
+      [table_row] 综合讲义楼 | 4
+      [table_row] 图书馆 | 5
+      [table_row] 学生会馆 | 6
+      [table_row] 室内体育馆 | 7
+      [table_row] 大运动场 | 8
+      [table_row] 笼式足球场 | 9-1
+      [table_row] 网球场 | 9-2
+      [table_row] 黄鸟生活馆 | 10
+  [column] 
+    [image] attachment:949a251d-0a59-4162-a828-6e5c1f6ac087:craft_map_img.jpg
+    [text] 
+[divider] 

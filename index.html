@@ -6,11 +6,54 @@
     <title>在韩留学生服务与社区</title>
     <link rel="manifest" href="/manifest.json" />
     <script>
+      // Cache buster to force clear old caches on version update
+      const APP_VERSION = 'v3';
+      if (localStorage.getItem('app_version') !== APP_VERSION) {
+        localStorage.setItem('app_version', APP_VERSION);
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then((registrations) => {
+            for (let registration of registrations) {
+              registration.unregister();
+            }
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then((names) => {
+            for (let name of names) {
+              caches.delete(name);
+            }
+          });
+        }
+        setTimeout(() => {
+          window.location.reload();
+        }, 200);
+      }
+
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js')
-            .then((reg) => console.log('PWA Service Worker registered:', reg.scope))
+            .then((reg) => {
+              console.log('PWA Service Worker registered:', reg.scope);
+              reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    console.log('New Service Worker version installed, reloading...');
+                    window.location.reload();
+                  }
+                });
+              });
+            })
             .catch((err) => console.log('Service Worker registration failed:', err));
+        });
+
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (!refreshing) {
+            refreshing = true;
+            console.log('Service Worker controller changed, reloading page...');
+            window.location.reload();
+          }
         });
       }
     </script>
