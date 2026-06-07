@@ -62,6 +62,8 @@ export default function GuideDetail({
     discount: false
   });
 
+  const [busTab, setBusTab] = useState<'samcheok' | 'dogye' | 'shuttle'>('samcheok');
+
   const handleShare = () => {
     setShowShareAlert(true);
     setTimeout(() => {
@@ -358,40 +360,198 @@ export default function GuideDetail({
               </div>
 
               <div className="mt-4 space-y-3">
-                <h4 className="text-xs font-bold text-slate-800 border-l-2 border-[#00685f] pl-2">
-                  {t("核心通勤线路 (Key Student Routes)", "핵심 통학 노선", "Key Commute Routes")}
+                <h4 className="text-xs font-bold text-slate-800 border-l-2 border-[#00685f] pl-2 mb-2">
+                  {t("核心通勤线路 & 实时系统", "핵심 통학 노선 및 실시간 시스템", "Key Routes & Real-time Info")}
                 </h4>
-                
-                <div className="space-y-2 text-xs">
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-teal-800">10-1 / 10-2 {t("路 (시내권)", "번", "Bus")}</span>
-                      <span className="text-[10px] text-slate-400 font-semibold">{t("三陟市区", "삼척 시내", "Samcheok City")}</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      {t("连接三陟客运站 ↔ 江原大学三陟校区 ↔ 市区各生活商圈，每 15-30 分钟一班。", "삼척종합버스터미널 ↔ 강원대 삼척캠퍼스 ↔ 삼척 시내 중심지를 연결하며, 15~30분 간격 운행.", "Connects Samcheok Bus Terminal ↔ KNU Samcheok Campus ↔ City center. Runs every 15-30 mins.")}
-                    </p>
-                  </div>
 
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-teal-800">43-1 / 41-1 {t("路 (도계권)", "번", "Bus")}</span>
-                      <span className="text-[10px] text-slate-400 font-semibold">{t("道溪校区", "도계 캠퍼스", "Dogye Campus")}</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      {t("连接道溪客运站/火车站 ↔ 道溪校区宿舍（道원관） ↔ 道溪校区教学楼（黄条馆）。", "도계버스터미널/도계역 ↔ 도계캠퍼스 기숙사(도원관) ↔ 도계캠퍼스 본관(황조관)을 연결합니다.", "Connects Dogye Terminal/Station ↔ Dogye Campus Dorms (Doweongwan) ↔ Lecture Hall (Hwangjogwan).")}
-                    </p>
-                  </div>
+                {/* Tab Switcher */}
+                <div className="flex border-b border-slate-100 mb-3 bg-slate-50 p-1 rounded-lg">
+                  <button
+                    onClick={() => setBusTab('samcheok')}
+                    className={`flex-1 py-1.5 text-[11px] font-bold rounded-md text-center transition-all ${
+                      busTab === 'samcheok'
+                        ? 'bg-white text-[#00685f] shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {t("三陟市区", "삼척 시내권", "Samcheok City")}
+                  </button>
+                  <button
+                    onClick={() => setBusTab('dogye')}
+                    className={`flex-1 py-1.5 text-[11px] font-bold rounded-md text-center transition-all ${
+                      busTab === 'dogye'
+                        ? 'bg-white text-[#00685f] shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {t("道溪校区", "도계 캠퍼스", "Dogye Campus")}
+                  </button>
+                  <button
+                    onClick={() => setBusTab('shuttle')}
+                    className={`flex-1 py-1.5 text-[11px] font-bold rounded-md text-center transition-all ${
+                      busTab === 'shuttle'
+                        ? 'bg-white text-[#00685f] shadow-sm'
+                        : 'text-slate-500 hover:text-slate-700'
+                    }`}
+                  >
+                    {t("免费校车/攻略", "무료 셔틀/꿀팁", "Shuttles & Tips")}
+                  </button>
+                </div>
 
-                  <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-indigo-700">{t("两校区免费校车", "캠퍼스 간 무료 셔틀", "Free Inter-Campus Shuttle")}</span>
-                      <span className="text-[10px] text-indigo-500 font-bold">{t("在校生免费", "학생 무료", "Free for Students")}</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 leading-normal">
-                      {t("学期中周一至周五运营，往返于三陟校区和道溪校区，需出示学生证搭乘（乘车前请在学校官网查看最新时间表）。", "학기 중 월~금요일 운행하며 삼척캠퍼스 ↔ 도계캠퍼스를 직통 연결합니다. 탑승 시 모바일 학생증 제시 필수.", "Runs Mon-Fri during semesters directly between Samcheok and Dogye campuses. Mobile student ID required.")}
-                    </p>
-                  </div>
+                {/* Tab Content */}
+                <div className="space-y-3">
+                  {busTab === 'samcheok' && (
+                    <>
+                      {/* Route 21-1 to 21-4 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-[#00685f] text-xs">21-1 / 21-2 / 21-3 / 21-4 {t("路", "번", "Bus")}</span>
+                          <span className="bg-teal-50 text-teal-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("三陟-东海跨市", "삼척-동해 광역", "Samcheok-Donghae")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要站点：", "주요 경유지:", "Key Stops:")}</strong>
+                          {t("三陟综合客运站 ↔ 三陟中央市场 ↔ 江原大学三陟校区 ↔ 增山 ↔ 北坪 ↔ 东海站 ↔ 东海客运站 ↔ 发한", "삼척종합버스터미널 ↔ 삼척중앙시장 ↔ 강원대 삼척캠퍼스 ↔ 증산 ↔ 북평 ↔ 동해역 ↔ 동해종합버스터미널 ↔ 발한", "Samcheok Terminal ↔ Central Market ↔ KNU Samcheok Campus ↔ Jeungsan ↔ Bukpyeong ↔ Donghae Station ↔ Donghae Terminal")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 班次：约 30-40 分钟一班。是往返邻市东海和高铁火车站的最核心骨干线路。", "⏱ 배차 간격: 약 30~40분. 동해시와 기차역(KTX)을 연결하는 핵심 광역 노선.", "⏱ Interval: Approx. 30-40 mins. Crucial intercity link to Donghae and Donghae KTX Station.")}
+                        </p>
+                      </div>
+
+                      {/* Route 100/101/102 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-teal-850 text-xs">100 / 101 / 102 {t("路", "번", "Bus")}</span>
+                          <span className="bg-slate-100 text-slate-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("市区循环", "시내 순환", "City Circular")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要站点：", "주요 경유지:", "Key Stops:")}</strong>
+                          {t("三陟客运站 ↔ 医疗院 ↔ 中央市场 ↔ 各大住宅区 (如Coaroo, G-Well等) ↔ 三陟中学", "삼척터미널 ↔ 삼척의료원 ↔ 삼척중앙시장 ↔ 주요 아파트 단지(코아루, 지웰 등) ↔ 삼척중학교", "Samcheok Terminal ↔ Medical Center ↔ Central Market ↔ Main Apartments (Coaroo, G-Well) ↔ Samcheok Middle School")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 覆盖市区所有生活圈与大型超市，适合日常买菜、购物及通勤。", "⏱ 삼척 시내의 모든 주거·상업 지역과 대형마트를 연결하여 일상 쇼핑과 시내 이동에 편리.", "⏱ Connects all residential/commercial hubs and supermarkets, ideal for daily shopping and local transit.")}
+                        </p>
+                      </div>
+
+                      {/* Route 70/70-1 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-amber-700 text-xs">70 / 70-1 {t("路", "번", "Bus")}</span>
+                          <span className="bg-amber-50 text-amber-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("三陟-道溪直通", "삼척-도계 직통", "Samcheok-Dogye")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要站点：", "주요 경유지:", "Key Stops:")}</strong>
+                          {t("三陟综合客运站 ↔ 美老 ↔ 神基 ↔ 幻仙窟 (部分车次) ↔ 道溪客运站", "삼척종합버스터미널 ↔ 미로 ↔ 신기 ↔ 환선굴 (일부) ↔ 도계버스터미널", "Samcheok Terminal ↔ Miro ↔ Singi ↔ Hwanseongul (Some) ↔ Dogye Terminal")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 班次：每天仅 4 班。连接三陟市区与道溪校区所在城镇的唯一市内公交直达线，车程约50分钟。", "⏱ 배차 간격: 1일 4회 운행. 삼척 시내와 도계읍을 잇는 유일한 시내버스 직통 노선.", "⏱ Interval: 4 times/day. The only direct city bus connecting Samcheok center and Dogye, ~50 mins.")}
+                        </p>
+                      </div>
+                    </>
+                  )}
+
+                  {busTab === 'dogye' && (
+                    <>
+                      {/* Route 43-1 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-[#00685f] text-xs">43-1 / 43-2 {t("路", "번", "Bus")}</span>
+                          <span className="bg-emerald-50 text-emerald-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("校区专线", "대학 전용", "Campus Dedicated")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要站点：", "주요 경유지:", "Key Stops:")}</strong>
+                          {t("道溪客运站/火车站 ↔ 道溪校区宿舍（道源馆） ↔ 道溪校区教学楼（黄条馆）", "도계버스터미널/도계역 ↔ 도계캠퍼스 기숙사(도원관) ↔ 도계캠퍼스 본관(황조관)", "Dogye Terminal/Station ↔ Dogye Campus Dorms (Doweongwan) ↔ Lecture Hall (Hwangjogwan)")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 专为道溪校区学生设计的通勤公交，随教学时间表进行频次调整。", "⏱ 도계역/터미널에서 산꼭대기 캠퍼스(황조관/도원관)까지 운행하는 학생들을 위한 핵심 통학 버스.", "⏱ Connects Dogye Station/Terminal to the hilltop campus (Hwangjogwan/Doweongwan) for students.")}
+                        </p>
+                      </div>
+
+                      {/* Route 70/70-1 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-amber-700 text-xs">70 / 70-1 {t("路", "번", "Bus")}</span>
+                          <span className="bg-amber-50 text-amber-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("道溪-三陟直通", "도계-삼척 직통", "Dogye-Samcheok")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要站点：", "주요 경유지:", "Key Stops:")}</strong>
+                          {t("道溪客运站 ↔ 进兴 / 神基 ↔ 美老 ↔ 三陟综合客运站", "도계버스터미널 ↔ 신기 ↔ 미로 ↔ 삼척종합버스터미널", "Dogye Terminal ↔ Singi ↔ Miro ↔ Samcheok Terminal")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 班次：每天仅 4 班。可直达三陟综合客运站或中途换乘至三陟校区。", "⏱ 배차 간격: 1일 4회 운행. 삼척 시내로 직접 갈 수 있는 유일한 노선.", "⏱ Interval: 4 times/day. Direct line to Samcheok Terminal, from where you can transfer to Samcheok Campus.")}
+                        </p>
+                      </div>
+
+                      {/* Route 40/41/45 */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 hover:border-slate-200 transition-colors shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-slate-800 text-xs">40 / 41 / 45 {t("路", "번", "Bus")}</span>
+                          <span className="bg-slate-100 text-slate-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("镇内/周边支线", "도계 읍내/지선", "Town/Local Branch")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          <strong>{t("主要区域：", "주요 경유지:", "Key Areas:")}</strong>
+                          {t("道溪 ↔ 兴前里 / 占里 / 新里 / 古士里", "도계 ↔ 흥전리 / 점리 / 신리 / 고사리", "Dogye ↔ Heungjeon-ri / Jeom-ri / Sin-ri / Gosa-ri")}
+                        </p>
+                        <p className="text-[10px] text-slate-400">
+                          {t("⏱ 方便在道溪城镇内部、周边的居住点 or 乡村景点穿梭出行。", "⏱ 도계 읍내 주변 마을과 주요 지선을 운행하여 지역 주민과 학생들의 근거리 이동을 지원.", "⏱ Runs to neighborhoods and villages around Dogye town, supporting short-distance travel.")}
+                        </p>
+                      </div>
+                    </>
+                  )}
+
+                  {busTab === 'shuttle' && (
+                    <>
+                      {/* Free Shuttle */}
+                      <div className="bg-indigo-50/50 p-3 rounded-xl border border-indigo-100 shadow-sm">
+                        <div className="flex justify-between items-center mb-1.5">
+                          <span className="font-bold text-indigo-800 text-xs">{t("两校区免费校车", "캠퍼스 간 무료 셔틀", "Free Inter-Campus Shuttle")}</span>
+                          <span className="bg-indigo-100 text-indigo-700 text-[9px] font-bold px-1.5 py-0.5 rounded">
+                            {t("在校生免费", "학생 무료", "Free for Students")}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-700 mb-1 leading-normal">
+                          {t("学期中周一至周五运营，直达往返于三陟校区（学生会馆前）与道溪校区之间，上车时必须出示手机端移动学生证。", "학기 중 월~금요일 운행하며 삼척캠퍼스(학생회관 앞) ↔ 도계캠퍼스를 직통 연결합니다. 탑승 시 모바일 학생증 제시 필수.", "Runs Mon-Fri during semesters directly between Samcheok (in front of Student Hall) and Dogye campus. Mobile student ID required.")}
+                        </p>
+                        <p className="text-[10px] text-indigo-600">
+                          {t("💡 寒暑假期间停运，具体发车班次和时刻表请登录学校官网查询最新版。", "💡 방학 중에는 운행하지 않으며, 상세 시간표는 대학 홈페이지 공지사항에서 확인해야 합니다.", "💡 Suspended during vacations. Check university website notices for the latest timetable details.")}
+                        </p>
+                      </div>
+
+                      {/* Real-time tools */}
+                      <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/60">
+                        <h5 className="font-bold text-slate-800 text-[11px] mb-1.5 flex items-center gap-1">
+                          <Info className="w-3.5 h-3.5 text-[#00685f]" />
+                          {t("如何查询实时到站信息与班次？", "실시간 버스 도착 정보 조회 방법", "How to query real-time bus info")}
+                        </h5>
+                        <ul className="text-[10px] text-slate-600 space-y-1 pl-1 leading-relaxed">
+                          <li>• {t("使用 Naver Map 或 KakaoMap 搜索公交路线或站点，即可直观查阅车辆当前所在位置和预计进站时间。", "Naver 지도 또는 KakaoMap 앱에서 버스 번호나 정류장을 검색하면 실시간 차량 위치와 도착 예정 시간을 알 수 있습니다.", "Search bus numbers or stop names in Naver Map or KakaoMap to view real-time location and ETA.")}</li>
+                          <li>• {t("三陟公交系统无固定秒级排班，发车受当天路况和运力影响，极易产生几分钟的前后波动，建议提前 5-10 分钟到站候车。", "삼척 시내버스는 고정된 초 단위 배차가 아니므로 기상 및 도로 상황에 따라 지연될 수 있어 5~10분 전 정류장 대기가 안전합니다.", "Samcheok buses have flexible intervals. Traffic and weather can affect ETAs, so arriving at the stop 5-10 mins early is highly recommended.")}</li>
+                        </ul>
+                        <div className="mt-3">
+                          <a 
+                            href="https://its.samcheok.go.kr/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-full py-1.5 bg-[#00685f] hover:bg-[#00574f] text-white text-[10px] font-bold rounded flex items-center justify-center gap-1 transition-colors"
+                          >
+                            <span>{t("访问三陟市交通信息中心官网", "삼척시 버스정보시스템(BIS) 바로가기", "Visit Samcheok Bus Info System (BIS)")}</span>
+                            <ChevronRight className="w-3.5 h-3.5 text-white" />
+                          </a>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
