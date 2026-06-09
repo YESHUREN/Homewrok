@@ -1,7 +1,7 @@
 {
-  "name": "在韩留学生服务与社区",
-  "short_name": "在韩留学生",
-  "description": "江原大学三陟校区在韩留学生一站式指南、日历提醒与交流社区",
+  "name": "K-Start",
+  "short_name": "K-Start",
+  "description": "K-Start - 江原大学三陟校区在韩留学生一站式指南、日历提醒与交流社区",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",

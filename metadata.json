@@ -1,5 +1,5 @@
 {
-  "name": "在韩留学生服务社区",
+  "name": "K-Start",
   "description": "为在韩中国留学生提供最专业的本土化生活指南（银行卡、健康保险、外国人登陆证、垃圾分类、交通、住房及邮寄）及同城互动交流社区。",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

@@ -11,7 +11,7 @@ export const translations = {
     profile: "个人中心",
 
     // Hamburger Menu / Info Drawer
-    app_title: "在韩留学生服务与社区",
+    app_title: "K-Start",
     cssa_aid: "学联学生援助项目",
     app_desc: "本应用汇合了全套最完整的韩国留学生活指南及高互动交流平台。完美还原中国留学生的日常核心生活场景。",
     feature_guides_title: "✓ 7大黄金指南完全内置",
@@ -127,7 +127,7 @@ export const translations = {
 
     // Login/Register Screens
     welcome_back: "欢迎回来",
-    login_title: "在韩留学生服务与社区 · 登录",
+    login_title: "K-Start · 登录",
     login_subtitle: "通过注册的账号和密码登录系统",
     username_label: "账号 (用户名/邮箱)",
     username_placeholder: "请输入账号",
@@ -163,7 +163,7 @@ export const translations = {
     profile: "Profile",
 
     // Hamburger Menu / Info Drawer
-    app_title: "Chinese Student Hub in Korea",
+    app_title: "K-Start",
     cssa_aid: "CSSA Student Aid Project",
     app_desc: "This app integrates a complete set of life guides in Korea and a highly interactive communication platform. Perfectly reflecting the daily core scenes of Chinese students.",
     feature_guides_title: "✓ 7 Core Guides Built-in",
@@ -279,7 +279,7 @@ export const translations = {
 
     // Login/Register Screens
     welcome_back: "Welcome Back",
-    login_title: "Chinese Student Hub · Sign In",
+    login_title: "K-Start · Sign In",
     login_subtitle: "Sign in with your registered account",
     username_label: "Account (Username/Email)",
     username_placeholder: "Enter account name",
@@ -315,7 +315,7 @@ export const translations = {
     profile: "마이페이지",
 
     // Hamburger Menu / Info Drawer
-    app_title: "재한 중국인 유학생 서비스 및 커뮤니티",
+    app_title: "K-Start",
     cssa_aid: "유학생회 학생 지원 프로젝트",
     app_desc: "본 앱은 한국 유학 생활에 대한 완전한 가이드와 소통이 원활한 커뮤니티 플랫폼을 제공하여, 유학생들의 핵심 일상을 완벽히 담아냅니다.",
     feature_guides_title: "✓ 7대 핵심 유학 가이드 내장",
@@ -431,7 +431,7 @@ export const translations = {
 
     // Login/Register Screens
     welcome_back: "어서 오세요",
-    login_title: "유학생 서비스 & 커뮤니티 · 로그인",
+    login_title: "K-Start · 로그인",
     login_subtitle: "등록한 계정으로 로그인하세요",
     username_label: "계정 (사용자 이름/이메일)",
     username_placeholder: "계정을 입력하세요",

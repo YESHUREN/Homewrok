@@ -1,4 +1,4 @@
-const CACHE_NAME = 'student-guide-cache-v4';
+const CACHE_NAME = 'student-guide-cache-v5';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -30,7 +30,7 @@ self.addEventListener('activate', (event) => {
       return self.clients.claim().then(() => {
         return self.clients.matchAll({ type: 'window' }).then((clients) => {
           clients.forEach((client) => {
-            client.postMessage({ type: 'SW_UPDATED', version: 'v4' });
+            client.postMessage({ type: 'SW_UPDATED', version: 'v5' });
           });
         });
       });
@@ -70,13 +70,13 @@ self.addEventListener('fetch', (event) => {
 
 // Handle Background Push Notifications
 self.addEventListener('push', (event) => {
-  let data = { title: '在韩留学生服务社区', body: '您今天有待办事项需要处理，快来看看吧！' };
+  let data = { title: 'K-Start', body: '您今天有待办事项需要处理，快来看看吧！' };
   
   if (event.data) {
     try {
       data = event.data.json();
     } catch (e) {
-      data = { title: '在韩留学生服务社区', body: event.data.text() };
+      data = { title: 'K-Start', body: event.data.text() };
     }
   }
 
