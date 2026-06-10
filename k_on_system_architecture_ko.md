@@ -46,6 +46,31 @@ graph TD
     class CLOUDDD db;
 ```
 
+### 1.2 시스템 기능 마인드맵 (System Feature Mindmap)
+
+마인드맵을 통해 K-ON 시스템의 핵심 기능과 백엔드 자가전환 로직 설계도를 직관적으로 살펴봅니다.
+
+```mermaid
+mindmap
+  root((K-ON 유학생 커뮤니티))
+    기술 아키텍처
+      React / Vite / TS
+      Tailwind CSS 글래스모피즘
+      Express.js 백엔드 API
+      Supabase 클라우드 DB
+      PWA Service Worker 오프라인
+    핵심 기능 모듈
+      7대 유학 생활 가이드
+      디데이 & 캘린더 일정
+      입국 도우미 D-Day 로드맵
+      커뮤니티 글 작성 & 고정
+      모사 지갑 & 모바일 승차권
+    자가전환 로직
+      클라우드 & 로컬 듀얼모드
+      Vite 프록시 CORS 차단
+      Service Worker 오프라인 알림
+```
+
 ---
 
 ## 2. 핵심 워크플로우: 데이터베이스 자가전환 (Fallback)

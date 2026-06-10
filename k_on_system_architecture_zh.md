@@ -46,6 +46,31 @@ graph TD
     class CLOUDDD db;
 ```
 
+### 1.2 系统功能思维脑图 (System Feature Mindmap)
+
+通过直观的思维脑图梳理 K-ON 系统的整体模块与底层自适应交互设计：
+
+```mermaid
+mindmap
+  root((K-ON 留学生社区))
+    技术架构
+      React / Vite / TS
+      Tailwind CSS 玻璃拟态
+      Express.js 后端 API
+      Supabase 云数据库
+      PWA Service Worker 离线
+    核心功能
+      7大黄金生活指南
+      倒计时与日历日程
+      入境助手 D-Day 路线图
+      社区论坛交互与置顶
+      模拟钱包与电子乘车码
+    自适应逻辑
+      云端与本地双模切换
+      Vite 代理规避 CORS 限制
+      Service Worker 离线通知
+```
+
 ---
 
 ## 2. 核心工作流：双模自适应数据库切换
