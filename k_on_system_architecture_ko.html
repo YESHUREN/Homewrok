@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-ON 시스템 아키텍처 설계서</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js (Markdown Parser) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Mermaid.js (Diagram Renderer) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+        pre { background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; overflow-x: auto; margin: 16px 0; }
+        code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.9em; color: #0f172a; }
+        .markdown-body h1 { font-size: 2em; font-weight: 800; margin-top: 32px; margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; color: #0f172a; }
+        .markdown-body h2 { font-size: 1.5em; font-weight: 700; margin-top: 28px; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; color: #1e293b; }
+        .markdown-body h3 { font-size: 1.2em; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #334155; }
+        .markdown-body p { margin-bottom: 16px; line-height: 1.75; color: #475569; }
+        .markdown-body ul { list-style-type: disc; padding-left: 24px; margin-bottom: 16px; color: #475569; }
+        .markdown-body li { margin-bottom: 6px; line-height: 1.625; }
+        .markdown-body strong { color: #0f172a; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-12 rounded-3xl shadow-xl border border-slate-100/80">
+        <!-- Print / PDF Button -->
+        <div class="flex justify-end mb-6 no-print">
+            <button onclick="window.print()" class="px-5 py-2.5 bg-[#00685f] hover:bg-[#00574f] text-white text-xs font-bold rounded-xl shadow-md transition-colors flex items-center gap-1.5">
+                🖨️ PDF 저장 / 인쇄
+            </button>
+        </div>
+        
+        <div id="content" class="markdown-body">
+            <!-- Raw Markdown will go here, parsed by JS -->
+        </div>
+    </div>
+
+    <script>
+        // Raw Markdown string
+        const markdownText = `# K-ON (재한 유학생 서비스 및 커뮤니티) - 시스템 아키텍처 설계서
+
+본 문서는 **K-ON (재한 중국인 유학생 서비스 및 커뮤니티)** 어플리케이션의 전반적인 기술 아키텍처, 핵심 기술 스택, 그리고 데이터베이스 이중화 자가전환(Fallback) 알고리즘 설계를 다룹니다.
+
+---
+
+## 1. 시스템 아키텍처 개요
+
+K-ON 시스템은 현대적인 **PWA 클라이언트 - API 백엔드 서버 - 데이터베이스**의 3계층 아키텍처로 구현되었습니다. 특히 네트워크 가용성과 클라우드 서버 상태를 실시간 감지하여 최적의 모드로 자동 전환하는 **듀얼모드 자가전환 데이터베이스** 아키텍처를 핵심 특징으로 합니다.
+
+\`\`\`mermaid
+graph TD
+    %% Styling
+    classDef client fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1;
+    classDef pwa fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#15803d;
+    classDef server fill:#faf5ff,stroke:#9333ea,stroke-width:2px,color:#6b21a8;
+    classDef db fill:#fffbeb,stroke:#d97706,stroke-width:2px,color:#92400e;
+    
+    subgraph Client_App ["K-ON 클라이언트 앱 (Vite / React SPA)"]
+        UI["React UI 뷰 및 화면<br>(홈, 커뮤니티, 마이페이지, 입국 도우미, 캘린더)"]
+        SW["Service Worker (sw.js)<br>(리소스 캐싱 및 백그라운드 푸시 알림)"]
+        LOCAL["클라이언트 로컬 저장소<br>(localStorage / CacheStorage)"]
+    end
+    
+    subgraph Backend_Server ["K-ON API 백엔드 서버 (Node.js / Express)"]
+        ROUT["Express 라우터 및 컨트롤러<br>(/api/posts, /api/reminders, /api/wallet)"]
+        DIAG["연결 상태 진단 엔진<br>(클라우드 DB 연결 실시간 모니터링)"]
+        LOCAL_DB["로컬 백업 DB 엔진<br>(메모리 모드 / fallback_db.json)"]
+    end
+    
+    subgraph Data_Storage ["데이터 데이터베이스 계층"]
+        CLOUDDD["Supabase 클라우드 DB<br>(PostgreSQL: 게시글, 댓글, 계정, 일정 저장)"]
+    end
+    
+    %% Connections
+    UI <--> ROUT
+    UI <--> LOCAL
+    SW <--> LOCAL
+    ROUT <--> DIAG
+    DIAG -- 연결 성공 --> CLOUDDD
+    DIAG -- 연결 실패 또는 타임아웃 --> LOCAL_DB
+    
+    class UI,LOCAL client;
+    class SW pwa;
+    class ROUT,DIAG,LOCAL_DB server;
+    class CLOUDDD db;
+\`\`\`
+
+---
+
+## 2. 핵심 워크플로우: 데이터베이스 자가전환 (Fallback)
+
+클라이언트 앱이 실행되거나 서버로 요청을 보낼 때, 백엔드 진단 엔진은 클라우드 데이터베이스와의 연동 유무를 진단합니다. 데이터베이스 환경 변수가 설정되어 있지 않거나 네트워크 불안정으로 클라우드 서버가 응답하지 않을 경우, 시스템은 별도의 오류 노출 없이 로컬 백업 엔진으로 자가전환되어 \`fallback_db.json\`을 조회합니다. 이를 통해 사용자는 서비스 중단 없이 동일한 고성능 오프라인 체험을 제공받습니다.
+
+\`\`\`mermaid
+sequenceDiagram
+    autonumber
+    participant Client as K-ON 클라이언트 앱
+    participant Server as Express 백엔드 서버
+    participant Diag as 진단 엔진
+    participant Supabase as Supabase 클라우드 DB
+    participant Fallback as 로컬 백업 DB (fallback_db.json)
+
+    Client->>Server: HTTP 요청 전송 (예: GET /api/posts)
+    Server->>Diag: 데이터베이스 연결 상태 확인
+    
+    alt 클라우드 DB 연결 성공
+        Diag->>Supabase: 해당 테이블 쿼리 실행
+        Supabase-->>Diag: PostgreSQL 데이터 레코드 반환
+        Diag-->>Server: 데이터 라우팅 및 가공
+        Server-->>Client: HTTP 200 JSON 응답 (온라인 클라우드 모드)
+    else 클라우드 DB 연결 실패 (오프라인/타임아웃)
+        Diag-->>Server: 연결 오류 반환 (자동 백업 모드 활성화)
+        Server->>Fallback: fallback_db.json 파일 또는 로컬 메모리 조회
+        Fallback-->>Server: 로컬 데이터 레코드 반환
+        Server-->>Client: HTTP 200 JSON 응답 (로컬 오프라인 모드)
+    end
+\`\`\`
+
+---
+
+## 3. 세부 기술 스택 구성
+
+### 3.1 클라이언트 영역 (Frontend)
+*   **Vite + React (SPA)**: 단일 페이지 애플리케이션 프레임워크로 구현하여 가벼운 번들링과 뛰어난 모바일 스크롤 반응 속도를 실현했습니다.
+*   **프로그레시브 웹앱 (PWA / Service Worker)**:
+    *   \`sw.js\`에서 '네트워크 우선(Network-First)' 자원 정책을 적용하여, 인터넷이 끊긴 상태에서도 캐시 파일들을 로드해 오프라인 접속이 가능합니다.
+    *   푸시 이벤트를 모니터링하여 만료 예정인 일정이나 등록된 이벤트를 백그라운드 푸시 알림으로 수신합니다.
+*   **Tailwind CSS**: 둥근 모서리 레이아웃, 반투명 효과(Glassmorphism), 마이크로 인터랙션 등 사용자 친화적인 비주얼 컴포넌트들을 설계했습니다.
+*   **Lucide React**: 입국 로드맵 타임라인과 마이페이지 설정 등에 적합한 경량 고해상도 벡터 아이콘 팩을 사용합니다.
+
+### 3.2 백엔드 영역 (Backend)
+*   **Express.js (TypeScript)**: 개발 서버 기준 포트 \`5000\`번을 청취하는 백엔드 서버 라우터입니다.
+*   **Vite 리버스 프록시**: \`vite.config.ts\` 설정을 통해 프론트엔드의 \`/api/*\` 주소로 향하는 요청을 내부적으로 Express 서버에 중계하여 CORS(크로스도메인 제한) 이슈를 원천 차단합니다.
+*   **비즈니스 API 라우팅**:
+    *   \`/api/posts\` - 커뮤니티 게시글 및 댓글 작성, 삭제, 좋아요, 고정 설정.
+    *   \`/api/reminders\` - 유학생 개인별 디데이 목록 및 캘린더 일정 동기화 관리.
+    *   \`/api/wallet\` - 충전(카카오페이/토스페이 모사) 및 지갑 사용 로그 기록.
+    *   \`/api/debug\` - 네트워크 진단용 전원 테스팅 엔드포인트.
+
+### 3.3 저장 및 스토리지 계층 (Storage)
+*   **Supabase (클라우드 PostgreSQL)**: 원격 데이터베이스 서비스로 아래의 테이블을 영속적으로 관리합니다.
+    *   \`users\`: 계정명, 비밀번호 해시, 인증 태그, 마이페이지 프로필 등.
+    *   \`posts\` / \`comments\`: 커뮤니티 게시판 정보.
+    *   \`reminders\` : 캘린더 모듈에 등록 및 동기화된 이벤트 일정.
+    *   \`wallet_logs\`: 지갑 충전 및 지출 결제 명세서.
+*   **fallback_db.json (로컬 백업)**: 데이터베이스 미연결 상태일 때 백엔드에 초기 데이터(Seeds)를 임시 보충 및 가공하기 위한 모사 JSON 파일입니다.
+*   **Client localStorage**: 유저 세션 토큰, 다국어 선호 설정, 편집 프로필 백업 데이터 등을 사용자의 로컬 브라우저 세션에 안전하게 유지합니다.
+`;
+
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
+        // Parse markdown to HTML
+        document.getElementById('content').innerHTML = marked.parse(markdownText);
+
+        // Convert language-mermaid blocks to divs for mermaid renderer
+        const codeElements = document.querySelectorAll('pre code.language-mermaid');
+        codeElements.forEach((codeEl, index) => {
+            const preEl = codeEl.parentElement;
+            const mermaidCode = codeEl.textContent;
+            
+            const container = document.createElement('div');
+            container.id = 'mermaid-container-' + index;
+            container.className = 'mermaid my-8 flex justify-center w-full overflow-x-auto';
+            container.textContent = mermaidCode;
+            
+            preEl.replaceWith(container);
+        });
+
+        // Run mermaid rendering
+        mermaid.contentLoaded();
+    </script>
+    
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { background: white; padding: 0; }
+            .max-w-4xl { max-width: 100%; border: none; shadow: none; padding: 0; }
+        }
+    </style>
+</body>
+</html>
