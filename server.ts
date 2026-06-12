@@ -370,14 +370,15 @@ app.get("/api/posts", async (req, res) => {
     let postsList: any[] = [];
 
     if (supabase) {
-      // 1. Fetch raw posts and count comments
+      // 1. Fetch raw posts and count comments (limited to 30 latest posts)
       const { data: postsRaw, error: postErr } = await supabase
         .from("posts")
         .select(`
           *,
           comments_count:comments(count)
         `)
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .limit(30);
 
       if (postErr) return res.status(500).json({ error: postErr.message });
       postsList = postsRaw || [];
@@ -402,22 +403,36 @@ app.get("/api/posts", async (req, res) => {
         bmsRaw?.forEach(b => bookmarkedPostIds.add(b.post_id));
       }
 
-      // 3. Construct rich UI post data
-      const parsedPosts = await Promise.all(postsList.map(async (p: any) => {
-        // Fetch matching comments for expanded display
-        const { data: commentsRaw } = await supabase
+      // 3. Fetch comments in a single batch query instead of N+1 database queries
+      const postIds = postsList.map((p: any) => p.id);
+      const commentsByPostId: { [key: string]: any[] } = {};
+
+      if (postIds.length > 0) {
+        const { data: commentsRaw, error: commentsErr } = await supabase
           .from("comments")
           .select("*")
-          .eq("post_id", p.id)
+          .in("post_id", postIds)
           .order("created_at", { ascending: true });
 
-        const commentsList = commentsRaw?.map((c: any) => ({
-          id: c.id,
-          username: c.username,
-          avatar: c.avatar,
-          text: c.text,
-          time: formatTimeDifference(c.created_at)
-        })) || [];
+        if (!commentsErr && commentsRaw) {
+          commentsRaw.forEach((c: any) => {
+            if (!commentsByPostId[c.post_id]) {
+              commentsByPostId[c.post_id] = [];
+            }
+            commentsByPostId[c.post_id].push({
+              id: c.id,
+              username: c.username,
+              avatar: c.avatar,
+              text: c.text,
+              time: formatTimeDifference(c.created_at)
+            });
+          });
+        }
+      }
+
+      // 4. Construct rich UI post data
+      postsList = postsList.map((p: any) => {
+        const commentsList = commentsByPostId[p.id] || [];
 
         return {
           id: p.id,
@@ -435,9 +450,7 @@ app.get("/api/posts", async (req, res) => {
           isBookmarked: bookmarkedPostIds.has(p.id),
           userId: p.user_id
         };
-      }));
-
-      postsList = parsedPosts;
+      });
     } else {
       // Memory Fallback Logic
       postsList = fallbackPosts.map(p => {

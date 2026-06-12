@@ -272,13 +272,47 @@ export default function App() {
       .catch(err => console.error("Error loading posts:", err));
   }, []);
 
-  // Auto-refresh posts every 12 seconds so likes/comments from other users are visible
+  // Auto-refresh posts when visible (every 60 seconds instead of 12s, stops when hidden)
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      const storedUserId = localStorage.getItem("service_community_user_id");
-      fetchPosts(storedUserId || undefined);
-    }, 12000);
-    return () => clearInterval(interval);
+    let intervalId: any;
+    
+    const startPolling = () => {
+      if (!intervalId) {
+        intervalId = setInterval(() => {
+          const id = localStorage.getItem("service_community_user_id");
+          fetchPosts(id || undefined);
+        }, 60000);
+      }
+    };
+    
+    const stopPolling = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        const id = localStorage.getItem("service_community_user_id");
+        fetchPosts(id || undefined);
+        startPolling();
+      } else {
+        stopPolling();
+      }
+    };
+
+    if (document.visibilityState === 'visible') {
+      const id = localStorage.getItem("service_community_user_id");
+      fetchPosts(id || undefined);
+      startPolling();
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      stopPolling();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [fetchPosts]);
 
   const fetchReminders = useCallback((userId: string) => {
@@ -903,15 +937,47 @@ export default function App() {
       .catch(err => console.error("Error fetching notifications:", err));
   }, [profile.studentId, fetchPosts]);
 
-  // Polling notifications every 3 seconds
+  // Polling notifications when visible (every 30 seconds instead of 3s, stops when hidden)
   useEffect(() => {
     if (!profile.isLoggedIn || !profile.studentId) {
       setNotifications([]);
       return;
     }
     fetchNotifications();
-    const interval = setInterval(fetchNotifications, 3000);
-    return () => clearInterval(interval);
+    
+    let intervalId: any;
+    
+    const startPolling = () => {
+      if (!intervalId) {
+        intervalId = setInterval(fetchNotifications, 30000);
+      }
+    };
+    
+    const stopPolling = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchNotifications();
+        startPolling();
+      } else {
+        stopPolling();
+      }
+    };
+
+    if (document.visibilityState === 'visible') {
+      startPolling();
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      stopPolling();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [profile.isLoggedIn, profile.studentId, fetchNotifications]);
 
   // Mark all notifications as read

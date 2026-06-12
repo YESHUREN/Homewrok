@@ -154,7 +154,8 @@ export default async function handler(req, res) {
 
       const { data: postsRaw, error: pe } = await sb
         .from("posts").select("*, comments_count:comments(count)")
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .limit(30);
       if (pe) return res.status(500).json({ error: pe.message });
 
       const likedIds = new Set();
@@ -166,14 +167,36 @@ export default async function handler(req, res) {
         (bk || []).forEach(b => bookmarkedIds.add(b.post_id));
       }
 
-      let postsList = await Promise.all((postsRaw || []).map(async p => {
-        const { data: cr } = await sb
-          .from("comments").select("*").eq("post_id", p.id).order("created_at", { ascending: true });
-        const commentsList = (cr || []).map(c => ({
-          id: c.id, username: c.username, avatar: c.avatar,
-          text: c.text, time: formatTime(c.created_at),
-          userId: c.user_id
-        }));
+      // Fetch comments in a single batch query instead of N+1 database queries
+      const postIds = (postsRaw || []).map(p => p.id);
+      const commentsByPostId = {};
+      
+      if (postIds.length > 0) {
+        const { data: crRaw, error: crErr } = await sb
+          .from("comments")
+          .select("*")
+          .in("post_id", postIds)
+          .order("created_at", { ascending: true });
+          
+        if (!crErr && crRaw) {
+          crRaw.forEach(c => {
+            if (!commentsByPostId[c.post_id]) {
+              commentsByPostId[c.post_id] = [];
+            }
+            commentsByPostId[c.post_id].push({
+              id: c.id,
+              username: c.username,
+              avatar: c.avatar,
+              text: c.text,
+              time: formatTime(c.created_at),
+              userId: c.user_id
+            });
+          });
+        }
+      }
+
+      let postsList = (postsRaw || []).map(p => {
+        const commentsList = commentsByPostId[p.id] || [];
         return {
           id: p.id, username: p.username, avatar: p.avatar,
           time: formatTime(p.created_at), area: p.area,
@@ -185,7 +208,7 @@ export default async function handler(req, res) {
           isBookmarked: bookmarkedIds.has(p.id),
           userId: p.user_id
         };
-      }));
+      });
 
       if (filter === "MINE" && userId) postsList = postsList.filter(p => p.userId === userId);
       else if (filter === "BOOKMARKED") postsList = postsList.filter(p => p.isBookmarked);
