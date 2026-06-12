@@ -4667,6 +4667,15 @@ export default function App() {
                     <span>这代表您在当前浏览器注册的账号、发布帖子的数据均储存在本地浏览器缓存中。由于数据未写入云端数据库，所以在其他手机或浏览器上登录会提示“账号不存在”。</span>
                   </div>
 
+                  {/* Real-time Diagnostic Log */}
+                  <div className="p-3 bg-rose-50 rounded-xl border border-rose-150 flex flex-col gap-1 text-[10px] text-rose-850 font-mono">
+                    <span className="font-bold text-rose-900 block mb-0.5">🛠️ 实时错误诊断日志 (Live Diagnostic Log):</span>
+                    <div className="space-y-1">
+                      <div><strong className="text-rose-950">Supabase Configured:</strong> {dbDiagnostic.tested ? (dbDiagnostic.errorMsg?.includes("配置未完成") || dbDiagnostic.errorMsg?.includes("API OFFLINE") ? "❌ 未配置" : "✅ 已配置") : "检测中..."}</div>
+                      <div><strong className="text-rose-950">Error Details:</strong> <span className="underline select-all">{dbDiagnostic.errorMsg || "无"}</span></div>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <span className="font-bold text-slate-800 text-xs block">💡 什么是云端存储？</span>
                     <p>系统完全支持连接到您的 Supabase 云端数据库进行永久化存储。完成配置后，您的账号、个人资料、提醒事项、帖子及评论将在云端加密存储，实现多设备互通登录。</p>
