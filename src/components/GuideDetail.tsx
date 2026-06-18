@@ -34,6 +34,29 @@ export default function GuideDetail({
     if (language === 'en') return en;
     return zh;
   };
+
+  const renderTextWithLinks = (text: string) => {
+    if (!text) return "";
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = text.split(urlRegex);
+    return parts.map((part, index) => {
+      if (part.match(urlRegex)) {
+        return (
+          <a 
+            key={index} 
+            href={part} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-[#00685f] hover:underline break-all font-bold"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
   // Share prompt
   const [showShareAlert, setShowShareAlert] = useState(false);
   const [zoomImage, setZoomImage] = useState<string | null>(null);
@@ -2319,7 +2342,7 @@ export default function GuideDetail({
                       return (
                         <div key={block.key} className="flex items-start gap-2 pl-1.5 py-0.5 text-[11px] leading-relaxed group">
                           <span className="text-[#00685f] font-extrabold mt-0.5 shrink-0">•</span>
-                          <span className="text-slate-700 font-semibold">{doc.name}</span>
+                          <span className="text-slate-700 font-semibold">{renderTextWithLinks(doc.name)}</span>
                         </div>
                       );
                     }
@@ -2343,7 +2366,7 @@ export default function GuideDetail({
                           ) : (
                             <span className="text-[#00685f] font-extrabold mt-0.5 shrink-0">#</span>
                           )}
-                          <span className="text-slate-700 font-bold pt-0.5">{listText}</span>
+                          <span className="text-slate-700 font-bold pt-0.5">{renderTextWithLinks(listText)}</span>
                         </div>
                       );
                     }
@@ -2388,7 +2411,7 @@ export default function GuideDetail({
                     // K. Text blocks (fallback)
                     return (
                       <p key={block.key} className="text-[11px] text-slate-500 leading-relaxed pl-1 py-0.5 font-medium whitespace-pre-wrap">
-                        {doc.name}
+                        {renderTextWithLinks(doc.name)}
                       </p>
                     );
                   });
